@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="axaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ClientBeneficiaries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CLIENT_ID" Type="bigint" Nullable="false" />
+    <Property Name="FULLNAME" Type="ntext" Nullable="false" />
+    <Property Name="BIRTHDATE" Type="date" />
+    <Property Name="BIRTHPLACE" Type="ntext" />
+    <Property Name="RELATIONSHIP" Type="ntext" Nullable="false" />
+    <Property Name="OCCUPATION" Type="ntext" Nullable="false" />
+    <Property Name="SHARE" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="financial_advisor_id" Type="bigint" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="middlename" Type="varchar" MaxLength="50" />
+    <Property Name="spouselastname" Type="varchar" MaxLength="50" />
+    <Property Name="spousefirstname" Type="varchar" MaxLength="50" />
+    <Property Name="spousemiddlename" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="civilstatus" Type="varchar" MaxLength="50" />
+    <Property Name="birthday" Type="datetime" />
+    <Property Name="birthplace" Type="varchar" MaxLength="50" />
+    <Property Name="height" Type="float" />
+    <Property Name="weight" Type="float" />
+    <Property Name="residenceaddress" Type="varchar" MaxLength="50" />
+    <Property Name="cpnumber" Type="varchar" MaxLength="50" />
+    <Property Name="telephonenumber" Type="varchar" MaxLength="50" />
+    <Property Name="emailaddress" Type="varchar" MaxLength="50" />
+    <Property Name="occupation" Type="varchar" MaxLength="50" />
+    <Property Name="worksalary" Type="float" />
+    <Property Name="businessincome" Type="float" />
+    <Property Name="othersource" Type="float" />
+    <Property Name="companyname" Type="varchar" MaxLength="50" />
+    <Property Name="companyaddress" Type="varchar" MaxLength="50" />
+    <Property Name="companycontact" Type="varchar" MaxLength="50" />
+    <Property Name="natureofbusiness" Type="varchar" MaxLength="50" />
+    <Property Name="taxidnumber" Type="varchar" MaxLength="50" />
+    <Property Name="sss_gsis_number" Type="varchar" MaxLength="50" />
+    <Property Name="answersub1" Type="varchar" MaxLength="50" />
+    <Property Name="answersub2" Type="varchar" MaxLength="50" />
+    <Property Name="answersub3" Type="varchar" MaxLength="50" />
+    <Property Name="addedby_userid" Type="bigint" />
+  </EntityType>
+  <EntityType Name="FinancialAdvisors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PASSWORD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ROLE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FULLNAME" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="axaDBModelStoreContainer">
+    <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiaries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

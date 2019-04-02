@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="axaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ClientBeneficiary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_ID" Type="Int64" Nullable="false" />
+    <Property Name="FULLNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BIRTHDATE" Type="DateTime" Precision="0" />
+    <Property Name="BIRTHPLACE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RELATIONSHIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OCCUPATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SHARE" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="spouselastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="spousefirstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="spousemiddlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="civilstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="birthplace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="height" Type="Double" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="residenceaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cpnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telephonenumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="worksalary" Type="Double" />
+    <Property Name="businessincome" Type="Double" />
+    <Property Name="othersource" Type="Double" />
+    <Property Name="companyname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="companyaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="companycontact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="natureofbusiness" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="taxidnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sss_gsis_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="answersub1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="answersub2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="answersub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="addedby_userid" Type="Int64" />
+    <Property Name="financial_advisor_id" Type="Int64" />
+  </EntityType>
+  <EntityType Name="FinancialAdvisor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USERNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ROLE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FULLNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiary" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisor" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+  </EntityContainer>
+</Schema>
