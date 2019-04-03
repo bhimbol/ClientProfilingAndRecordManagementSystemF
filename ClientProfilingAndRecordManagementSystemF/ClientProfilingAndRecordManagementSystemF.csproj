@@ -95,6 +95,12 @@
     <Compile Include="FinancialAdvisor.cs">
       <DependentUpon>axaDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="AddPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPlanForm.Designer.cs">
+      <DependentUpon>AddPlanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="ManageFinancialAdvisorForm.Designer.cs">
       <DependentUpon>ManageFinancialAdvisorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plan.cs">
+      <DependentUpon>axaDBEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs">
@@ -129,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="AddEditClientForm.resx">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPlanForm.resx">
+      <DependentUpon>AddPlanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

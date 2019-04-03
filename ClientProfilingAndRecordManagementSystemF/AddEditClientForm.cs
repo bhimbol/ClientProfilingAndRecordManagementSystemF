@@ -53,6 +53,9 @@ namespace ClientProfilingAndRecordManagementSystemF
                     var selected_fa = db.FinancialAdvisors.Find(selected_client.Cells["financial_advisor_id"].Value);
                     cboxfinancial_advisor.Text = selected_fa.fullname;
                     cboxfinancial_advisor.Refresh();
+                    var selected_plan = db.Plans.Find(selected_client.Cells["plan_id"].Value);
+                    txtPlan.Text = selected_plan.type + ": \r\n" + selected_plan.category + ": \r\n"  + selected_plan.description;
+                    txtPlan.Tag = selected_client.Cells["plan_id"].Value;
                 }
             }
             catch { }
@@ -171,6 +174,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 double h = 0, w = 0, ws = 0, bi = 0, oi = 0;
 
                 c.financial_advisor_id = (Int64)cboxfinancial_advisor.SelectedValue;
+                c.plan_id = int.Parse(txtPlan.Tag.ToString());
                 c.firstname = txtFirstname.Text;
                 c.middlename = txtMiddlename.Text;
                 c.lastname = txtLastname.Text;
@@ -231,6 +235,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 Client c = new Client();
                 double h = 0, w = 0, ws = 0, bi = 0, oi = 0;
                 c.financial_advisor_id = (Int64)cboxfinancial_advisor.SelectedValue;
+                c.plan_id = int.Parse(txtPlan.Tag.ToString());
                 c.lastname = txtLastname.Text;
                 c.firstname = txtFirstname.Text;
                 c.middlename = txtMiddlename.Text;
@@ -374,14 +379,18 @@ namespace ClientProfilingAndRecordManagementSystemF
             this.Close();
             this.Dispose();
         }
-
-        private void cboxfinancial_advisor_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void btnAddPlan_Click(object sender, EventArgs e)
         {
-        }
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            AddPlanForm addplanform = new AddPlanForm();
+            addplanform.plan = 19;
+            addplanform.ShowDialog();
+            using (axaDBEntities db = new axaDBEntities())
+            {
+                var selected_plan = db.Plans.Find(addplanform.plan);
+                txtPlan.Text = selected_plan.type + ": " + selected_plan.category + ": " + selected_plan.description;
+                txtPlan.Tag = addplanform.plan;
+            }
         }
     }
 }

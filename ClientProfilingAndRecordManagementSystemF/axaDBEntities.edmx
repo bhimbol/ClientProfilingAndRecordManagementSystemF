@@ -24,6 +24,7 @@
           </Key>
           <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="financial_advisor_id" Type="bigint" />
+          <Property Name="plan_id" Type="int" />
           <Property Name="lastname" Type="varchar" MaxLength="50" />
           <Property Name="firstname" Type="varchar" MaxLength="50" />
           <Property Name="middlename" Type="varchar" MaxLength="50" />
@@ -62,6 +63,15 @@
           <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fullname" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Plans">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="category" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -86,6 +96,7 @@
           <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiaries" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -142,6 +153,7 @@
           <Property Name="answersub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="addedby_userid" Type="Int64" />
           <Property Name="financial_advisor_id" Type="Int64" />
+          <Property Name="plan_id" Type="Int32" />
         </EntityType>
         <EntityType Name="FinancialAdvisor">
           <Key>
@@ -176,7 +188,17 @@
           <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisor" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
         </EntityContainer>
+        <EntityType Name="Plan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -200,6 +222,7 @@
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="axaDBModel.Client">
               <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="plan_id" ColumnName="plan_id" />
                 <ScalarProperty Name="financial_advisor_id" ColumnName="financial_advisor_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="lastname" ColumnName="lastname" />
@@ -262,6 +285,16 @@
                 <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
                 <ScalarProperty Name="ROLE" ColumnName="ROLE" />
                 <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plans">
+            <EntityTypeMapping TypeName="axaDBModel.Plan">
+              <MappingFragment StoreEntitySet="Plans">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

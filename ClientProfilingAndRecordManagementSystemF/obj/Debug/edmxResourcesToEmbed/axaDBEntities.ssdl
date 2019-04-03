@@ -19,6 +19,7 @@
     </Key>
     <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="financial_advisor_id" Type="bigint" />
+    <Property Name="plan_id" Type="int" />
     <Property Name="lastname" Type="varchar" MaxLength="50" />
     <Property Name="firstname" Type="varchar" MaxLength="50" />
     <Property Name="middlename" Type="varchar" MaxLength="50" />
@@ -57,6 +58,15 @@
     <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fullname" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="category" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -81,6 +91,7 @@
     <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiaries" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

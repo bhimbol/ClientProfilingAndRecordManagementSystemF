@@ -46,5 +46,6 @@ namespace ClientProfilingAndRecordManagementSystemF
         public string answersub3 { get; set; }
         public Nullable<long> addedby_userid { get; set; }
         public Nullable<long> financial_advisor_id { get; set; }
+        public Nullable<int> plan_id { get; set; }
     }
 }

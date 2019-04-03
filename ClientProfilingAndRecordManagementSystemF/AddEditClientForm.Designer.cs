@@ -70,9 +70,9 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.cboxfinancial_advisor = new System.Windows.Forms.ComboBox();
             this.Label1 = new System.Windows.Forms.Label();
-            this.Button1 = new System.Windows.Forms.Button();
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtPlan = new System.Windows.Forms.TextBox();
+            this.btnAddPlan = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.Button2 = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
@@ -406,7 +406,7 @@
             // 
             // btnAddClient
             // 
-            this.btnAddClient.Location = new System.Drawing.Point(716, 608);
+            this.btnAddClient.Location = new System.Drawing.Point(674, 654);
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(75, 62);
             this.btnAddClient.TabIndex = 11;
@@ -424,7 +424,7 @@
             // Label9
             // 
             this.Label9.AutoSize = true;
-            this.Label9.Location = new System.Drawing.Point(31, 406);
+            this.Label9.Location = new System.Drawing.Point(28, 499);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(63, 13);
             this.Label9.TabIndex = 88;
@@ -433,7 +433,7 @@
             // Label10
             // 
             this.Label10.AutoSize = true;
-            this.Label10.Location = new System.Drawing.Point(31, 379);
+            this.Label10.Location = new System.Drawing.Point(28, 472);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(89, 13);
             this.Label10.TabIndex = 87;
@@ -442,7 +442,7 @@
             // Label11
             // 
             this.Label11.AutoSize = true;
-            this.Label11.Location = new System.Drawing.Point(31, 349);
+            this.Label11.Location = new System.Drawing.Point(28, 442);
             this.Label11.Name = "Label11";
             this.Label11.Size = new System.Drawing.Size(78, 13);
             this.Label11.TabIndex = 86;
@@ -451,7 +451,7 @@
             // Label12
             // 
             this.Label12.AutoSize = true;
-            this.Label12.Location = new System.Drawing.Point(31, 320);
+            this.Label12.Location = new System.Drawing.Point(28, 413);
             this.Label12.Name = "Label12";
             this.Label12.Size = new System.Drawing.Size(70, 13);
             this.Label12.TabIndex = 85;
@@ -463,7 +463,7 @@
             this.ComboBox2.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.ComboBox2.Location = new System.Drawing.Point(107, 465);
+            this.ComboBox2.Location = new System.Drawing.Point(118, 296);
             this.ComboBox2.Name = "ComboBox2";
             this.ComboBox2.Size = new System.Drawing.Size(121, 21);
             this.ComboBox2.TabIndex = 84;
@@ -471,7 +471,7 @@
             // Label8
             // 
             this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(17, 471);
+            this.Label8.Location = new System.Drawing.Point(28, 299);
             this.Label8.Name = "Label8";
             this.Label8.Size = new System.Drawing.Size(84, 13);
             this.Label8.TabIndex = 83;
@@ -480,7 +480,7 @@
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(31, 287);
+            this.Label7.Location = new System.Drawing.Point(135, 407);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(80, 13);
             this.Label7.TabIndex = 82;
@@ -489,7 +489,7 @@
             // Label4
             // 
             this.Label4.AutoSize = true;
-            this.Label4.Location = new System.Drawing.Point(31, 260);
+            this.Label4.Location = new System.Drawing.Point(135, 380);
             this.Label4.Name = "Label4";
             this.Label4.Size = new System.Drawing.Size(103, 13);
             this.Label4.TabIndex = 81;
@@ -498,7 +498,7 @@
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(31, 230);
+            this.Label3.Location = new System.Drawing.Point(135, 350);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(95, 13);
             this.Label3.TabIndex = 80;
@@ -507,7 +507,7 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(31, 201);
+            this.Label2.Location = new System.Drawing.Point(28, 386);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(90, 13);
             this.Label2.TabIndex = 79;
@@ -520,61 +520,58 @@
             this.cboxfinancial_advisor.Name = "cboxfinancial_advisor";
             this.cboxfinancial_advisor.Size = new System.Drawing.Size(217, 21);
             this.cboxfinancial_advisor.TabIndex = 78;
-            this.cboxfinancial_advisor.SelectedIndexChanged += new System.EventHandler(this.cboxfinancial_advisor_SelectedIndexChanged);
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(31, 165);
+            this.Label1.Location = new System.Drawing.Point(28, 350);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(92, 13);
             this.Label1.TabIndex = 77;
             this.Label1.Text = "Mode Of Payment";
             // 
-            // Button1
-            // 
-            this.Button1.Location = new System.Drawing.Point(20, 104);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(75, 23);
-            this.Button1.TabIndex = 0;
-            this.Button1.Text = "Add Plan";
-            this.Button1.UseVisualStyleBackColor = true;
-            // 
             // Panel1
             // 
-            this.Panel1.Controls.Add(this.comboBox1);
+            this.Panel1.Controls.Add(this.txtPlan);
+            this.Panel1.Controls.Add(this.btnAddPlan);
             this.Panel1.Controls.Add(this.label13);
             this.Panel1.Controls.Add(this.Label9);
-            this.Panel1.Controls.Add(this.Label10);
-            this.Panel1.Controls.Add(this.Label11);
-            this.Panel1.Controls.Add(this.Label12);
             this.Panel1.Controls.Add(this.ComboBox2);
             this.Panel1.Controls.Add(this.Label8);
+            this.Panel1.Controls.Add(this.Label10);
             this.Panel1.Controls.Add(this.Label7);
-            this.Panel1.Controls.Add(this.Label4);
-            this.Panel1.Controls.Add(this.Label3);
             this.Panel1.Controls.Add(this.Label2);
+            this.Panel1.Controls.Add(this.Label11);
             this.Panel1.Controls.Add(this.cboxfinancial_advisor);
+            this.Panel1.Controls.Add(this.Label4);
+            this.Panel1.Controls.Add(this.Label12);
             this.Panel1.Controls.Add(this.Label1);
-            this.Panel1.Controls.Add(this.Button1);
+            this.Panel1.Controls.Add(this.Label3);
             this.Panel1.Location = new System.Drawing.Point(1029, 33);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(255, 518);
             this.Panel1.TabIndex = 16;
-            this.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
-            // comboBox1
+            // txtPlan
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Monthly",
-            "Quarterly",
-            "Semi Anually",
-            "Anually"});
-            this.comboBox1.Location = new System.Drawing.Point(98, 105);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(139, 21);
-            this.comboBox1.TabIndex = 90;
+            this.txtPlan.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtPlan.Enabled = false;
+            this.txtPlan.Location = new System.Drawing.Point(20, 82);
+            this.txtPlan.Multiline = true;
+            this.txtPlan.Name = "txtPlan";
+            this.txtPlan.Size = new System.Drawing.Size(217, 99);
+            this.txtPlan.TabIndex = 93;
+            this.txtPlan.Tag = "19";
+            // 
+            // btnAddPlan
+            // 
+            this.btnAddPlan.Location = new System.Drawing.Point(20, 52);
+            this.btnAddPlan.Name = "btnAddPlan";
+            this.btnAddPlan.Size = new System.Drawing.Size(217, 23);
+            this.btnAddPlan.TabIndex = 92;
+            this.btnAddPlan.Text = "Add Plan";
+            this.btnAddPlan.UseVisualStyleBackColor = true;
+            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
             // label13
             // 
@@ -587,16 +584,16 @@
             // 
             // Button2
             // 
-            this.Button2.Location = new System.Drawing.Point(716, 685);
+            this.Button2.Location = new System.Drawing.Point(925, 654);
             this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(245, 23);
+            this.Button2.Size = new System.Drawing.Size(75, 62);
             this.Button2.TabIndex = 15;
             this.Button2.Text = "View E - Policy";
             this.Button2.UseVisualStyleBackColor = true;
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(886, 608);
+            this.btnDone.Location = new System.Drawing.Point(844, 654);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(75, 62);
             this.btnDone.TabIndex = 14;
@@ -606,7 +603,7 @@
             // 
             // btnUpdateClient
             // 
-            this.btnUpdateClient.Location = new System.Drawing.Point(801, 608);
+            this.btnUpdateClient.Location = new System.Drawing.Point(759, 654);
             this.btnUpdateClient.Name = "btnUpdateClient";
             this.btnUpdateClient.Size = new System.Drawing.Size(75, 62);
             this.btnUpdateClient.TabIndex = 13;
@@ -1298,7 +1295,6 @@
         internal System.Windows.Forms.Button btnDone;
         internal System.Windows.Forms.Button Button2;
         internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Button Button1;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.ComboBox cboxfinancial_advisor;
         internal System.Windows.Forms.Label Label2;
@@ -1342,6 +1338,7 @@
         internal System.Windows.Forms.TextBox txtBShare;
         internal System.Windows.Forms.Button btnBUpdate;
         private System.Windows.Forms.Label label13;
-        internal System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnAddPlan;
+        private System.Windows.Forms.TextBox txtPlan;
     }
 }

@@ -49,6 +49,7 @@
     <Property Name="answersub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="addedby_userid" Type="Int64" />
     <Property Name="financial_advisor_id" Type="Int64" />
+    <Property Name="plan_id" Type="Int32" />
   </EntityType>
   <EntityType Name="FinancialAdvisor">
     <Key>
@@ -83,5 +84,15 @@
     <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisor" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
   </EntityContainer>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>
