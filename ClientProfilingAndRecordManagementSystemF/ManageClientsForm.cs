@@ -79,5 +79,17 @@ namespace ClientProfilingAndRecordManagementSystemF
             this.Close();
             this.Dispose();
         }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            using (axaDBEntities db = new axaDBEntities())
+            {
+                    dgvClients.DataSource = db.Clients.Where(x => x.lastname.Contains(txtSearch.Text) ||
+                                                                        x.firstname.Contains(txtSearch.Text) ||
+                                                                        x.middlename.Contains(txtSearch.Text) ||
+                                                                        x.residenceaddress.Contains(txtSearch.Text)).ToList();
+
+            }
+        }
     }
 }

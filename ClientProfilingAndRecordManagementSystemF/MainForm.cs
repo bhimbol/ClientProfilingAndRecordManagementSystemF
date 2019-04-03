@@ -39,12 +39,12 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void ListDataGridView_DataSourceChanged(object sender, EventArgs e)
         {
-            if(ListDataGridView.Tag.ToString() == "AXAFORMS" || ListDataGridView.Tag.ToString() == "AXAFORMS-SUBFOLDERS")
+            if (ListDataGridView.Tag.ToString() == "AXAFORMS" || ListDataGridView.Tag.ToString() == "AXAFORMS-SUBFOLDERS")
             {
 
-                foreach(DataGridViewColumn c in ListDataGridView.Columns)
+                foreach (DataGridViewColumn c in ListDataGridView.Columns)
                 {
-                    if (c.HeaderText!= "Name")
+                    if (c.HeaderText != "Name")
                     {
                         c.Visible = false;
                     }
@@ -72,7 +72,19 @@ namespace ClientProfilingAndRecordManagementSystemF
                     }
                 }
             }
+            else if (ListDataGridView.Tag.ToString() == "PLANS")
+            {
+                foreach (DataGridViewColumn c in ListDataGridView.Columns)
+                {
+                    c.Visible = false;
+                    if (c.HeaderText == "description")
+                    {
+                        c.Visible = true;
+                    }
+                }
+            }
             else { }
+
         }
 
         private void ListDataGridView_Click(object sender, EventArgs e)
@@ -158,6 +170,16 @@ namespace ClientProfilingAndRecordManagementSystemF
                     }
                     else { }
                 }
+            }
+        }
+
+        private void ListPlanButton_Click(object sender, EventArgs e)
+        {
+            using (axaDBEntities db = new axaDBEntities())
+            {
+                ListLabel.Text = "List of: Plans " + db.Plans.Count() + " plan(s) found.";
+                ListDataGridView.Tag = "PLANS";
+                ListDataGridView.DataSource = db.Plans.ToList();
             }
         }
     }

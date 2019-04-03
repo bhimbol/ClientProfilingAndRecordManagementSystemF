@@ -45,9 +45,9 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(29, 152);
+            this.btnEdit.Location = new System.Drawing.Point(25, 168);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(228, 23);
+            this.btnEdit.Size = new System.Drawing.Size(228, 43);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -71,15 +71,15 @@
             // SplitContainer1.Panel2
             // 
             this.SplitContainer1.Panel2.Controls.Add(this.dgvClients);
-            this.SplitContainer1.Size = new System.Drawing.Size(990, 400);
+            this.SplitContainer1.Size = new System.Drawing.Size(990, 527);
             this.SplitContainer1.SplitterDistance = 269;
             this.SplitContainer1.TabIndex = 1;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(162, 204);
+            this.btnBack.Location = new System.Drawing.Point(158, 266);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(95, 22);
+            this.btnBack.Size = new System.Drawing.Size(95, 42);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(29, 94);
+            this.btnAdd.Location = new System.Drawing.Point(25, 119);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(228, 23);
+            this.btnAdd.Size = new System.Drawing.Size(228, 43);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(29, 123);
+            this.btnDelete.Location = new System.Drawing.Point(25, 217);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(228, 23);
+            this.btnDelete.Size = new System.Drawing.Size(228, 43);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -107,20 +107,21 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(110, 29);
+            this.txtSearch.Location = new System.Drawing.Point(25, 12);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(147, 20);
+            this.txtSearch.Size = new System.Drawing.Size(228, 20);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = ". . . search by name, adress . . .";
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(29, 29);
+            this.btnFind.Location = new System.Drawing.Point(25, 38);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.Size = new System.Drawing.Size(228, 43);
             this.btnFind.TabIndex = 1;
             this.btnFind.Text = "Search Client";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // dgvClients
             // 
@@ -139,14 +140,14 @@
             this.dgvClients.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClients.ShowEditingIcon = false;
-            this.dgvClients.Size = new System.Drawing.Size(714, 400);
+            this.dgvClients.Size = new System.Drawing.Size(714, 521);
             this.dgvClients.TabIndex = 0;
             // 
             // ManageClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 400);
+            this.ClientSize = new System.Drawing.Size(990, 527);
             this.Controls.Add(this.SplitContainer1);
             this.Name = "ManageClientsForm";
             this.Text = "ManageClientsForm";

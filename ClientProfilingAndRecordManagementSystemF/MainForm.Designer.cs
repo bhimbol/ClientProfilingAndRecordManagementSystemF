@@ -83,7 +83,7 @@
             this.ListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ListDataGridView.Size = new System.Drawing.Size(581, 428);
             this.ListDataGridView.TabIndex = 6;
-            this.ListDataGridView.Tag = "Default";
+            this.ListDataGridView.Tag = "CLIENTS";
             this.ListDataGridView.DataSourceChanged += new System.EventHandler(this.ListDataGridView_DataSourceChanged);
             this.ListDataGridView.Click += new System.EventHandler(this.ListDataGridView_Click);
             this.ListDataGridView.DoubleClick += new System.EventHandler(this.ListDataGridView_DoubleClick);
@@ -116,6 +116,7 @@
             this.ListPlanButton.TabIndex = 3;
             this.ListPlanButton.Text = "LIST OF PLAN";
             this.ListPlanButton.UseVisualStyleBackColor = true;
+            this.ListPlanButton.Click += new System.EventHandler(this.ListPlanButton_Click);
             // 
             // ListClientsButton
             // 
