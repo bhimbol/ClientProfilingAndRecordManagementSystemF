@@ -182,5 +182,28 @@ namespace ClientProfilingAndRecordManagementSystemF
                 ListDataGridView.DataSource = db.Plans.ToList();
             }
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainForm_Load(null, null);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.Show();
+            LogInForm loginform = new LogInForm();
+            loginform.ShowDialog();
+            if ((Properties.Settings.Default.current_user_role == "Clerk Staff") || (Properties.Settings.Default.current_user_role == "Advisor"))
+            {
+                manageUsersToolStripMenuItem.Enabled = false;
+                manageFinancialAdvisorToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEditUserForm addeditfuserform = new AddEditUserForm();
+            addeditfuserform.ShowDialog();
+        }
     }
 }

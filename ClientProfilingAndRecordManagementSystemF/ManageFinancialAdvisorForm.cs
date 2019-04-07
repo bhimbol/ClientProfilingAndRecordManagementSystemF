@@ -34,7 +34,21 @@ namespace ClientProfilingAndRecordManagementSystemF
                 fa.fullname = txtFullName.Text; 
                 db.FinancialAdvisors.Add(fa);
                 db.SaveChanges();
+                MessageBox.Show("Successfully added advisor.");
                 ManageFinancialAdvisorForm_Load(null, null);
+
+                DialogResult dr = new DialogResult();
+                dr = MessageBox.Show("Would  you like to create log-in account for this advisor?","Create log-in account:",MessageBoxButtons.YesNo);
+                if(dr == DialogResult.Yes)
+                {
+                    AddEditUserForm addedituserform = new AddEditUserForm();
+                    addedituserform.role = "Advisor";
+                    ((TextBox)addedituserform.Controls["txtFullname"]).Text = fa.fullname;
+                    ((Button)addedituserform.Controls["btnUpdate"]).Enabled= false;
+                    ((Button)addedituserform.Controls["btnDelete"]).Enabled = false; 
+                    addedituserform.ShowDialog();
+                    addedituserform.role = null;
+                }
             }
         }
 
@@ -85,6 +99,17 @@ namespace ClientProfilingAndRecordManagementSystemF
                             ManageFinancialAdvisorForm_Load(null, null);
                         }
                     }
+                }
+            }
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                using(axaDBEntities db = new axaDBEntities())
+                {
+                    dataGridViewFA.DataSource = db.FinancialAdvisors.Where(fa => fa.fullname.Contains(txtSearch.Text)).ToList();
                 }
             }
         }

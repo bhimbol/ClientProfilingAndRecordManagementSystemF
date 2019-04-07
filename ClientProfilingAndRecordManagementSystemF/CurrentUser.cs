@@ -8,5 +8,9 @@ namespace ClientProfilingAndRecordManagementSystemF
 {
     class CurrentUser
     {
+        public string fullname { get; set; }
+        public bool isOnline { get; set; }
+        public string role { get; set; }
+
     }
 }

@@ -40,6 +40,8 @@
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageFinancialAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListDataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -81,7 +83,7 @@
             this.ListDataGridView.Name = "ListDataGridView";
             this.ListDataGridView.ReadOnly = true;
             this.ListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListDataGridView.Size = new System.Drawing.Size(581, 428);
+            this.ListDataGridView.Size = new System.Drawing.Size(581, 406);
             this.ListDataGridView.TabIndex = 6;
             this.ListDataGridView.Tag = "CLIENTS";
             this.ListDataGridView.DataSourceChanged += new System.EventHandler(this.ListDataGridView_DataSourceChanged);
@@ -151,7 +153,9 @@
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageClientsToolStripMenuItem,
-            this.manageFinancialAdvisorToolStripMenuItem});
+            this.manageFinancialAdvisorToolStripMenuItem,
+            this.manageUsersToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -170,6 +174,20 @@
             this.manageFinancialAdvisorToolStripMenuItem.Text = "Manage Financial Advisor";
             this.manageFinancialAdvisorToolStripMenuItem.Click += new System.EventHandler(this.manageFinancialAdvisorToolStripMenuItem_Click);
             // 
+            // manageUsersToolStripMenuItem
+            // 
+            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +201,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client Profiling And Record Management System In AXA Samar";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListDataGridView)).EndInit();
@@ -207,6 +226,8 @@
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageClientsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageFinancialAdvisorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
     }
 }
 

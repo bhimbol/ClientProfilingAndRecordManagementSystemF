@@ -79,13 +79,13 @@
   </EntityType>
   <EntityType Name="Users">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="USERNAME" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PASSWORD" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ROLE" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FULLNAME" Type="nvarchar(max)" />
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="role" Type="varchar" MaxLength="50" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="axaDBModelStoreContainer">
     <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiaries" Schema="dbo" store:Type="Tables" />

@@ -14,10 +14,10 @@ namespace ClientProfilingAndRecordManagementSystemF
     
     public partial class User
     {
-        public long ID { get; set; }
-        public string USERNAME { get; set; }
-        public string PASSWORD { get; set; }
-        public string ROLE { get; set; }
-        public string FULLNAME { get; set; }
+        public long id { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string role { get; set; }
+        public string fullname { get; set; }
     }
 }

@@ -71,6 +71,12 @@
     <Compile Include="AddEditClientForm.Designer.cs">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditUserForm.Designer.cs">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="axaDBEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +98,7 @@
     <Compile Include="ClientBeneficiary.cs">
       <DependentUpon>axaDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="FinancialAdvisor.cs">
       <DependentUpon>axaDBEntities.tt</DependentUpon>
     </Compile>
@@ -100,6 +107,12 @@
     </Compile>
     <Compile Include="AddPlanForm.Designer.cs">
       <DependentUpon>AddPlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -139,8 +152,14 @@
     <EmbeddedResource Include="AddEditClientForm.resx">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEditUserForm.resx">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddPlanForm.resx">
       <DependentUpon>AddPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -159,6 +178,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ViewClientForm.resx">
       <DependentUpon>ViewClientForm.cs</DependentUpon>
