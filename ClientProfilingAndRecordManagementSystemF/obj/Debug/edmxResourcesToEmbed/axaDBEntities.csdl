@@ -50,6 +50,9 @@
     <Property Name="addedby_userid" Type="Int64" />
     <Property Name="financial_advisor_id" Type="Int64" />
     <Property Name="plan_id" Type="Int32" />
+    <Property Name="id_path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="true" />
+    <Property Name="mode_of_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="due" Type="Double" />
   </EntityType>
   <EntityType Name="FinancialAdvisor">
     <Key>
@@ -85,14 +88,23 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
+    <EntitySet Name="ClientPlans" EntityType="axaDBModel.ClientPlan" />
   </EntityContainer>
   <EntityType Name="Plan">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ClientPlan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="plan_id" Type="Int32" />
   </EntityType>
 </Schema>

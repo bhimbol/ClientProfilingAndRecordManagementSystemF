@@ -12,11 +12,10 @@ namespace ClientProfilingAndRecordManagementSystemF
     using System;
     using System.Collections.Generic;
     
-    public partial class Plan
+    public partial class ClientPlan
     {
         public int id { get; set; }
-        public string type { get; set; }
-        public string category { get; set; }
-        public string description { get; set; }
+        public Nullable<int> client_id { get; set; }
+        public Nullable<int> plan_id { get; set; }
     }
 }

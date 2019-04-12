@@ -47,5 +47,8 @@ namespace ClientProfilingAndRecordManagementSystemF
         public Nullable<long> addedby_userid { get; set; }
         public Nullable<long> financial_advisor_id { get; set; }
         public Nullable<int> plan_id { get; set; }
+        public string id_path { get; set; }
+        public string mode_of_payment { get; set; }
+        public Nullable<double> due { get; set; }
     }
 }

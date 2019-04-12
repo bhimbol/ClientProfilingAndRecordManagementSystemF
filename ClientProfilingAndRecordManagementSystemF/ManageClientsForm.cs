@@ -32,7 +32,11 @@ namespace ClientProfilingAndRecordManagementSystemF
                 using (AddEditClientForm addeditclientform = new AddEditClientForm())
                 {
                     addeditclientform.action = "Edit";
-                    addeditclientform.selected_client = dgvClients.SelectedRows[0];
+                    using (axaDBEntities db = new axaDBEntities())
+                    {
+                        long client_id = Int64.Parse(dgvClients.SelectedRows[0].Cells["ID"].Value.ToString());
+                        addeditclientform.selected_client = db.Clients.Find(client_id);
+                    }
                     addeditclientform.ShowDialog();
                     ManageClientsForm_Load(null, null);
                 }
@@ -63,6 +67,10 @@ namespace ClientProfilingAndRecordManagementSystemF
                             IEnumerable<ClientBeneficiary> client_beneficiaries = (from b in db.ClientBeneficiaries
                                                                             where b.CLIENT_ID == c.id
                                                                             select b);
+                            IEnumerable<ClientPlan> client_plans = (from p in db.ClientPlans
+                                                                        where p.client_id == c.id
+                                                                        select p);
+                            db.ClientPlans.RemoveRange(client_plans);
                             db.ClientBeneficiaries.RemoveRange(client_beneficiaries);
                             db.Clients.Remove(c);
                             db.SaveChanges();

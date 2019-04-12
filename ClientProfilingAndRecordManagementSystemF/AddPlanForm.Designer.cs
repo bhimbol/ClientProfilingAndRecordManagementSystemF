@@ -28,28 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
-            this.radioButton17 = new System.Windows.Forms.RadioButton();
-            this.radioButton18 = new System.Windows.Forms.RadioButton();
-            this.radioButton19 = new System.Windows.Forms.RadioButton();
-            this.radioButton20 = new System.Windows.Forms.RadioButton();
-            this.radioButton21 = new System.Windows.Forms.RadioButton();
-            this.radioButton22 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,252 +37,31 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnAddSelected = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(62, 75);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(120, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Tag = "1";
-            this.radioButton1.Text = "1. ASSURE 10 PAY";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(62, 98);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(120, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Tag = "2";
-            this.radioButton2.Text = "2. ASSURE 20 PAY";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(62, 121);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(114, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Tag = "3";
-            this.radioButton3.Text = "3. ASSURE 5 PAY";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(422, 98);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(145, 17);
-            this.radioButton4.TabIndex = 5;
-            this.radioButton4.Tag = "9";
-            this.radioButton4.Text = "2. HEALTH MAX 10 PAY";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(422, 75);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(333, 17);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.Tag = "8";
-            this.radioButton5.Text = "1. GLOBAL HEALTH ACCESS WORLD WIDE INCLUDING USA";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(62, 144);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(286, 17);
-            this.radioButton6.TabIndex = 3;
-            this.radioButton6.Tag = "4";
-            this.radioButton6.Text = "4. FLEXI PROTECT BUSINESS REGULAR PREMIUM";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(62, 167);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(273, 17);
-            this.radioButton7.TabIndex = 6;
-            this.radioButton7.Tag = "5";
-            this.radioButton7.Text = "5. FLEXI PROTECT BUSINESS SINGLE PREMIUM";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(62, 191);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(254, 17);
-            this.radioButton8.TabIndex = 7;
-            this.radioButton8.Tag = "6";
-            this.radioButton8.Text = "6. FLEXI PROTECT LIFE REGULAR PREMIUM";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(62, 214);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(229, 17);
-            this.radioButton9.TabIndex = 8;
-            this.radioButton9.Tag = "7";
-            this.radioButton9.Text = "7. FLEXI PROTECT REGULAR PREMIUM";
-            this.radioButton9.UseVisualStyleBackColor = true;
-            // 
-            // radioButton10
-            // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(422, 121);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(145, 17);
-            this.radioButton10.TabIndex = 9;
-            this.radioButton10.Tag = "10";
-            this.radioButton10.Text = "3. HEALTH MAX 20 PAY";
-            this.radioButton10.UseVisualStyleBackColor = true;
-            // 
-            // radioButton11
-            // 
-            this.radioButton11.AutoSize = true;
-            this.radioButton11.Location = new System.Drawing.Point(422, 144);
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(163, 17);
-            this.radioButton11.TabIndex = 10;
-            this.radioButton11.Tag = "11";
-            this.radioButton11.Text = "4. HEALTH MAX PAY-TO-65";
-            this.radioButton11.UseVisualStyleBackColor = true;
-            // 
-            // radioButton12
-            // 
-            this.radioButton12.AutoSize = true;
-            this.radioButton12.Location = new System.Drawing.Point(62, 340);
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(109, 17);
-            this.radioButton12.TabIndex = 12;
-            this.radioButton12.Tag = "13";
-            this.radioButton12.Text = "2. ACELARATOR";
-            this.radioButton12.UseVisualStyleBackColor = true;
-            // 
-            // radioButton13
-            // 
-            this.radioButton13.AutoSize = true;
-            this.radioButton13.Location = new System.Drawing.Point(62, 317);
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(92, 17);
-            this.radioButton13.TabIndex = 11;
-            this.radioButton13.Tag = "12";
-            this.radioButton13.Text = "1. ACADEMIC";
-            this.radioButton13.UseVisualStyleBackColor = true;
-            // 
-            // radioButton14
-            // 
-            this.radioButton14.AutoSize = true;
-            this.radioButton14.Location = new System.Drawing.Point(422, 340);
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(250, 17);
-            this.radioButton14.TabIndex = 14;
-            this.radioButton14.Tag = "15";
-            this.radioButton14.Text = "2. LIFE BASIC INCREASING DEATH BENEFIT";
-            this.radioButton14.UseVisualStyleBackColor = true;
-            // 
-            // radioButton15
-            // 
-            this.radioButton15.AutoSize = true;
-            this.radioButton15.Location = new System.Drawing.Point(422, 317);
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(217, 17);
-            this.radioButton15.TabIndex = 13;
-            this.radioButton15.Tag = "13";
-            this.radioButton15.Text = "1. LIFE BASIC LEVEL DEATH BENEFIT";
-            this.radioButton15.UseVisualStyleBackColor = true;
-            // 
-            // radioButton16
-            // 
-            this.radioButton16.AutoSize = true;
-            this.radioButton16.Location = new System.Drawing.Point(422, 363);
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(140, 17);
-            this.radioButton16.TabIndex = 15;
-            this.radioButton16.Tag = "16";
-            this.radioButton16.Text = "3. ACELARATOR PLUS";
-            this.radioButton16.UseVisualStyleBackColor = true;
-            // 
-            // radioButton17
-            // 
-            this.radioButton17.AutoSize = true;
-            this.radioButton17.Location = new System.Drawing.Point(62, 425);
-            this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(120, 17);
-            this.radioButton17.TabIndex = 16;
-            this.radioButton17.Tag = "17";
-            this.radioButton17.Text = "1. ASSET MASTER";
-            this.radioButton17.UseVisualStyleBackColor = true;
-            // 
-            // radioButton18
-            // 
-            this.radioButton18.AutoSize = true;
-            this.radioButton18.Location = new System.Drawing.Point(422, 425);
-            this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(118, 17);
-            this.radioButton18.TabIndex = 17;
-            this.radioButton18.Tag = "18";
-            this.radioButton18.Text = "1. RETIRE SMART";
-            this.radioButton18.UseVisualStyleBackColor = true;
-            // 
-            // radioButton19
-            // 
-            this.radioButton19.AutoSize = true;
-            this.radioButton19.Location = new System.Drawing.Point(296, 585);
-            this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(141, 17);
-            this.radioButton19.TabIndex = 21;
-            this.radioButton19.Tag = "22";
-            this.radioButton19.Text = "4. FAMILY INSURANCE";
-            this.radioButton19.UseVisualStyleBackColor = true;
-            // 
-            // radioButton20
-            // 
-            this.radioButton20.AutoSize = true;
-            this.radioButton20.Location = new System.Drawing.Point(296, 562);
-            this.radioButton20.Name = "radioButton20";
-            this.radioButton20.Size = new System.Drawing.Size(125, 17);
-            this.radioButton20.TabIndex = 20;
-            this.radioButton20.Tag = "21";
-            this.radioButton20.Text = "3. CAR INSURANCE";
-            this.radioButton20.UseVisualStyleBackColor = true;
-            // 
-            // radioButton21
-            // 
-            this.radioButton21.AutoSize = true;
-            this.radioButton21.Location = new System.Drawing.Point(296, 539);
-            this.radioButton21.Name = "radioButton21";
-            this.radioButton21.Size = new System.Drawing.Size(157, 17);
-            this.radioButton21.TabIndex = 19;
-            this.radioButton21.Tag = "20";
-            this.radioButton21.Text = "2. BUSINESS INSURANCE";
-            this.radioButton21.UseVisualStyleBackColor = true;
-            // 
-            // radioButton22
-            // 
-            this.radioButton22.AutoSize = true;
-            this.radioButton22.Checked = true;
-            this.radioButton22.Location = new System.Drawing.Point(296, 516);
-            this.radioButton22.Name = "radioButton22";
-            this.radioButton22.Size = new System.Drawing.Size(135, 17);
-            this.radioButton22.TabIndex = 18;
-            this.radioButton22.TabStop = true;
-            this.radioButton22.Tag = "19";
-            this.radioButton22.Text = "1. HOME INSURANCE";
-            this.radioButton22.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -396,15 +153,267 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "INVESTMENT";
             // 
-            // btnSelect
+            // btnAddSelected
             // 
-            this.btnSelect.Location = new System.Drawing.Point(326, 625);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 31;
-            this.btnSelect.Text = "SELECT";
-            this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            this.btnAddSelected.Location = new System.Drawing.Point(241, 625);
+            this.btnAddSelected.Name = "btnAddSelected";
+            this.btnAddSelected.Size = new System.Drawing.Size(131, 23);
+            this.btnAddSelected.TabIndex = 31;
+            this.btnAddSelected.Text = "Add/Update Selected";
+            this.btnAddSelected.UseVisualStyleBackColor = true;
+            this.btnAddSelected.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(406, 625);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(145, 23);
+            this.btnCancel.TabIndex = 32;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(63, 75);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(121, 17);
+            this.checkBox1.TabIndex = 33;
+            this.checkBox1.Tag = "1";
+            this.checkBox1.Text = "1. ASSURE 10 PAY";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(62, 99);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(121, 17);
+            this.checkBox2.TabIndex = 34;
+            this.checkBox2.Tag = "2";
+            this.checkBox2.Text = "2. ASSURE 20 PAY";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(61, 146);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(287, 17);
+            this.checkBox3.TabIndex = 36;
+            this.checkBox3.Tag = "4";
+            this.checkBox3.Text = "4. FLEXI PROTECT BUSINESS REGULAR PREMIUM";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(62, 122);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(115, 17);
+            this.checkBox4.TabIndex = 35;
+            this.checkBox4.Tag = "3";
+            this.checkBox4.Text = "3. ASSURE 5 PAY";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(60, 216);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(230, 17);
+            this.checkBox5.TabIndex = 39;
+            this.checkBox5.Tag = "7";
+            this.checkBox5.Text = "7. FLEXI PROTECT REGULAR PREMIUM";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(60, 193);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(255, 17);
+            this.checkBox6.TabIndex = 38;
+            this.checkBox6.Tag = "6";
+            this.checkBox6.Text = "6. FLEXI PROTECT LIFE REGULAR PREMIUM";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(61, 169);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(274, 17);
+            this.checkBox7.TabIndex = 37;
+            this.checkBox7.Tag = "5";
+            this.checkBox7.Text = "5. FLEXI PROTECT BUSINESS SINGLE PREMIUM";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(420, 146);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(164, 17);
+            this.checkBox8.TabIndex = 43;
+            this.checkBox8.Tag = "11";
+            this.checkBox8.Text = "4. HEALTH MAX PAY-TO-65";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(421, 122);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(146, 17);
+            this.checkBox9.TabIndex = 42;
+            this.checkBox9.Tag = "10";
+            this.checkBox9.Text = "3. HEALTH MAX 20 PAY";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(421, 99);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(146, 17);
+            this.checkBox10.TabIndex = 41;
+            this.checkBox10.Tag = "9";
+            this.checkBox10.Text = "2. HEALTH MAX 10 PAY";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(422, 75);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(334, 17);
+            this.checkBox11.TabIndex = 40;
+            this.checkBox11.Tag = "8";
+            this.checkBox11.Text = "1. GLOBAL HEALTH ACCESS WORLD WIDE INCLUDING USA";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(62, 341);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(110, 17);
+            this.checkBox12.TabIndex = 45;
+            this.checkBox12.Tag = "13";
+            this.checkBox12.Text = "2. ACELARATOR";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Location = new System.Drawing.Point(63, 317);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(93, 17);
+            this.checkBox13.TabIndex = 44;
+            this.checkBox13.Tag = "12";
+            this.checkBox13.Text = "1. ACADEMIC";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Location = new System.Drawing.Point(419, 364);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(141, 17);
+            this.checkBox14.TabIndex = 48;
+            this.checkBox14.Tag = "16";
+            this.checkBox14.Text = "3. ACELARATOR PLUS";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Location = new System.Drawing.Point(420, 340);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(251, 17);
+            this.checkBox15.TabIndex = 47;
+            this.checkBox15.Tag = "15";
+            this.checkBox15.Text = "2. LIFE BASIC INCREASING DEATH BENEFIT";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Location = new System.Drawing.Point(420, 317);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(218, 17);
+            this.checkBox16.TabIndex = 46;
+            this.checkBox16.Tag = "14";
+            this.checkBox16.Text = "1. LIFE BASIC LEVEL DEATH BENEFIT";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.Location = new System.Drawing.Point(60, 426);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(121, 17);
+            this.checkBox17.TabIndex = 49;
+            this.checkBox17.Tag = "17";
+            this.checkBox17.Text = "1. ASSET MASTER";
+            this.checkBox17.UseVisualStyleBackColor = true;
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.Location = new System.Drawing.Point(419, 426);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(119, 17);
+            this.checkBox18.TabIndex = 50;
+            this.checkBox18.Tag = "18";
+            this.checkBox18.Text = "1. RETIRE SMART";
+            this.checkBox18.UseVisualStyleBackColor = true;
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.Location = new System.Drawing.Point(294, 552);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(126, 17);
+            this.checkBox19.TabIndex = 53;
+            this.checkBox19.Tag = "21";
+            this.checkBox19.Text = "3. CAR INSURANCE";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(295, 528);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(158, 17);
+            this.checkBox20.TabIndex = 52;
+            this.checkBox20.Tag = "20";
+            this.checkBox20.Text = "2. BUSINESS INSURANCE";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.Location = new System.Drawing.Point(295, 505);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(136, 17);
+            this.checkBox21.TabIndex = 51;
+            this.checkBox21.Tag = "19";
+            this.checkBox21.Text = "1. HOME INSURANCE";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            // 
+            // checkBox22
+            // 
+            this.checkBox22.AutoSize = true;
+            this.checkBox22.Location = new System.Drawing.Point(294, 574);
+            this.checkBox22.Name = "checkBox22";
+            this.checkBox22.Size = new System.Drawing.Size(142, 17);
+            this.checkBox22.TabIndex = 54;
+            this.checkBox22.Tag = "22";
+            this.checkBox22.Text = "4. FAMILY INSURANCE";
+            this.checkBox22.UseVisualStyleBackColor = true;
             // 
             // AddPlanForm
             // 
@@ -412,7 +421,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 660);
             this.ControlBox = false;
-            this.Controls.Add(this.btnSelect);
+            this.Controls.Add(this.checkBox22);
+            this.Controls.Add(this.checkBox19);
+            this.Controls.Add(this.checkBox20);
+            this.Controls.Add(this.checkBox21);
+            this.Controls.Add(this.checkBox18);
+            this.Controls.Add(this.checkBox17);
+            this.Controls.Add(this.checkBox14);
+            this.Controls.Add(this.checkBox15);
+            this.Controls.Add(this.checkBox16);
+            this.Controls.Add(this.checkBox12);
+            this.Controls.Add(this.checkBox13);
+            this.Controls.Add(this.checkBox8);
+            this.Controls.Add(this.checkBox9);
+            this.Controls.Add(this.checkBox10);
+            this.Controls.Add(this.checkBox11);
+            this.Controls.Add(this.checkBox5);
+            this.Controls.Add(this.checkBox6);
+            this.Controls.Add(this.checkBox7);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnAddSelected);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
@@ -422,59 +454,15 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton19);
-            this.Controls.Add(this.radioButton20);
-            this.Controls.Add(this.radioButton21);
-            this.Controls.Add(this.radioButton22);
-            this.Controls.Add(this.radioButton18);
-            this.Controls.Add(this.radioButton17);
-            this.Controls.Add(this.radioButton16);
-            this.Controls.Add(this.radioButton14);
-            this.Controls.Add(this.radioButton15);
-            this.Controls.Add(this.radioButton12);
-            this.Controls.Add(this.radioButton13);
-            this.Controls.Add(this.radioButton11);
-            this.Controls.Add(this.radioButton10);
-            this.Controls.Add(this.radioButton9);
-            this.Controls.Add(this.radioButton8);
-            this.Controls.Add(this.radioButton7);
-            this.Controls.Add(this.radioButton4);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton6);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Name = "AddPlanForm";
             this.Text = "Add Plan Form";
+            this.Load += new System.EventHandler(this.AddPlanForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton8;
-        private System.Windows.Forms.RadioButton radioButton9;
-        private System.Windows.Forms.RadioButton radioButton10;
-        private System.Windows.Forms.RadioButton radioButton11;
-        private System.Windows.Forms.RadioButton radioButton12;
-        private System.Windows.Forms.RadioButton radioButton13;
-        private System.Windows.Forms.RadioButton radioButton14;
-        private System.Windows.Forms.RadioButton radioButton15;
-        private System.Windows.Forms.RadioButton radioButton16;
-        private System.Windows.Forms.RadioButton radioButton17;
-        private System.Windows.Forms.RadioButton radioButton18;
-        private System.Windows.Forms.RadioButton radioButton19;
-        private System.Windows.Forms.RadioButton radioButton20;
-        private System.Windows.Forms.RadioButton radioButton21;
-        private System.Windows.Forms.RadioButton radioButton22;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -484,6 +472,29 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnAddSelected;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.CheckBox checkBox14;
+        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.CheckBox checkBox17;
+        private System.Windows.Forms.CheckBox checkBox18;
+        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.CheckBox checkBox20;
+        private System.Windows.Forms.CheckBox checkBox21;
+        private System.Windows.Forms.CheckBox checkBox22;
     }
 }

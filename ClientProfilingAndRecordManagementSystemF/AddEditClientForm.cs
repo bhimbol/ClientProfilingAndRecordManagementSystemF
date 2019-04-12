@@ -12,93 +12,33 @@ namespace ClientProfilingAndRecordManagementSystemF
 {
     public partial class AddEditClientForm : Form
     {
-        public DataGridViewRow selected_client { set; get; }
+        public Client selected_client { set; get; }
 
         public string action { set; get; }
 
-        private void fillDataForms()
+        private void copy_browsed_id(string sourcepath, long client_id)
         {
-            txtClientsID.Text = selected_client.Cells["ID"].Value.ToString();
-            txtLastname.Text = selected_client.Cells["LASTNAME"].Value.ToString();
-            txtFirstname.Text = selected_client.Cells["FIRSTNAME"].Value.ToString();
-            txtMiddlename.Text = selected_client.Cells["MIDDLENAME"].Value.ToString();
-            txtSLastname.Text = selected_client.Cells["SPOUSELASTNAME"].Value.ToString();
-            txtSFirstname.Text = selected_client.Cells["SPOUSEFIRSTNAME"].Value.ToString();
-            txtSMiddlename.Text = selected_client.Cells["SPOUSEMIDDLENAME"].Value.ToString();
-            txtBirthplace.Text = selected_client.Cells["BIRTHPLACE"].Value.ToString();
-            txtHeight.Text = selected_client.Cells["HEIGHT"].Value.ToString();
-            txtweight.Text = selected_client.Cells["WEIGHT"].Value.ToString();
-            txtresidenceaddress.Text = selected_client.Cells["RESIDENCEADDRESS"].Value.ToString();
-            txtcpnumber.Text = selected_client.Cells["CPNUMBER"].Value.ToString();
-            txttelephonenumber.Text = selected_client.Cells["TELEPHONENUMBER"].Value.ToString();
-            txtemailaddress.Text = selected_client.Cells["EMAILADDRESS"].Value.ToString();
-            txtOccupation.Text = selected_client.Cells["OCCUPATION"].Value.ToString();
-            txtWorkSalary.Text = selected_client.Cells["WORKSALARY"].Value.ToString();
-            txtBusinessIncome.Text = selected_client.Cells["BUSINESSINCOME"].Value.ToString();
-            txtOtherSource.Text = selected_client.Cells["OTHERSOURCE"].Value.ToString();
-            txtCompanyName.Text = selected_client.Cells["COMPANYNAME"].Value.ToString();
-            txtCompanyAddress.Text = selected_client.Cells["COMPANYADDRESS"].Value.ToString();
-            txtCompanyConctactNumber.Text = selected_client.Cells["COMPANYCONTACT"].Value.ToString();
-            txtNatureofBusiness.Text = selected_client.Cells["NATUREOFBUSINESS"].Value.ToString();
-            txtTaxIDNumber.Text = selected_client.Cells["TAXIDNUMBER"].Value.ToString();
-            txtSSSGSISNumber.Text = selected_client.Cells["sss_gsis_number"].Value.ToString();
-            txtsubanswer2.Text = selected_client.Cells["ANSWERSUB2"].Value.ToString();
-            txtsubanswer3.Text = selected_client.Cells["ANSWERSUB3"].Value.ToString();
-            dtpBdate.Value = (DateTime)selected_client.Cells["BIRTHDAY"].Value;
+            if (pbID.Image != null) { pbID.Image.Dispose(); }
+            System.IO.File.Copy(sourcepath, Application.StartupPath + "\\ID_S\\" + client_id.ToString() + ".jpg", true);
+        }
 
-            try
+        public void populateClientIDImage(string id_path)
+        {
+            if (id_path != null)
             {
-                using (axaDBEntities db = new axaDBEntities())
+                if (System.IO.File.Exists(id_path))
                 {
-                    var selected_fa = db.FinancialAdvisors.Find(selected_client.Cells["financial_advisor_id"].Value);
-                    cboxfinancial_advisor.Text = selected_fa.fullname;
-                    cboxfinancial_advisor.Refresh();
-                    var selected_plan = db.Plans.Find(selected_client.Cells["plan_id"].Value);
-                    txtPlan.Text = selected_plan.type + ": \r\n" + selected_plan.category + ": \r\n"  + selected_plan.description;
-                    txtPlan.Tag = selected_client.Cells["plan_id"].Value;
+                    Bitmap id_image;
+                    pbID.SizeMode = PictureBoxSizeMode.StretchImage;
+                    id_image = new Bitmap(id_path);
+                    pbID.Image = (Image)id_image;
                 }
             }
-            catch { }
-
-            string gender = selected_client.Cells["GENDER"].Value.ToString();
-            string civilstatus = selected_client.Cells["CIVILSTATUS"].Value.ToString();
-            string answersub1 = selected_client.Cells["ANSWERSUB1"].Value.ToString();
-
-            if (gender == "Male")
-            {
-                rbGenderM.Checked = true;
-            }
-            else
-            {
-                rbGenderF.Checked = true;
-            }
-
-            if (civilstatus == "Single")
-            {
-                rbSingle.Checked = true;
-            }
-            else if (civilstatus == "Married")
-            {
-                rbMarried.Checked = true;
-            }
-            else
-            {
-                rbWidowed.Checked = true;
-            }
-
-            if (answersub1 == "YES")
-            {
-                rbYES.Checked = true;
-            }
-            else
-            {
-                rbNo.Checked = true;
-            }
-            fillBeneficiariesForm(Int64.Parse(txtClientsID.Text));
         }
-        public void fillfinancial_advisor_cbox()
+
+        private void populateFinancialAdvisors()
         {
-            using (axaDBEntities db = new axaDBEntities())
+            using(axaDBEntities db = new axaDBEntities())
             {
                 cboxfinancial_advisor.DataSource = db.FinancialAdvisors.ToList();
                 cboxfinancial_advisor.DisplayMember = "fullname";
@@ -106,12 +46,28 @@ namespace ClientProfilingAndRecordManagementSystemF
             }
         }
 
-        public void fillBeneficiariesForm(long id)
+        public void populateClientPlans(long client_id)
+        {
+            using (axaDBEntities db = new axaDBEntities())
+            {
+                var client_plan_ids = (from cp in db.ClientPlans
+                                       where cp.client_id == client_id
+                                       select cp.plan_id).ToList();
+                foreach (int _id in client_plan_ids)
+                {
+                    lbPlan.Items.Add(db.Plans.Where(p => p.id == _id).FirstOrDefault());
+                    lbPlan.DisplayMember = "description";
+                    lbPlan.ValueMember = "id";
+                }
+            }
+        }
+
+        public void populateClientBeneficiaries(long client_id)
         {
             using (axaDBEntities db = new axaDBEntities())
             {
                 dgvBeneficiaries.DataSource = (from cb in db.ClientBeneficiaries
-                                               where cb.CLIENT_ID == id
+                                               where cb.CLIENT_ID == client_id
                                                select cb).ToList();
                 dgvBeneficiaries.Columns[0].HeaderText = "Beneficiary's ID";
                 dgvBeneficiaries.Columns[1].HeaderText = "Client's ID";
@@ -126,7 +82,85 @@ namespace ClientProfilingAndRecordManagementSystemF
                 btnBUpdate.Visible = false;
             }
         }
-        
+
+        private void populateClient()
+        {
+            txtClientsID.Text = selected_client.id.ToString();
+            txtLastname.Text = selected_client.lastname;
+            txtFirstname.Text = selected_client.firstname;
+            txtMiddlename.Text = selected_client.middlename;
+            txtSLastname.Text = selected_client.spouselastname;
+            txtSFirstname.Text = selected_client.spousefirstname;
+            txtSMiddlename.Text = selected_client.spousemiddlename;
+            txtBirthplace.Text = selected_client.birthplace;
+            txtHeight.Text = selected_client.height.ToString();
+            txtweight.Text = selected_client.weight.ToString();
+            txtresidenceaddress.Text = selected_client.residenceaddress;
+            txtcpnumber.Text = selected_client.cpnumber;
+            txttelephonenumber.Text = selected_client.telephonenumber;
+            txtemailaddress.Text = selected_client.emailaddress;
+            txtOccupation.Text = selected_client.occupation;
+            txtWorkSalary.Text = selected_client.worksalary.ToString();
+            txtBusinessIncome.Text = selected_client.businessincome.ToString();
+            txtOtherSource.Text = selected_client.othersource.ToString();
+            txtCompanyName.Text = selected_client.companyname;
+            txtCompanyAddress.Text = selected_client.companyaddress;
+            txtCompanyConctactNumber.Text = selected_client.companycontact;
+            txtNatureofBusiness.Text = selected_client.natureofbusiness;
+            txtTaxIDNumber.Text = selected_client.taxidnumber;
+            txtSSSGSISNumber.Text = selected_client.sss_gsis_number;
+            txtsubanswer2.Text = selected_client.answersub2;
+            txtsubanswer3.Text = selected_client.answersub3;
+            dtpBdate.Value = (DateTime)selected_client.birthday;
+            txtDue.Text = selected_client.due.ToString();
+
+            if(selected_client.mode_of_payment == null){ lbModeofPayment.SelectedIndex = 1; }
+            else{ lbModeofPayment.SelectedItem = selected_client.mode_of_payment; }
+
+            try
+            {
+                using (axaDBEntities db = new axaDBEntities())
+                {
+                    FinancialAdvisor selected_fa = db.FinancialAdvisors.Find(selected_client.financial_advisor_id);
+                    cboxfinancial_advisor.Text = selected_fa.fullname;
+
+                }
+            }
+            catch { }
+
+    
+            if (selected_client.gender == "Male")
+            {
+                rbGenderM.Checked = true;
+            }
+            else
+            {
+                rbGenderF.Checked = true;
+            }
+
+            if (selected_client.civilstatus == "Single")
+            {
+                rbSingle.Checked = true;
+            }
+            else if (selected_client.civilstatus == "Married")
+            {
+                rbMarried.Checked = true;
+            }
+            else
+            {
+                rbWidowed.Checked = true;
+            }
+
+            if (selected_client.answersub1 == "YES")
+            {
+                rbYES.Checked = true;
+            }
+            else
+            {
+                rbNo.Checked = true;
+            }
+        }
+
         public AddEditClientForm()
         {
             InitializeComponent();
@@ -134,19 +168,26 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void AddEditClientForm_Load(object sender, EventArgs e)
         {
-            fillfinancial_advisor_cbox();
+            populateFinancialAdvisors();
+            lbModeofPayment.SelectedIndex = 0;
+
             if (this.action == "Edit")
             {
                 btnAddClient.Enabled = false;
                 btnUpdateClient.Enabled = true;
                 panelBeneficiaries.Enabled = true;
-                fillDataForms();
+                btnAddPlan.Enabled = true;
+                populateClient();
+                populateClientBeneficiaries(selected_client.id);
+                populateClientPlans(selected_client.id);
+                populateClientIDImage(selected_client.id_path);
             }
             else if (this.action == "Add")
             {
                 btnAddClient.Enabled = true;
                 btnUpdateClient.Enabled = false;
                 panelBeneficiaries.Enabled = false;
+                btnAddPlan.Enabled = false;
             }
             else
             {
@@ -171,10 +212,9 @@ namespace ClientProfilingAndRecordManagementSystemF
             using (axaDBEntities db = new axaDBEntities())
             {
                 Client c = db.Clients.Find(Int64.Parse(txtClientsID.Text));
-                double h = 0, w = 0, ws = 0, bi = 0, oi = 0;
+                double h = 0, w = 0, ws = 0, bi = 0, oi = 0, d = 0;
 
                 c.financial_advisor_id = (Int64)cboxfinancial_advisor.SelectedValue;
-                c.plan_id = int.Parse(txtPlan.Tag.ToString());
                 c.firstname = txtFirstname.Text;
                 c.middlename = txtMiddlename.Text;
                 c.lastname = txtLastname.Text;
@@ -209,6 +249,16 @@ namespace ClientProfilingAndRecordManagementSystemF
                 c.birthday = dtpBdate.Value;
                 c.gender = gender;
                 c.civilstatus = civilstatus;
+                Double.TryParse(txtDue.Text, out d);
+                c.due = d;
+                c.mode_of_payment = lbModeofPayment.SelectedItem.ToString();
+
+                if (!String.IsNullOrEmpty(txtIDDir.Text))
+                {
+                    copy_browsed_id(txtIDDir.Text, c.id);
+                    c.id_path = Application.StartupPath + "\\ID_S\\" + c.id.ToString() + ".jpg";
+                }
+
                 db.SaveChanges();
                 MessageBox.Show("Record successfully updated.");
                 c = null;
@@ -233,9 +283,8 @@ namespace ClientProfilingAndRecordManagementSystemF
             using (axaDBEntities db = new axaDBEntities())
             {
                 Client c = new Client();
-                double h = 0, w = 0, ws = 0, bi = 0, oi = 0;
+                double h = 0, w = 0, ws = 0, bi = 0, oi = 0, d = 0;
                 c.financial_advisor_id = (Int64)cboxfinancial_advisor.SelectedValue;
-                c.plan_id = int.Parse(txtPlan.Tag.ToString());
                 c.lastname = txtLastname.Text;
                 c.firstname = txtFirstname.Text;
                 c.middlename = txtMiddlename.Text;
@@ -270,14 +319,25 @@ namespace ClientProfilingAndRecordManagementSystemF
                 c.birthday = dtpBdate.Value;
                 c.gender = gender;
                 c.civilstatus = civilstatus;
+                Double.TryParse(txtDue.Text, out d);
+                c.due = d;
+                c.mode_of_payment = lbModeofPayment.SelectedItem.ToString();
+
+
+                if (!String.IsNullOrEmpty(txtIDDir.Text))
+                {
+                    copy_browsed_id(txtIDDir.Text, c.id);
+                    c.id_path = Application.StartupPath + "\\ID_S\\" + c.id.ToString() + ".jpg";
+                }
+
                 db.Clients.Add(c);
                 db.SaveChanges();
                 MessageBox.Show("Record successfully added.");
                 txtClientsID.Text = c.id.ToString();
-                fillBeneficiariesForm(c.id);
-                btnAddClient.Enabled = false;
-                btnUpdateClient.Enabled = true;
-                panelBeneficiaries.Enabled = true;
+
+                this.selected_client = c;
+                this.action = "Edit";
+                AddEditClientForm_Load(null, null);
             }
         }
 
@@ -298,7 +358,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 db.ClientBeneficiaries.Add(cb);
                 db.SaveChanges();
                 MessageBox.Show("Beneficiary successfully added.");
-                fillBeneficiariesForm(Int64.Parse(txtClientsID.Text));
+                populateClientBeneficiaries(Int64.Parse(txtClientsID.Text));
                 txtBFullname.Clear();
                 txtBBirthPlace.Clear();
                 txtBRelationship.Clear();
@@ -324,7 +384,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 cb.SHARE = s;
                 db.SaveChanges();
                 MessageBox.Show("Beneficiary updated.");
-                fillBeneficiariesForm(Int64.Parse(txtClientsID.Text));
+                populateClientBeneficiaries(Int64.Parse(txtClientsID.Text));
                 txtBFullname.Clear();
                 txtBBirthPlace.Clear();
                 txtBRelationship.Clear();
@@ -371,7 +431,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     }
                 }
             }
-            fillBeneficiariesForm(Int64.Parse(txtClientsID.Text));
+            populateClientBeneficiaries(Int64.Parse(txtClientsID.Text));
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -383,14 +443,40 @@ namespace ClientProfilingAndRecordManagementSystemF
         private void btnAddPlan_Click(object sender, EventArgs e)
         {
             AddPlanForm addplanform = new AddPlanForm();
-            addplanform.plan = 19;
+            addplanform.client_id = Int32.Parse(txtClientsID.Text);
             addplanform.ShowDialog();
-            using (axaDBEntities db = new axaDBEntities())
+            lbPlan.Items.Clear();
+            populateClientPlans(Int64.Parse(txtClientsID.Text));
+        }
+
+        private void btnBrowseID_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opd = new OpenFileDialog();
+            opd.Title = "Browse Image file for ID";
+            opd.DefaultExt = "jpg";
+            opd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            opd.Multiselect = false;
+            if (opd.ShowDialog() == DialogResult.OK)
             {
-                var selected_plan = db.Plans.Find(addplanform.plan);
-                txtPlan.Text = selected_plan.type + ": " + selected_plan.category + ": " + selected_plan.description;
-                txtPlan.Tag = addplanform.plan;
+                txtIDDir.Text = opd.FileName;
             }
+        }
+
+        private void txtIDDir_TextChanged(object sender, EventArgs e)
+        {
+            populateClientIDImage(txtIDDir.Text);
+        }
+
+        private void lbModeofPayment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbModeofPayment.SelectedItem.ToString() == "Monthly Premium")
+                lblDue.Text = "Monthly Due";
+            else if (lbModeofPayment.SelectedItem.ToString() == "Quarterly Premium")
+                lblDue.Text = "Quarterly Due";
+            else if (lbModeofPayment.SelectedItem.ToString() == "Semi Anual Premium")
+                lblDue.Text = "Semi Anual Due";
+            else if (lbModeofPayment.SelectedItem.ToString() == "Anual Premium")
+                lblDue.Text = "Anual Due";
         }
     }
 }

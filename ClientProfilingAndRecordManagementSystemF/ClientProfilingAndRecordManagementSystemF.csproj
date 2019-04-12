@@ -98,6 +98,9 @@
     <Compile Include="ClientBeneficiary.cs">
       <DependentUpon>axaDBEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClientPlan.cs">
+      <DependentUpon>axaDBEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="CurrentUser.cs" />
     <Compile Include="FinancialAdvisor.cs">
       <DependentUpon>axaDBEntities.tt</DependentUpon>

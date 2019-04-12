@@ -18,6 +18,9 @@
     <EntitySetMapping Name="Clients">
       <EntityTypeMapping TypeName="axaDBModel.Client">
         <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="due" ColumnName="due" />
+          <ScalarProperty Name="mode_of_payment" ColumnName="mode_of_payment" />
+          <ScalarProperty Name="id_path" ColumnName="id_path" />
           <ScalarProperty Name="plan_id" ColumnName="plan_id" />
           <ScalarProperty Name="financial_advisor_id" ColumnName="financial_advisor_id" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -90,6 +93,15 @@
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="category" ColumnName="category" />
           <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientPlans">
+      <EntityTypeMapping TypeName="axaDBModel.ClientPlan">
+        <MappingFragment StoreEntitySet="ClientPlans">
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

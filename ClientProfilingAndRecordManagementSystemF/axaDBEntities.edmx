@@ -18,6 +18,14 @@
           <Property Name="OCCUPATION" Type="ntext" Nullable="false" />
           <Property Name="SHARE" Type="float" Nullable="false" />
         </EntityType>
+        <EntityType Name="ClientPlans">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="client_id" Type="int" />
+          <Property Name="plan_id" Type="int" />
+        </EntityType>
         <EntityType Name="Clients">
           <Key>
             <PropertyRef Name="id" />
@@ -55,6 +63,9 @@
           <Property Name="answersub2" Type="varchar" MaxLength="50" />
           <Property Name="answersub3" Type="varchar" MaxLength="50" />
           <Property Name="addedby_userid" Type="bigint" />
+          <Property Name="id_path" Type="varchar" MaxLength="200" />
+          <Property Name="mode_of_payment" Type="varchar" MaxLength="50" />
+          <Property Name="due" Type="float" />
         </EntityType>
         <EntityType Name="FinancialAdvisors">
           <Key>
@@ -67,7 +78,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="type" Type="varchar" MaxLength="50" />
           <Property Name="category" Type="varchar" MaxLength="50" />
           <Property Name="description" Type="varchar" MaxLength="100" />
@@ -94,6 +105,7 @@
         </EntityType>
         <EntityContainer Name="axaDBModelStoreContainer">
           <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiaries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientPlans" EntityType="Self.ClientPlans" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
@@ -154,6 +166,9 @@
           <Property Name="addedby_userid" Type="Int64" />
           <Property Name="financial_advisor_id" Type="Int64" />
           <Property Name="plan_id" Type="Int32" />
+          <Property Name="id_path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="mode_of_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="due" Type="Double" />
         </EntityType>
         <EntityType Name="FinancialAdvisor">
           <Key>
@@ -189,15 +204,24 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
+          <EntitySet Name="ClientPlans" EntityType="axaDBModel.ClientPlan" />
         </EntityContainer>
         <EntityType Name="Plan">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ClientPlan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="client_id" Type="Int32" />
+          <Property Name="plan_id" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -222,6 +246,9 @@
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="axaDBModel.Client">
               <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="due" ColumnName="due" />
+                <ScalarProperty Name="mode_of_payment" ColumnName="mode_of_payment" />
+                <ScalarProperty Name="id_path" ColumnName="id_path" />
                 <ScalarProperty Name="plan_id" ColumnName="plan_id" />
                 <ScalarProperty Name="financial_advisor_id" ColumnName="financial_advisor_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -294,6 +321,15 @@
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="category" ColumnName="category" />
                 <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientPlans">
+            <EntityTypeMapping TypeName="axaDBModel.ClientPlan">
+              <MappingFragment StoreEntitySet="ClientPlans">
+                <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -58,20 +58,19 @@
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.txtsubanswer3 = new System.Windows.Forms.TextBox();
-            this.Label9 = new System.Windows.Forms.Label();
-            this.Label10 = new System.Windows.Forms.Label();
-            this.Label11 = new System.Windows.Forms.Label();
-            this.Label12 = new System.Windows.Forms.Label();
+            this.cboxfinancial_advisor = new System.Windows.Forms.ComboBox();
+            this.Panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtIDDir = new System.Windows.Forms.TextBox();
+            this.pbID = new System.Windows.Forms.PictureBox();
+            this.btnBrowseID = new System.Windows.Forms.Button();
+            this.txtDue = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbModeofPayment = new System.Windows.Forms.ListBox();
             this.ComboBox2 = new System.Windows.Forms.ComboBox();
             this.Label8 = new System.Windows.Forms.Label();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.cboxfinancial_advisor = new System.Windows.Forms.ComboBox();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.Panel1 = new System.Windows.Forms.Panel();
-            this.txtPlan = new System.Windows.Forms.TextBox();
+            this.lblDue = new System.Windows.Forms.Label();
+            this.lbPlan = new System.Windows.Forms.ListBox();
             this.btnAddPlan = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.Button2 = new System.Windows.Forms.Button();
@@ -138,10 +137,12 @@
             this.txtOccupation = new System.Windows.Forms.TextBox();
             this.lblMonthlyIncome = new System.Windows.Forms.Label();
             this.lblOccupation = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelBeneficiaries.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficiaries)).BeginInit();
             this.Panel5.SuspendLayout();
             this.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID)).BeginInit();
             this.Panel3.SuspendLayout();
             this.Penel1.SuspendLayout();
             this.Panel2.SuspendLayout();
@@ -421,98 +422,6 @@
             this.txtsubanswer3.Size = new System.Drawing.Size(129, 20);
             this.txtsubanswer3.TabIndex = 73;
             // 
-            // Label9
-            // 
-            this.Label9.AutoSize = true;
-            this.Label9.Location = new System.Drawing.Point(28, 499);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(63, 13);
-            this.Label9.TabIndex = 88;
-            this.Label9.Text = "Anual  Due:";
-            // 
-            // Label10
-            // 
-            this.Label10.AutoSize = true;
-            this.Label10.Location = new System.Drawing.Point(28, 472);
-            this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(89, 13);
-            this.Label10.TabIndex = 87;
-            this.Label10.Text = "Semi Anual  Due:";
-            // 
-            // Label11
-            // 
-            this.Label11.AutoSize = true;
-            this.Label11.Location = new System.Drawing.Point(28, 442);
-            this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(78, 13);
-            this.Label11.TabIndex = 86;
-            this.Label11.Text = "Quarterly  Due:";
-            // 
-            // Label12
-            // 
-            this.Label12.AutoSize = true;
-            this.Label12.Location = new System.Drawing.Point(28, 413);
-            this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(70, 13);
-            this.Label12.TabIndex = 85;
-            this.Label12.Text = "Monthly Due:";
-            // 
-            // ComboBox2
-            // 
-            this.ComboBox2.FormattingEnabled = true;
-            this.ComboBox2.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.ComboBox2.Location = new System.Drawing.Point(118, 296);
-            this.ComboBox2.Name = "ComboBox2";
-            this.ComboBox2.Size = new System.Drawing.Size(121, 21);
-            this.ComboBox2.TabIndex = 84;
-            // 
-            // Label8
-            // 
-            this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(28, 299);
-            this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(84, 13);
-            this.Label8.TabIndex = 83;
-            this.Label8.Text = "Payment Status:";
-            // 
-            // Label7
-            // 
-            this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(135, 407);
-            this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(80, 13);
-            this.Label7.TabIndex = 82;
-            this.Label7.Text = "Anual Premium:";
-            // 
-            // Label4
-            // 
-            this.Label4.AutoSize = true;
-            this.Label4.Location = new System.Drawing.Point(135, 380);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(103, 13);
-            this.Label4.TabIndex = 81;
-            this.Label4.Text = "Semi Anual Premium";
-            // 
-            // Label3
-            // 
-            this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(135, 350);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(95, 13);
-            this.Label3.TabIndex = 80;
-            this.Label3.Text = "Quarterly Premium:";
-            // 
-            // Label2
-            // 
-            this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(28, 386);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(90, 13);
-            this.Label2.TabIndex = 79;
-            this.Label2.Text = "Monthly Premium:";
-            // 
             // cboxfinancial_advisor
             // 
             this.cboxfinancial_advisor.FormattingEnabled = true;
@@ -521,47 +430,129 @@
             this.cboxfinancial_advisor.Size = new System.Drawing.Size(217, 21);
             this.cboxfinancial_advisor.TabIndex = 78;
             // 
-            // Label1
-            // 
-            this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(28, 350);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(92, 13);
-            this.Label1.TabIndex = 77;
-            this.Label1.Text = "Mode Of Payment";
-            // 
             // Panel1
             // 
-            this.Panel1.Controls.Add(this.txtPlan);
-            this.Panel1.Controls.Add(this.btnAddPlan);
-            this.Panel1.Controls.Add(this.label13);
-            this.Panel1.Controls.Add(this.Label9);
+            this.Panel1.Controls.Add(this.label2);
+            this.Panel1.Controls.Add(this.txtIDDir);
+            this.Panel1.Controls.Add(this.pbID);
+            this.Panel1.Controls.Add(this.btnBrowseID);
+            this.Panel1.Controls.Add(this.txtDue);
+            this.Panel1.Controls.Add(this.label1);
+            this.Panel1.Controls.Add(this.lbModeofPayment);
             this.Panel1.Controls.Add(this.ComboBox2);
             this.Panel1.Controls.Add(this.Label8);
-            this.Panel1.Controls.Add(this.Label10);
-            this.Panel1.Controls.Add(this.Label7);
-            this.Panel1.Controls.Add(this.Label2);
-            this.Panel1.Controls.Add(this.Label11);
+            this.Panel1.Controls.Add(this.lblDue);
+            this.Panel1.Controls.Add(this.lbPlan);
+            this.Panel1.Controls.Add(this.btnAddPlan);
+            this.Panel1.Controls.Add(this.label13);
             this.Panel1.Controls.Add(this.cboxfinancial_advisor);
-            this.Panel1.Controls.Add(this.Label4);
-            this.Panel1.Controls.Add(this.Label12);
-            this.Panel1.Controls.Add(this.Label1);
-            this.Panel1.Controls.Add(this.Label3);
             this.Panel1.Location = new System.Drawing.Point(1029, 33);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(255, 518);
             this.Panel1.TabIndex = 16;
             // 
-            // txtPlan
+            // label2
             // 
-            this.txtPlan.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtPlan.Enabled = false;
-            this.txtPlan.Location = new System.Drawing.Point(20, 82);
-            this.txtPlan.Multiline = true;
-            this.txtPlan.Name = "txtPlan";
-            this.txtPlan.Size = new System.Drawing.Size(217, 99);
-            this.txtPlan.TabIndex = 93;
-            this.txtPlan.Tag = "19";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 334);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 106;
+            this.label2.Text = "Valid ID:";
+            // 
+            // txtIDDir
+            // 
+            this.txtIDDir.Location = new System.Drawing.Point(93, 352);
+            this.txtIDDir.Name = "txtIDDir";
+            this.txtIDDir.Size = new System.Drawing.Size(144, 20);
+            this.txtIDDir.TabIndex = 105;
+            this.txtIDDir.TextChanged += new System.EventHandler(this.txtIDDir_TextChanged);
+            // 
+            // pbID
+            // 
+            this.pbID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbID.Location = new System.Drawing.Point(20, 379);
+            this.pbID.Name = "pbID";
+            this.pbID.Size = new System.Drawing.Size(217, 123);
+            this.pbID.TabIndex = 104;
+            this.pbID.TabStop = false;
+            // 
+            // btnBrowseID
+            // 
+            this.btnBrowseID.Location = new System.Drawing.Point(20, 350);
+            this.btnBrowseID.Name = "btnBrowseID";
+            this.btnBrowseID.Size = new System.Drawing.Size(67, 23);
+            this.btnBrowseID.TabIndex = 103;
+            this.btnBrowseID.Text = "Browse";
+            this.btnBrowseID.UseVisualStyleBackColor = true;
+            this.btnBrowseID.Click += new System.EventHandler(this.btnBrowseID_Click);
+            // 
+            // txtDue
+            // 
+            this.txtDue.Location = new System.Drawing.Point(113, 300);
+            this.txtDue.Name = "txtDue";
+            this.txtDue.Size = new System.Drawing.Size(126, 20);
+            this.txtDue.TabIndex = 102;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 224);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "Mode of Payment";
+            // 
+            // lbModeofPayment
+            // 
+            this.lbModeofPayment.FormattingEnabled = true;
+            this.lbModeofPayment.Items.AddRange(new object[] {
+            "Monthly Premium",
+            "Quarterly Premium",
+            "Semi Anual Premium",
+            "Anual Premium"});
+            this.lbModeofPayment.Location = new System.Drawing.Point(20, 240);
+            this.lbModeofPayment.Name = "lbModeofPayment";
+            this.lbModeofPayment.Size = new System.Drawing.Size(219, 56);
+            this.lbModeofPayment.TabIndex = 100;
+            this.lbModeofPayment.SelectedIndexChanged += new System.EventHandler(this.lbModeofPayment_SelectedIndexChanged);
+            // 
+            // ComboBox2
+            // 
+            this.ComboBox2.FormattingEnabled = true;
+            this.ComboBox2.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.ComboBox2.Location = new System.Drawing.Point(113, 195);
+            this.ComboBox2.Name = "ComboBox2";
+            this.ComboBox2.Size = new System.Drawing.Size(121, 21);
+            this.ComboBox2.TabIndex = 98;
+            // 
+            // Label8
+            // 
+            this.Label8.AutoSize = true;
+            this.Label8.Location = new System.Drawing.Point(17, 198);
+            this.Label8.Name = "Label8";
+            this.Label8.Size = new System.Drawing.Size(84, 13);
+            this.Label8.TabIndex = 97;
+            this.Label8.Text = "Payment Status:";
+            // 
+            // lblDue
+            // 
+            this.lblDue.AutoSize = true;
+            this.lblDue.Location = new System.Drawing.Point(17, 303);
+            this.lblDue.Name = "lblDue";
+            this.lblDue.Size = new System.Drawing.Size(70, 13);
+            this.lblDue.TabIndex = 99;
+            this.lblDue.Text = "Monthly Due:";
+            // 
+            // lbPlan
+            // 
+            this.lbPlan.FormattingEnabled = true;
+            this.lbPlan.Location = new System.Drawing.Point(20, 81);
+            this.lbPlan.Name = "lbPlan";
+            this.lbPlan.Size = new System.Drawing.Size(219, 108);
+            this.lbPlan.TabIndex = 93;
             // 
             // btnAddPlan
             // 
@@ -1192,6 +1183,10 @@
             this.lblOccupation.TabIndex = 48;
             this.lblOccupation.Text = "Occupation (Job Position)";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // AddEditClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1216,6 +1211,7 @@
             this.Panel5.PerformLayout();
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID)).EndInit();
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
             this.Penel1.ResumeLayout(false);
@@ -1295,18 +1291,7 @@
         internal System.Windows.Forms.Button btnDone;
         internal System.Windows.Forms.Button Button2;
         internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.ComboBox cboxfinancial_advisor;
-        internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.Label Label3;
-        internal System.Windows.Forms.Label Label4;
-        internal System.Windows.Forms.Label Label7;
-        internal System.Windows.Forms.Label Label8;
-        internal System.Windows.Forms.ComboBox ComboBox2;
-        internal System.Windows.Forms.Label Label12;
-        internal System.Windows.Forms.Label Label11;
-        internal System.Windows.Forms.Label Label10;
-        internal System.Windows.Forms.Label Label9;
         internal System.Windows.Forms.TextBox txtsubanswer3;
         internal System.Windows.Forms.Button btnAddClient;
         internal System.Windows.Forms.TextBox txtCompanyName;
@@ -1339,6 +1324,17 @@
         internal System.Windows.Forms.Button btnBUpdate;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnAddPlan;
-        private System.Windows.Forms.TextBox txtPlan;
+        private System.Windows.Forms.ListBox lbPlan;
+        internal System.Windows.Forms.Label lblDue;
+        internal System.Windows.Forms.Label Label8;
+        internal System.Windows.Forms.ComboBox ComboBox2;
+        private System.Windows.Forms.ListBox lbModeofPayment;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDue;
+        private System.Windows.Forms.PictureBox pbID;
+        private System.Windows.Forms.Button btnBrowseID;
+        private System.Windows.Forms.TextBox txtIDDir;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label2;
     }
 }

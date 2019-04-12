@@ -31,5 +31,6 @@ namespace ClientProfilingAndRecordManagementSystemF
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Plan> Plans { get; set; }
+        public virtual DbSet<ClientPlan> ClientPlans { get; set; }
     }
 }

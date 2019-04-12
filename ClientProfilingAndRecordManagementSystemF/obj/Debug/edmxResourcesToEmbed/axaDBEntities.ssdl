@@ -13,6 +13,14 @@
     <Property Name="OCCUPATION" Type="ntext" Nullable="false" />
     <Property Name="SHARE" Type="float" Nullable="false" />
   </EntityType>
+  <EntityType Name="ClientPlans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="plan_id" Type="int" />
+  </EntityType>
   <EntityType Name="Clients">
     <Key>
       <PropertyRef Name="id" />
@@ -50,6 +58,9 @@
     <Property Name="answersub2" Type="varchar" MaxLength="50" />
     <Property Name="answersub3" Type="varchar" MaxLength="50" />
     <Property Name="addedby_userid" Type="bigint" />
+    <Property Name="id_path" Type="varchar" MaxLength="200" />
+    <Property Name="mode_of_payment" Type="varchar" MaxLength="50" />
+    <Property Name="due" Type="float" />
   </EntityType>
   <EntityType Name="FinancialAdvisors">
     <Key>
@@ -62,7 +73,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="type" Type="varchar" MaxLength="50" />
     <Property Name="category" Type="varchar" MaxLength="50" />
     <Property Name="description" Type="varchar" MaxLength="100" />
@@ -89,6 +100,7 @@
   </EntityType>
   <EntityContainer Name="axaDBModelStoreContainer">
     <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiaries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientPlans" EntityType="Self.ClientPlans" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
