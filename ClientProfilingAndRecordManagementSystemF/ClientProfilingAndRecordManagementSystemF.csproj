@@ -33,10 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonControls.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -45,6 +45,7 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -53,6 +54,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -77,39 +79,52 @@
     <Compile Include="AddEditUserForm.Designer.cs">
       <DependentUpon>AddEditUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="axaDBEntities.Context.cs">
+    <Compile Include="axaDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>axaDBEntities.Context.tt</DependentUpon>
+      <DependentUpon>axaDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="axaDBEntities.cs">
+    <Compile Include="axaDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
+      <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="axaDBEntities.Designer.cs">
+    <Compile Include="axaDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>axaDBEntities.edmx</DependentUpon>
+      <DependentUpon>axaDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Client.cs">
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
+      <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientBeneficiary.cs">
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
+      <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ClientPlan.cs">
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
+      <DependentUpon>axaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientPlanForm.Designer.cs">
+      <DependentUpon>ClientPlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="CurrentUser.cs" />
-    <Compile Include="FinancialAdvisor.cs">
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="AddPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddPlanForm.Designer.cs">
       <DependentUpon>AddPlanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancialAdvisor.cs">
+      <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
@@ -136,15 +151,15 @@
       <DependentUpon>ManageFinancialAdvisorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Plan.cs">
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
+      <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
+      <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>axaDBEntities.tt</DependentUpon>
+      <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewClientForm.cs">
       <SubType>Form</SubType>
@@ -161,6 +176,14 @@
     <EmbeddedResource Include="AddPlanForm.resx">
       <DependentUpon>AddPlanForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientPlanForm.resx">
+      <DependentUpon>ClientPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,18 +209,14 @@
     <EmbeddedResource Include="ViewClientForm.resx">
       <DependentUpon>ViewClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewClientReport.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EntityDeploy Include="axaDBEntities.edmx">
+    <EntityDeploy Include="axaDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>axaDBEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>axaDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="axaDBEntities.edmx.diagram">
-      <DependentUpon>axaDBEntities.edmx</DependentUpon>
+    <None Include="axaDB.edmx.diagram">
+      <DependentUpon>axaDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\ClientBeneficiary.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -209,33 +228,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="axaDBEntities.Context.tt">
+    <Content Include="axaDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>axaDBEntities.edmx</DependentUpon>
-      <LastGenOutput>axaDBEntities.Context.cs</LastGenOutput>
+      <DependentUpon>axaDB.edmx</DependentUpon>
+      <LastGenOutput>axaDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="axaDBEntities.tt">
+    <Content Include="axaDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>axaDBEntities.edmx</DependentUpon>
-      <LastGenOutput>axaDBEntities.cs</LastGenOutput>
+      <DependentUpon>axaDB.edmx</DependentUpon>
+      <LastGenOutput>axaDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="CrystalReportsCommonObjectModelLib">
-      <Guid>{FDB9B69E-BA79-4B13-9E96-8373AF162AEA}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

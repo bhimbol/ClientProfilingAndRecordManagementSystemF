@@ -14,13 +14,15 @@ namespace ClientProfilingAndRecordManagementSystemF
     
     public partial class ClientBeneficiary
     {
-        public long ID { get; set; }
-        public long CLIENT_ID { get; set; }
-        public string FULLNAME { get; set; }
-        public Nullable<System.DateTime> BIRTHDATE { get; set; }
-        public string BIRTHPLACE { get; set; }
-        public string RELATIONSHIP { get; set; }
-        public string OCCUPATION { get; set; }
-        public double SHARE { get; set; }
+        public int beneficiary_id { get; set; }
+        public int client_id { get; set; }
+        public string fullname { get; set; }
+        public Nullable<System.DateTime> birthdate { get; set; }
+        public string birthplace { get; set; }
+        public string relationship { get; set; }
+        public string occupation { get; set; }
+        public double share { get; set; }
+    
+        public virtual Client Client { get; set; }
     }
 }

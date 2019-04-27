@@ -4,75 +4,93 @@
     <EntitySetMapping Name="ClientBeneficiaries">
       <EntityTypeMapping TypeName="axaDBModel.ClientBeneficiary">
         <MappingFragment StoreEntitySet="ClientBeneficiaries">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
-          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
-          <ScalarProperty Name="BIRTHDATE" ColumnName="BIRTHDATE" />
-          <ScalarProperty Name="BIRTHPLACE" ColumnName="BIRTHPLACE" />
-          <ScalarProperty Name="RELATIONSHIP" ColumnName="RELATIONSHIP" />
-          <ScalarProperty Name="OCCUPATION" ColumnName="OCCUPATION" />
-          <ScalarProperty Name="SHARE" ColumnName="SHARE" />
+          <ScalarProperty Name="share" ColumnName="share" />
+          <ScalarProperty Name="occupation" ColumnName="occupation" />
+          <ScalarProperty Name="relationship" ColumnName="relationship" />
+          <ScalarProperty Name="birthplace" ColumnName="birthplace" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="beneficiary_id" ColumnName="beneficiary_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientPlans">
+      <EntityTypeMapping TypeName="axaDBModel.ClientPlan">
+        <MappingFragment StoreEntitySet="ClientPlans">
+          <ScalarProperty Name="due" ColumnName="due" />
+          <ScalarProperty Name="mode_of_payment" ColumnName="mode_of_payment" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Clients">
       <EntityTypeMapping TypeName="axaDBModel.Client">
         <MappingFragment StoreEntitySet="Clients">
-          <ScalarProperty Name="due" ColumnName="due" />
-          <ScalarProperty Name="mode_of_payment" ColumnName="mode_of_payment" />
           <ScalarProperty Name="id_path" ColumnName="id_path" />
-          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
-          <ScalarProperty Name="financial_advisor_id" ColumnName="financial_advisor_id" />
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="lastname" ColumnName="lastname" />
-          <ScalarProperty Name="firstname" ColumnName="firstname" />
-          <ScalarProperty Name="middlename" ColumnName="middlename" />
-          <ScalarProperty Name="spouselastname" ColumnName="spouselastname" />
-          <ScalarProperty Name="spousefirstname" ColumnName="spousefirstname" />
-          <ScalarProperty Name="spousemiddlename" ColumnName="spousemiddlename" />
-          <ScalarProperty Name="gender" ColumnName="gender" />
-          <ScalarProperty Name="civilstatus" ColumnName="civilstatus" />
-          <ScalarProperty Name="birthday" ColumnName="birthday" />
-          <ScalarProperty Name="birthplace" ColumnName="birthplace" />
-          <ScalarProperty Name="height" ColumnName="height" />
-          <ScalarProperty Name="weight" ColumnName="weight" />
-          <ScalarProperty Name="residenceaddress" ColumnName="residenceaddress" />
-          <ScalarProperty Name="cpnumber" ColumnName="cpnumber" />
-          <ScalarProperty Name="telephonenumber" ColumnName="telephonenumber" />
-          <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
-          <ScalarProperty Name="occupation" ColumnName="occupation" />
-          <ScalarProperty Name="worksalary" ColumnName="worksalary" />
-          <ScalarProperty Name="businessincome" ColumnName="businessincome" />
-          <ScalarProperty Name="othersource" ColumnName="othersource" />
-          <ScalarProperty Name="companyname" ColumnName="companyname" />
-          <ScalarProperty Name="companyaddress" ColumnName="companyaddress" />
-          <ScalarProperty Name="companycontact" ColumnName="companycontact" />
-          <ScalarProperty Name="natureofbusiness" ColumnName="natureofbusiness" />
-          <ScalarProperty Name="taxidnumber" ColumnName="taxidnumber" />
-          <ScalarProperty Name="sss_gsis_number" ColumnName="sss_gsis_number" />
-          <ScalarProperty Name="answersub1" ColumnName="answersub1" />
-          <ScalarProperty Name="answersub2" ColumnName="answersub2" />
           <ScalarProperty Name="answersub3" ColumnName="answersub3" />
-          <ScalarProperty Name="addedby_userid" ColumnName="addedby_userid" />
+          <ScalarProperty Name="answersub2" ColumnName="answersub2" />
+          <ScalarProperty Name="answersub1" ColumnName="answersub1" />
+          <ScalarProperty Name="sss_gsis_number" ColumnName="sss_gsis_number" />
+          <ScalarProperty Name="taxidnumber" ColumnName="taxidnumber" />
+          <ScalarProperty Name="natureofbusiness" ColumnName="natureofbusiness" />
+          <ScalarProperty Name="companycontact" ColumnName="companycontact" />
+          <ScalarProperty Name="companyaddress" ColumnName="companyaddress" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="othersource" ColumnName="othersource" />
+          <ScalarProperty Name="businessincome" ColumnName="businessincome" />
+          <ScalarProperty Name="worksalary" ColumnName="worksalary" />
+          <ScalarProperty Name="occupation" ColumnName="occupation" />
+          <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+          <ScalarProperty Name="telephonenumber" ColumnName="telephonenumber" />
+          <ScalarProperty Name="cpnumber" ColumnName="cpnumber" />
+          <ScalarProperty Name="residenceaddress" ColumnName="residenceaddress" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="birthplace" ColumnName="birthplace" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="civilstatus" ColumnName="civilstatus" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="spousemiddlename" ColumnName="spousemiddlename" />
+          <ScalarProperty Name="spousefirstname" ColumnName="spousefirstname" />
+          <ScalarProperty Name="spouselastname" ColumnName="spouselastname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="financial_advisor_id" ColumnName="financial_advisor_id" />
+          <ScalarProperty Name="addedby_user_id" ColumnName="addedby_user_id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="FinancialAdvisors">
       <EntityTypeMapping TypeName="axaDBModel.FinancialAdvisor">
         <MappingFragment StoreEntitySet="FinancialAdvisors">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="financial_advisor_id" ColumnName="financial_advisor_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plans">
+      <EntityTypeMapping TypeName="axaDBModel.Plan">
+        <MappingFragment StoreEntitySet="Plans">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="axaDBModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -83,26 +101,7 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Plans">
-      <EntityTypeMapping TypeName="axaDBModel.Plan">
-        <MappingFragment StoreEntitySet="Plans">
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="category" ColumnName="category" />
-          <ScalarProperty Name="type" ColumnName="type" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ClientPlans">
-      <EntityTypeMapping TypeName="axaDBModel.ClientPlan">
-        <MappingFragment StoreEntitySet="ClientPlans">
-          <ScalarProperty Name="plan_id" ColumnName="plan_id" />
-          <ScalarProperty Name="client_id" ColumnName="client_id" />
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

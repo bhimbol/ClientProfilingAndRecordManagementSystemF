@@ -19,7 +19,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void ManageClientsForm_Load(object sender, EventArgs e)
         {
-            using(axaDBEntities db = new axaDBEntities())
+            using (axaDBEntities db = new axaDBEntities())
             {
                 dgvClients.DataSource = db.Clients.ToList();
             }
@@ -34,11 +34,11 @@ namespace ClientProfilingAndRecordManagementSystemF
                     addeditclientform.action = "Edit";
                     using (axaDBEntities db = new axaDBEntities())
                     {
-                        long client_id = Int64.Parse(dgvClients.SelectedRows[0].Cells["ID"].Value.ToString());
+                        int client_id = (int)dgvClients.SelectedRows[0].Cells["client_id"].Value;
                         addeditclientform.selected_client = db.Clients.Find(client_id);
+                        addeditclientform.ShowDialog();
+                        ManageClientsForm_Load(null, null);
                     }
-                    addeditclientform.ShowDialog();
-                    ManageClientsForm_Load(null, null);
                 }
             }
         }
@@ -59,16 +59,16 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 foreach(DataGridViewRow cr in dgvClients.SelectedRows)
                 {
-                    if (MessageBox.Show("Delete ID: " + cr.Cells["ID"].Value.ToString() + " Client's Name: " + cr.Cells["LASTNAME"].Value.ToString() + ".", "Delete User", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Delete ID: " + cr.Cells["client_id"].Value.ToString() + " Client's Name: " + cr.Cells["LASTNAME"].Value.ToString() + ".", "Delete User", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         using(axaDBEntities db = new axaDBEntities())
                         {
-                            Client c = db.Clients.Find(cr.Cells["ID"].Value);
+                            Client c = db.Clients.Find(cr.Cells["client_id"].Value);
                             IEnumerable<ClientBeneficiary> client_beneficiaries = (from b in db.ClientBeneficiaries
-                                                                            where b.CLIENT_ID == c.id
+                                                                            where b.client_id == c.client_id
                                                                             select b);
                             IEnumerable<ClientPlan> client_plans = (from p in db.ClientPlans
-                                                                        where p.client_id == c.id
+                                                                        where p.client_id == c.client_id
                                                                         select p);
                             db.ClientPlans.RemoveRange(client_plans);
                             db.ClientBeneficiaries.RemoveRange(client_beneficiaries);

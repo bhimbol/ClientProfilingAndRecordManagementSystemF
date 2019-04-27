@@ -2,16 +2,16 @@
 <Schema Namespace="axaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ClientBeneficiaries">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="beneficiary_id" />
     </Key>
-    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CLIENT_ID" Type="bigint" Nullable="false" />
-    <Property Name="FULLNAME" Type="ntext" Nullable="false" />
-    <Property Name="BIRTHDATE" Type="date" />
-    <Property Name="BIRTHPLACE" Type="ntext" />
-    <Property Name="RELATIONSHIP" Type="ntext" Nullable="false" />
-    <Property Name="OCCUPATION" Type="ntext" Nullable="false" />
-    <Property Name="SHARE" Type="float" Nullable="false" />
+    <Property Name="beneficiary_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="client_id" Type="int" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="birthdate" Type="date" />
+    <Property Name="birthplace" Type="varchar" MaxLength="50" />
+    <Property Name="relationship" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="occupation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="share" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="ClientPlans">
     <Key>
@@ -20,14 +20,16 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="client_id" Type="int" />
     <Property Name="plan_id" Type="int" />
+    <Property Name="mode_of_payment" Type="varchar" MaxLength="50" />
+    <Property Name="due" Type="float" />
   </EntityType>
   <EntityType Name="Clients">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="client_id" />
     </Key>
-    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="financial_advisor_id" Type="bigint" />
-    <Property Name="plan_id" Type="int" />
+    <Property Name="client_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="addedby_user_id" Type="int" />
+    <Property Name="financial_advisor_id" Type="int" />
     <Property Name="lastname" Type="varchar" MaxLength="50" />
     <Property Name="firstname" Type="varchar" MaxLength="50" />
     <Property Name="middlename" Type="varchar" MaxLength="50" />
@@ -57,23 +59,20 @@
     <Property Name="answersub1" Type="varchar" MaxLength="50" />
     <Property Name="answersub2" Type="varchar" MaxLength="50" />
     <Property Name="answersub3" Type="varchar" MaxLength="50" />
-    <Property Name="addedby_userid" Type="bigint" />
     <Property Name="id_path" Type="varchar" MaxLength="200" />
-    <Property Name="mode_of_payment" Type="varchar" MaxLength="50" />
-    <Property Name="due" Type="float" />
   </EntityType>
   <EntityType Name="FinancialAdvisors">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="financial_advisor_id" />
     </Key>
-    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="financial_advisor_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fullname" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Plans">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="plan_id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="type" Type="varchar" MaxLength="50" />
     <Property Name="category" Type="varchar" MaxLength="50" />
     <Property Name="description" Type="varchar" MaxLength="100" />
@@ -90,9 +89,9 @@
   </EntityType>
   <EntityType Name="Users">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="user_id" />
     </Key>
-    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="50" />
     <Property Name="password" Type="varchar" MaxLength="50" />
     <Property Name="role" Type="varchar" MaxLength="50" />

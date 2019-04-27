@@ -112,9 +112,8 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 if (ListDataGridView.SelectedRows.Count > 0)
                 {
-                    //code for view client selected row
                     ViewClientForm viewclientform = new ViewClientForm();
-                    viewclientform.selected_client = ListDataGridView.SelectedRows[0];
+                    viewclientform.selected_client_id = Int32.Parse(ListDataGridView.SelectedRows[0].Cells["client_id"].Value.ToString());
                     viewclientform.ShowDialog();
                 }
             }
@@ -204,6 +203,11 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             AddEditUserForm addeditfuserform = new AddEditUserForm();
             addeditfuserform.ShowDialog();
+        }
+
+        private void ListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

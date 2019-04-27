@@ -14,7 +14,16 @@ namespace ClientProfilingAndRecordManagementSystemF
     
     public partial class FinancialAdvisor
     {
-        public long id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FinancialAdvisor()
+        {
+            this.Clients = new HashSet<Client>();
+        }
+    
+        public int financial_advisor_id { get; set; }
         public string fullname { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Client> Clients { get; set; }
     }
 }

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="axaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ClientBeneficiaries">
+    <Key>
+      <PropertyRef Name="beneficiary_id" />
+    </Key>
+    <Property Name="beneficiary_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="client_id" Type="int" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="birthdate" Type="datetime" />
+    <Property Name="birthplace" Type="varchar" MaxLength="50" />
+    <Property Name="relationship" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="occupation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="share" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientPlans">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="plan_id" Type="int" />
+    <Property Name="mode_of_payment" Type="varchar" MaxLength="50" />
+    <Property Name="due" Type="float" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="client_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="addedby_user_id" Type="int" />
+    <Property Name="financial_advisor_id" Type="int" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="middlename" Type="varchar" MaxLength="50" />
+    <Property Name="spouselastname" Type="varchar" MaxLength="50" />
+    <Property Name="spousefirstname" Type="varchar" MaxLength="50" />
+    <Property Name="spousemiddlename" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="civilstatus" Type="varchar" MaxLength="50" />
+    <Property Name="birthday" Type="datetime" />
+    <Property Name="birthplace" Type="varchar" MaxLength="50" />
+    <Property Name="height" Type="float" />
+    <Property Name="weight" Type="float" />
+    <Property Name="residenceaddress" Type="varchar" MaxLength="50" />
+    <Property Name="cpnumber" Type="varchar" MaxLength="50" />
+    <Property Name="telephonenumber" Type="varchar" MaxLength="50" />
+    <Property Name="emailaddress" Type="varchar" MaxLength="50" />
+    <Property Name="occupation" Type="varchar" MaxLength="50" />
+    <Property Name="worksalary" Type="float" />
+    <Property Name="businessincome" Type="float" />
+    <Property Name="othersource" Type="float" />
+    <Property Name="companyname" Type="varchar" MaxLength="50" />
+    <Property Name="companyaddress" Type="varchar" MaxLength="50" />
+    <Property Name="companycontact" Type="varchar" MaxLength="50" />
+    <Property Name="natureofbusiness" Type="varchar" MaxLength="50" />
+    <Property Name="taxidnumber" Type="varchar" MaxLength="50" />
+    <Property Name="sss_gsis_number" Type="varchar" MaxLength="50" />
+    <Property Name="answersub1" Type="varchar" MaxLength="50" />
+    <Property Name="answersub2" Type="varchar" MaxLength="50" />
+    <Property Name="answersub3" Type="varchar" MaxLength="50" />
+    <Property Name="id_path1" Type="varchar" MaxLength="200" />
+    <Property Name="id_path2" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="FinancialAdvisors">
+    <Key>
+      <PropertyRef Name="financial_advisor_id" />
+    </Key>
+    <Property Name="financial_advisor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Plans">
+    <Key>
+      <PropertyRef Name="plan_id" />
+    </Key>
+    <Property Name="plan_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="category" Type="varchar" MaxLength="50" />
+    <Property Name="description" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="role" Type="varchar" MaxLength="50" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_ClientBeneficiaries">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="ClientBeneficiaries" Type="Self.ClientBeneficiaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ClientBeneficiaries">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientPlans_Client">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+    <End Role="ClientPlans" Type="Self.ClientPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ClientPlans">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientPlans_Plan">
+    <End Role="Plans" Type="Self.Plans" Multiplicity="0..1" />
+    <End Role="ClientPlans" Type="Self.ClientPlans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="plan_id" />
+      </Principal>
+      <Dependent Role="ClientPlans">
+        <PropertyRef Name="plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Clients_FA">
+    <End Role="FinancialAdvisors" Type="Self.FinancialAdvisors" Multiplicity="0..1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FinancialAdvisors">
+        <PropertyRef Name="financial_advisor_id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="financial_advisor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="axaDBModelStoreContainer">
+    <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiaries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientPlans" EntityType="Self.ClientPlans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ClientBeneficiaries" Association="Self.FK_ClientBeneficiaries">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientBeneficiaries" EntitySet="ClientBeneficiaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientPlans_Client" Association="Self.FK_ClientPlans_Client">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientPlans" EntitySet="ClientPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientPlans_Plan" Association="Self.FK_ClientPlans_Plan">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="ClientPlans" EntitySet="ClientPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Clients_FA" Association="Self.FK_Clients_Clients_FA">
+      <End Role="FinancialAdvisors" EntitySet="FinancialAdvisors" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

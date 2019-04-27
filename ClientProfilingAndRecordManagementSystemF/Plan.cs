@@ -14,9 +14,18 @@ namespace ClientProfilingAndRecordManagementSystemF
     
     public partial class Plan
     {
-        public int id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Plan()
+        {
+            this.ClientPlans = new HashSet<ClientPlan>();
+        }
+    
+        public int plan_id { get; set; }
         public string type { get; set; }
         public string category { get; set; }
         public string description { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClientPlan> ClientPlans { get; set; }
     }
 }

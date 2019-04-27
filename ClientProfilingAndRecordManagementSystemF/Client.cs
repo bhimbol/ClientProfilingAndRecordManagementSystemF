@@ -14,7 +14,16 @@ namespace ClientProfilingAndRecordManagementSystemF
     
     public partial class Client
     {
-        public long id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Client()
+        {
+            this.ClientBeneficiaries = new HashSet<ClientBeneficiary>();
+            this.ClientPlans = new HashSet<ClientPlan>();
+        }
+    
+        public int client_id { get; set; }
+        public Nullable<int> addedby_user_id { get; set; }
+        public Nullable<int> financial_advisor_id { get; set; }
         public string lastname { get; set; }
         public string firstname { get; set; }
         public string middlename { get; set; }
@@ -44,11 +53,13 @@ namespace ClientProfilingAndRecordManagementSystemF
         public string answersub1 { get; set; }
         public string answersub2 { get; set; }
         public string answersub3 { get; set; }
-        public Nullable<long> addedby_userid { get; set; }
-        public Nullable<long> financial_advisor_id { get; set; }
-        public Nullable<int> plan_id { get; set; }
-        public string id_path { get; set; }
-        public string mode_of_payment { get; set; }
-        public Nullable<double> due { get; set; }
+        public string id_path1 { get; set; }
+        public string id_path2 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClientBeneficiary> ClientBeneficiaries { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClientPlan> ClientPlans { get; set; }
+        public virtual FinancialAdvisor FinancialAdvisor { get; set; }
     }
 }

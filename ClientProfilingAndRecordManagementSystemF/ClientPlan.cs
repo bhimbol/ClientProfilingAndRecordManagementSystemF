@@ -17,5 +17,10 @@ namespace ClientProfilingAndRecordManagementSystemF
         public int id { get; set; }
         public Nullable<int> client_id { get; set; }
         public Nullable<int> plan_id { get; set; }
+        public string mode_of_payment { get; set; }
+        public Nullable<double> due { get; set; }
+    
+        public virtual Client Client { get; set; }
+        public virtual Plan Plan { get; set; }
     }
 }

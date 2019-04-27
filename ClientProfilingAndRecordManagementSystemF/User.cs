@@ -14,7 +14,7 @@ namespace ClientProfilingAndRecordManagementSystemF
     
     public partial class User
     {
-        public long id { get; set; }
+        public long user_id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public string role { get; set; }

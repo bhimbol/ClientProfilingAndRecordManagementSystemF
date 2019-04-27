@@ -175,6 +175,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.AccessibleName = "1";
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(63, 75);
             this.checkBox1.Name = "checkBox1";
@@ -183,9 +184,11 @@
             this.checkBox1.Tag = "1";
             this.checkBox1.Text = "1. ASSURE 10 PAY";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox2
             // 
+            this.checkBox2.AccessibleName = "2";
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(62, 99);
             this.checkBox2.Name = "checkBox2";
@@ -194,9 +197,11 @@
             this.checkBox2.Tag = "2";
             this.checkBox2.Text = "2. ASSURE 20 PAY";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox3
             // 
+            this.checkBox3.AccessibleName = "4";
             this.checkBox3.AutoSize = true;
             this.checkBox3.Location = new System.Drawing.Point(61, 146);
             this.checkBox3.Name = "checkBox3";
@@ -205,9 +210,11 @@
             this.checkBox3.Tag = "4";
             this.checkBox3.Text = "4. FLEXI PROTECT BUSINESS REGULAR PREMIUM";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox4
             // 
+            this.checkBox4.AccessibleName = "3";
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(62, 122);
             this.checkBox4.Name = "checkBox4";
@@ -216,9 +223,11 @@
             this.checkBox4.Tag = "3";
             this.checkBox4.Text = "3. ASSURE 5 PAY";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox5
             // 
+            this.checkBox5.AccessibleName = "7";
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(60, 216);
             this.checkBox5.Name = "checkBox5";
@@ -227,9 +236,11 @@
             this.checkBox5.Tag = "7";
             this.checkBox5.Text = "7. FLEXI PROTECT REGULAR PREMIUM";
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox6
             // 
+            this.checkBox6.AccessibleName = "6";
             this.checkBox6.AutoSize = true;
             this.checkBox6.Location = new System.Drawing.Point(60, 193);
             this.checkBox6.Name = "checkBox6";
@@ -238,9 +249,11 @@
             this.checkBox6.Tag = "6";
             this.checkBox6.Text = "6. FLEXI PROTECT LIFE REGULAR PREMIUM";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox7
             // 
+            this.checkBox7.AccessibleName = "5";
             this.checkBox7.AutoSize = true;
             this.checkBox7.Location = new System.Drawing.Point(61, 169);
             this.checkBox7.Name = "checkBox7";
@@ -249,9 +262,11 @@
             this.checkBox7.Tag = "5";
             this.checkBox7.Text = "5. FLEXI PROTECT BUSINESS SINGLE PREMIUM";
             this.checkBox7.UseVisualStyleBackColor = true;
+            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox8
             // 
+            this.checkBox8.AccessibleName = "11";
             this.checkBox8.AutoSize = true;
             this.checkBox8.Location = new System.Drawing.Point(420, 146);
             this.checkBox8.Name = "checkBox8";
@@ -260,9 +275,11 @@
             this.checkBox8.Tag = "11";
             this.checkBox8.Text = "4. HEALTH MAX PAY-TO-65";
             this.checkBox8.UseVisualStyleBackColor = true;
+            this.checkBox8.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox9
             // 
+            this.checkBox9.AccessibleName = "10";
             this.checkBox9.AutoSize = true;
             this.checkBox9.Location = new System.Drawing.Point(421, 122);
             this.checkBox9.Name = "checkBox9";
@@ -271,9 +288,11 @@
             this.checkBox9.Tag = "10";
             this.checkBox9.Text = "3. HEALTH MAX 20 PAY";
             this.checkBox9.UseVisualStyleBackColor = true;
+            this.checkBox9.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox10
             // 
+            this.checkBox10.AccessibleName = "9";
             this.checkBox10.AutoSize = true;
             this.checkBox10.Location = new System.Drawing.Point(421, 99);
             this.checkBox10.Name = "checkBox10";
@@ -282,9 +301,11 @@
             this.checkBox10.Tag = "9";
             this.checkBox10.Text = "2. HEALTH MAX 10 PAY";
             this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBox10.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox11
             // 
+            this.checkBox11.AccessibleName = "8";
             this.checkBox11.AutoSize = true;
             this.checkBox11.Location = new System.Drawing.Point(422, 75);
             this.checkBox11.Name = "checkBox11";
@@ -293,9 +314,11 @@
             this.checkBox11.Tag = "8";
             this.checkBox11.Text = "1. GLOBAL HEALTH ACCESS WORLD WIDE INCLUDING USA";
             this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox11.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox12
             // 
+            this.checkBox12.AccessibleName = "13";
             this.checkBox12.AutoSize = true;
             this.checkBox12.Location = new System.Drawing.Point(62, 341);
             this.checkBox12.Name = "checkBox12";
@@ -304,9 +327,11 @@
             this.checkBox12.Tag = "13";
             this.checkBox12.Text = "2. ACELARATOR";
             this.checkBox12.UseVisualStyleBackColor = true;
+            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox13
             // 
+            this.checkBox13.AccessibleName = "12";
             this.checkBox13.AutoSize = true;
             this.checkBox13.Location = new System.Drawing.Point(63, 317);
             this.checkBox13.Name = "checkBox13";
@@ -315,9 +340,11 @@
             this.checkBox13.Tag = "12";
             this.checkBox13.Text = "1. ACADEMIC";
             this.checkBox13.UseVisualStyleBackColor = true;
+            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox14
             // 
+            this.checkBox14.AccessibleName = "16";
             this.checkBox14.AutoSize = true;
             this.checkBox14.Location = new System.Drawing.Point(419, 364);
             this.checkBox14.Name = "checkBox14";
@@ -326,9 +353,11 @@
             this.checkBox14.Tag = "16";
             this.checkBox14.Text = "3. ACELARATOR PLUS";
             this.checkBox14.UseVisualStyleBackColor = true;
+            this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox15
             // 
+            this.checkBox15.AccessibleName = "15";
             this.checkBox15.AutoSize = true;
             this.checkBox15.Location = new System.Drawing.Point(420, 340);
             this.checkBox15.Name = "checkBox15";
@@ -337,9 +366,11 @@
             this.checkBox15.Tag = "15";
             this.checkBox15.Text = "2. LIFE BASIC INCREASING DEATH BENEFIT";
             this.checkBox15.UseVisualStyleBackColor = true;
+            this.checkBox15.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox16
             // 
+            this.checkBox16.AccessibleName = "14";
             this.checkBox16.AutoSize = true;
             this.checkBox16.Location = new System.Drawing.Point(420, 317);
             this.checkBox16.Name = "checkBox16";
@@ -348,9 +379,11 @@
             this.checkBox16.Tag = "14";
             this.checkBox16.Text = "1. LIFE BASIC LEVEL DEATH BENEFIT";
             this.checkBox16.UseVisualStyleBackColor = true;
+            this.checkBox16.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox17
             // 
+            this.checkBox17.AccessibleName = "17";
             this.checkBox17.AutoSize = true;
             this.checkBox17.Location = new System.Drawing.Point(60, 426);
             this.checkBox17.Name = "checkBox17";
@@ -359,9 +392,11 @@
             this.checkBox17.Tag = "17";
             this.checkBox17.Text = "1. ASSET MASTER";
             this.checkBox17.UseVisualStyleBackColor = true;
+            this.checkBox17.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox18
             // 
+            this.checkBox18.AccessibleName = "18";
             this.checkBox18.AutoSize = true;
             this.checkBox18.Location = new System.Drawing.Point(419, 426);
             this.checkBox18.Name = "checkBox18";
@@ -370,9 +405,11 @@
             this.checkBox18.Tag = "18";
             this.checkBox18.Text = "1. RETIRE SMART";
             this.checkBox18.UseVisualStyleBackColor = true;
+            this.checkBox18.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox19
             // 
+            this.checkBox19.AccessibleName = "21";
             this.checkBox19.AutoSize = true;
             this.checkBox19.Location = new System.Drawing.Point(294, 552);
             this.checkBox19.Name = "checkBox19";
@@ -381,9 +418,11 @@
             this.checkBox19.Tag = "21";
             this.checkBox19.Text = "3. CAR INSURANCE";
             this.checkBox19.UseVisualStyleBackColor = true;
+            this.checkBox19.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox20
             // 
+            this.checkBox20.AccessibleName = "20";
             this.checkBox20.AutoSize = true;
             this.checkBox20.Location = new System.Drawing.Point(295, 528);
             this.checkBox20.Name = "checkBox20";
@@ -392,9 +431,11 @@
             this.checkBox20.Tag = "20";
             this.checkBox20.Text = "2. BUSINESS INSURANCE";
             this.checkBox20.UseVisualStyleBackColor = true;
+            this.checkBox20.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox21
             // 
+            this.checkBox21.AccessibleName = "19";
             this.checkBox21.AutoSize = true;
             this.checkBox21.Location = new System.Drawing.Point(295, 505);
             this.checkBox21.Name = "checkBox21";
@@ -403,9 +444,11 @@
             this.checkBox21.Tag = "19";
             this.checkBox21.Text = "1. HOME INSURANCE";
             this.checkBox21.UseVisualStyleBackColor = true;
+            this.checkBox21.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // checkBox22
             // 
+            this.checkBox22.AccessibleName = "22";
             this.checkBox22.AutoSize = true;
             this.checkBox22.Location = new System.Drawing.Point(294, 574);
             this.checkBox22.Name = "checkBox22";
@@ -414,6 +457,7 @@
             this.checkBox22.Tag = "22";
             this.checkBox22.Text = "4. FAMILY INSURANCE";
             this.checkBox22.UseVisualStyleBackColor = true;
+            this.checkBox22.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
             // AddPlanForm
             // 

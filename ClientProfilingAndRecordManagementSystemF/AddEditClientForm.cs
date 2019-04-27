@@ -16,23 +16,37 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         public string action { set; get; }
 
-        private void copy_browsed_id(string sourcepath, long client_id)
+        private string Copy_browsed_id(string sourcepath, long client_id, string _id)
         {
-            if (pbID.Image != null) { pbID.Image.Dispose(); }
-            System.IO.File.Copy(sourcepath, Application.StartupPath + "\\ID_S\\" + client_id.ToString() + ".jpg", true);
+            try
+            {
+                if (_id == "1"){ pbID1.Image.Dispose(); }
+                else if (_id == "2"){ pbID2.Image.Dispose(); }
+                else { }
+                string final_destination_path = Application.StartupPath + "\\ID_S\\" + client_id.ToString() + _id + DateTime.Now.Ticks.ToString() + ".jpeg";
+                System.IO.File.Copy(sourcepath, final_destination_path, true);
+                PopulateClientIDImage(final_destination_path, Int32.Parse(_id));
+                return final_destination_path;
+            }
+            catch
+            {
+                return Application.StartupPath + "\\ID_S\\" + "DefaultID.jpeg";
+            }
         }
 
-        public void populateClientIDImage(string id_path)
+        public void PopulateClientIDImage(string id_path, int _id)
         {
-            if (id_path != null)
+            if ((id_path != null) && System.IO.File.Exists(id_path))
             {
-                if (System.IO.File.Exists(id_path))
+                if (_id == 1)
                 {
-                    Bitmap id_image;
-                    pbID.SizeMode = PictureBoxSizeMode.StretchImage;
-                    id_image = new Bitmap(id_path);
-                    pbID.Image = (Image)id_image;
+                    pbID1.Image = Image.FromFile(id_path);
                 }
+                else if (_id == 2)
+                {
+                    pbID2.Image = Image.FromFile(id_path);
+                }
+                else { }
             }
         }
 
@@ -40,9 +54,13 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             using(axaDBEntities db = new axaDBEntities())
             {
-                cboxfinancial_advisor.DataSource = db.FinancialAdvisors.ToList();
-                cboxfinancial_advisor.DisplayMember = "fullname";
-                cboxfinancial_advisor.ValueMember = "id";
+                var financial_advisor_list = db.FinancialAdvisors.ToList();
+                if (financial_advisor_list.Count > 0)
+                {
+                    cboxfinancial_advisor.DataSource = financial_advisor_list;
+                    cboxfinancial_advisor.DisplayMember = "fullname";
+                    cboxfinancial_advisor.ValueMember = "financial_advisor_id";
+                }
             }
         }
 
@@ -55,9 +73,9 @@ namespace ClientProfilingAndRecordManagementSystemF
                                        select cp.plan_id).ToList();
                 foreach (int _id in client_plan_ids)
                 {
-                    lbPlan.Items.Add(db.Plans.Where(p => p.id == _id).FirstOrDefault());
+                    lbPlan.Items.Add(db.Plans.Where(p => p.plan_id == _id).FirstOrDefault());
                     lbPlan.DisplayMember = "description";
-                    lbPlan.ValueMember = "id";
+                    lbPlan.ValueMember = "plan_id";
                 }
             }
         }
@@ -67,7 +85,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             using (axaDBEntities db = new axaDBEntities())
             {
                 dgvBeneficiaries.DataSource = (from cb in db.ClientBeneficiaries
-                                               where cb.CLIENT_ID == client_id
+                                               where cb.client_id == client_id
                                                select cb).ToList();
                 dgvBeneficiaries.Columns[0].HeaderText = "Beneficiary's ID";
                 dgvBeneficiaries.Columns[1].HeaderText = "Client's ID";
@@ -85,7 +103,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void populateClient()
         {
-            txtClientsID.Text = selected_client.id.ToString();
+            txtClientsID.Text = selected_client.client_id.ToString();
             txtLastname.Text = selected_client.lastname;
             txtFirstname.Text = selected_client.firstname;
             txtMiddlename.Text = selected_client.middlename;
@@ -112,53 +130,94 @@ namespace ClientProfilingAndRecordManagementSystemF
             txtsubanswer2.Text = selected_client.answersub2;
             txtsubanswer3.Text = selected_client.answersub3;
             dtpBdate.Value = (DateTime)selected_client.birthday;
-            txtDue.Text = selected_client.due.ToString();
 
-            if(selected_client.mode_of_payment == null){ lbModeofPayment.SelectedIndex = 1; }
-            else{ lbModeofPayment.SelectedItem = selected_client.mode_of_payment; }
+            //if(selected_client.mode_of_payment == null){ lbModeofPayment.SelectedIndex = 1; }
+            //else{ lbModeofPayment.SelectedItem = selected_client.mode_of_payment; }
 
-            try
-            {
-                using (axaDBEntities db = new axaDBEntities())
-                {
-                    FinancialAdvisor selected_fa = db.FinancialAdvisors.Find(selected_client.financial_advisor_id);
-                    cboxfinancial_advisor.Text = selected_fa.fullname;
+            //try
+            //{
+            //    using (axaDBEntities db = new axaDBEntities())
+            //    {
+            //        FinancialAdvisor selected_fa = db.FinancialAdvisors.Find(selected_client.financial_advisor_id);
+            //        cboxfinancial_advisor.Text = selected_fa.fullname;
 
-                }
-            }
-            catch { }
+            //    }
+            //}
+            //catch { }
 
     
-            if (selected_client.gender == "Male")
+            if (selected_client.gender == "Male"){ rbGenderM.Checked = true; }
+            else{ rbGenderF.Checked = true; }
+
+            if (selected_client.civilstatus == "Single"){ rbSingle.Checked = true; }
+            else if (selected_client.civilstatus == "Married"){ rbMarried.Checked = true; }
+            else{ rbWidowed.Checked = true; }
+
+            if (selected_client.answersub1 == "YES"){ rbYES.Checked = true; }
+            else{ rbNo.Checked = true; }
+        }
+
+        private Client SetClientDataForAddUpdate(Client c)
+        {
+            string gender = "", civilstatus = "", answer1 = "";
+
+            if (rbGenderM.Checked == true) { gender = "Male"; }
+            if (rbGenderF.Checked == true) { gender = "Female"; }
+            if (rbSingle.Checked == true) { civilstatus = "Single"; }
+            if (rbMarried.Checked == true) { civilstatus = "Married"; }
+            if (rbWidowed.Checked == true) { civilstatus = "Widowed"; }
+            if (rbYES.Checked == true) { answer1 = "YES"; }
+            if (rbNo.Checked == true) { answer1 = "NO"; }
+
+            Double.TryParse(txtHeight.Text, out double h);
+            Double.TryParse(txtweight.Text, out double w);
+            Double.TryParse(txtWorkSalary.Text, out double ws);
+            Double.TryParse(txtBusinessIncome.Text, out double bi);
+            Double.TryParse(txtOtherSource.Text, out double oi);
+
+            //c.financial_advisor_id = (Int32)cboxfinancial_advisor.SelectedValue;
+            c.lastname = txtLastname.Text;
+            c.firstname = txtFirstname.Text;
+            c.middlename = txtMiddlename.Text;
+            c.spouselastname = txtSLastname.Text;
+            c.spousefirstname = txtSFirstname.Text;
+            c.spousemiddlename = txtSMiddlename.Text;
+            c.birthplace = txtBirthplace.Text;
+            c.height = h;
+            c.weight = w;
+            c.residenceaddress = txtresidenceaddress.Text;
+            c.cpnumber = txtcpnumber.Text;
+            c.telephonenumber = txttelephonenumber.Text;
+            c.emailaddress = txtemailaddress.Text;
+            c.occupation = txtOccupation.Text;
+            c.worksalary = ws;
+            c.businessincome = bi;
+            c.othersource = oi;
+            c.companyname = txtCompanyName.Text;
+            c.companyaddress = txtCompanyAddress.Text;
+            c.companycontact = txtCompanyConctactNumber.Text;
+            c.natureofbusiness = txtNatureofBusiness.Text;
+            c.taxidnumber = txtTaxIDNumber.Text;
+            c.sss_gsis_number = txtSSSGSISNumber.Text;
+            c.answersub1 = answer1;
+            c.answersub2 = txtsubanswer2.Text;
+            c.answersub3 = txtsubanswer3.Text;
+            c.birthday = dtpBdate.Value;
+            c.gender = gender;
+            c.civilstatus = civilstatus;
+
+            if (!String.IsNullOrEmpty(txtIDDir1.Text))
             {
-                rbGenderM.Checked = true;
+                // (System.IO.File.Exists(c.id_path1)) { System.IO.File.Delete(c.id_path1); }
+                c.id_path1 = Copy_browsed_id(txtIDDir1.Text, c.client_id, "1");
             }
-            else
+            if (!String.IsNullOrEmpty(txtIDDir2.Text))
             {
-                rbGenderF.Checked = true;
+                //if (System.IO.File.Exists(c.id_path2)) { System.IO.File.Delete(c.id_path2); }
+                c.id_path2  = Copy_browsed_id(txtIDDir2.Text, c.client_id, "2");
             }
 
-            if (selected_client.civilstatus == "Single")
-            {
-                rbSingle.Checked = true;
-            }
-            else if (selected_client.civilstatus == "Married")
-            {
-                rbMarried.Checked = true;
-            }
-            else
-            {
-                rbWidowed.Checked = true;
-            }
-
-            if (selected_client.answersub1 == "YES")
-            {
-                rbYES.Checked = true;
-            }
-            else
-            {
-                rbNo.Checked = true;
-            }
+            return c;
         }
 
         public AddEditClientForm()
@@ -168,8 +227,8 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void AddEditClientForm_Load(object sender, EventArgs e)
         {
-            populateFinancialAdvisors();
-            lbModeofPayment.SelectedIndex = 0;
+            //populateFinancialAdvisors();
+            //lbModeofPayment.SelectedIndex = 0;
 
             if (this.action == "Edit")
             {
@@ -178,9 +237,10 @@ namespace ClientProfilingAndRecordManagementSystemF
                 panelBeneficiaries.Enabled = true;
                 btnAddPlan.Enabled = true;
                 populateClient();
-                populateClientBeneficiaries(selected_client.id);
-                populateClientPlans(selected_client.id);
-                populateClientIDImage(selected_client.id_path);
+                populateClientBeneficiaries(selected_client.client_id);
+                populateClientPlans(selected_client.client_id);
+                PopulateClientIDImage(selected_client.id_path1, 1);
+                PopulateClientIDImage(selected_client.id_path2, 2);
             }
             else if (this.action == "Add")
             {
@@ -198,147 +258,45 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void btnUpdateClient_Click(object sender, EventArgs e)
         {
-            string gender = "";
-            string civilstatus = "";
-            string answer1 = "";
-            if (rbGenderM.Checked == true) { gender = "Male"; }
-            if (rbGenderF.Checked == true) { gender = "Female"; }
-            if (rbSingle.Checked == true) { civilstatus = "Single"; }
-            if (rbMarried.Checked == true) { civilstatus = "Married"; }
-            if (rbWidowed.Checked == true) { civilstatus = "Widowed"; }
-            if (rbYES.Checked == true) { answer1 = "YES"; }
-            if (rbNo.Checked == true) { answer1 = "NO"; }
-
-            using (axaDBEntities db = new axaDBEntities())
-            {
-                Client c = db.Clients.Find(Int64.Parse(txtClientsID.Text));
-                double h = 0, w = 0, ws = 0, bi = 0, oi = 0, d = 0;
-
-                c.financial_advisor_id = (Int64)cboxfinancial_advisor.SelectedValue;
-                c.firstname = txtFirstname.Text;
-                c.middlename = txtMiddlename.Text;
-                c.lastname = txtLastname.Text;
-                c.spouselastname = txtSLastname.Text;
-                c.spousefirstname = txtSFirstname.Text;
-                c.spousemiddlename = txtSMiddlename.Text;
-                c.birthplace = txtBirthplace.Text;
-                Double.TryParse(txtHeight.Text, out h);
-                c.height = h;
-                Double.TryParse(txtweight.Text, out w);
-                c.weight = w;
-                c.residenceaddress = txtresidenceaddress.Text;
-                c.cpnumber = txtcpnumber.Text;
-                c.telephonenumber = txttelephonenumber.Text;
-                c.emailaddress = txtemailaddress.Text;
-                c.occupation = txtOccupation.Text;
-                Double.TryParse(txtWorkSalary.Text, out ws);
-                c.worksalary = ws;
-                Double.TryParse(txtBusinessIncome.Text, out bi);
-                c.businessincome = bi;
-                Double.TryParse(txtOtherSource.Text, out oi);
-                c.othersource = oi;
-                c.companyname = txtCompanyName.Text;
-                c.companyaddress = txtCompanyAddress.Text;
-                c.companycontact = txtCompanyConctactNumber.Text;
-                c.natureofbusiness = txtNatureofBusiness.Text;
-                c.taxidnumber = txtTaxIDNumber.Text;
-                c.sss_gsis_number = txtSSSGSISNumber.Text;
-                c.answersub1 = answer1;
-                c.answersub2 = txtsubanswer2.Text;
-                c.answersub3 = txtsubanswer3.Text;
-                c.birthday = dtpBdate.Value;
-                c.gender = gender;
-                c.civilstatus = civilstatus;
-                Double.TryParse(txtDue.Text, out d);
-                c.due = d;
-                c.mode_of_payment = lbModeofPayment.SelectedItem.ToString();
-
-                if (!String.IsNullOrEmpty(txtIDDir.Text))
+            //try
+            //{
+                using(axaDBEntities db = new axaDBEntities())
                 {
-                    copy_browsed_id(txtIDDir.Text, c.id);
-                    c.id_path = Application.StartupPath + "\\ID_S\\" + c.id.ToString() + ".jpg";
+                    Client c = db.Clients.Find(Int32.Parse(txtClientsID.Text));
+                    c = SetClientDataForAddUpdate(c);
+                    db.SaveChanges();
+                    MessageBox.Show("Record successfully updated.");
+                    this.Close();
+                    this.Dispose();
                 }
-
-                db.SaveChanges();
-                MessageBox.Show("Record successfully updated.");
-                c = null;
-                this.Close();
-                this.Dispose();
-            }
+           // }
+            //catch (Exception ex)
+            //{
+             //   MessageBox.Show(ex.Message);
+           // }
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
-            string gender = "";
-            string civilstatus = "";
-            string answer1 = "";
-            if (rbGenderM.Checked == true) { gender = "Male"; }
-            if (rbGenderF.Checked == true) { gender = "Female"; }
-            if (rbSingle.Checked == true) { civilstatus = "Single"; }
-            if (rbMarried.Checked == true) { civilstatus = "Married"; }
-            if (rbWidowed.Checked == true) { civilstatus = "Widowed"; }
-            if (rbYES.Checked == true) { answer1 = "YES"; }
-            if (rbNo.Checked == true) { answer1 = "NO"; }
-
-            using (axaDBEntities db = new axaDBEntities())
+            try
             {
-                Client c = new Client();
-                double h = 0, w = 0, ws = 0, bi = 0, oi = 0, d = 0;
-                c.financial_advisor_id = (Int64)cboxfinancial_advisor.SelectedValue;
-                c.lastname = txtLastname.Text;
-                c.firstname = txtFirstname.Text;
-                c.middlename = txtMiddlename.Text;
-                c.spouselastname = txtSLastname.Text;
-                c.spousefirstname = txtSFirstname.Text;
-                c.spousemiddlename = txtSMiddlename.Text;
-                c.birthplace = txtBirthplace.Text;
-                Double.TryParse(txtHeight.Text,out h);
-                c.height = h;
-                Double.TryParse(txtweight.Text, out w);
-                c.weight = w;
-                c.residenceaddress = txtresidenceaddress.Text;
-                c.cpnumber = txtcpnumber.Text;
-                c.telephonenumber = txttelephonenumber.Text;
-                c.emailaddress = txtemailaddress.Text;
-                c.occupation = txtOccupation.Text;
-                Double.TryParse(txtWorkSalary.Text, out ws);
-                c.worksalary = ws;
-                Double.TryParse(txtBusinessIncome.Text, out bi);
-                c.businessincome = bi;
-                Double.TryParse(txtOtherSource.Text, out oi);
-                c.othersource = oi;
-                c.companyname = txtCompanyName.Text;
-                c.companyaddress = txtCompanyAddress.Text;
-                c.companycontact = txtCompanyConctactNumber.Text;
-                c.natureofbusiness = txtNatureofBusiness.Text;
-                c.taxidnumber = txtTaxIDNumber.Text;
-                c.sss_gsis_number = txtSSSGSISNumber.Text;
-                c.answersub1 = answer1;
-                c.answersub2 = txtsubanswer2.Text;
-                c.answersub3 = txtsubanswer3.Text;
-                c.birthday = dtpBdate.Value;
-                c.gender = gender;
-                c.civilstatus = civilstatus;
-                Double.TryParse(txtDue.Text, out d);
-                c.due = d;
-                c.mode_of_payment = lbModeofPayment.SelectedItem.ToString();
-
-
-                if (!String.IsNullOrEmpty(txtIDDir.Text))
+                Client c = SetClientDataForAddUpdate(new Client());
+                using (axaDBEntities db = new axaDBEntities())
                 {
-                    copy_browsed_id(txtIDDir.Text, c.id);
-                    c.id_path = Application.StartupPath + "\\ID_S\\" + c.id.ToString() + ".jpg";
+                    db.Clients.Add(c);
+                    db.SaveChanges();
+                    MessageBox.Show("Record successfully added.");
+                    txtClientsID.Text = c.client_id.ToString();
+                    this.selected_client = c;
+                    this.action = "Edit";
+                    AddEditClientForm_Load(null, null);
                 }
-
-                db.Clients.Add(c);
-                db.SaveChanges();
-                MessageBox.Show("Record successfully added.");
-                txtClientsID.Text = c.id.ToString();
-
-                this.selected_client = c;
-                this.action = "Edit";
-                AddEditClientForm_Load(null, null);
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btnAddBeneficiary_Click(object sender, EventArgs e)
@@ -347,14 +305,14 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 ClientBeneficiary cb = new ClientBeneficiary();
                 double s = 0;
-                cb.CLIENT_ID = Int64.Parse(txtClientsID.Text);
-                cb.FULLNAME = txtBFullname.Text;
-                cb.BIRTHDATE = dtpBBirthDate.Value;
-                cb.BIRTHPLACE = txtBBirthPlace.Text;
-                cb.RELATIONSHIP = txtBRelationship.Text;
-                cb.OCCUPATION = txtBOccupation.Text;
+                cb.client_id = Int32.Parse(txtClientsID.Text);
+                cb.fullname = txtBFullname.Text;
+                cb.birthdate = dtpBBirthDate.Value;
+                cb.birthplace = txtBBirthPlace.Text;
+                cb.relationship = txtBRelationship.Text;
+                cb.occupation = txtBOccupation.Text;
                 Double.TryParse(txtBShare.Text, out s);
-                cb.SHARE = s;
+                cb.share = s;
                 db.ClientBeneficiaries.Add(cb);
                 db.SaveChanges();
                 MessageBox.Show("Beneficiary successfully added.");
@@ -370,18 +328,18 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void btnBUpdate_Click(object sender, EventArgs e)
         {
-            long bid = (Int64)dgvBeneficiaries.SelectedRows[0].Cells["ID"].Value;
+            int bid = (Int32)dgvBeneficiaries.SelectedRows[0].Cells["beneficiary_id"].Value;
             using (axaDBEntities db = new axaDBEntities())
             {
                 ClientBeneficiary cb = db.ClientBeneficiaries.Find(bid);
                 double s = 0;
-                cb.FULLNAME = txtBFullname.Text;
-                cb.BIRTHDATE = dtpBBirthDate.Value;
-                cb.BIRTHPLACE = txtBBirthPlace.Text;
-                cb.RELATIONSHIP = txtBRelationship.Text;
-                cb.OCCUPATION = txtBOccupation.Text;
+                cb.fullname = txtBFullname.Text;
+                cb.birthdate = dtpBBirthDate.Value;
+                cb.birthplace = txtBBirthPlace.Text;
+                cb.relationship = txtBRelationship.Text;
+                cb.occupation = txtBOccupation.Text;
                 Double.TryParse(txtBShare.Text, out s);
-                cb.SHARE = s;
+                cb.share = s;
                 db.SaveChanges();
                 MessageBox.Show("Beneficiary updated.");
                 populateClientBeneficiaries(Int64.Parse(txtClientsID.Text));
@@ -424,7 +382,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     {
                         using(axaDBEntities db = new axaDBEntities())
                         {
-                            ClientBeneficiary cb = db.ClientBeneficiaries.Find(br.Cells["ID"].Value);
+                            ClientBeneficiary cb = db.ClientBeneficiaries.Find(br.Cells["beneficiary_id"].Value);
                             db.ClientBeneficiaries.Remove(cb);
                             db.SaveChanges();
                         }
@@ -458,25 +416,32 @@ namespace ClientProfilingAndRecordManagementSystemF
             opd.Multiselect = false;
             if (opd.ShowDialog() == DialogResult.OK)
             {
-                txtIDDir.Text = opd.FileName;
+                txtIDDir1.Text = opd.FileName;
             }
         }
 
-        private void txtIDDir_TextChanged(object sender, EventArgs e)
+        private void btnBrowseID2_Click(object sender, EventArgs e)
         {
-            populateClientIDImage(txtIDDir.Text);
+            OpenFileDialog opd = new OpenFileDialog();
+            opd.Title = "Browse Image file for ID";
+            opd.DefaultExt = "jpg";
+            opd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            opd.Multiselect = false;
+            if (opd.ShowDialog() == DialogResult.OK)
+            {
+                txtIDDir2.Text = opd.FileName;
+            }
         }
 
-        private void lbModeofPayment_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtIDDir1_TextChanged(object sender, EventArgs e)
         {
-            if (lbModeofPayment.SelectedItem.ToString() == "Monthly Premium")
-                lblDue.Text = "Monthly Due";
-            else if (lbModeofPayment.SelectedItem.ToString() == "Quarterly Premium")
-                lblDue.Text = "Quarterly Due";
-            else if (lbModeofPayment.SelectedItem.ToString() == "Semi Anual Premium")
-                lblDue.Text = "Semi Anual Due";
-            else if (lbModeofPayment.SelectedItem.ToString() == "Anual Premium")
-                lblDue.Text = "Anual Due";
+            PopulateClientIDImage(txtIDDir1.Text, 1);
         }
+        private void txtIDDir2_TextChanged(object sender, EventArgs e)
+        {
+            PopulateClientIDImage(txtIDDir2.Text, 2);
+        }
+
+
     }
 }

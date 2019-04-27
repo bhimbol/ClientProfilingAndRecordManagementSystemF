@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="axaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ClientBeneficiary">
+    <Key>
+      <PropertyRef Name="beneficiary_id" />
+    </Key>
+    <Property Name="beneficiary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="birthdate" Type="DateTime" Precision="3" />
+    <Property Name="birthplace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="share" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_ClientBeneficiaries" FromRole="ClientBeneficiaries" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="ClientPlan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="plan_id" Type="Int32" />
+    <Property Name="mode_of_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="due" Type="Double" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_ClientPlans_Client" FromRole="ClientPlans" ToRole="Clients" />
+    <NavigationProperty Name="Plan" Relationship="Self.FK_ClientPlans_Plan" FromRole="ClientPlans" ToRole="Plans" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="addedby_user_id" Type="Int32" />
+    <Property Name="financial_advisor_id" Type="Int32" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="spouselastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="spousefirstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="spousemiddlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="civilstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthday" Type="DateTime" Precision="3" />
+    <Property Name="birthplace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="height" Type="Double" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="residenceaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cpnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telephonenumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="emailaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="worksalary" Type="Double" />
+    <Property Name="businessincome" Type="Double" />
+    <Property Name="othersource" Type="Double" />
+    <Property Name="companyname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="companyaddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="companycontact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="natureofbusiness" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="taxidnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sss_gsis_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="answersub1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="answersub2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="answersub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ClientBeneficiaries" Relationship="Self.FK_ClientBeneficiaries" FromRole="Clients" ToRole="ClientBeneficiaries" />
+    <NavigationProperty Name="ClientPlans" Relationship="Self.FK_ClientPlans_Client" FromRole="Clients" ToRole="ClientPlans" />
+    <NavigationProperty Name="FinancialAdvisor" Relationship="Self.FK_Clients_Clients_FA" FromRole="Clients" ToRole="FinancialAdvisors" />
+    <Property Name="id_path1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="id_path2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FinancialAdvisor">
+    <Key>
+      <PropertyRef Name="financial_advisor_id" />
+    </Key>
+    <Property Name="financial_advisor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Clients_FA" FromRole="FinancialAdvisors" ToRole="Clients" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="plan_id" />
+    </Key>
+    <Property Name="plan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ClientPlans" Relationship="Self.FK_ClientPlans_Plan" FromRole="Plans" ToRole="ClientPlans" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_ClientBeneficiaries">
+    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientBeneficiaries" Type="Self.ClientBeneficiary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ClientBeneficiaries">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientPlans_Client">
+    <End Role="Clients" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="ClientPlans" Type="Self.ClientPlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="client_id" />
+      </Principal>
+      <Dependent Role="ClientPlans">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClientPlans_Plan">
+    <End Role="Plans" Type="Self.Plan" Multiplicity="0..1" />
+    <End Role="ClientPlans" Type="Self.ClientPlan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Plans">
+        <PropertyRef Name="plan_id" />
+      </Principal>
+      <Dependent Role="ClientPlans">
+        <PropertyRef Name="plan_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clients_Clients_FA">
+    <End Role="FinancialAdvisors" Type="Self.FinancialAdvisor" Multiplicity="0..1" />
+    <End Role="Clients" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FinancialAdvisors">
+        <PropertyRef Name="financial_advisor_id" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="financial_advisor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiary" />
+    <EntitySet Name="ClientPlans" EntityType="Self.ClientPlan" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisor" />
+    <EntitySet Name="Plans" EntityType="Self.Plan" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_ClientBeneficiaries" Association="Self.FK_ClientBeneficiaries">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientBeneficiaries" EntitySet="ClientBeneficiaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientPlans_Client" Association="Self.FK_ClientPlans_Client">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="ClientPlans" EntitySet="ClientPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientPlans_Plan" Association="Self.FK_ClientPlans_Plan">
+      <End Role="Plans" EntitySet="Plans" />
+      <End Role="ClientPlans" EntitySet="ClientPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Clients_FA" Association="Self.FK_Clients_Clients_FA">
+      <End Role="FinancialAdvisors" EntitySet="FinancialAdvisors" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

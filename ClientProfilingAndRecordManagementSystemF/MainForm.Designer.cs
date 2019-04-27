@@ -87,6 +87,7 @@
             this.ListDataGridView.TabIndex = 6;
             this.ListDataGridView.Tag = "CLIENTS";
             this.ListDataGridView.DataSourceChanged += new System.EventHandler(this.ListDataGridView_DataSourceChanged);
+            this.ListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListDataGridView_CellContentClick);
             this.ListDataGridView.Click += new System.EventHandler(this.ListDataGridView_Click);
             this.ListDataGridView.DoubleClick += new System.EventHandler(this.ListDataGridView_DoubleClick);
             // 

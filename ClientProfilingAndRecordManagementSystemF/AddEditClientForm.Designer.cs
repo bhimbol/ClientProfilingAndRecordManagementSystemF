@@ -60,16 +60,13 @@
             this.txtsubanswer3 = new System.Windows.Forms.TextBox();
             this.cboxfinancial_advisor = new System.Windows.Forms.ComboBox();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.pbID2 = new System.Windows.Forms.PictureBox();
+            this.txtIDDir2 = new System.Windows.Forms.TextBox();
+            this.pbID1 = new System.Windows.Forms.PictureBox();
+            this.btnBrowseID2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtIDDir = new System.Windows.Forms.TextBox();
-            this.pbID = new System.Windows.Forms.PictureBox();
-            this.btnBrowseID = new System.Windows.Forms.Button();
-            this.txtDue = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lbModeofPayment = new System.Windows.Forms.ListBox();
-            this.ComboBox2 = new System.Windows.Forms.ComboBox();
-            this.Label8 = new System.Windows.Forms.Label();
-            this.lblDue = new System.Windows.Forms.Label();
+            this.txtIDDir1 = new System.Windows.Forms.TextBox();
+            this.btnBrowseID1 = new System.Windows.Forms.Button();
             this.lbPlan = new System.Windows.Forms.ListBox();
             this.btnAddPlan = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -142,7 +139,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficiaries)).BeginInit();
             this.Panel5.SuspendLayout();
             this.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID1)).BeginInit();
             this.Panel3.SuspendLayout();
             this.Penel1.SuspendLayout();
             this.Panel2.SuspendLayout();
@@ -432,16 +430,13 @@
             // 
             // Panel1
             // 
+            this.Panel1.Controls.Add(this.pbID2);
+            this.Panel1.Controls.Add(this.txtIDDir2);
+            this.Panel1.Controls.Add(this.pbID1);
+            this.Panel1.Controls.Add(this.btnBrowseID2);
             this.Panel1.Controls.Add(this.label2);
-            this.Panel1.Controls.Add(this.txtIDDir);
-            this.Panel1.Controls.Add(this.pbID);
-            this.Panel1.Controls.Add(this.btnBrowseID);
-            this.Panel1.Controls.Add(this.txtDue);
-            this.Panel1.Controls.Add(this.label1);
-            this.Panel1.Controls.Add(this.lbModeofPayment);
-            this.Panel1.Controls.Add(this.ComboBox2);
-            this.Panel1.Controls.Add(this.Label8);
-            this.Panel1.Controls.Add(this.lblDue);
+            this.Panel1.Controls.Add(this.txtIDDir1);
+            this.Panel1.Controls.Add(this.btnBrowseID1);
             this.Panel1.Controls.Add(this.lbPlan);
             this.Panel1.Controls.Add(this.btnAddPlan);
             this.Panel1.Controls.Add(this.label13);
@@ -451,100 +446,70 @@
             this.Panel1.Size = new System.Drawing.Size(255, 518);
             this.Panel1.TabIndex = 16;
             // 
+            // pbID2
+            // 
+            this.pbID2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbID2.Location = new System.Drawing.Point(132, 443);
+            this.pbID2.Name = "pbID2";
+            this.pbID2.Size = new System.Drawing.Size(116, 70);
+            this.pbID2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbID2.TabIndex = 18;
+            this.pbID2.TabStop = false;
+            // 
+            // txtIDDir2
+            // 
+            this.txtIDDir2.Location = new System.Drawing.Point(93, 407);
+            this.txtIDDir2.Name = "txtIDDir2";
+            this.txtIDDir2.Size = new System.Drawing.Size(144, 20);
+            this.txtIDDir2.TabIndex = 109;
+            this.txtIDDir2.TextChanged += new System.EventHandler(this.txtIDDir2_TextChanged);
+            // 
+            // pbID1
+            // 
+            this.pbID1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbID1.Location = new System.Drawing.Point(6, 443);
+            this.pbID1.Name = "pbID1";
+            this.pbID1.Size = new System.Drawing.Size(112, 70);
+            this.pbID1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbID1.TabIndex = 17;
+            this.pbID1.TabStop = false;
+            // 
+            // btnBrowseID2
+            // 
+            this.btnBrowseID2.Location = new System.Drawing.Point(20, 405);
+            this.btnBrowseID2.Name = "btnBrowseID2";
+            this.btnBrowseID2.Size = new System.Drawing.Size(67, 23);
+            this.btnBrowseID2.TabIndex = 108;
+            this.btnBrowseID2.Text = "Browse";
+            this.btnBrowseID2.UseVisualStyleBackColor = true;
+            this.btnBrowseID2.Click += new System.EventHandler(this.btnBrowseID2_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 334);
+            this.label2.Location = new System.Drawing.Point(17, 350);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 106;
             this.label2.Text = "Valid ID:";
             // 
-            // txtIDDir
+            // txtIDDir1
             // 
-            this.txtIDDir.Location = new System.Drawing.Point(93, 352);
-            this.txtIDDir.Name = "txtIDDir";
-            this.txtIDDir.Size = new System.Drawing.Size(144, 20);
-            this.txtIDDir.TabIndex = 105;
-            this.txtIDDir.TextChanged += new System.EventHandler(this.txtIDDir_TextChanged);
+            this.txtIDDir1.Location = new System.Drawing.Point(93, 375);
+            this.txtIDDir1.Name = "txtIDDir1";
+            this.txtIDDir1.Size = new System.Drawing.Size(144, 20);
+            this.txtIDDir1.TabIndex = 105;
+            this.txtIDDir1.TextChanged += new System.EventHandler(this.txtIDDir1_TextChanged);
             // 
-            // pbID
+            // btnBrowseID1
             // 
-            this.pbID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbID.Location = new System.Drawing.Point(20, 379);
-            this.pbID.Name = "pbID";
-            this.pbID.Size = new System.Drawing.Size(217, 123);
-            this.pbID.TabIndex = 104;
-            this.pbID.TabStop = false;
-            // 
-            // btnBrowseID
-            // 
-            this.btnBrowseID.Location = new System.Drawing.Point(20, 350);
-            this.btnBrowseID.Name = "btnBrowseID";
-            this.btnBrowseID.Size = new System.Drawing.Size(67, 23);
-            this.btnBrowseID.TabIndex = 103;
-            this.btnBrowseID.Text = "Browse";
-            this.btnBrowseID.UseVisualStyleBackColor = true;
-            this.btnBrowseID.Click += new System.EventHandler(this.btnBrowseID_Click);
-            // 
-            // txtDue
-            // 
-            this.txtDue.Location = new System.Drawing.Point(113, 300);
-            this.txtDue.Name = "txtDue";
-            this.txtDue.Size = new System.Drawing.Size(126, 20);
-            this.txtDue.TabIndex = 102;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 224);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 101;
-            this.label1.Text = "Mode of Payment";
-            // 
-            // lbModeofPayment
-            // 
-            this.lbModeofPayment.FormattingEnabled = true;
-            this.lbModeofPayment.Items.AddRange(new object[] {
-            "Monthly Premium",
-            "Quarterly Premium",
-            "Semi Anual Premium",
-            "Anual Premium"});
-            this.lbModeofPayment.Location = new System.Drawing.Point(20, 240);
-            this.lbModeofPayment.Name = "lbModeofPayment";
-            this.lbModeofPayment.Size = new System.Drawing.Size(219, 56);
-            this.lbModeofPayment.TabIndex = 100;
-            this.lbModeofPayment.SelectedIndexChanged += new System.EventHandler(this.lbModeofPayment_SelectedIndexChanged);
-            // 
-            // ComboBox2
-            // 
-            this.ComboBox2.FormattingEnabled = true;
-            this.ComboBox2.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.ComboBox2.Location = new System.Drawing.Point(113, 195);
-            this.ComboBox2.Name = "ComboBox2";
-            this.ComboBox2.Size = new System.Drawing.Size(121, 21);
-            this.ComboBox2.TabIndex = 98;
-            // 
-            // Label8
-            // 
-            this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(17, 198);
-            this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(84, 13);
-            this.Label8.TabIndex = 97;
-            this.Label8.Text = "Payment Status:";
-            // 
-            // lblDue
-            // 
-            this.lblDue.AutoSize = true;
-            this.lblDue.Location = new System.Drawing.Point(17, 303);
-            this.lblDue.Name = "lblDue";
-            this.lblDue.Size = new System.Drawing.Size(70, 13);
-            this.lblDue.TabIndex = 99;
-            this.lblDue.Text = "Monthly Due:";
+            this.btnBrowseID1.Location = new System.Drawing.Point(20, 373);
+            this.btnBrowseID1.Name = "btnBrowseID1";
+            this.btnBrowseID1.Size = new System.Drawing.Size(67, 23);
+            this.btnBrowseID1.TabIndex = 103;
+            this.btnBrowseID1.Text = "Browse";
+            this.btnBrowseID1.UseVisualStyleBackColor = true;
+            this.btnBrowseID1.Click += new System.EventHandler(this.btnBrowseID_Click);
             // 
             // lbPlan
             // 
@@ -1211,7 +1176,8 @@
             this.Panel5.PerformLayout();
             this.Panel1.ResumeLayout(false);
             this.Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID1)).EndInit();
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
             this.Penel1.ResumeLayout(false);
@@ -1325,16 +1291,13 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnAddPlan;
         private System.Windows.Forms.ListBox lbPlan;
-        internal System.Windows.Forms.Label lblDue;
-        internal System.Windows.Forms.Label Label8;
-        internal System.Windows.Forms.ComboBox ComboBox2;
-        private System.Windows.Forms.ListBox lbModeofPayment;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDue;
-        private System.Windows.Forms.PictureBox pbID;
-        private System.Windows.Forms.Button btnBrowseID;
-        private System.Windows.Forms.TextBox txtIDDir;
+        private System.Windows.Forms.Button btnBrowseID1;
+        private System.Windows.Forms.TextBox txtIDDir1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIDDir2;
+        private System.Windows.Forms.Button btnBrowseID2;
+        private System.Windows.Forms.PictureBox pbID1;
+        private System.Windows.Forms.PictureBox pbID2;
     }
 }

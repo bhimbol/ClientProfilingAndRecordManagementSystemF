@@ -1,23 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="axaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClientBeneficiaries" EntityType="axaDBModel.ClientBeneficiary" />
+    <EntitySet Name="ClientPlans" EntityType="axaDBModel.ClientPlan" />
+    <EntitySet Name="Clients" EntityType="axaDBModel.Client" />
+    <EntitySet Name="FinancialAdvisors" EntityType="axaDBModel.FinancialAdvisor" />
+    <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
+    <EntitySet Name="sysdiagrams" EntityType="axaDBModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="axaDBModel.User" />
+  </EntityContainer>
   <EntityType Name="ClientBeneficiary">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="beneficiary_id" />
     </Key>
-    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CLIENT_ID" Type="Int64" Nullable="false" />
-    <Property Name="FULLNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="BIRTHDATE" Type="DateTime" Precision="0" />
-    <Property Name="BIRTHPLACE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="RELATIONSHIP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="OCCUPATION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="SHARE" Type="Double" Nullable="false" />
+    <Property Name="beneficiary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" Nullable="false" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="birthdate" Type="DateTime" Precision="0" />
+    <Property Name="birthplace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="relationship" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="occupation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="share" Type="Double" Nullable="false" />
   </EntityType>
-  <EntityType Name="Client">
+  <EntityType Name="ClientPlan">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="client_id" Type="Int32" />
+    <Property Name="plan_id" Type="Int32" />
+    <Property Name="mode_of_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="due" Type="Double" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="client_id" />
+    </Key>
+    <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="addedby_user_id" Type="Int32" />
+    <Property Name="financial_advisor_id" Type="Int32" />
     <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -47,25 +68,29 @@
     <Property Name="answersub1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="answersub2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="answersub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="addedby_userid" Type="Int64" />
-    <Property Name="financial_advisor_id" Type="Int64" />
-    <Property Name="plan_id" Type="Int32" />
-    <Property Name="id_path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="true" />
-    <Property Name="mode_of_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="due" Type="Double" />
+    <Property Name="id_path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="FinancialAdvisor">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="financial_advisor_id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="financial_advisor_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Plan">
+    <Key>
+      <PropertyRef Name="plan_id" />
+    </Key>
+    <Property Name="plan_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="principal_id" Type="Int32" Nullable="false" />
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
@@ -73,38 +98,12 @@
   </EntityType>
   <EntityType Name="User">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="user_id" />
     </Key>
-    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiary" />
-    <EntitySet Name="Clients" EntityType="Self.Client" />
-    <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisor" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Users" EntityType="Self.User" />
-    <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
-    <EntitySet Name="ClientPlans" EntityType="axaDBModel.ClientPlan" />
-  </EntityContainer>
-  <EntityType Name="Plan">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="ClientPlan">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="client_id" Type="Int32" />
-    <Property Name="plan_id" Type="Int32" />
   </EntityType>
 </Schema>
