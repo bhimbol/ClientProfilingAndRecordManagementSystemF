@@ -52,6 +52,7 @@
             this.Name = "ViewClientForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewClientForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ViewClientForm_Load);
             this.ResumeLayout(false);
 

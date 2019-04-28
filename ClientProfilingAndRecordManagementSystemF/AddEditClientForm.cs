@@ -131,21 +131,11 @@ namespace ClientProfilingAndRecordManagementSystemF
             txtsubanswer3.Text = selected_client.answersub3;
             dtpBdate.Value = (DateTime)selected_client.birthday;
 
-            //if(selected_client.mode_of_payment == null){ lbModeofPayment.SelectedIndex = 1; }
-            //else{ lbModeofPayment.SelectedItem = selected_client.mode_of_payment; }
+            if (selected_client.FinancialAdvisor != null)
+            {
+                cboxfinancial_advisor.Text = selected_client.FinancialAdvisor.fullname;
+            }
 
-            //try
-            //{
-            //    using (axaDBEntities db = new axaDBEntities())
-            //    {
-            //        FinancialAdvisor selected_fa = db.FinancialAdvisors.Find(selected_client.financial_advisor_id);
-            //        cboxfinancial_advisor.Text = selected_fa.fullname;
-
-            //    }
-            //}
-            //catch { }
-
-    
             if (selected_client.gender == "Male"){ rbGenderM.Checked = true; }
             else{ rbGenderF.Checked = true; }
 
@@ -175,7 +165,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             Double.TryParse(txtBusinessIncome.Text, out double bi);
             Double.TryParse(txtOtherSource.Text, out double oi);
 
-            //c.financial_advisor_id = (Int32)cboxfinancial_advisor.SelectedValue;
+            c.financial_advisor_id = (Int32)cboxfinancial_advisor.SelectedValue;
             c.lastname = txtLastname.Text;
             c.firstname = txtFirstname.Text;
             c.middlename = txtMiddlename.Text;
@@ -227,9 +217,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void AddEditClientForm_Load(object sender, EventArgs e)
         {
-            //populateFinancialAdvisors();
-            //lbModeofPayment.SelectedIndex = 0;
-
+            populateFinancialAdvisors();
             if (this.action == "Edit")
             {
                 btnAddClient.Enabled = false;
