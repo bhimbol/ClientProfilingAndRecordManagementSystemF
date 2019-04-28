@@ -89,7 +89,7 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             if (dataGridViewUSR.SelectedRows.Count > 0)
             {
-                long usrid = (Int64)dataGridViewUSR.SelectedRows[0].Cells["id"].Value;
+                int usrid = int.Parse(dataGridViewUSR.SelectedRows[0].Cells["user_id"].Value.ToString());
                 using (axaDBEntities db = new axaDBEntities())
                 {
                     User usr = db.Users.Find(usrid);
@@ -122,7 +122,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     {
                         using (axaDBEntities db = new axaDBEntities())
                         {
-                            User usr = db.Users.Find(br.Cells["ID"].Value);
+                            User usr = db.Users.Find(br.Cells["user_id"].Value);
                             db.Users.Remove(usr);
                             db.SaveChanges();
                             dataGridViewUSR.Enabled = true;
@@ -150,6 +150,11 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void AddEditUserForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+        }
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            ((TextBox)sender).SelectAll();
         }
     }
 }

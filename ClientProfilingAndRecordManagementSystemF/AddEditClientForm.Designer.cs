@@ -311,6 +311,7 @@
             this.dgvBeneficiaries.Size = new System.Drawing.Size(577, 154);
             this.dgvBeneficiaries.TabIndex = 1;
             this.dgvBeneficiaries.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBeneficiaries_CellContentDoubleClick);
+            this.dgvBeneficiaries.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBeneficiaries_CellMouseDoubleClick);
             // 
             // lblBeneficiaries
             // 

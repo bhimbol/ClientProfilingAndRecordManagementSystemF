@@ -91,7 +91,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     {
                         using (axaDBEntities db = new axaDBEntities())
                         {
-                            FinancialAdvisor fa = db.FinancialAdvisors.Find(br.Cells["ID"].Value);
+                            FinancialAdvisor fa = db.FinancialAdvisors.Find(br.Cells["financial_advisor_id"].Value);
                             db.FinancialAdvisors.Remove(fa);
                             db.SaveChanges();
                             dataGridViewFA.Enabled = true;

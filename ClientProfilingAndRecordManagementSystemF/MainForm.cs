@@ -66,7 +66,8 @@ namespace ClientProfilingAndRecordManagementSystemF
                 foreach (DataGridViewColumn c in ListDataGridView.Columns)
                 {
                     c.Visible = false;
-                    if ((c.HeaderText == "id") || (c.HeaderText == "fullname"))
+                    c.HeaderText = c.HeaderText.ToLower();
+                    if (c.HeaderText == "fullname")
                     {
                         c.Visible = true;
                     }
@@ -167,6 +168,13 @@ namespace ClientProfilingAndRecordManagementSystemF
                     {
 
                     }
+                    else if(ListDataGridView.Tag.ToString() == "PLANS")
+                    {
+                        ListDataGridView.DataSource = db.Plans.Where(x => x.description.Contains(txtSearch.Text) ||
+                                                                            x.type.Contains(txtSearch.Text) ||
+                                                                            x.category.Contains(txtSearch.Text)).ToList();
+                        ListLabel.Text = "Found " + ListDataGridView.RowCount.ToString() + " item(s).";
+                    }
                     else { }
                 }
             }
@@ -197,6 +205,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 manageUsersToolStripMenuItem.Enabled = false;
                 manageFinancialAdvisorToolStripMenuItem.Enabled = false;
             }
+            ListClientsButton_Click(null, null);
         }
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,6 +217,21 @@ namespace ClientProfilingAndRecordManagementSystemF
         private void ListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearch_Click(object sender, EventArgs e)
+        {
+            ((TextBox)sender).SelectAll();
         }
     }
 }

@@ -65,11 +65,11 @@ namespace ClientProfilingAndRecordManagementSystemF
                         {
                             Client c = db.Clients.Find(cr.Cells["client_id"].Value);
                             IEnumerable<ClientBeneficiary> client_beneficiaries = (from b in db.ClientBeneficiaries
-                                                                            where b.client_id == c.client_id
-                                                                            select b);
+                                                                                   where b.client_id == c.client_id
+                                                                                   select b);
                             IEnumerable<ClientPlan> client_plans = (from p in db.ClientPlans
-                                                                        where p.client_id == c.client_id
-                                                                        select p);
+                                                                    where p.client_id == c.client_id
+                                                                    select p);
                             db.ClientPlans.RemoveRange(client_plans);
                             db.ClientBeneficiaries.RemoveRange(client_beneficiaries);
                             db.Clients.Remove(c);
@@ -98,6 +98,11 @@ namespace ClientProfilingAndRecordManagementSystemF
                                                                         x.residenceaddress.Contains(txtSearch.Text)).ToList();
 
             }
+        }
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            ((TextBox)sender).SelectAll();
         }
     }
 }

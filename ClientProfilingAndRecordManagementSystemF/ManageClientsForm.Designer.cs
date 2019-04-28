@@ -112,6 +112,7 @@
             this.txtSearch.Size = new System.Drawing.Size(228, 20);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = ". . . search by name, adress . . .";
+            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
             // 
             // btnFind
             // 

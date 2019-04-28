@@ -357,19 +357,6 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void dgvBeneficiaries_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnBUpdate.Visible = true;
-            btnAddBeneficiary.Enabled = false;
-            if( dgvBeneficiaries.Rows.Count > 0)
-            {
-                txtBFullname.Text = dgvBeneficiaries.SelectedRows[0].Cells["FULLNAME"].Value.ToString();
-                dtpBBirthDate.Value = (DateTime)dgvBeneficiaries.SelectedRows[0].Cells["BIRTHDATE"].Value;
-                txtBBirthPlace.Text = dgvBeneficiaries.SelectedRows[0].Cells["BIRTHPLACE"].Value.ToString();
-                txtBRelationship.Text = dgvBeneficiaries.SelectedRows[0].Cells["RELATIONSHIP"].Value.ToString();
-                txtBOccupation.Text = dgvBeneficiaries.SelectedRows[0].Cells["OCCUPATION"].Value.ToString();
-                txtBShare.Text = dgvBeneficiaries.SelectedRows[0].Cells["SHARE"].Value.ToString();
-                dgvBeneficiaries.Enabled = false;
-                btnRemoveBeneficiary.Enabled = false;
-            }
         }
 
         private void btnRemoveBeneficiary_Click(object sender, EventArgs e)
@@ -442,6 +429,23 @@ namespace ClientProfilingAndRecordManagementSystemF
             PopulateClientIDImage(txtIDDir2.Text, 2);
         }
 
+        private void dgvBeneficiaries_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            btnBUpdate.Visible = true;
+            btnAddBeneficiary.Enabled = false;
+            if (dgvBeneficiaries.Rows.Count > 0)
+            {
+                txtBFullname.Text = dgvBeneficiaries.SelectedRows[0].Cells["FULLNAME"].Value.ToString();
+                dtpBBirthDate.Value = (DateTime)dgvBeneficiaries.SelectedRows[0].Cells["BIRTHDATE"].Value;
+                txtBBirthPlace.Text = dgvBeneficiaries.SelectedRows[0].Cells["BIRTHPLACE"].Value.ToString();
+                txtBRelationship.Text = dgvBeneficiaries.SelectedRows[0].Cells["RELATIONSHIP"].Value.ToString();
+                txtBOccupation.Text = dgvBeneficiaries.SelectedRows[0].Cells["OCCUPATION"].Value.ToString();
+                txtBShare.Text = dgvBeneficiaries.SelectedRows[0].Cells["SHARE"].Value.ToString();
+                dgvBeneficiaries.Enabled = false;
+                btnRemoveBeneficiary.Enabled = false;
+            }
 
+
+        }
     }
 }
