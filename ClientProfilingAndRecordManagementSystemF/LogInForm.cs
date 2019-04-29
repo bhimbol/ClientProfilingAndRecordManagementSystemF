@@ -49,5 +49,21 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             Application.Exit();
         }
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+            txtusername.TextAlign = HorizontalAlignment.Center;
+            txtpassword.TextAlign = HorizontalAlignment.Center;
+        }
+
+        private void txtpassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtusername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

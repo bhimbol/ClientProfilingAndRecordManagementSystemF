@@ -123,8 +123,15 @@ namespace ClientProfilingAndRecordManagementSystemF
                         using (axaDBEntities db = new axaDBEntities())
                         {
                             User usr = db.Users.Find(br.Cells["user_id"].Value);
-                            db.Users.Remove(usr);
-                            db.SaveChanges();
+                            if(usr.username == Properties.Settings.Default.current_user_username)
+                            {
+                                MessageBox.Show("Sorry, can't delete current logged-in user.");
+                            }
+                            else
+                            {
+                                db.Users.Remove(usr);
+                                db.SaveChanges();
+                            }
                             dataGridViewUSR.Enabled = true;
                             btnAdd.Enabled = true;
                             AddEditUserForm_Load(null, null);
@@ -146,10 +153,6 @@ namespace ClientProfilingAndRecordManagementSystemF
                                                                 u.role.Contains(txtSearch.Text)).ToList();
                 }
             }
-        }
-
-        private void AddEditUserForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
         }
 
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)

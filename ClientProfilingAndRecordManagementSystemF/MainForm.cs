@@ -92,10 +92,13 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             if (ListDataGridView.Tag.ToString() == "AXAFORMS")
             {
-                ListLabel.Text = ListLabel.Text + " (" + ListDataGridView.RowCount.ToString() + " items: " + ") in " + ListDataGridView.SelectedRows[0].Cells["Name"].Value.ToString();
                 ListDataGridView.Tag = "AXAFORMS-SUBFOLDERS";
                 var AllFiles = new DirectoryInfo(ListDataGridView.SelectedRows[0].Cells["FullName"].Value.ToString()).GetFiles();
                 ListDataGridView.DataSource = AllFiles;
+                if(ListDataGridView.RowCount > 0)
+                {
+                    ListLabel.Text = ListLabel.Text + " (" + ListDataGridView.RowCount.ToString() + " items: " + ") in " + ListDataGridView.SelectedRows[0].Cells["Name"].Value.ToString();
+                }
                 ListDataGridView.ClearSelection();
             }
         }
@@ -150,15 +153,17 @@ namespace ClientProfilingAndRecordManagementSystemF
                 {
                     if (ListDataGridView.Tag.ToString() == "FA")
                     {
-                        ListDataGridView.DataSource = db.FinancialAdvisors.Where(x => x.fullname.Contains(txtSearch.Text)).ToList();
-                        ListLabel.Text = "Found " + ListDataGridView.RowCount.ToString() + " item(s).";
+                        var result = db.FinancialAdvisors.Where(x => x.fullname.Contains(txtSearch.Text)).ToList();
+                        ListDataGridView.DataSource = result;
+                        ListLabel.Text = "Found " + result.Count.ToString() + " item(s).";
                     }
                     else if (ListDataGridView.Tag.ToString() == "CLIENTS")
                     {
-                        ListDataGridView.DataSource = db.Clients.Where(x => x.lastname.Contains(txtSearch.Text) ||
-                                                                            x.firstname.Contains(txtSearch.Text) ||
-                                                                            x.middlename.Contains(txtSearch.Text)).ToList();
-                        ListLabel.Text = "Found " + ListDataGridView.RowCount.ToString() + " item(s).";
+                        var result = db.Clients.Where(x => x.lastname.Contains(txtSearch.Text) ||
+                                                      x.firstname.Contains(txtSearch.Text) ||
+                                                      x.middlename.Contains(txtSearch.Text)).ToList();
+                        ListDataGridView.DataSource = result;
+                        ListLabel.Text = "Found " + result.Count.ToString() + " item(s).";
                     }
                     else if (ListDataGridView.Tag.ToString() == "AXAFORMS")
                     {
@@ -170,10 +175,11 @@ namespace ClientProfilingAndRecordManagementSystemF
                     }
                     else if(ListDataGridView.Tag.ToString() == "PLANS")
                     {
-                        ListDataGridView.DataSource = db.Plans.Where(x => x.description.Contains(txtSearch.Text) ||
-                                                                            x.type.Contains(txtSearch.Text) ||
-                                                                            x.category.Contains(txtSearch.Text)).ToList();
-                        ListLabel.Text = "Found " + ListDataGridView.RowCount.ToString() + " item(s).";
+                        var result = db.Plans.Where(x => x.description.Contains(txtSearch.Text) ||
+                                                         x.type.Contains(txtSearch.Text) ||
+                                                         x.category.Contains(txtSearch.Text)).ToList();
+                        ListDataGridView.DataSource = result;
+                        ListLabel.Text = "Found " + result.Count.ToString() + " item(s).";
                     }
                     else { }
                 }
@@ -213,22 +219,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             AddEditUserForm addeditfuserform = new AddEditUserForm();
             addeditfuserform.ShowDialog();
         }
-
-        private void ListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void txtSearch_Click(object sender, EventArgs e)
         {
             ((TextBox)sender).SelectAll();
