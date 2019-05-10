@@ -67,7 +67,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 {
                     c.Visible = false;
                     c.HeaderText = c.HeaderText.ToLower();
-                    if (c.HeaderText == "fullname")
+                    if (c.HeaderText == "fname" || c.HeaderText == "mname" || c.HeaderText == "lname")
                     {
                         c.Visible = true;
                     }
