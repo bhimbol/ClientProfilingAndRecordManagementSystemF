@@ -444,5 +444,46 @@ namespace ClientProfilingAndRecordManagementSystemF
             string middlename = ((FinancialAdvisor)e.ListItem).MName;
             e.Value = lastname + ", " + firstname + " " + middlename;
         }
+
+        private void txtHeight_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void txtweight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void isNumeric(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtWorkSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void txtBusinessIncome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void txtOtherSource_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
     }
 }

@@ -681,6 +681,7 @@
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(162, 20);
             this.txtweight.TabIndex = 28;
+            this.txtweight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtweight_KeyPress);
             // 
             // txtHeight
             // 
@@ -688,6 +689,8 @@
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(162, 20);
             this.txtHeight.TabIndex = 27;
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
+            this.txtHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtHeight_KeyUp);
             // 
             // Label6
             // 
@@ -1083,6 +1086,7 @@
             this.txtOtherSource.Name = "txtOtherSource";
             this.txtOtherSource.Size = new System.Drawing.Size(155, 20);
             this.txtOtherSource.TabIndex = 56;
+            this.txtOtherSource.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtherSource_KeyPress);
             // 
             // txtBusinessIncome
             // 
@@ -1090,6 +1094,7 @@
             this.txtBusinessIncome.Name = "txtBusinessIncome";
             this.txtBusinessIncome.Size = new System.Drawing.Size(155, 20);
             this.txtBusinessIncome.TabIndex = 55;
+            this.txtBusinessIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusinessIncome_KeyPress);
             // 
             // txtWorkSalary
             // 
@@ -1097,6 +1102,7 @@
             this.txtWorkSalary.Name = "txtWorkSalary";
             this.txtWorkSalary.Size = new System.Drawing.Size(155, 20);
             this.txtWorkSalary.TabIndex = 54;
+            this.txtWorkSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWorkSalary_KeyPress);
             // 
             // lblWorkSalary
             // 
