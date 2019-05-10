@@ -55,11 +55,13 @@ namespace ClientProfilingAndRecordManagementSystemF
                 foreach (DataGridViewColumn c in ListDataGridView.Columns)
                 {
                     c.Visible = false;
-                    if ((c.HeaderText == "firstname") || (c.HeaderText == "lastname") || (c.HeaderText == "middlename"))
-                    {
-                        c.Visible = true;
-                    }
                 }
+                ListDataGridView.Columns["firstname"].HeaderText = "First Name";
+                ListDataGridView.Columns["firstname"].Visible = true;
+                ListDataGridView.Columns["middlename"].HeaderText = "Middle Name";
+                ListDataGridView.Columns["middlename"].Visible = true;
+                ListDataGridView.Columns["lastname"].HeaderText = "Last Name";
+                ListDataGridView.Columns["lastname"].Visible = true;
             }
             else if (ListDataGridView.Tag.ToString() == "FA")
             {
@@ -67,25 +69,24 @@ namespace ClientProfilingAndRecordManagementSystemF
                 {
                     c.Visible = false;
                     c.HeaderText = c.HeaderText.ToLower();
-                    if (c.HeaderText == "fname" || c.HeaderText == "mname" || c.HeaderText == "lname")
-                    {
-                        c.Visible = true;
-                    }
                 }
+                ListDataGridView.Columns["fname"].HeaderText = "First Name";
+                ListDataGridView.Columns["fname"].Visible = true;
+                ListDataGridView.Columns["mname"].HeaderText = "Middle Name";
+                ListDataGridView.Columns["mname"].Visible = true;
+                ListDataGridView.Columns["lname"].HeaderText = "Last Name";
+                ListDataGridView.Columns["lname"].Visible = true;
             }
             else if (ListDataGridView.Tag.ToString() == "PLANS")
             {
                 foreach (DataGridViewColumn c in ListDataGridView.Columns)
                 {
                     c.Visible = false;
-                    if (c.HeaderText == "description")
-                    {
-                        c.Visible = true;
-                    }
                 }
+                ListDataGridView.Columns["description"].HeaderText = "List of Plans";
+                ListDataGridView.Columns["description"].Visible = true;
             }
             else { }
-
         }
 
         private void ListDataGridView_Click(object sender, EventArgs e)
