@@ -153,7 +153,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 {
                     if (ListDataGridView.Tag.ToString() == "FA")
                     {
-                        var result = db.FinancialAdvisors.Where(x => x.fullname.Contains(txtSearch.Text)).ToList();
+                        var result = db.FinancialAdvisors.Where(x => x.FName.Contains(txtSearch.Text)).ToList();
                         ListDataGridView.DataSource = result;
                         ListLabel.Text = "Found " + result.Count.ToString() + " item(s).";
                     }

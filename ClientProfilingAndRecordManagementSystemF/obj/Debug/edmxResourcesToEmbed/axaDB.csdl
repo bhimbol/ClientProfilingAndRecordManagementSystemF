@@ -1,18 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="axaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ClientBeneficiaries" EntityType="axaDBModel.ClientBeneficiary" />
+    <EntitySet Name="ClientPlans" EntityType="axaDBModel.ClientPlan" />
+    <EntitySet Name="Clients" EntityType="axaDBModel.Client" />
+    <EntitySet Name="FinancialAdvisors" EntityType="axaDBModel.FinancialAdvisor" />
+    <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
+    <AssociationSet Name="FK_ClientBeneficiaries" Association="axaDBModel.FK_ClientBeneficiaries">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="ClientBeneficiary" EntitySet="ClientBeneficiaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientPlans_Client" Association="axaDBModel.FK_ClientPlans_Client">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="ClientPlan" EntitySet="ClientPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClientPlans_Plan" Association="axaDBModel.FK_ClientPlans_Plan">
+      <End Role="Plan" EntitySet="Plans" />
+      <End Role="ClientPlan" EntitySet="ClientPlans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clients_Clients_FA" Association="axaDBModel.FK_Clients_Clients_FA">
+      <End Role="FinancialAdvisor" EntitySet="FinancialAdvisors" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="axaDBModel.User" />
+  </EntityContainer>
   <EntityType Name="ClientBeneficiary">
     <Key>
       <PropertyRef Name="beneficiary_id" />
     </Key>
     <Property Name="beneficiary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="client_id" Type="Int32" Nullable="false" />
-    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="birthdate" Type="DateTime" Precision="3" />
     <Property Name="birthplace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="relationship" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="occupation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="share" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Client" Relationship="Self.FK_ClientBeneficiaries" FromRole="ClientBeneficiaries" ToRole="Clients" />
+    <NavigationProperty Name="Client" Relationship="axaDBModel.FK_ClientBeneficiaries" FromRole="ClientBeneficiary" ToRole="Client" />
   </EntityType>
   <EntityType Name="ClientPlan">
     <Key>
@@ -23,8 +47,8 @@
     <Property Name="plan_id" Type="Int32" />
     <Property Name="mode_of_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="due" Type="Double" />
-    <NavigationProperty Name="Client" Relationship="Self.FK_ClientPlans_Client" FromRole="ClientPlans" ToRole="Clients" />
-    <NavigationProperty Name="Plan" Relationship="Self.FK_ClientPlans_Plan" FromRole="ClientPlans" ToRole="Plans" />
+    <NavigationProperty Name="Client" Relationship="axaDBModel.FK_ClientPlans_Client" FromRole="ClientPlan" ToRole="Client" />
+    <NavigationProperty Name="Plan" Relationship="axaDBModel.FK_ClientPlans_Plan" FromRole="ClientPlan" ToRole="Plan" />
   </EntityType>
   <EntityType Name="Client">
     <Key>
@@ -32,7 +56,7 @@
     </Key>
     <Property Name="client_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="addedby_user_id" Type="Int32" />
-    <Property Name="financial_advisor_id" Type="Int32" />
+    <Property Name="FA_id" Type="Int32" />
     <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -62,19 +86,27 @@
     <Property Name="answersub1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="answersub2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="answersub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="ClientBeneficiaries" Relationship="Self.FK_ClientBeneficiaries" FromRole="Clients" ToRole="ClientBeneficiaries" />
-    <NavigationProperty Name="ClientPlans" Relationship="Self.FK_ClientPlans_Client" FromRole="Clients" ToRole="ClientPlans" />
-    <NavigationProperty Name="FinancialAdvisor" Relationship="Self.FK_Clients_Clients_FA" FromRole="Clients" ToRole="FinancialAdvisors" />
     <Property Name="id_path1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="id_path2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ClientBeneficiaries" Relationship="axaDBModel.FK_ClientBeneficiaries" FromRole="Client" ToRole="ClientBeneficiary" />
+    <NavigationProperty Name="ClientPlans" Relationship="axaDBModel.FK_ClientPlans_Client" FromRole="Client" ToRole="ClientPlan" />
+    <NavigationProperty Name="FinancialAdvisor" Relationship="axaDBModel.FK_Clients_Clients_FA" FromRole="Client" ToRole="FinancialAdvisor" />
   </EntityType>
   <EntityType Name="FinancialAdvisor">
     <Key>
-      <PropertyRef Name="financial_advisor_id" />
+      <PropertyRef Name="FA_id" />
     </Key>
-    <Property Name="financial_advisor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Clients_FA" FromRole="FinancialAdvisors" ToRole="Clients" />
+    <Property Name="FA_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code_Num" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="B_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Contact_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email_Add" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Clients" Relationship="axaDBModel.FK_Clients_Clients_FA" FromRole="FinancialAdvisor" ToRole="Client" />
   </EntityType>
   <EntityType Name="Plan">
     <Key>
@@ -84,99 +116,67 @@
     <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="ClientPlans" Relationship="Self.FK_ClientPlans_Plan" FromRole="Plans" ToRole="ClientPlans" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="User">
-    <Key>
-      <PropertyRef Name="user_id" />
-    </Key>
-    <Property Name="user_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ClientPlans" Relationship="axaDBModel.FK_ClientPlans_Plan" FromRole="Plan" ToRole="ClientPlan" />
   </EntityType>
   <Association Name="FK_ClientBeneficiaries">
-    <End Role="Clients" Type="Self.Client" Multiplicity="1" />
-    <End Role="ClientBeneficiaries" Type="Self.ClientBeneficiary" Multiplicity="*" />
+    <End Type="axaDBModel.Client" Role="Client" Multiplicity="1" />
+    <End Type="axaDBModel.ClientBeneficiary" Role="ClientBeneficiary" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Clients">
+      <Principal Role="Client">
         <PropertyRef Name="client_id" />
       </Principal>
-      <Dependent Role="ClientBeneficiaries">
+      <Dependent Role="ClientBeneficiary">
         <PropertyRef Name="client_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ClientPlans_Client">
-    <End Role="Clients" Type="Self.Client" Multiplicity="0..1" />
-    <End Role="ClientPlans" Type="Self.ClientPlan" Multiplicity="*" />
+    <End Type="axaDBModel.Client" Role="Client" Multiplicity="0..1" />
+    <End Type="axaDBModel.ClientPlan" Role="ClientPlan" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Clients">
+      <Principal Role="Client">
         <PropertyRef Name="client_id" />
       </Principal>
-      <Dependent Role="ClientPlans">
+      <Dependent Role="ClientPlan">
         <PropertyRef Name="client_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ClientPlans_Plan">
-    <End Role="Plans" Type="Self.Plan" Multiplicity="0..1" />
-    <End Role="ClientPlans" Type="Self.ClientPlan" Multiplicity="*" />
+    <End Type="axaDBModel.Plan" Role="Plan" Multiplicity="0..1" />
+    <End Type="axaDBModel.ClientPlan" Role="ClientPlan" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Plans">
+      <Principal Role="Plan">
         <PropertyRef Name="plan_id" />
       </Principal>
-      <Dependent Role="ClientPlans">
+      <Dependent Role="ClientPlan">
         <PropertyRef Name="plan_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Clients_Clients_FA">
-    <End Role="FinancialAdvisors" Type="Self.FinancialAdvisor" Multiplicity="0..1" />
-    <End Role="Clients" Type="Self.Client" Multiplicity="*" />
+    <End Type="axaDBModel.FinancialAdvisor" Role="FinancialAdvisor" Multiplicity="0..1" />
+    <End Type="axaDBModel.Client" Role="Client" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="FinancialAdvisors">
-        <PropertyRef Name="financial_advisor_id" />
+      <Principal Role="FinancialAdvisor">
+        <PropertyRef Name="FA_id" />
       </Principal>
-      <Dependent Role="Clients">
-        <PropertyRef Name="financial_advisor_id" />
+      <Dependent Role="Client">
+        <PropertyRef Name="FA_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiary" />
-    <EntitySet Name="ClientPlans" EntityType="Self.ClientPlan" />
-    <EntitySet Name="Clients" EntityType="Self.Client" />
-    <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisor" />
-    <EntitySet Name="Plans" EntityType="Self.Plan" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Users" EntityType="Self.User" />
-    <AssociationSet Name="FK_ClientBeneficiaries" Association="Self.FK_ClientBeneficiaries">
-      <End Role="Clients" EntitySet="Clients" />
-      <End Role="ClientBeneficiaries" EntitySet="ClientBeneficiaries" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ClientPlans_Client" Association="Self.FK_ClientPlans_Client">
-      <End Role="Clients" EntitySet="Clients" />
-      <End Role="ClientPlans" EntitySet="ClientPlans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ClientPlans_Plan" Association="Self.FK_ClientPlans_Plan">
-      <End Role="Plans" EntitySet="Plans" />
-      <End Role="ClientPlans" EntitySet="ClientPlans" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Clients_Clients_FA" Association="Self.FK_Clients_Clients_FA">
-      <End Role="FinancialAdvisors" EntitySet="FinancialAdvisors" />
-      <End Role="Clients" EntitySet="Clients" />
-    </AssociationSet>
-  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contact_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

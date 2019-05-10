@@ -26,28 +26,57 @@ namespace ClientProfilingAndRecordManagementSystemF
             }
         }
 
+        private bool CheckForRequiredFields()
+        {
+            return (!String.IsNullOrWhiteSpace(txtFirstName.Text) && !String.IsNullOrWhiteSpace(txtMiddleName.Text) && !String.IsNullOrWhiteSpace(txtLastName.Text) && !String.IsNullOrWhiteSpace(txtCode_Num.Text));
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            using(axaDBEntities db = new axaDBEntities())
+            using (axaDBEntities db = new axaDBEntities())
             {
-                FinancialAdvisor fa = new FinancialAdvisor();
-                fa.fullname = txtFullName.Text; 
-                db.FinancialAdvisors.Add(fa);
-                db.SaveChanges();
-                MessageBox.Show("Successfully added advisor.");
-                ManageFinancialAdvisorForm_Load(null, null);
-
-                DialogResult dr = new DialogResult();
-                dr = MessageBox.Show("Would  you like to create log-in account for this advisor?","Create log-in account:",MessageBoxButtons.YesNo);
-                if(dr == DialogResult.Yes)
+                if (CheckForRequiredFields())
                 {
-                    AddEditUserForm addedituserform = new AddEditUserForm();
-                    addedituserform.role = "Advisor";
-                    ((TextBox)addedituserform.Controls["txtFullname"]).Text = fa.fullname;
-                    ((Button)addedituserform.Controls["btnUpdate"]).Enabled= false;
-                    ((Button)addedituserform.Controls["btnDelete"]).Enabled = false; 
-                    addedituserform.ShowDialog();
-                    addedituserform.role = null;
+                    FinancialAdvisor fa = new FinancialAdvisor();
+                    string gender = "";
+                    if (rbM.Checked) { gender = rbM.Text; }
+                    if (rbF.Checked) { gender = rbF.Text; }
+                    fa.LName = txtLastName.Text;
+                    fa.FName = txtFirstName.Text;
+                    fa.MName = txtMiddleName.Text;
+                    fa.Code_Num = txtCode_Num.Text;
+                    fa.Contact_Num = txtContact_Num.Text;
+                    fa.Email_Add = txtEmail_Add.Text;
+                    fa.Address = txtAddress.Text;
+                    fa.B_Date = dtpB_Date.Text;
+                    fa.Gender = gender;
+                    db.FinancialAdvisors.Add(fa);
+                    try
+                    {
+                        db.SaveChanges();
+                        MessageBox.Show("Successfully added advisor.");
+                        ManageFinancialAdvisorForm_Load(null, null);
+                        DialogResult dr = new DialogResult();
+                        dr = MessageBox.Show("Would  you like to create log-in account for this advisor?", "Create log-in account:", MessageBoxButtons.YesNo);
+                        if (dr == DialogResult.Yes)
+                        {
+                            AddEditUserForm addedituserform = new AddEditUserForm();
+                            addedituserform.role = "Advisor";
+                            ((TextBox)addedituserform.Controls["txtFullname"]).Text = fa.LName + ", " + fa.FName + " " + fa.MName;
+                            ((Button)addedituserform.Controls["btnUpdate"]).Enabled = false;
+                            ((Button)addedituserform.Controls["btnDelete"]).Enabled = false;
+                            addedituserform.ShowDialog();
+                            addedituserform.role = null;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill up required fields.");
                 }
             }
         }
@@ -56,17 +85,36 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             if(dataGridViewFA.SelectedRows.Count > 0)
             {
-                long faid = (Int64)dataGridViewFA.SelectedRows[0].Cells["id"].Value;
-                using (axaDBEntities db = new axaDBEntities())
+                if (CheckForRequiredFields())
                 {
-                    FinancialAdvisor fa = db.FinancialAdvisors.Find(faid);
-                    fa.fullname = txtFullName.Text;
-                    db.SaveChanges();
-                    btnUpdate.Enabled = false;
-                    btnAdd.Enabled = true;
-                    dataGridViewFA.Enabled = true;
+                    int faid = (Int32)dataGridViewFA.SelectedRows[0].Cells["FA_id"].Value;
+                    using (axaDBEntities db = new axaDBEntities())
+                    {
+                        FinancialAdvisor fa = db.FinancialAdvisors.Find(faid);
+                        string gender = "";
+                        if (rbM.Checked) { gender = rbM.Text; }
+                        if (rbF.Checked) { gender = rbF.Text; }
+                        fa.LName = txtLastName.Text;
+                        fa.FName = txtFirstName.Text;
+                        fa.MName = txtMiddleName.Text;
+                        fa.Code_Num = txtCode_Num.Text;
+                        fa.Contact_Num = txtContact_Num.Text;
+                        fa.Email_Add = txtEmail_Add.Text;
+                        fa.Address = txtAddress.Text;
+                        fa.B_Date = dtpB_Date.Text;
+                        fa.Gender = gender;
+                        db.SaveChanges();
+                        btnUpdate.Enabled = false;
+                        btnAdd.Enabled = true;
+                        dataGridViewFA.Enabled = true;
+                    }
+                    ManageFinancialAdvisorForm_Load(null, null);
+                    MessageBox.Show("Record updated Successfully.");
                 }
-                ManageFinancialAdvisorForm_Load(null, null);
+                else
+                {
+                    MessageBox.Show("Please fill up required fields.");
+                }
             }
         }
 
@@ -74,7 +122,18 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             if (dataGridViewFA.SelectedRows.Count > 0)
             {
-                txtFullName.Text = dataGridViewFA.SelectedRows[0].Cells["fullname"].Value.ToString();
+                txtFirstName.Text = dataGridViewFA.SelectedRows[0].Cells["FName"].Value.ToString();
+                txtMiddleName.Text = dataGridViewFA.SelectedRows[0].Cells["MName"].Value.ToString();
+                txtLastName.Text = dataGridViewFA.SelectedRows[0].Cells["LName"].Value.ToString();
+                txtCode_Num.Text = dataGridViewFA.SelectedRows[0].Cells["Code_Num"].Value.ToString();
+                txtContact_Num.Text = dataGridViewFA.SelectedRows[0].Cells["Contact_Num"].Value.ToString();
+                txtEmail_Add.Text = dataGridViewFA.SelectedRows[0].Cells["Email_Add"].Value.ToString();
+                txtAddress.Text = dataGridViewFA.SelectedRows[0].Cells["Address"].Value.ToString();
+
+                dtpB_Date.Text = dataGridViewFA.SelectedRows[0].Cells["B_Date"].Value.ToString();
+                if (dataGridViewFA.SelectedRows[0].Cells["Gender"].Value.ToString() == "Male") { rbM.Checked = true; }
+                if (dataGridViewFA.SelectedRows[0].Cells["Gender"].Value.ToString() == "Female") { rbF.Checked = true; }
+
                 btnUpdate.Enabled = true;
                 btnAdd.Enabled = false;
                 dataGridViewFA.Enabled = false;
@@ -87,16 +146,26 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 foreach (DataGridViewRow br in dataGridViewFA.SelectedRows)
                 {
-                    if (MessageBox.Show("Delete? " + br.Cells["FULLNAME"].Value.ToString(), "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Delete Financial Advisor with License Number: ? " + br.Cells["Code_Num"].Value.ToString(), "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        using (axaDBEntities db = new axaDBEntities())
+                        try
                         {
-                            FinancialAdvisor fa = db.FinancialAdvisors.Find(br.Cells["financial_advisor_id"].Value);
-                            db.FinancialAdvisors.Remove(fa);
-                            db.SaveChanges();
-                            dataGridViewFA.Enabled = true;
-                            btnAdd.Enabled = true;
-                            ManageFinancialAdvisorForm_Load(null, null);
+                            using (axaDBEntities db = new axaDBEntities())
+                            {
+                                FinancialAdvisor fa = db.FinancialAdvisors.Find(br.Cells["FA_id"].Value);
+                                db.FinancialAdvisors.Remove(fa);
+                                db.SaveChanges();
+                                dataGridViewFA.Enabled = true;
+                                btnAdd.Enabled = true;
+                                ManageFinancialAdvisorForm_Load(null, null);
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            if(ex.InnerException != null)
+                            {
+                                MessageBox.Show(ex.InnerException.InnerException.Message);
+                            }
                         }
                     }
                 }
@@ -109,9 +178,29 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 using(axaDBEntities db = new axaDBEntities())
                 {
-                    dataGridViewFA.DataSource = db.FinancialAdvisors.Where(fa => fa.fullname.Contains(txtSearch.Text)).ToList();
+                    dataGridViewFA.DataSource = db.FinancialAdvisors.Where(fa => fa.FName.Contains(txtSearch.Text) ||
+                                                                                 fa.MName.Contains(txtSearch.Text) ||
+                                                                                 fa.LName.Contains(txtSearch.Text) ||
+                                                                                 fa.Address.Contains(txtSearch.Text) ||
+                                                                                 fa.Email_Add.Contains(txtSearch.Text) ||
+                                                                                 fa.Code_Num.Contains(txtSearch.Text)).ToList();
                 }
             }
+        }
+
+        private void dataGridViewFA_DataSourceChanged(object sender, EventArgs e)
+        {
+            dataGridViewFA.Columns[0].HeaderText = "Id";
+            dataGridViewFA.Columns[1].HeaderText = "License Code";
+            dataGridViewFA.Columns[2].HeaderText = "First Name";
+            dataGridViewFA.Columns[3].HeaderText = "Middle Name";
+            dataGridViewFA.Columns[4].HeaderText = "Last Name";
+            dataGridViewFA.Columns[5].HeaderText = "Birth Date";
+            dataGridViewFA.Columns[6].HeaderText = "Gender";
+            dataGridViewFA.Columns[7].HeaderText = "Contact Number";
+            dataGridViewFA.Columns[8].HeaderText = "Email Address";
+            dataGridViewFA.Columns[9].HeaderText = "Address";
+            dataGridViewFA.Columns["Clients"].Visible = false;
         }
     }
 }

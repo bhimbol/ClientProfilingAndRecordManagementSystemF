@@ -4,18 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4dc117c9478240ee9326948c4522ba4c" Name="Diagram1" ZoomLevel="134">
-        <EntityTypeShape EntityType="axaDBModel.ClientBeneficiary" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="axaDBModel.ClientPlan" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="axaDBModel.Client" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="axaDBModel.FinancialAdvisor" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="axaDBModel.Plan" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="axaDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="axaDBModel.User" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
-        <AssociationConnector Association="axaDBModel.FK_ClientBeneficiaries" ManuallyRouted="false" />
-        <AssociationConnector Association="axaDBModel.FK_ClientPlans_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="axaDBModel.FK_ClientPlans_Plan" ManuallyRouted="false" />
-        <AssociationConnector Association="axaDBModel.FK_Clients_Clients_FA" ManuallyRouted="false" />
+      <Diagram DiagramId="4dc117c9478240ee9326948c4522ba4c" Name="Diagram1" ZoomLevel="127">
+        <EntityTypeShape EntityType="axaDBModel.ClientBeneficiary" Width="1.5" PointX="5.25" PointY="7" />
+        <EntityTypeShape EntityType="axaDBModel.ClientPlan" Width="1.5" PointX="5.25" PointY="3.125" />
+        <EntityTypeShape EntityType="axaDBModel.Client" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="axaDBModel.FinancialAdvisor" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="axaDBModel.Plan" Width="1.5" PointX="3" PointY="10.25" />
+        <AssociationConnector Association="axaDBModel.FK_ClientBeneficiaries" />
+        <AssociationConnector Association="axaDBModel.FK_ClientPlans_Client" />
+        <AssociationConnector Association="axaDBModel.FK_ClientPlans_Plan" />
+        <AssociationConnector Association="axaDBModel.FK_Clients_Clients_FA" />
+        <EntityTypeShape EntityType="axaDBModel.User" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

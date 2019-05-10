@@ -35,6 +35,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                         Properties.Settings.Default.current_user_fullname = user.fullname;
                         Properties.Settings.Default.current_user_username = user.username;
                         Properties.Settings.Default.current_user_role = user.role;
+                        Properties.Settings.Default.current_user_id = user.user_id.ToString();
                         status.Text = "Welcome: " + user.fullname;
                     }
                 }

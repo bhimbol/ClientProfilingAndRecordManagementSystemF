@@ -23,7 +23,7 @@ namespace ClientProfilingAndRecordManagementSystemF
     
         public int client_id { get; set; }
         public Nullable<int> addedby_user_id { get; set; }
-        public Nullable<int> financial_advisor_id { get; set; }
+        public Nullable<int> FA_id { get; set; }
         public string lastname { get; set; }
         public string firstname { get; set; }
         public string middlename { get; set; }

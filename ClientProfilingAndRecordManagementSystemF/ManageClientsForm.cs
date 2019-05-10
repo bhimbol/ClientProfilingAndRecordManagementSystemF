@@ -104,5 +104,33 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             ((TextBox)sender).SelectAll();
         }
+
+        private void dgvClients_DataSourceChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn col in dgvClients.Columns)
+            {
+                if(col.HeaderText == "client_id") { col.HeaderText = "Client ID"; }
+                if (col.HeaderText == "addedby_user_id") { col.Visible = false; }
+                if (col.HeaderText == "lastname") { col.HeaderText = "Last Nmae"; }
+                if (col.HeaderText == "firstname") { col.HeaderText = "First Name"; }
+                if (col.HeaderText == "middlename") { col.HeaderText = "Middle Nmae"; }
+                if (col.HeaderText == "spouselastname") { col.HeaderText = "Spouse Last Name"; }
+                if (col.HeaderText == "spousefirstname") { col.HeaderText = "Spouse First Name"; }
+                if (col.HeaderText == "spousemiddlename") { col.HeaderText = "Spouse Middle Name"; }
+                if (col.HeaderText == "gender") { col.HeaderText = "Gender"; }
+                if (col.HeaderText == "civilstatus") { col.HeaderText = "Civil Status"; }
+                if (col.HeaderText == "birthday") { col.HeaderText = "Birth Date"; }
+                //
+                if (col.HeaderText == "FA_id") { col.Visible = false; }
+                if (col.HeaderText == "id_path1") { col.Visible = false; }
+                if (col.HeaderText == "id_path2") { col.Visible = false; }
+                if (col.HeaderText == "ClientBeneficiaries") { col.Visible = false; }
+                if (col.HeaderText == "ClientPlans") { col.Visible = false; }
+                if (col.HeaderText == "FinancialAdvisor") { col.Visible = false; }
+                if (col.HeaderText == "answersub1") { col.Visible = false; }
+                if (col.HeaderText == "answersub2") { col.Visible = false; }
+                if (col.HeaderText == "answersub3") { col.Visible = false; }
+            }
+        }
     }
 }

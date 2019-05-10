@@ -20,8 +20,16 @@ namespace ClientProfilingAndRecordManagementSystemF
             this.Clients = new HashSet<Client>();
         }
     
-        public int financial_advisor_id { get; set; }
-        public string fullname { get; set; }
+        public int FA_id { get; set; }
+        public string Code_Num { get; set; }
+        public string FName { get; set; }
+        public string MName { get; set; }
+        public string LName { get; set; }
+        public string B_Date { get; set; }
+        public string Gender { get; set; }
+        public string Contact_Num { get; set; }
+        public string Email_Add { get; set; }
+        public string Address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client> Clients { get; set; }

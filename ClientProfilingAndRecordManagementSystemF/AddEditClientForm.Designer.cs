@@ -428,6 +428,7 @@
             this.cboxfinancial_advisor.Name = "cboxfinancial_advisor";
             this.cboxfinancial_advisor.Size = new System.Drawing.Size(217, 21);
             this.cboxfinancial_advisor.TabIndex = 78;
+            this.cboxfinancial_advisor.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cboxfinancial_advisor_Format);
             // 
             // Panel1
             // 
