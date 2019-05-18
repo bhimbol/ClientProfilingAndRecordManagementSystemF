@@ -224,5 +224,15 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             ((TextBox)sender).SelectAll();
         }
+
+        private void ListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

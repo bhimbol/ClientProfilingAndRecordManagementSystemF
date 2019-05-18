@@ -104,5 +104,10 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             ((TextBox)sender).SelectAll();
         }
+
+        private void dgvClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

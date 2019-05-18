@@ -131,6 +131,7 @@
             this.ListDataGridView.TabIndex = 13;
             this.ListDataGridView.Tag = "CLIENTS";
             this.ListDataGridView.DataSourceChanged += new System.EventHandler(this.ListDataGridView_DataSourceChanged);
+            this.ListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListDataGridView_CellContentClick);
             this.ListDataGridView.Click += new System.EventHandler(this.ListDataGridView_Click);
             this.ListDataGridView.DoubleClick += new System.EventHandler(this.ListDataGridView_DoubleClick);
             // 
@@ -196,6 +197,7 @@
             this.txtSearch.TabIndex = 8;
             this.txtSearch.Text = "Search";
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // MainForm
