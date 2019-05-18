@@ -159,7 +159,7 @@
             this.dgvClients.ShowEditingIcon = false;
             this.dgvClients.Size = new System.Drawing.Size(796, 428);
             this.dgvClients.TabIndex = 0;
-            this.dgvClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellContentClick);
+            this.dgvClients.DataSourceChanged += new System.EventHandler(this.dgvClients_DataSourceChanged);
             // 
             // txtSearch
             // 

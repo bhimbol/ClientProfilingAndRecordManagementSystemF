@@ -29,7 +29,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             client = db.Clients.Find(selected_client_id);
             myReportDocument = new ReportDocument();
             myReportDocument.Load((Application.StartupPath + "\\CrystalReport.rpt"));
-            //myReportDocument.SetDatabaseLogon("bhimbol", "input32.dll", "PPYCHA-PC", "axaDB");
+            //myReportDocument.SetDatabaseLogon("bhimbol", "inpout32.dll", "air/bhimsqlinstance", "axaDB");
             myReportDocument.SetParameterValue("param_client_id", client.client_id);
             crystalReportViewer1.ReportSource = myReportDocument;
         }

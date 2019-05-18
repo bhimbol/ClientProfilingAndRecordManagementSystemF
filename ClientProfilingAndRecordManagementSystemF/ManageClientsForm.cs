@@ -105,9 +105,48 @@ namespace ClientProfilingAndRecordManagementSystemF
             ((TextBox)sender).SelectAll();
         }
 
-        private void dgvClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvClients_DataSourceChanged(object sender, EventArgs e)
         {
-
+            foreach (DataGridViewColumn col in dgvClients.Columns)
+            {
+                if(col.HeaderText == "client_id") { col.HeaderText = "Client ID"; }
+                if (col.HeaderText == "addedby_user_id") { col.Visible = false; }
+                if (col.HeaderText == "lastname") { col.HeaderText = "Last Nmae"; }
+                if (col.HeaderText == "firstname") { col.HeaderText = "First Name"; }
+                if (col.HeaderText == "middlename") { col.HeaderText = "Middle Nmae"; }
+                if (col.HeaderText == "spouselastname") { col.HeaderText = "Spouse Last Name"; }
+                if (col.HeaderText == "spousefirstname") { col.HeaderText = "Spouse First Name"; }
+                if (col.HeaderText == "spousemiddlename") { col.HeaderText = "Spouse Middle Name"; }
+                if (col.HeaderText == "gender") { col.HeaderText = "Gender"; }
+                if (col.HeaderText == "civilstatus") { col.HeaderText = "Civil Status"; }
+                if (col.HeaderText == "birthday") { col.HeaderText = "Birth Date"; }
+                if (col.HeaderText == "birthplace") { col.HeaderText = "Birth Place"; }
+                if (col.HeaderText == "height") { col.HeaderText = "Height"; }
+                if (col.HeaderText == "weight") { col.HeaderText = "Weight"; }
+                if (col.HeaderText == "residenceaddress") { col.HeaderText = "Address"; }
+                if (col.HeaderText == "cpnumber") { col.HeaderText = "Cellphone Number"; }
+                if (col.HeaderText == "telephonenumber") { col.HeaderText = "Telephone Number"; }
+                if (col.HeaderText == "emailaddress") { col.HeaderText = "E-Address"; }
+                if (col.HeaderText == "occupation") { col.HeaderText = "Occupation"; }
+                if (col.HeaderText == "worksalary") { col.HeaderText = "Work Salary"; }
+                if (col.HeaderText == "businessincome") { col.HeaderText = "Business Income"; }
+                if (col.HeaderText == "othersource") { col.HeaderText = "Other Source Income"; }
+                if (col.HeaderText == "companyname") { col.HeaderText = "Company Name"; }
+                if (col.HeaderText == "companyaddress") { col.HeaderText = "Company Address"; }
+                if (col.HeaderText == "companycontact") { col.HeaderText = "Company Contact Number"; }
+                if (col.HeaderText == "natureofbusiness") { col.HeaderText = "Nature of Business"; }
+                if (col.HeaderText == "taxidnumber") { col.HeaderText = "TAX ID NUMBER"; }
+                if (col.HeaderText == "sss_gsis_number") { col.HeaderText = "SSS/GSIS NUMBER"; }
+                if (col.HeaderText == "FA_id") { col.Visible = false; }
+                if (col.HeaderText == "id_path1") { col.Visible = false; }
+                if (col.HeaderText == "id_path2") { col.Visible = false; }
+                if (col.HeaderText == "ClientBeneficiaries") { col.Visible = false; }
+                if (col.HeaderText == "ClientPlans") { col.Visible = false; }
+                if (col.HeaderText == "FinancialAdvisor") { col.Visible = false; }
+                if (col.HeaderText == "answersub1") { col.Visible = false; }
+                if (col.HeaderText == "answersub2") { col.Visible = false; }
+                if (col.HeaderText == "answersub3") { col.Visible = false; }
+            }
         }
     }
 }

@@ -58,8 +58,8 @@ namespace ClientProfilingAndRecordManagementSystemF
                 if (financial_advisor_list.Count > 0)
                 {
                     cboxfinancial_advisor.DataSource = financial_advisor_list;
-                    cboxfinancial_advisor.DisplayMember = "fullname";
-                    cboxfinancial_advisor.ValueMember = "financial_advisor_id";
+                    cboxfinancial_advisor.DisplayMember = "FName";
+                    cboxfinancial_advisor.ValueMember = "FA_id";
                 }
             }
         }
@@ -133,7 +133,8 @@ namespace ClientProfilingAndRecordManagementSystemF
 
             if (selected_client.FinancialAdvisor != null)
             {
-                cboxfinancial_advisor.Text = selected_client.FinancialAdvisor.fullname;
+                string fullname = selected_client.FinancialAdvisor.LName + ", " + selected_client.FinancialAdvisor.FName + " " + selected_client.FinancialAdvisor.MName;
+                cboxfinancial_advisor.Text = fullname;
             }
 
             if (selected_client.gender == "Male"){ rbGenderM.Checked = true; }
@@ -165,7 +166,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             Double.TryParse(txtBusinessIncome.Text, out double bi);
             Double.TryParse(txtOtherSource.Text, out double oi);
 
-            c.financial_advisor_id = (Int32)cboxfinancial_advisor.SelectedValue;
+            c.FA_id= (Int32)cboxfinancial_advisor.SelectedValue;
             c.lastname = txtLastname.Text;
             c.firstname = txtFirstname.Text;
             c.middlename = txtMiddlename.Text;
@@ -434,6 +435,55 @@ namespace ClientProfilingAndRecordManagementSystemF
             }
 
 
+        }
+
+        private void cboxfinancial_advisor_Format(object sender, ListControlConvertEventArgs e)
+        {
+            string lastname = ((FinancialAdvisor)e.ListItem).LName;
+            string firstname = ((FinancialAdvisor)e.ListItem).FName;
+            string middlename = ((FinancialAdvisor)e.ListItem).MName;
+            e.Value = lastname + ", " + firstname + " " + middlename;
+        }
+
+        private void txtHeight_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void txtweight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void txtHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void isNumeric(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtWorkSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void txtBusinessIncome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        private void txtOtherSource_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
         }
     }
 }
