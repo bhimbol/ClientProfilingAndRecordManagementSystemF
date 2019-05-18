@@ -1173,6 +1173,7 @@
             this.Controls.Add(this.btnUpdateClient);
             this.Controls.Add(this.Penel1);
             this.Controls.Add(this.Panel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEditClientForm";
             this.Text = "Add / Edit Client";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

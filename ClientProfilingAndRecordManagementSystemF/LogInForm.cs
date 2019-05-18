@@ -66,5 +66,16 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
 
         }
+
+        private void txtusername_Click(object sender, EventArgs e)
+        {
+            txtusername.Clear();
+        }
+
+        private void txtpassword_Click(object sender, EventArgs e)
+        {
+            txtpassword.Clear();
+            txtpassword.PasswordChar = '*';
+        }
     }
 }

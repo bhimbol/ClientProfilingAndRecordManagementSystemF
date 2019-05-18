@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace ClientProfilingAndRecordManagementSystemF
 {
@@ -26,6 +22,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 ListLabel.Text = "List of: CLIENTS " + db.Clients.Count() + " client(s) found.";
                 ListDataGridView.Tag = "CLIENTS";
                 ListDataGridView.DataSource = db.Clients.ToList();
+                DataGridDesign();
             }
         }
 
@@ -89,6 +86,14 @@ namespace ClientProfilingAndRecordManagementSystemF
             else { }
         }
 
+        private void DataGridDesign()
+        {
+            // designing code =: ListDataGridView.BorderStyle = BorderStyle.None; 
+            ListDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249); ListDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal; ListDataGridView.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise; ListDataGridView.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke; ListDataGridView.BackgroundColor = Color.White; ListDataGridView.EnableHeadersVisualStyles = false; ListDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None; ListDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72); ListDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+        }
+
+
         private void ListDataGridView_Click(object sender, EventArgs e)
         {
             if (ListDataGridView.Tag.ToString() == "AXAFORMS")
@@ -96,7 +101,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 ListDataGridView.Tag = "AXAFORMS-SUBFOLDERS";
                 var AllFiles = new DirectoryInfo(ListDataGridView.SelectedRows[0].Cells["FullName"].Value.ToString()).GetFiles();
                 ListDataGridView.DataSource = AllFiles;
-                if(ListDataGridView.RowCount > 0)
+                if (ListDataGridView.RowCount > 0)
                 {
                     ListLabel.Text = ListLabel.Text + " (" + ListDataGridView.RowCount.ToString() + " items: " + ") in " + ListDataGridView.SelectedRows[0].Cells["Name"].Value.ToString();
                 }
@@ -113,7 +118,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     System.Diagnostics.Process.Start(ListDataGridView.SelectedRows[0].Cells["FullName"].Value.ToString());
                 }
             }
-            if(ListDataGridView.Tag.ToString() == "CLIENTS")
+            if (ListDataGridView.Tag.ToString() == "CLIENTS")
             {
                 if (ListDataGridView.SelectedRows.Count > 0)
                 {
@@ -148,9 +153,9 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                using(axaDBEntities db = new axaDBEntities())
+                using (axaDBEntities db = new axaDBEntities())
                 {
                     if (ListDataGridView.Tag.ToString() == "FA")
                     {
@@ -168,13 +173,13 @@ namespace ClientProfilingAndRecordManagementSystemF
                     }
                     else if (ListDataGridView.Tag.ToString() == "AXAFORMS")
                     {
-                        
+
                     }
                     else if (ListDataGridView.Tag.ToString() == "AXAFORMS-SUBFOLDERS")
                     {
 
                     }
-                    else if(ListDataGridView.Tag.ToString() == "PLANS")
+                    else if (ListDataGridView.Tag.ToString() == "PLANS")
                     {
                         var result = db.Plans.Where(x => x.description.Contains(txtSearch.Text) ||
                                                          x.type.Contains(txtSearch.Text) ||
@@ -220,7 +225,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             AddEditUserForm addeditfuserform = new AddEditUserForm();
             addeditfuserform.ShowDialog();
         }
-        
+
         private void txtSearch_Click(object sender, EventArgs e)
         {
             ((TextBox)sender).SelectAll();

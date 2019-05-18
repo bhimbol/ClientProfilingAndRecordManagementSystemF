@@ -44,6 +44,7 @@
             this.ListPlanButton = new System.Windows.Forms.Button();
             this.ListClientsButton = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.MainPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +52,14 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.MainPanel.Controls.Add(this.ListClientsButton);
+            this.MainPanel.Controls.Add(this.ListPlanButton);
+            this.MainPanel.Controls.Add(this.ListAXAFormButton);
+            this.MainPanel.Controls.Add(this.ListFinancialAdvisorButton);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MainPanel.Location = new System.Drawing.Point(0, 29);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(809, 40);
+            this.MainPanel.Size = new System.Drawing.Size(809, 57);
             this.MainPanel.TabIndex = 3;
             // 
             // menuStrip1
@@ -111,7 +116,7 @@
             // 
             this.ListLabel.AutoSize = true;
             this.ListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListLabel.Location = new System.Drawing.Point(21, 100);
+            this.ListLabel.Location = new System.Drawing.Point(21, 101);
             this.ListLabel.Name = "ListLabel";
             this.ListLabel.Size = new System.Drawing.Size(69, 20);
             this.ListLabel.TabIndex = 14;
@@ -133,14 +138,14 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ListDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListDataGridView.Location = new System.Drawing.Point(18, 125);
+            this.ListDataGridView.Location = new System.Drawing.Point(12, 137);
             this.ListDataGridView.MultiSelect = false;
             this.ListDataGridView.Name = "ListDataGridView";
             this.ListDataGridView.ReadOnly = true;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListDataGridView.Size = new System.Drawing.Size(581, 372);
+            this.ListDataGridView.Size = new System.Drawing.Size(762, 354);
             this.ListDataGridView.TabIndex = 13;
             this.ListDataGridView.Tag = "CLIENTS";
             this.ListDataGridView.DataSourceChanged += new System.EventHandler(this.ListDataGridView_DataSourceChanged);
@@ -153,7 +158,7 @@
             this.ListAXAFormButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ListAXAFormButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListAXAFormButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ListAXAFormButton.Location = new System.Drawing.Point(615, 323);
+            this.ListAXAFormButton.Location = new System.Drawing.Point(602, 1);
             this.ListAXAFormButton.Name = "ListAXAFormButton";
             this.ListAXAFormButton.Size = new System.Drawing.Size(172, 56);
             this.ListAXAFormButton.TabIndex = 12;
@@ -166,7 +171,7 @@
             this.ListFinancialAdvisorButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ListFinancialAdvisorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListFinancialAdvisorButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ListFinancialAdvisorButton.Location = new System.Drawing.Point(615, 261);
+            this.ListFinancialAdvisorButton.Location = new System.Drawing.Point(416, 0);
             this.ListFinancialAdvisorButton.Name = "ListFinancialAdvisorButton";
             this.ListFinancialAdvisorButton.Size = new System.Drawing.Size(172, 56);
             this.ListFinancialAdvisorButton.TabIndex = 11;
@@ -179,7 +184,7 @@
             this.ListPlanButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ListPlanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListPlanButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ListPlanButton.Location = new System.Drawing.Point(615, 199);
+            this.ListPlanButton.Location = new System.Drawing.Point(230, 1);
             this.ListPlanButton.Name = "ListPlanButton";
             this.ListPlanButton.Size = new System.Drawing.Size(172, 56);
             this.ListPlanButton.TabIndex = 10;
@@ -192,7 +197,7 @@
             this.ListClientsButton.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ListClientsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListClientsButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ListClientsButton.Location = new System.Drawing.Point(615, 137);
+            this.ListClientsButton.Location = new System.Drawing.Point(44, 1);
             this.ListClientsButton.Name = "ListClientsButton";
             this.ListClientsButton.Size = new System.Drawing.Size(172, 56);
             this.ListClientsButton.TabIndex = 9;
@@ -204,7 +209,7 @@
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtSearch.Location = new System.Drawing.Point(20, 71);
+            this.txtSearch.Location = new System.Drawing.Point(602, 105);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(169, 26);
             this.txtSearch.TabIndex = 8;
@@ -221,19 +226,17 @@
             this.ClientSize = new System.Drawing.Size(809, 523);
             this.Controls.Add(this.ListLabel);
             this.Controls.Add(this.ListDataGridView);
-            this.Controls.Add(this.ListAXAFormButton);
-            this.Controls.Add(this.ListFinancialAdvisorButton);
-            this.Controls.Add(this.ListPlanButton);
-            this.Controls.Add(this.ListClientsButton);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client Profiling And Record Management System In AXA Samar";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.MainPanel.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListDataGridView)).EndInit();
