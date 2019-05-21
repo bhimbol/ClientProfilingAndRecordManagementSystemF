@@ -148,5 +148,10 @@ namespace ClientProfilingAndRecordManagementSystemF
                 if (col.HeaderText == "answersub3") { col.Visible = false; }
             }
         }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

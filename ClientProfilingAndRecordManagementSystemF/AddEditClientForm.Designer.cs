@@ -28,37 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBUpdate = new System.Windows.Forms.Button();
-            this.txtBShare = new System.Windows.Forms.TextBox();
-            this.txtBRelationship = new System.Windows.Forms.TextBox();
-            this.lblBshare = new System.Windows.Forms.Label();
-            this.lblBRelationship = new System.Windows.Forms.Label();
-            this.txtBOccupation = new System.Windows.Forms.TextBox();
-            this.lblBOccupation = new System.Windows.Forms.Label();
-            this.btnRemoveBeneficiary = new System.Windows.Forms.Button();
-            this.txtBBirthPlace = new System.Windows.Forms.TextBox();
-            this.btnAddBeneficiary = new System.Windows.Forms.Button();
-            this.lblBBirthPlace = new System.Windows.Forms.Label();
-            this.panelBeneficiaries = new System.Windows.Forms.Panel();
-            this.lblBBirthDate = new System.Windows.Forms.Label();
-            this.dtpBBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.lblBFullname = new System.Windows.Forms.Label();
-            this.txtBFullname = new System.Windows.Forms.TextBox();
-            this.dgvBeneficiaries = new System.Windows.Forms.DataGridView();
-            this.lblBeneficiaries = new System.Windows.Forms.Label();
-            this.Panel5 = new System.Windows.Forms.Panel();
-            this.rbNo = new System.Windows.Forms.RadioButton();
-            this.rbYES = new System.Windows.Forms.RadioButton();
-            this.lblsubquestion3 = new System.Windows.Forms.Label();
-            this.txtSSSGSISNumber = new System.Windows.Forms.TextBox();
-            this.txtTaxIDNumber = new System.Windows.Forms.TextBox();
-            this.txtNatureofBusiness = new System.Windows.Forms.TextBox();
-            this.txtCompanyConctactNumber = new System.Windows.Forms.TextBox();
-            this.txtCompanyAddress = new System.Windows.Forms.TextBox();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditClientForm));
             this.btnAddClient = new System.Windows.Forms.Button();
-            this.txtsubanswer3 = new System.Windows.Forms.TextBox();
-            this.cboxfinancial_advisor = new System.Windows.Forms.ComboBox();
+            this.Button2 = new System.Windows.Forms.Button();
+            this.btnDone = new System.Windows.Forms.Button();
+            this.btnUpdateClient = new System.Windows.Forms.Button();
+            this.txtClientsID = new System.Windows.Forms.TextBox();
+            this.Label6 = new System.Windows.Forms.Label();
+            this.rbWidowed = new System.Windows.Forms.RadioButton();
+            this.txtSMiddlename = new System.Windows.Forms.TextBox();
+            this.txtSFirstname = new System.Windows.Forms.TextBox();
+            this.txtSLastname = new System.Windows.Forms.TextBox();
+            this.lblNameSpouse = new System.Windows.Forms.Label();
+            this.Panel3 = new System.Windows.Forms.Panel();
+            this.rbMarried = new System.Windows.Forms.RadioButton();
+            this.rbSingle = new System.Windows.Forms.RadioButton();
+            this.Penel1 = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.txtemailaddress = new System.Windows.Forms.TextBox();
+            this.txttelephonenumber = new System.Windows.Forms.TextBox();
+            this.txtcpnumber = new System.Windows.Forms.TextBox();
+            this.txtresidenceaddress = new System.Windows.Forms.TextBox();
+            this.txtweight = new System.Windows.Forms.TextBox();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.txtBirthplace = new System.Windows.Forms.TextBox();
+            this.dtpBdate = new System.Windows.Forms.DateTimePicker();
+            this.lblBirthDate = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.Panel2 = new System.Windows.Forms.Panel();
+            this.rbGenderF = new System.Windows.Forms.RadioButton();
+            this.Label5 = new System.Windows.Forms.Label();
+            this.rbGenderM = new System.Windows.Forms.RadioButton();
+            this.txtMiddlename = new System.Windows.Forms.TextBox();
+            this.txtFirstname = new System.Windows.Forms.TextBox();
+            this.txtLastname = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.button_Exit = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.pbID2 = new System.Windows.Forms.PictureBox();
             this.txtIDDir2 = new System.Windows.Forms.TextBox();
@@ -69,264 +93,941 @@
             this.btnBrowseID1 = new System.Windows.Forms.Button();
             this.lbPlan = new System.Windows.Forms.ListBox();
             this.btnAddPlan = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.Button2 = new System.Windows.Forms.Button();
-            this.btnDone = new System.Windows.Forms.Button();
-            this.btnUpdateClient = new System.Windows.Forms.Button();
-            this.txtsubanswer2 = new System.Windows.Forms.TextBox();
-            this.lblQuestion = new System.Windows.Forms.Label();
-            this.txtClientsID = new System.Windows.Forms.TextBox();
-            this.txtemailaddress = new System.Windows.Forms.TextBox();
-            this.txttelephonenumber = new System.Windows.Forms.TextBox();
-            this.txtcpnumber = new System.Windows.Forms.TextBox();
-            this.lbleaddress = new System.Windows.Forms.Label();
-            this.lbltelephonenumber = new System.Windows.Forms.Label();
-            this.lblcpnumber = new System.Windows.Forms.Label();
-            this.lblResidenceAddress = new System.Windows.Forms.Label();
-            this.lblWeight = new System.Windows.Forms.Label();
-            this.lblHeight = new System.Windows.Forms.Label();
-            this.txtresidenceaddress = new System.Windows.Forms.TextBox();
-            this.txtweight = new System.Windows.Forms.TextBox();
-            this.txtHeight = new System.Windows.Forms.TextBox();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.rbWidowed = new System.Windows.Forms.RadioButton();
-            this.txtBirthplace = new System.Windows.Forms.TextBox();
-            this.lblBirthplace = new System.Windows.Forms.Label();
-            this.lblBirthDate = new System.Windows.Forms.Label();
-            this.lblSMiddlename = new System.Windows.Forms.Label();
-            this.lblSFirstname = new System.Windows.Forms.Label();
-            this.lblSLastname = new System.Windows.Forms.Label();
-            this.txtSMiddlename = new System.Windows.Forms.TextBox();
-            this.txtSFirstname = new System.Windows.Forms.TextBox();
-            this.txtSLastname = new System.Windows.Forms.TextBox();
-            this.lblNameSpouse = new System.Windows.Forms.Label();
-            this.Panel3 = new System.Windows.Forms.Panel();
-            this.rbMarried = new System.Windows.Forms.RadioButton();
-            this.rbSingle = new System.Windows.Forms.RadioButton();
-            this.dtpBdate = new System.Windows.Forms.DateTimePicker();
-            this.Penel1 = new System.Windows.Forms.Panel();
-            this.Panel2 = new System.Windows.Forms.Panel();
-            this.rbGenderF = new System.Windows.Forms.RadioButton();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.rbGenderM = new System.Windows.Forms.RadioButton();
-            this.lblMiddlename = new System.Windows.Forms.Label();
-            this.lblFirstname = new System.Windows.Forms.Label();
-            this.lblLastname = new System.Windows.Forms.Label();
-            this.txtMiddlename = new System.Windows.Forms.TextBox();
-            this.txtFirstname = new System.Windows.Forms.TextBox();
-            this.txtLastname = new System.Windows.Forms.TextBox();
-            this.lblProposedInsuredName = new System.Windows.Forms.Label();
+            this.cboxfinancial_advisor = new System.Windows.Forms.ComboBox();
             this.Panel4 = new System.Windows.Forms.Panel();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.panel32 = new System.Windows.Forms.Panel();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.Panel5 = new System.Windows.Forms.Panel();
+            this.rbNo = new System.Windows.Forms.RadioButton();
+            this.rbYES = new System.Windows.Forms.RadioButton();
+            this.txtsubanswer2 = new System.Windows.Forms.TextBox();
+            this.txtsubanswer3 = new System.Windows.Forms.TextBox();
+            this.txtSSSGSISNumber = new System.Windows.Forms.TextBox();
+            this.txtTaxIDNumber = new System.Windows.Forms.TextBox();
+            this.txtNatureofBusiness = new System.Windows.Forms.TextBox();
+            this.txtCompanyConctactNumber = new System.Windows.Forms.TextBox();
+            this.txtCompanyAddress = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.lblQuestion = new System.Windows.Forms.Label();
             this.lblsubquestion1 = new System.Windows.Forms.Label();
-            this.lblsubquestion2 = new System.Windows.Forms.Label();
-            this.lblNatureofBusiness = new System.Windows.Forms.Label();
-            this.lblTaxID = new System.Windows.Forms.Label();
-            this.lblSSSGSIS = new System.Windows.Forms.Label();
-            this.lblCompanyname = new System.Windows.Forms.Label();
-            this.lblCompanyContactNumber = new System.Windows.Forms.Label();
-            this.lblCompanyAddress = new System.Windows.Forms.Label();
             this.txtOtherSource = new System.Windows.Forms.TextBox();
             this.txtBusinessIncome = new System.Windows.Forms.TextBox();
             this.txtWorkSalary = new System.Windows.Forms.TextBox();
-            this.lblWorkSalary = new System.Windows.Forms.Label();
-            this.lblBusinessIncome = new System.Windows.Forms.Label();
-            this.lblOtherSource = new System.Windows.Forms.Label();
             this.txtOccupation = new System.Windows.Forms.TextBox();
             this.lblMonthlyIncome = new System.Windows.Forms.Label();
-            this.lblOccupation = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panelBeneficiaries.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficiaries)).BeginInit();
-            this.Panel5.SuspendLayout();
-            this.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbID2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbID1)).BeginInit();
+            this.panelBeneficiaries = new System.Windows.Forms.Panel();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.panel41 = new System.Windows.Forms.Panel();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.btnBUpdate = new System.Windows.Forms.Button();
+            this.txtBShare = new System.Windows.Forms.TextBox();
+            this.txtBRelationship = new System.Windows.Forms.TextBox();
+            this.txtBOccupation = new System.Windows.Forms.TextBox();
+            this.btnRemoveBeneficiary = new System.Windows.Forms.Button();
+            this.txtBBirthPlace = new System.Windows.Forms.TextBox();
+            this.btnAddBeneficiary = new System.Windows.Forms.Button();
+            this.lblBBirthDate = new System.Windows.Forms.Label();
+            this.dtpBBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.txtBFullname = new System.Windows.Forms.TextBox();
+            this.dgvBeneficiaries = new System.Windows.Forms.DataGridView();
+            this.lblBeneficiaries = new System.Windows.Forms.Label();
+            this.panel43 = new System.Windows.Forms.Panel();
+            this.panel44 = new System.Windows.Forms.Panel();
             this.Panel3.SuspendLayout();
             this.Penel1.SuspendLayout();
             this.Panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID1)).BeginInit();
             this.Panel4.SuspendLayout();
+            this.Panel5.SuspendLayout();
+            this.panelBeneficiaries.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficiaries)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnBUpdate
+            // btnAddClient
             // 
-            this.btnBUpdate.Location = new System.Drawing.Point(368, 306);
-            this.btnBUpdate.Name = "btnBUpdate";
-            this.btnBUpdate.Size = new System.Drawing.Size(91, 23);
-            this.btnBUpdate.TabIndex = 16;
-            this.btnBUpdate.Text = "Update";
-            this.btnBUpdate.UseVisualStyleBackColor = true;
-            this.btnBUpdate.Click += new System.EventHandler(this.btnBUpdate_Click);
+            this.btnAddClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnAddClient.FlatAppearance.BorderSize = 0;
+            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddClient.Image = ((System.Drawing.Image)(resources.GetObject("btnAddClient.Image")));
+            this.btnAddClient.Location = new System.Drawing.Point(596, 547);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(158, 62);
+            this.btnAddClient.TabIndex = 11;
+            this.btnAddClient.Text = "Add Clients";
+            this.btnAddClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddClient.UseVisualStyleBackColor = false;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
-            // txtBShare
+            // Button2
             // 
-            this.txtBShare.Location = new System.Drawing.Point(400, 91);
-            this.txtBShare.Name = "txtBShare";
-            this.txtBShare.Size = new System.Drawing.Size(183, 20);
-            this.txtBShare.TabIndex = 15;
+            this.Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.Button2.FlatAppearance.BorderSize = 0;
+            this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button2.Image = ((System.Drawing.Image)(resources.GetObject("Button2.Image")));
+            this.Button2.Location = new System.Drawing.Point(1070, 547);
+            this.Button2.Name = "Button2";
+            this.Button2.Size = new System.Drawing.Size(158, 62);
+            this.Button2.TabIndex = 15;
+            this.Button2.Text = "View E - Policy";
+            this.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Button2.UseVisualStyleBackColor = false;
             // 
-            // txtBRelationship
+            // btnDone
             // 
-            this.txtBRelationship.Location = new System.Drawing.Point(400, 59);
-            this.txtBRelationship.Name = "txtBRelationship";
-            this.txtBRelationship.Size = new System.Drawing.Size(183, 20);
-            this.txtBRelationship.TabIndex = 14;
+            this.btnDone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnDone.FlatAppearance.BorderSize = 0;
+            this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.Image = ((System.Drawing.Image)(resources.GetObject("btnDone.Image")));
+            this.btnDone.Location = new System.Drawing.Point(912, 547);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(158, 62);
+            this.btnDone.TabIndex = 14;
+            this.btnDone.Text = "Done";
+            this.btnDone.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // lblBshare
+            // btnUpdateClient
             // 
-            this.lblBshare.AutoSize = true;
-            this.lblBshare.Location = new System.Drawing.Point(348, 94);
-            this.lblBshare.Name = "lblBshare";
-            this.lblBshare.Size = new System.Drawing.Size(46, 13);
-            this.lblBshare.TabIndex = 13;
-            this.lblBshare.Text = "% Share";
+            this.btnUpdateClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdateClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnUpdateClient.FlatAppearance.BorderSize = 0;
+            this.btnUpdateClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateClient.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateClient.Image")));
+            this.btnUpdateClient.Location = new System.Drawing.Point(754, 547);
+            this.btnUpdateClient.Name = "btnUpdateClient";
+            this.btnUpdateClient.Size = new System.Drawing.Size(158, 62);
+            this.btnUpdateClient.TabIndex = 13;
+            this.btnUpdateClient.Text = "Update Clients";
+            this.btnUpdateClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdateClient.UseVisualStyleBackColor = false;
+            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
             // 
-            // lblBRelationship
+            // txtClientsID
             // 
-            this.lblBRelationship.AutoSize = true;
-            this.lblBRelationship.Location = new System.Drawing.Point(329, 62);
-            this.lblBRelationship.Name = "lblBRelationship";
-            this.lblBRelationship.Size = new System.Drawing.Size(65, 13);
-            this.lblBRelationship.TabIndex = 12;
-            this.lblBRelationship.Text = "Relationship";
+            this.txtClientsID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtClientsID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientsID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtClientsID.Location = new System.Drawing.Point(16, 37);
+            this.txtClientsID.Name = "txtClientsID";
+            this.txtClientsID.Size = new System.Drawing.Size(485, 20);
+            this.txtClientsID.TabIndex = 41;
+            this.txtClientsID.Text = "Proposed Insured Name";
+            this.txtClientsID.Visible = false;
             // 
-            // txtBOccupation
+            // Label6
             // 
-            this.txtBOccupation.Location = new System.Drawing.Point(400, 29);
-            this.txtBOccupation.Name = "txtBOccupation";
-            this.txtBOccupation.Size = new System.Drawing.Size(183, 20);
-            this.txtBOccupation.TabIndex = 11;
+            this.Label6.AutoSize = true;
+            this.Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.Label6.Location = new System.Drawing.Point(4, 5);
+            this.Label6.Name = "Label6";
+            this.Label6.Size = new System.Drawing.Size(82, 17);
+            this.Label6.TabIndex = 18;
+            this.Label6.Text = "Civil Status:";
             // 
-            // lblBOccupation
+            // rbWidowed
             // 
-            this.lblBOccupation.AutoSize = true;
-            this.lblBOccupation.Location = new System.Drawing.Point(332, 27);
-            this.lblBOccupation.Name = "lblBOccupation";
-            this.lblBOccupation.Size = new System.Drawing.Size(62, 13);
-            this.lblBOccupation.TabIndex = 10;
-            this.lblBOccupation.Text = "Occupation";
+            this.rbWidowed.AutoSize = true;
+            this.rbWidowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.rbWidowed.Location = new System.Drawing.Point(156, 25);
+            this.rbWidowed.Name = "rbWidowed";
+            this.rbWidowed.Size = new System.Drawing.Size(89, 21);
+            this.rbWidowed.TabIndex = 17;
+            this.rbWidowed.Text = "Widowed";
+            this.rbWidowed.UseVisualStyleBackColor = true;
             // 
-            // btnRemoveBeneficiary
+            // txtSMiddlename
             // 
-            this.btnRemoveBeneficiary.Location = new System.Drawing.Point(465, 307);
-            this.btnRemoveBeneficiary.Name = "btnRemoveBeneficiary";
-            this.btnRemoveBeneficiary.Size = new System.Drawing.Size(118, 23);
-            this.btnRemoveBeneficiary.TabIndex = 2;
-            this.btnRemoveBeneficiary.Text = "Remove Beneficiary";
-            this.btnRemoveBeneficiary.UseVisualStyleBackColor = true;
-            this.btnRemoveBeneficiary.Click += new System.EventHandler(this.btnRemoveBeneficiary_Click);
+            this.txtSMiddlename.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSMiddlename.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSMiddlename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtSMiddlename.Location = new System.Drawing.Point(301, 357);
+            this.txtSMiddlename.Name = "txtSMiddlename";
+            this.txtSMiddlename.Size = new System.Drawing.Size(132, 20);
+            this.txtSMiddlename.TabIndex = 19;
+            this.txtSMiddlename.Text = "Middle name";
             // 
-            // txtBBirthPlace
+            // txtSFirstname
             // 
-            this.txtBBirthPlace.Location = new System.Drawing.Point(103, 95);
-            this.txtBBirthPlace.Name = "txtBBirthPlace";
-            this.txtBBirthPlace.Size = new System.Drawing.Size(194, 20);
-            this.txtBBirthPlace.TabIndex = 9;
+            this.txtSFirstname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSFirstname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSFirstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtSFirstname.Location = new System.Drawing.Point(160, 357);
+            this.txtSFirstname.Name = "txtSFirstname";
+            this.txtSFirstname.Size = new System.Drawing.Size(132, 20);
+            this.txtSFirstname.TabIndex = 18;
+            this.txtSFirstname.Text = "First name";
             // 
-            // btnAddBeneficiary
+            // txtSLastname
             // 
-            this.btnAddBeneficiary.Location = new System.Drawing.Point(492, 118);
-            this.btnAddBeneficiary.Name = "btnAddBeneficiary";
-            this.btnAddBeneficiary.Size = new System.Drawing.Size(91, 23);
-            this.btnAddBeneficiary.TabIndex = 3;
-            this.btnAddBeneficiary.Text = "Add Beneficiary";
-            this.btnAddBeneficiary.UseVisualStyleBackColor = true;
-            this.btnAddBeneficiary.Click += new System.EventHandler(this.btnAddBeneficiary_Click);
+            this.txtSLastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtSLastname.Location = new System.Drawing.Point(19, 357);
+            this.txtSLastname.Name = "txtSLastname";
+            this.txtSLastname.Size = new System.Drawing.Size(132, 20);
+            this.txtSLastname.TabIndex = 17;
+            this.txtSLastname.Text = "Last name";
             // 
-            // lblBBirthPlace
+            // lblNameSpouse
             // 
-            this.lblBBirthPlace.AutoSize = true;
-            this.lblBBirthPlace.Location = new System.Drawing.Point(35, 95);
-            this.lblBBirthPlace.Name = "lblBBirthPlace";
-            this.lblBBirthPlace.Size = new System.Drawing.Size(58, 13);
-            this.lblBBirthPlace.TabIndex = 8;
-            this.lblBBirthPlace.Text = "Birth Place";
+            this.lblNameSpouse.AutoSize = true;
+            this.lblNameSpouse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameSpouse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.lblNameSpouse.Location = new System.Drawing.Point(111, 318);
+            this.lblNameSpouse.Name = "lblNameSpouse";
+            this.lblNameSpouse.Size = new System.Drawing.Size(221, 21);
+            this.lblNameSpouse.TabIndex = 16;
+            this.lblNameSpouse.Text = "Name of Spouse (If Maried)";
             // 
-            // panelBeneficiaries
+            // Panel3
             // 
-            this.panelBeneficiaries.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panelBeneficiaries.Controls.Add(this.btnBUpdate);
-            this.panelBeneficiaries.Controls.Add(this.txtBShare);
-            this.panelBeneficiaries.Controls.Add(this.txtBRelationship);
-            this.panelBeneficiaries.Controls.Add(this.lblBshare);
-            this.panelBeneficiaries.Controls.Add(this.lblBRelationship);
-            this.panelBeneficiaries.Controls.Add(this.txtBOccupation);
-            this.panelBeneficiaries.Controls.Add(this.lblBOccupation);
-            this.panelBeneficiaries.Controls.Add(this.btnRemoveBeneficiary);
-            this.panelBeneficiaries.Controls.Add(this.txtBBirthPlace);
-            this.panelBeneficiaries.Controls.Add(this.btnAddBeneficiary);
-            this.panelBeneficiaries.Controls.Add(this.lblBBirthPlace);
-            this.panelBeneficiaries.Controls.Add(this.lblBBirthDate);
-            this.panelBeneficiaries.Controls.Add(this.dtpBBirthDate);
-            this.panelBeneficiaries.Controls.Add(this.lblBFullname);
-            this.panelBeneficiaries.Controls.Add(this.txtBFullname);
-            this.panelBeneficiaries.Controls.Add(this.dgvBeneficiaries);
-            this.panelBeneficiaries.Controls.Add(this.lblBeneficiaries);
-            this.panelBeneficiaries.Location = new System.Drawing.Point(19, 379);
-            this.panelBeneficiaries.Name = "panelBeneficiaries";
-            this.panelBeneficiaries.Size = new System.Drawing.Size(593, 337);
-            this.panelBeneficiaries.TabIndex = 12;
+            this.Panel3.Controls.Add(this.Label6);
+            this.Panel3.Controls.Add(this.rbWidowed);
+            this.Panel3.Controls.Add(this.rbMarried);
+            this.Panel3.Controls.Add(this.rbSingle);
+            this.Panel3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Panel3.Location = new System.Drawing.Point(16, 247);
+            this.Panel3.Name = "Panel3";
+            this.Panel3.Size = new System.Drawing.Size(251, 58);
+            this.Panel3.TabIndex = 15;
             // 
-            // lblBBirthDate
+            // rbMarried
             // 
-            this.lblBBirthDate.AutoSize = true;
-            this.lblBBirthDate.Location = new System.Drawing.Point(35, 66);
-            this.lblBBirthDate.Name = "lblBBirthDate";
-            this.lblBBirthDate.Size = new System.Drawing.Size(54, 13);
-            this.lblBBirthDate.TabIndex = 7;
-            this.lblBBirthDate.Text = "Birth Date";
+            this.rbMarried.AutoSize = true;
+            this.rbMarried.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.rbMarried.Location = new System.Drawing.Point(76, 25);
+            this.rbMarried.Name = "rbMarried";
+            this.rbMarried.Size = new System.Drawing.Size(74, 21);
+            this.rbMarried.TabIndex = 16;
+            this.rbMarried.Text = "Married";
+            this.rbMarried.UseVisualStyleBackColor = true;
             // 
-            // dtpBBirthDate
+            // rbSingle
             // 
-            this.dtpBBirthDate.Location = new System.Drawing.Point(103, 64);
-            this.dtpBBirthDate.Name = "dtpBBirthDate";
-            this.dtpBBirthDate.Size = new System.Drawing.Size(194, 20);
-            this.dtpBBirthDate.TabIndex = 6;
+            this.rbSingle.AutoSize = true;
+            this.rbSingle.Checked = true;
+            this.rbSingle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.rbSingle.Location = new System.Drawing.Point(7, 25);
+            this.rbSingle.Name = "rbSingle";
+            this.rbSingle.Size = new System.Drawing.Size(63, 21);
+            this.rbSingle.TabIndex = 15;
+            this.rbSingle.TabStop = true;
+            this.rbSingle.Text = "Single";
+            this.rbSingle.UseVisualStyleBackColor = true;
             // 
-            // lblBFullname
+            // Penel1
             // 
-            this.lblBFullname.AutoSize = true;
-            this.lblBFullname.Location = new System.Drawing.Point(45, 42);
-            this.lblBFullname.Name = "lblBFullname";
-            this.lblBFullname.Size = new System.Drawing.Size(241, 13);
-            this.lblBFullname.TabIndex = 5;
-            this.lblBFullname.Text = "Full Name: (Last Name, First Name, Middle Name)";
+            this.Penel1.BackColor = System.Drawing.Color.White;
+            this.Penel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Penel1.Controls.Add(this.panel25);
+            this.Penel1.Controls.Add(this.panel24);
+            this.Penel1.Controls.Add(this.panel23);
+            this.Penel1.Controls.Add(this.panel22);
+            this.Penel1.Controls.Add(this.panel21);
+            this.Penel1.Controls.Add(this.panel20);
+            this.Penel1.Controls.Add(this.panel19);
+            this.Penel1.Controls.Add(this.panel18);
+            this.Penel1.Controls.Add(this.panel17);
+            this.Penel1.Controls.Add(this.panel16);
+            this.Penel1.Controls.Add(this.panel15);
+            this.Penel1.Controls.Add(this.panel14);
+            this.Penel1.Controls.Add(this.panel13);
+            this.Penel1.Controls.Add(this.panel12);
+            this.Penel1.Controls.Add(this.panel11);
+            this.Penel1.Controls.Add(this.txtemailaddress);
+            this.Penel1.Controls.Add(this.txttelephonenumber);
+            this.Penel1.Controls.Add(this.txtcpnumber);
+            this.Penel1.Controls.Add(this.txtresidenceaddress);
+            this.Penel1.Controls.Add(this.txtweight);
+            this.Penel1.Controls.Add(this.txtHeight);
+            this.Penel1.Controls.Add(this.txtBirthplace);
+            this.Penel1.Controls.Add(this.dtpBdate);
+            this.Penel1.Controls.Add(this.lblBirthDate);
+            this.Penel1.Controls.Add(this.panel10);
+            this.Penel1.Controls.Add(this.txtClientsID);
+            this.Penel1.Controls.Add(this.txtSMiddlename);
+            this.Penel1.Controls.Add(this.txtSFirstname);
+            this.Penel1.Controls.Add(this.txtSLastname);
+            this.Penel1.Controls.Add(this.lblNameSpouse);
+            this.Penel1.Controls.Add(this.Panel3);
+            this.Penel1.Controls.Add(this.Panel2);
+            this.Penel1.Controls.Add(this.txtMiddlename);
+            this.Penel1.Controls.Add(this.txtFirstname);
+            this.Penel1.Controls.Add(this.txtLastname);
+            this.Penel1.Location = new System.Drawing.Point(3, 3);
+            this.Penel1.Name = "Penel1";
+            this.Penel1.Size = new System.Drawing.Size(534, 485);
+            this.Penel1.TabIndex = 9;
             // 
-            // txtBFullname
+            // panel25
             // 
-            this.txtBFullname.Location = new System.Drawing.Point(38, 20);
-            this.txtBFullname.Name = "txtBFullname";
-            this.txtBFullname.Size = new System.Drawing.Size(259, 20);
-            this.txtBFullname.TabIndex = 4;
+            this.panel25.BackColor = System.Drawing.Color.DimGray;
+            this.panel25.Location = new System.Drawing.Point(301, 382);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(132, 1);
+            this.panel25.TabIndex = 57;
             // 
-            // dgvBeneficiaries
+            // panel24
             // 
-            this.dgvBeneficiaries.AllowUserToAddRows = false;
-            this.dgvBeneficiaries.AllowUserToDeleteRows = false;
-            this.dgvBeneficiaries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBeneficiaries.Location = new System.Drawing.Point(6, 147);
-            this.dgvBeneficiaries.MultiSelect = false;
-            this.dgvBeneficiaries.Name = "dgvBeneficiaries";
-            this.dgvBeneficiaries.ReadOnly = true;
-            this.dgvBeneficiaries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBeneficiaries.Size = new System.Drawing.Size(577, 154);
-            this.dgvBeneficiaries.TabIndex = 1;
-            this.dgvBeneficiaries.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBeneficiaries_CellContentDoubleClick);
-            this.dgvBeneficiaries.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBeneficiaries_CellMouseDoubleClick);
+            this.panel24.BackColor = System.Drawing.Color.DimGray;
+            this.panel24.Location = new System.Drawing.Point(160, 383);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(132, 1);
+            this.panel24.TabIndex = 57;
             // 
-            // lblBeneficiaries
+            // panel23
             // 
-            this.lblBeneficiaries.AutoSize = true;
-            this.lblBeneficiaries.Location = new System.Drawing.Point(7, 4);
-            this.lblBeneficiaries.Name = "lblBeneficiaries";
-            this.lblBeneficiaries.Size = new System.Drawing.Size(87, 13);
-            this.lblBeneficiaries.TabIndex = 0;
-            this.lblBeneficiaries.Text = "BENEFICIARIES";
+            this.panel23.BackColor = System.Drawing.Color.DimGray;
+            this.panel23.Location = new System.Drawing.Point(19, 382);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(132, 1);
+            this.panel23.TabIndex = 56;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.DimGray;
+            this.panel22.Location = new System.Drawing.Point(115, 343);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(211, 1);
+            this.panel22.TabIndex = 55;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.DimGray;
+            this.panel21.Location = new System.Drawing.Point(16, 240);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(235, 1);
+            this.panel21.TabIndex = 55;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.DimGray;
+            this.panel20.Location = new System.Drawing.Point(290, 235);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(211, 1);
+            this.panel20.TabIndex = 54;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.DimGray;
+            this.panel19.Location = new System.Drawing.Point(290, 200);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(211, 1);
+            this.panel19.TabIndex = 53;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.DimGray;
+            this.panel18.Location = new System.Drawing.Point(16, 200);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(211, 1);
+            this.panel18.TabIndex = 45;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.DimGray;
+            this.panel17.Location = new System.Drawing.Point(290, 164);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(211, 1);
+            this.panel17.TabIndex = 45;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.DimGray;
+            this.panel16.Location = new System.Drawing.Point(16, 167);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(211, 1);
+            this.panel16.TabIndex = 44;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.DimGray;
+            this.panel15.Location = new System.Drawing.Point(290, 135);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(211, 1);
+            this.panel15.TabIndex = 44;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.DimGray;
+            this.panel14.Location = new System.Drawing.Point(16, 135);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(211, 1);
+            this.panel14.TabIndex = 43;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.DimGray;
+            this.panel13.Location = new System.Drawing.Point(298, 99);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(132, 1);
+            this.panel13.TabIndex = 52;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.DimGray;
+            this.panel12.Location = new System.Drawing.Point(157, 99);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(132, 1);
+            this.panel12.TabIndex = 43;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.DimGray;
+            this.panel11.Location = new System.Drawing.Point(16, 63);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(485, 1);
+            this.panel11.TabIndex = 43;
+            // 
+            // txtemailaddress
+            // 
+            this.txtemailaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtemailaddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtemailaddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtemailaddress.Location = new System.Drawing.Point(290, 109);
+            this.txtemailaddress.Name = "txtemailaddress";
+            this.txtemailaddress.Size = new System.Drawing.Size(211, 20);
+            this.txtemailaddress.TabIndex = 51;
+            this.txtemailaddress.Text = "Email Address";
+            // 
+            // txttelephonenumber
+            // 
+            this.txttelephonenumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txttelephonenumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttelephonenumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txttelephonenumber.Location = new System.Drawing.Point(290, 142);
+            this.txttelephonenumber.Name = "txttelephonenumber";
+            this.txttelephonenumber.Size = new System.Drawing.Size(211, 20);
+            this.txttelephonenumber.TabIndex = 50;
+            this.txttelephonenumber.Text = "Home Telephone Number";
+            // 
+            // txtcpnumber
+            // 
+            this.txtcpnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtcpnumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcpnumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtcpnumber.Location = new System.Drawing.Point(290, 174);
+            this.txtcpnumber.Name = "txtcpnumber";
+            this.txtcpnumber.Size = new System.Drawing.Size(211, 20);
+            this.txtcpnumber.TabIndex = 49;
+            this.txtcpnumber.Text = "Cellphone Number";
+            // 
+            // txtresidenceaddress
+            // 
+            this.txtresidenceaddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtresidenceaddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtresidenceaddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtresidenceaddress.Location = new System.Drawing.Point(290, 207);
+            this.txtresidenceaddress.Name = "txtresidenceaddress";
+            this.txtresidenceaddress.Size = new System.Drawing.Size(211, 20);
+            this.txtresidenceaddress.TabIndex = 48;
+            this.txtresidenceaddress.Text = "Residence Address";
+            // 
+            // txtweight
+            // 
+            this.txtweight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtweight.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtweight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtweight.Location = new System.Drawing.Point(16, 109);
+            this.txtweight.Name = "txtweight";
+            this.txtweight.Size = new System.Drawing.Size(211, 20);
+            this.txtweight.TabIndex = 47;
+            this.txtweight.Text = "Weight";
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHeight.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtHeight.Location = new System.Drawing.Point(16, 142);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(211, 20);
+            this.txtHeight.TabIndex = 46;
+            this.txtHeight.Text = "Height";
+            // 
+            // txtBirthplace
+            // 
+            this.txtBirthplace.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBirthplace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBirthplace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtBirthplace.Location = new System.Drawing.Point(16, 174);
+            this.txtBirthplace.Name = "txtBirthplace";
+            this.txtBirthplace.Size = new System.Drawing.Size(211, 20);
+            this.txtBirthplace.TabIndex = 45;
+            this.txtBirthplace.Text = "Place of Birth";
+            // 
+            // dtpBdate
+            // 
+            this.dtpBdate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.dtpBdate.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.dtpBdate.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dtpBdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBdate.Location = new System.Drawing.Point(129, 207);
+            this.dtpBdate.Name = "dtpBdate";
+            this.dtpBdate.Size = new System.Drawing.Size(126, 27);
+            this.dtpBdate.TabIndex = 44;
+            // 
+            // lblBirthDate
+            // 
+            this.lblBirthDate.AutoSize = true;
+            this.lblBirthDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.lblBirthDate.Location = new System.Drawing.Point(12, 207);
+            this.lblBirthDate.Name = "lblBirthDate";
+            this.lblBirthDate.Size = new System.Drawing.Size(111, 21);
+            this.lblBirthDate.TabIndex = 43;
+            this.lblBirthDate.Text = "Date of Birth:";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.DimGray;
+            this.panel10.Location = new System.Drawing.Point(16, 99);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(132, 1);
+            this.panel10.TabIndex = 42;
+            // 
+            // Panel2
+            // 
+            this.Panel2.Controls.Add(this.rbGenderF);
+            this.Panel2.Controls.Add(this.Label5);
+            this.Panel2.Controls.Add(this.rbGenderM);
+            this.Panel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Panel2.Location = new System.Drawing.Point(289, 247);
+            this.Panel2.Name = "Panel2";
+            this.Panel2.Size = new System.Drawing.Size(141, 60);
+            this.Panel2.TabIndex = 11;
+            // 
+            // rbGenderF
+            // 
+            this.rbGenderF.AutoSize = true;
+            this.rbGenderF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.rbGenderF.Location = new System.Drawing.Point(60, 28);
+            this.rbGenderF.Name = "rbGenderF";
+            this.rbGenderF.Size = new System.Drawing.Size(73, 21);
+            this.rbGenderF.TabIndex = 12;
+            this.rbGenderF.Text = "Female";
+            this.rbGenderF.UseVisualStyleBackColor = true;
+            // 
+            // Label5
+            // 
+            this.Label5.AutoSize = true;
+            this.Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.Label5.Location = new System.Drawing.Point(3, 5);
+            this.Label5.Name = "Label5";
+            this.Label5.Size = new System.Drawing.Size(60, 17);
+            this.Label5.TabIndex = 11;
+            this.Label5.Text = "Gender:";
+            // 
+            // rbGenderM
+            // 
+            this.rbGenderM.AutoSize = true;
+            this.rbGenderM.Checked = true;
+            this.rbGenderM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.rbGenderM.Location = new System.Drawing.Point(3, 25);
+            this.rbGenderM.Name = "rbGenderM";
+            this.rbGenderM.Size = new System.Drawing.Size(57, 21);
+            this.rbGenderM.TabIndex = 10;
+            this.rbGenderM.TabStop = true;
+            this.rbGenderM.Text = "Male";
+            this.rbGenderM.UseVisualStyleBackColor = true;
+            // 
+            // txtMiddlename
+            // 
+            this.txtMiddlename.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMiddlename.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiddlename.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtMiddlename.Location = new System.Drawing.Point(298, 75);
+            this.txtMiddlename.Name = "txtMiddlename";
+            this.txtMiddlename.Size = new System.Drawing.Size(132, 20);
+            this.txtMiddlename.TabIndex = 3;
+            this.txtMiddlename.Text = "Middle name";
+            // 
+            // txtFirstname
+            // 
+            this.txtFirstname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFirstname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtFirstname.Location = new System.Drawing.Point(157, 75);
+            this.txtFirstname.Name = "txtFirstname";
+            this.txtFirstname.Size = new System.Drawing.Size(132, 20);
+            this.txtFirstname.TabIndex = 2;
+            this.txtFirstname.Text = "First name";
+            // 
+            // txtLastname
+            // 
+            this.txtLastname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtLastname.Location = new System.Drawing.Point(16, 75);
+            this.txtLastname.Name = "txtLastname";
+            this.txtLastname.Size = new System.Drawing.Size(132, 20);
+            this.txtLastname.TabIndex = 1;
+            this.txtLastname.Text = "Last name";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
+            this.panel6.Controls.Add(this.button_Exit);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1270, 40);
+            this.panel6.TabIndex = 17;
+            // 
+            // button_Exit
+            // 
+            this.button_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Exit.FlatAppearance.BorderSize = 0;
+            this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
+            this.button_Exit.Location = new System.Drawing.Point(1231, 0);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(36, 33);
+            this.button_Exit.TabIndex = 16;
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.btnDone_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 40);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(10, 584);
+            this.panel7.TabIndex = 18;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(1260, 40);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 584);
+            this.panel8.TabIndex = 19;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel9.Location = new System.Drawing.Point(10, 614);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1250, 10);
+            this.panel9.TabIndex = 20;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.Penel1);
+            this.flowLayoutPanel1.Controls.Add(this.Panel1);
+            this.flowLayoutPanel1.Controls.Add(this.Panel4);
+            this.flowLayoutPanel1.Controls.Add(this.panelBeneficiaries);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 46);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1237, 495);
+            this.flowLayoutPanel1.TabIndex = 21;
+            // 
+            // Panel1
+            // 
+            this.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel1.Controls.Add(this.panel44);
+            this.Panel1.Controls.Add(this.panel43);
+            this.Panel1.Controls.Add(this.pbID2);
+            this.Panel1.Controls.Add(this.txtIDDir2);
+            this.Panel1.Controls.Add(this.pbID1);
+            this.Panel1.Controls.Add(this.btnBrowseID2);
+            this.Panel1.Controls.Add(this.label2);
+            this.Panel1.Controls.Add(this.txtIDDir1);
+            this.Panel1.Controls.Add(this.btnBrowseID1);
+            this.Panel1.Controls.Add(this.lbPlan);
+            this.Panel1.Controls.Add(this.btnAddPlan);
+            this.Panel1.Controls.Add(this.cboxfinancial_advisor);
+            this.Panel1.Location = new System.Drawing.Point(543, 3);
+            this.Panel1.Name = "Panel1";
+            this.Panel1.Size = new System.Drawing.Size(288, 485);
+            this.Panel1.TabIndex = 17;
+            // 
+            // pbID2
+            // 
+            this.pbID2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbID2.Location = new System.Drawing.Point(138, 360);
+            this.pbID2.Name = "pbID2";
+            this.pbID2.Size = new System.Drawing.Size(129, 99);
+            this.pbID2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbID2.TabIndex = 18;
+            this.pbID2.TabStop = false;
+            // 
+            // txtIDDir2
+            // 
+            this.txtIDDir2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIDDir2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDDir2.Location = new System.Drawing.Point(123, 318);
+            this.txtIDDir2.Name = "txtIDDir2";
+            this.txtIDDir2.Size = new System.Drawing.Size(144, 20);
+            this.txtIDDir2.TabIndex = 109;
+            // 
+            // pbID1
+            // 
+            this.pbID1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbID1.Location = new System.Drawing.Point(6, 360);
+            this.pbID1.Name = "pbID1";
+            this.pbID1.Size = new System.Drawing.Size(129, 99);
+            this.pbID1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbID1.TabIndex = 17;
+            this.pbID1.TabStop = false;
+            // 
+            // btnBrowseID2
+            // 
+            this.btnBrowseID2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnBrowseID2.FlatAppearance.BorderSize = 0;
+            this.btnBrowseID2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowseID2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseID2.Image = ((System.Drawing.Image)(resources.GetObject("btnBrowseID2.Image")));
+            this.btnBrowseID2.Location = new System.Drawing.Point(6, 306);
+            this.btnBrowseID2.Name = "btnBrowseID2";
+            this.btnBrowseID2.Size = new System.Drawing.Size(111, 38);
+            this.btnBrowseID2.TabIndex = 108;
+            this.btnBrowseID2.Text = "Browse";
+            this.btnBrowseID2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBrowseID2.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 222);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 21);
+            this.label2.TabIndex = 106;
+            this.label2.Text = "Valid ID:";
+            // 
+            // txtIDDir1
+            // 
+            this.txtIDDir1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIDDir1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDDir1.Location = new System.Drawing.Point(123, 266);
+            this.txtIDDir1.Name = "txtIDDir1";
+            this.txtIDDir1.Size = new System.Drawing.Size(144, 20);
+            this.txtIDDir1.TabIndex = 105;
+            // 
+            // btnBrowseID1
+            // 
+            this.btnBrowseID1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnBrowseID1.FlatAppearance.BorderSize = 0;
+            this.btnBrowseID1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowseID1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowseID1.Image = ((System.Drawing.Image)(resources.GetObject("btnBrowseID1.Image")));
+            this.btnBrowseID1.Location = new System.Drawing.Point(6, 257);
+            this.btnBrowseID1.Name = "btnBrowseID1";
+            this.btnBrowseID1.Size = new System.Drawing.Size(111, 38);
+            this.btnBrowseID1.TabIndex = 103;
+            this.btnBrowseID1.Text = "Browse";
+            this.btnBrowseID1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBrowseID1.UseVisualStyleBackColor = false;
+            // 
+            // lbPlan
+            // 
+            this.lbPlan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlan.FormattingEnabled = true;
+            this.lbPlan.ItemHeight = 21;
+            this.lbPlan.Location = new System.Drawing.Point(6, 93);
+            this.lbPlan.Name = "lbPlan";
+            this.lbPlan.Size = new System.Drawing.Size(261, 109);
+            this.lbPlan.TabIndex = 93;
+            // 
+            // btnAddPlan
+            // 
+            this.btnAddPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnAddPlan.FlatAppearance.BorderSize = 0;
+            this.btnAddPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPlan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPlan.Location = new System.Drawing.Point(20, 43);
+            this.btnAddPlan.Name = "btnAddPlan";
+            this.btnAddPlan.Size = new System.Drawing.Size(217, 43);
+            this.btnAddPlan.TabIndex = 92;
+            this.btnAddPlan.Text = "Add Plan";
+            this.btnAddPlan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddPlan.UseVisualStyleBackColor = false;
+            // 
+            // cboxfinancial_advisor
+            // 
+            this.cboxfinancial_advisor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxfinancial_advisor.FormattingEnabled = true;
+            this.cboxfinancial_advisor.Location = new System.Drawing.Point(20, 8);
+            this.cboxfinancial_advisor.Name = "cboxfinancial_advisor";
+            this.cboxfinancial_advisor.Size = new System.Drawing.Size(217, 29);
+            this.cboxfinancial_advisor.TabIndex = 78;
+            this.cboxfinancial_advisor.Text = "Assign Financial Advisor";
+            // 
+            // Panel4
+            // 
+            this.Panel4.BackColor = System.Drawing.Color.White;
+            this.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Panel4.Controls.Add(this.panel37);
+            this.Panel4.Controls.Add(this.panel36);
+            this.Panel4.Controls.Add(this.panel35);
+            this.Panel4.Controls.Add(this.panel34);
+            this.Panel4.Controls.Add(this.panel33);
+            this.Panel4.Controls.Add(this.panel32);
+            this.Panel4.Controls.Add(this.panel31);
+            this.Panel4.Controls.Add(this.panel30);
+            this.Panel4.Controls.Add(this.panel29);
+            this.Panel4.Controls.Add(this.panel28);
+            this.Panel4.Controls.Add(this.panel27);
+            this.Panel4.Controls.Add(this.panel26);
+            this.Panel4.Controls.Add(this.Panel5);
+            this.Panel4.Controls.Add(this.txtsubanswer2);
+            this.Panel4.Controls.Add(this.txtsubanswer3);
+            this.Panel4.Controls.Add(this.txtSSSGSISNumber);
+            this.Panel4.Controls.Add(this.txtTaxIDNumber);
+            this.Panel4.Controls.Add(this.txtNatureofBusiness);
+            this.Panel4.Controls.Add(this.txtCompanyConctactNumber);
+            this.Panel4.Controls.Add(this.txtCompanyAddress);
+            this.Panel4.Controls.Add(this.txtCompanyName);
+            this.Panel4.Controls.Add(this.lblQuestion);
+            this.Panel4.Controls.Add(this.lblsubquestion1);
+            this.Panel4.Controls.Add(this.txtOtherSource);
+            this.Panel4.Controls.Add(this.txtBusinessIncome);
+            this.Panel4.Controls.Add(this.txtWorkSalary);
+            this.Panel4.Controls.Add(this.txtOccupation);
+            this.Panel4.Controls.Add(this.lblMonthlyIncome);
+            this.Panel4.Location = new System.Drawing.Point(837, 3);
+            this.Panel4.Name = "Panel4";
+            this.Panel4.Size = new System.Drawing.Size(373, 485);
+            this.Panel4.TabIndex = 18;
+            // 
+            // panel37
+            // 
+            this.panel37.BackColor = System.Drawing.Color.DimGray;
+            this.panel37.Location = new System.Drawing.Point(12, 465);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(339, 1);
+            this.panel37.TabIndex = 48;
+            // 
+            // panel36
+            // 
+            this.panel36.BackColor = System.Drawing.Color.DimGray;
+            this.panel36.Location = new System.Drawing.Point(12, 432);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(339, 1);
+            this.panel36.TabIndex = 47;
+            // 
+            // panel35
+            // 
+            this.panel35.BackColor = System.Drawing.Color.DimGray;
+            this.panel35.Location = new System.Drawing.Point(12, 322);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(244, 1);
+            this.panel35.TabIndex = 46;
+            // 
+            // panel34
+            // 
+            this.panel34.BackColor = System.Drawing.Color.DimGray;
+            this.panel34.Location = new System.Drawing.Point(12, 297);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(244, 1);
+            this.panel34.TabIndex = 46;
+            // 
+            // panel33
+            // 
+            this.panel33.BackColor = System.Drawing.Color.DimGray;
+            this.panel33.Location = new System.Drawing.Point(12, 272);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(244, 1);
+            this.panel33.TabIndex = 46;
+            // 
+            // panel32
+            // 
+            this.panel32.BackColor = System.Drawing.Color.DimGray;
+            this.panel32.Location = new System.Drawing.Point(12, 247);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(244, 1);
+            this.panel32.TabIndex = 46;
+            // 
+            // panel31
+            // 
+            this.panel31.BackColor = System.Drawing.Color.DimGray;
+            this.panel31.Location = new System.Drawing.Point(12, 222);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(244, 1);
+            this.panel31.TabIndex = 46;
+            // 
+            // panel30
+            // 
+            this.panel30.BackColor = System.Drawing.Color.DimGray;
+            this.panel30.Location = new System.Drawing.Point(12, 197);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(244, 1);
+            this.panel30.TabIndex = 77;
+            // 
+            // panel29
+            // 
+            this.panel29.BackColor = System.Drawing.Color.DimGray;
+            this.panel29.Location = new System.Drawing.Point(36, 141);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(244, 1);
+            this.panel29.TabIndex = 46;
+            // 
+            // panel28
+            // 
+            this.panel28.BackColor = System.Drawing.Color.DimGray;
+            this.panel28.Location = new System.Drawing.Point(36, 114);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(244, 1);
+            this.panel28.TabIndex = 46;
+            // 
+            // panel27
+            // 
+            this.panel27.BackColor = System.Drawing.Color.DimGray;
+            this.panel27.Location = new System.Drawing.Point(36, 87);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(244, 1);
+            this.panel27.TabIndex = 46;
+            // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.Color.DimGray;
+            this.panel26.Location = new System.Drawing.Point(12, 34);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(244, 1);
+            this.panel26.TabIndex = 45;
             // 
             // Panel5
             // 
             this.Panel5.Controls.Add(this.rbNo);
             this.Panel5.Controls.Add(this.rbYES);
-            this.Panel5.Location = new System.Drawing.Point(252, 402);
+            this.Panel5.Location = new System.Drawing.Point(145, 364);
             this.Panel5.Name = "Panel5";
             this.Panel5.Size = new System.Drawing.Size(129, 32);
             this.Panel5.TabIndex = 76;
@@ -353,885 +1054,437 @@
             this.rbYES.Text = "YES";
             this.rbYES.UseVisualStyleBackColor = true;
             // 
-            // lblsubquestion3
+            // txtsubanswer2
             // 
-            this.lblsubquestion3.AutoSize = true;
-            this.lblsubquestion3.Location = new System.Drawing.Point(9, 470);
-            this.lblsubquestion3.Name = "lblsubquestion3";
-            this.lblsubquestion3.Size = new System.Drawing.Size(240, 13);
-            this.lblsubquestion3.TabIndex = 75;
-            this.lblsubquestion3.Text = "Cigarette consumption, how many sticks per day?";
-            // 
-            // txtSSSGSISNumber
-            // 
-            this.txtSSSGSISNumber.Location = new System.Drawing.Point(198, 320);
-            this.txtSSSGSISNumber.Name = "txtSSSGSISNumber";
-            this.txtSSSGSISNumber.Size = new System.Drawing.Size(155, 20);
-            this.txtSSSGSISNumber.TabIndex = 71;
-            // 
-            // txtTaxIDNumber
-            // 
-            this.txtTaxIDNumber.Location = new System.Drawing.Point(198, 292);
-            this.txtTaxIDNumber.Name = "txtTaxIDNumber";
-            this.txtTaxIDNumber.Size = new System.Drawing.Size(155, 20);
-            this.txtTaxIDNumber.TabIndex = 70;
-            // 
-            // txtNatureofBusiness
-            // 
-            this.txtNatureofBusiness.Location = new System.Drawing.Point(198, 265);
-            this.txtNatureofBusiness.Name = "txtNatureofBusiness";
-            this.txtNatureofBusiness.Size = new System.Drawing.Size(155, 20);
-            this.txtNatureofBusiness.TabIndex = 69;
-            // 
-            // txtCompanyConctactNumber
-            // 
-            this.txtCompanyConctactNumber.Location = new System.Drawing.Point(198, 217);
-            this.txtCompanyConctactNumber.Name = "txtCompanyConctactNumber";
-            this.txtCompanyConctactNumber.Size = new System.Drawing.Size(155, 20);
-            this.txtCompanyConctactNumber.TabIndex = 68;
-            // 
-            // txtCompanyAddress
-            // 
-            this.txtCompanyAddress.Location = new System.Drawing.Point(198, 191);
-            this.txtCompanyAddress.Name = "txtCompanyAddress";
-            this.txtCompanyAddress.Size = new System.Drawing.Size(155, 20);
-            this.txtCompanyAddress.TabIndex = 67;
-            // 
-            // txtCompanyName
-            // 
-            this.txtCompanyName.Location = new System.Drawing.Point(198, 165);
-            this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(155, 20);
-            this.txtCompanyName.TabIndex = 66;
-            // 
-            // btnAddClient
-            // 
-            this.btnAddClient.Location = new System.Drawing.Point(674, 654);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(75, 62);
-            this.btnAddClient.TabIndex = 11;
-            this.btnAddClient.Text = "Add Clients";
-            this.btnAddClient.UseVisualStyleBackColor = true;
-            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            this.txtsubanswer2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsubanswer2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsubanswer2.Location = new System.Drawing.Point(12, 408);
+            this.txtsubanswer2.Name = "txtsubanswer2";
+            this.txtsubanswer2.Size = new System.Drawing.Size(339, 16);
+            this.txtsubanswer2.TabIndex = 74;
+            this.txtsubanswer2.Text = "If YES, since when do you start smoking?";
             // 
             // txtsubanswer3
             // 
-            this.txtsubanswer3.Location = new System.Drawing.Point(252, 466);
+            this.txtsubanswer3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtsubanswer3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsubanswer3.Location = new System.Drawing.Point(12, 443);
             this.txtsubanswer3.Name = "txtsubanswer3";
-            this.txtsubanswer3.Size = new System.Drawing.Size(129, 20);
+            this.txtsubanswer3.Size = new System.Drawing.Size(342, 16);
             this.txtsubanswer3.TabIndex = 73;
+            this.txtsubanswer3.Text = "Cigarette consumption, how many sticks per day?";
             // 
-            // cboxfinancial_advisor
+            // txtSSSGSISNumber
             // 
-            this.cboxfinancial_advisor.FormattingEnabled = true;
-            this.cboxfinancial_advisor.Location = new System.Drawing.Point(20, 23);
-            this.cboxfinancial_advisor.Name = "cboxfinancial_advisor";
-            this.cboxfinancial_advisor.Size = new System.Drawing.Size(217, 21);
-            this.cboxfinancial_advisor.TabIndex = 78;
-            this.cboxfinancial_advisor.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cboxfinancial_advisor_Format);
+            this.txtSSSGSISNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSSSGSISNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSSSGSISNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtSSSGSISNumber.Location = new System.Drawing.Point(12, 300);
+            this.txtSSSGSISNumber.Name = "txtSSSGSISNumber";
+            this.txtSSSGSISNumber.Size = new System.Drawing.Size(244, 20);
+            this.txtSSSGSISNumber.TabIndex = 71;
+            this.txtSSSGSISNumber.Text = "SSS or GSIS Number";
             // 
-            // Panel1
+            // txtTaxIDNumber
             // 
-            this.Panel1.Controls.Add(this.pbID2);
-            this.Panel1.Controls.Add(this.txtIDDir2);
-            this.Panel1.Controls.Add(this.pbID1);
-            this.Panel1.Controls.Add(this.btnBrowseID2);
-            this.Panel1.Controls.Add(this.label2);
-            this.Panel1.Controls.Add(this.txtIDDir1);
-            this.Panel1.Controls.Add(this.btnBrowseID1);
-            this.Panel1.Controls.Add(this.lbPlan);
-            this.Panel1.Controls.Add(this.btnAddPlan);
-            this.Panel1.Controls.Add(this.label13);
-            this.Panel1.Controls.Add(this.cboxfinancial_advisor);
-            this.Panel1.Location = new System.Drawing.Point(1029, 33);
-            this.Panel1.Name = "Panel1";
-            this.Panel1.Size = new System.Drawing.Size(255, 518);
-            this.Panel1.TabIndex = 16;
+            this.txtTaxIDNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTaxIDNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaxIDNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtTaxIDNumber.Location = new System.Drawing.Point(12, 275);
+            this.txtTaxIDNumber.Name = "txtTaxIDNumber";
+            this.txtTaxIDNumber.Size = new System.Drawing.Size(244, 20);
+            this.txtTaxIDNumber.TabIndex = 70;
+            this.txtTaxIDNumber.Text = "Tax Identification Number";
             // 
-            // pbID2
+            // txtNatureofBusiness
             // 
-            this.pbID2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbID2.Location = new System.Drawing.Point(132, 443);
-            this.pbID2.Name = "pbID2";
-            this.pbID2.Size = new System.Drawing.Size(116, 70);
-            this.pbID2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbID2.TabIndex = 18;
-            this.pbID2.TabStop = false;
+            this.txtNatureofBusiness.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNatureofBusiness.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNatureofBusiness.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtNatureofBusiness.Location = new System.Drawing.Point(12, 250);
+            this.txtNatureofBusiness.Name = "txtNatureofBusiness";
+            this.txtNatureofBusiness.Size = new System.Drawing.Size(244, 20);
+            this.txtNatureofBusiness.TabIndex = 69;
+            this.txtNatureofBusiness.Text = "Nature of Business";
             // 
-            // txtIDDir2
+            // txtCompanyConctactNumber
             // 
-            this.txtIDDir2.Location = new System.Drawing.Point(93, 407);
-            this.txtIDDir2.Name = "txtIDDir2";
-            this.txtIDDir2.Size = new System.Drawing.Size(144, 20);
-            this.txtIDDir2.TabIndex = 109;
-            this.txtIDDir2.TextChanged += new System.EventHandler(this.txtIDDir2_TextChanged);
+            this.txtCompanyConctactNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCompanyConctactNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanyConctactNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtCompanyConctactNumber.Location = new System.Drawing.Point(12, 225);
+            this.txtCompanyConctactNumber.Name = "txtCompanyConctactNumber";
+            this.txtCompanyConctactNumber.Size = new System.Drawing.Size(244, 20);
+            this.txtCompanyConctactNumber.TabIndex = 68;
+            this.txtCompanyConctactNumber.Text = "Company\'s Contact Number";
             // 
-            // pbID1
+            // txtCompanyAddress
             // 
-            this.pbID1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbID1.Location = new System.Drawing.Point(6, 443);
-            this.pbID1.Name = "pbID1";
-            this.pbID1.Size = new System.Drawing.Size(112, 70);
-            this.pbID1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbID1.TabIndex = 17;
-            this.pbID1.TabStop = false;
+            this.txtCompanyAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCompanyAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanyAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtCompanyAddress.Location = new System.Drawing.Point(12, 200);
+            this.txtCompanyAddress.Name = "txtCompanyAddress";
+            this.txtCompanyAddress.Size = new System.Drawing.Size(244, 20);
+            this.txtCompanyAddress.TabIndex = 67;
+            this.txtCompanyAddress.Text = "Company\'s Address";
             // 
-            // btnBrowseID2
+            // txtCompanyName
             // 
-            this.btnBrowseID2.Location = new System.Drawing.Point(20, 405);
-            this.btnBrowseID2.Name = "btnBrowseID2";
-            this.btnBrowseID2.Size = new System.Drawing.Size(67, 23);
-            this.btnBrowseID2.TabIndex = 108;
-            this.btnBrowseID2.Text = "Browse";
-            this.btnBrowseID2.UseVisualStyleBackColor = true;
-            this.btnBrowseID2.Click += new System.EventHandler(this.btnBrowseID2_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 350);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 106;
-            this.label2.Text = "Valid ID:";
-            // 
-            // txtIDDir1
-            // 
-            this.txtIDDir1.Location = new System.Drawing.Point(93, 375);
-            this.txtIDDir1.Name = "txtIDDir1";
-            this.txtIDDir1.Size = new System.Drawing.Size(144, 20);
-            this.txtIDDir1.TabIndex = 105;
-            this.txtIDDir1.TextChanged += new System.EventHandler(this.txtIDDir1_TextChanged);
-            // 
-            // btnBrowseID1
-            // 
-            this.btnBrowseID1.Location = new System.Drawing.Point(20, 373);
-            this.btnBrowseID1.Name = "btnBrowseID1";
-            this.btnBrowseID1.Size = new System.Drawing.Size(67, 23);
-            this.btnBrowseID1.TabIndex = 103;
-            this.btnBrowseID1.Text = "Browse";
-            this.btnBrowseID1.UseVisualStyleBackColor = true;
-            this.btnBrowseID1.Click += new System.EventHandler(this.btnBrowseID_Click);
-            // 
-            // lbPlan
-            // 
-            this.lbPlan.FormattingEnabled = true;
-            this.lbPlan.Location = new System.Drawing.Point(20, 81);
-            this.lbPlan.Name = "lbPlan";
-            this.lbPlan.Size = new System.Drawing.Size(219, 108);
-            this.lbPlan.TabIndex = 93;
-            // 
-            // btnAddPlan
-            // 
-            this.btnAddPlan.Location = new System.Drawing.Point(20, 52);
-            this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(217, 23);
-            this.btnAddPlan.TabIndex = 92;
-            this.btnAddPlan.Text = "Add Plan";
-            this.btnAddPlan.UseVisualStyleBackColor = true;
-            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(63, 8);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(121, 13);
-            this.label13.TabIndex = 89;
-            this.label13.Text = "Assign Financial Advisor";
-            // 
-            // Button2
-            // 
-            this.Button2.Location = new System.Drawing.Point(925, 654);
-            this.Button2.Name = "Button2";
-            this.Button2.Size = new System.Drawing.Size(75, 62);
-            this.Button2.TabIndex = 15;
-            this.Button2.Text = "View E - Policy";
-            this.Button2.UseVisualStyleBackColor = true;
-            // 
-            // btnDone
-            // 
-            this.btnDone.Location = new System.Drawing.Point(844, 654);
-            this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(75, 62);
-            this.btnDone.TabIndex = 14;
-            this.btnDone.Text = "Done";
-            this.btnDone.UseVisualStyleBackColor = true;
-            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
-            // 
-            // btnUpdateClient
-            // 
-            this.btnUpdateClient.Location = new System.Drawing.Point(759, 654);
-            this.btnUpdateClient.Name = "btnUpdateClient";
-            this.btnUpdateClient.Size = new System.Drawing.Size(75, 62);
-            this.btnUpdateClient.TabIndex = 13;
-            this.btnUpdateClient.Text = "Update Clients";
-            this.btnUpdateClient.UseVisualStyleBackColor = true;
-            this.btnUpdateClient.Click += new System.EventHandler(this.btnUpdateClient_Click);
-            // 
-            // txtsubanswer2
-            // 
-            this.txtsubanswer2.Location = new System.Drawing.Point(252, 440);
-            this.txtsubanswer2.Name = "txtsubanswer2";
-            this.txtsubanswer2.Size = new System.Drawing.Size(129, 20);
-            this.txtsubanswer2.TabIndex = 74;
+            this.txtCompanyName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCompanyName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompanyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtCompanyName.Location = new System.Drawing.Point(12, 175);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(244, 20);
+            this.txtCompanyName.TabIndex = 66;
+            this.txtCompanyName.Text = "Company\'s Name";
             // 
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
-            this.lblQuestion.Location = new System.Drawing.Point(9, 391);
+            this.lblQuestion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.Location = new System.Drawing.Point(12, 344);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(69, 13);
+            this.lblQuestion.Size = new System.Drawing.Size(77, 17);
             this.lblQuestion.TabIndex = 65;
             this.lblQuestion.Text = "QUESTION?";
-            // 
-            // txtClientsID
-            // 
-            this.txtClientsID.Location = new System.Drawing.Point(25, 25);
-            this.txtClientsID.Name = "txtClientsID";
-            this.txtClientsID.Size = new System.Drawing.Size(118, 20);
-            this.txtClientsID.TabIndex = 41;
-            this.txtClientsID.Visible = false;
-            // 
-            // txtemailaddress
-            // 
-            this.txtemailaddress.Location = new System.Drawing.Point(389, 292);
-            this.txtemailaddress.Name = "txtemailaddress";
-            this.txtemailaddress.Size = new System.Drawing.Size(162, 20);
-            this.txtemailaddress.TabIndex = 40;
-            // 
-            // txttelephonenumber
-            // 
-            this.txttelephonenumber.Location = new System.Drawing.Point(389, 265);
-            this.txttelephonenumber.Name = "txttelephonenumber";
-            this.txttelephonenumber.Size = new System.Drawing.Size(162, 20);
-            this.txttelephonenumber.TabIndex = 39;
-            // 
-            // txtcpnumber
-            // 
-            this.txtcpnumber.Location = new System.Drawing.Point(389, 238);
-            this.txtcpnumber.Name = "txtcpnumber";
-            this.txtcpnumber.Size = new System.Drawing.Size(162, 20);
-            this.txtcpnumber.TabIndex = 38;
-            // 
-            // lbleaddress
-            // 
-            this.lbleaddress.AutoSize = true;
-            this.lbleaddress.Location = new System.Drawing.Point(311, 292);
-            this.lbleaddress.Name = "lbleaddress";
-            this.lbleaddress.Size = new System.Drawing.Size(73, 13);
-            this.lbleaddress.TabIndex = 35;
-            this.lbleaddress.Text = "Email Address";
-            // 
-            // lbltelephonenumber
-            // 
-            this.lbltelephonenumber.AutoSize = true;
-            this.lbltelephonenumber.Location = new System.Drawing.Point(255, 265);
-            this.lbltelephonenumber.Name = "lbltelephonenumber";
-            this.lbltelephonenumber.Size = new System.Drawing.Size(129, 13);
-            this.lbltelephonenumber.TabIndex = 34;
-            this.lbltelephonenumber.Text = "Home Telephone Number";
-            // 
-            // lblcpnumber
-            // 
-            this.lblcpnumber.AutoSize = true;
-            this.lblcpnumber.Location = new System.Drawing.Point(290, 238);
-            this.lblcpnumber.Name = "lblcpnumber";
-            this.lblcpnumber.Size = new System.Drawing.Size(94, 13);
-            this.lblcpnumber.TabIndex = 33;
-            this.lblcpnumber.Text = "Cellphone Number";
-            // 
-            // lblResidenceAddress
-            // 
-            this.lblResidenceAddress.AutoSize = true;
-            this.lblResidenceAddress.Location = new System.Drawing.Point(285, 211);
-            this.lblResidenceAddress.Name = "lblResidenceAddress";
-            this.lblResidenceAddress.Size = new System.Drawing.Size(99, 13);
-            this.lblResidenceAddress.TabIndex = 32;
-            this.lblResidenceAddress.Text = "Residence Address";
-            // 
-            // lblWeight
-            // 
-            this.lblWeight.AutoSize = true;
-            this.lblWeight.Location = new System.Drawing.Point(34, 268);
-            this.lblWeight.Name = "lblWeight";
-            this.lblWeight.Size = new System.Drawing.Size(41, 13);
-            this.lblWeight.TabIndex = 31;
-            this.lblWeight.Text = "Weight";
-            // 
-            // lblHeight
-            // 
-            this.lblHeight.AutoSize = true;
-            this.lblHeight.Location = new System.Drawing.Point(37, 241);
-            this.lblHeight.Name = "lblHeight";
-            this.lblHeight.Size = new System.Drawing.Size(38, 13);
-            this.lblHeight.TabIndex = 30;
-            this.lblHeight.Text = "Height";
-            // 
-            // txtresidenceaddress
-            // 
-            this.txtresidenceaddress.Location = new System.Drawing.Point(390, 211);
-            this.txtresidenceaddress.Name = "txtresidenceaddress";
-            this.txtresidenceaddress.Size = new System.Drawing.Size(162, 20);
-            this.txtresidenceaddress.TabIndex = 29;
-            // 
-            // txtweight
-            // 
-            this.txtweight.Location = new System.Drawing.Point(81, 268);
-            this.txtweight.Name = "txtweight";
-            this.txtweight.Size = new System.Drawing.Size(162, 20);
-            this.txtweight.TabIndex = 28;
-            this.txtweight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtweight_KeyPress);
-            // 
-            // txtHeight
-            // 
-            this.txtHeight.Location = new System.Drawing.Point(81, 241);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(162, 20);
-            this.txtHeight.TabIndex = 27;
-            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
-            this.txtHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtHeight_KeyUp);
-            // 
-            // Label6
-            // 
-            this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(4, 5);
-            this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(59, 13);
-            this.Label6.TabIndex = 18;
-            this.Label6.Text = "Civil Status";
-            // 
-            // rbWidowed
-            // 
-            this.rbWidowed.AutoSize = true;
-            this.rbWidowed.Location = new System.Drawing.Point(210, 3);
-            this.rbWidowed.Name = "rbWidowed";
-            this.rbWidowed.Size = new System.Drawing.Size(70, 17);
-            this.rbWidowed.TabIndex = 17;
-            this.rbWidowed.Text = "Widowed";
-            this.rbWidowed.UseVisualStyleBackColor = true;
-            // 
-            // txtBirthplace
-            // 
-            this.txtBirthplace.Location = new System.Drawing.Point(81, 214);
-            this.txtBirthplace.Name = "txtBirthplace";
-            this.txtBirthplace.Size = new System.Drawing.Size(162, 20);
-            this.txtBirthplace.TabIndex = 26;
-            // 
-            // lblBirthplace
-            // 
-            this.lblBirthplace.AutoSize = true;
-            this.lblBirthplace.Location = new System.Drawing.Point(5, 214);
-            this.lblBirthplace.Name = "lblBirthplace";
-            this.lblBirthplace.Size = new System.Drawing.Size(70, 13);
-            this.lblBirthplace.TabIndex = 25;
-            this.lblBirthplace.Text = "Place of Birth";
-            // 
-            // lblBirthDate
-            // 
-            this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Location = new System.Drawing.Point(165, 172);
-            this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(66, 13);
-            this.lblBirthDate.TabIndex = 23;
-            this.lblBirthDate.Text = "Date of Birth";
-            // 
-            // lblSMiddlename
-            // 
-            this.lblSMiddlename.AutoSize = true;
-            this.lblSMiddlename.Location = new System.Drawing.Point(447, 142);
-            this.lblSMiddlename.Name = "lblSMiddlename";
-            this.lblSMiddlename.Size = new System.Drawing.Size(69, 13);
-            this.lblSMiddlename.TabIndex = 22;
-            this.lblSMiddlename.Text = "Middle Name";
-            // 
-            // lblSFirstname
-            // 
-            this.lblSFirstname.AutoSize = true;
-            this.lblSFirstname.Location = new System.Drawing.Point(306, 142);
-            this.lblSFirstname.Name = "lblSFirstname";
-            this.lblSFirstname.Size = new System.Drawing.Size(57, 13);
-            this.lblSFirstname.TabIndex = 21;
-            this.lblSFirstname.Text = "First Name";
-            // 
-            // lblSLastname
-            // 
-            this.lblSLastname.AutoSize = true;
-            this.lblSLastname.Location = new System.Drawing.Point(165, 142);
-            this.lblSLastname.Name = "lblSLastname";
-            this.lblSLastname.Size = new System.Drawing.Size(58, 13);
-            this.lblSLastname.TabIndex = 20;
-            this.lblSLastname.Text = "Last Name";
-            // 
-            // txtSMiddlename
-            // 
-            this.txtSMiddlename.Location = new System.Drawing.Point(450, 118);
-            this.txtSMiddlename.Name = "txtSMiddlename";
-            this.txtSMiddlename.Size = new System.Drawing.Size(132, 20);
-            this.txtSMiddlename.TabIndex = 19;
-            // 
-            // txtSFirstname
-            // 
-            this.txtSFirstname.Location = new System.Drawing.Point(309, 118);
-            this.txtSFirstname.Name = "txtSFirstname";
-            this.txtSFirstname.Size = new System.Drawing.Size(132, 20);
-            this.txtSFirstname.TabIndex = 18;
-            // 
-            // txtSLastname
-            // 
-            this.txtSLastname.Location = new System.Drawing.Point(168, 118);
-            this.txtSLastname.Name = "txtSLastname";
-            this.txtSLastname.Size = new System.Drawing.Size(132, 20);
-            this.txtSLastname.TabIndex = 17;
-            // 
-            // lblNameSpouse
-            // 
-            this.lblNameSpouse.AutoSize = true;
-            this.lblNameSpouse.Location = new System.Drawing.Point(7, 121);
-            this.lblNameSpouse.Name = "lblNameSpouse";
-            this.lblNameSpouse.Size = new System.Drawing.Size(136, 13);
-            this.lblNameSpouse.TabIndex = 16;
-            this.lblNameSpouse.Text = "Name of Spouse (If Maried)";
-            // 
-            // Panel3
-            // 
-            this.Panel3.Controls.Add(this.Label6);
-            this.Panel3.Controls.Add(this.rbWidowed);
-            this.Panel3.Controls.Add(this.rbMarried);
-            this.Panel3.Controls.Add(this.rbSingle);
-            this.Panel3.Location = new System.Drawing.Point(168, 84);
-            this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(285, 22);
-            this.Panel3.TabIndex = 15;
-            // 
-            // rbMarried
-            // 
-            this.rbMarried.AutoSize = true;
-            this.rbMarried.Location = new System.Drawing.Point(139, 3);
-            this.rbMarried.Name = "rbMarried";
-            this.rbMarried.Size = new System.Drawing.Size(60, 17);
-            this.rbMarried.TabIndex = 16;
-            this.rbMarried.Text = "Married";
-            this.rbMarried.UseVisualStyleBackColor = true;
-            // 
-            // rbSingle
-            // 
-            this.rbSingle.AutoSize = true;
-            this.rbSingle.Checked = true;
-            this.rbSingle.Location = new System.Drawing.Point(74, 3);
-            this.rbSingle.Name = "rbSingle";
-            this.rbSingle.Size = new System.Drawing.Size(54, 17);
-            this.rbSingle.TabIndex = 15;
-            this.rbSingle.TabStop = true;
-            this.rbSingle.Text = "Single";
-            this.rbSingle.UseVisualStyleBackColor = true;
-            // 
-            // dtpBdate
-            // 
-            this.dtpBdate.Location = new System.Drawing.Point(235, 169);
-            this.dtpBdate.Name = "dtpBdate";
-            this.dtpBdate.Size = new System.Drawing.Size(200, 20);
-            this.dtpBdate.TabIndex = 24;
-            // 
-            // Penel1
-            // 
-            this.Penel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Penel1.Controls.Add(this.txtClientsID);
-            this.Penel1.Controls.Add(this.txtemailaddress);
-            this.Penel1.Controls.Add(this.txttelephonenumber);
-            this.Penel1.Controls.Add(this.txtcpnumber);
-            this.Penel1.Controls.Add(this.lbleaddress);
-            this.Penel1.Controls.Add(this.lbltelephonenumber);
-            this.Penel1.Controls.Add(this.lblcpnumber);
-            this.Penel1.Controls.Add(this.lblResidenceAddress);
-            this.Penel1.Controls.Add(this.lblWeight);
-            this.Penel1.Controls.Add(this.lblHeight);
-            this.Penel1.Controls.Add(this.txtresidenceaddress);
-            this.Penel1.Controls.Add(this.txtweight);
-            this.Penel1.Controls.Add(this.txtHeight);
-            this.Penel1.Controls.Add(this.txtBirthplace);
-            this.Penel1.Controls.Add(this.lblBirthplace);
-            this.Penel1.Controls.Add(this.dtpBdate);
-            this.Penel1.Controls.Add(this.lblBirthDate);
-            this.Penel1.Controls.Add(this.lblSMiddlename);
-            this.Penel1.Controls.Add(this.lblSFirstname);
-            this.Penel1.Controls.Add(this.lblSLastname);
-            this.Penel1.Controls.Add(this.txtSMiddlename);
-            this.Penel1.Controls.Add(this.txtSFirstname);
-            this.Penel1.Controls.Add(this.txtSLastname);
-            this.Penel1.Controls.Add(this.lblNameSpouse);
-            this.Penel1.Controls.Add(this.Panel3);
-            this.Penel1.Controls.Add(this.Panel2);
-            this.Penel1.Controls.Add(this.lblMiddlename);
-            this.Penel1.Controls.Add(this.lblFirstname);
-            this.Penel1.Controls.Add(this.lblLastname);
-            this.Penel1.Controls.Add(this.txtMiddlename);
-            this.Penel1.Controls.Add(this.txtFirstname);
-            this.Penel1.Controls.Add(this.txtLastname);
-            this.Penel1.Controls.Add(this.lblProposedInsuredName);
-            this.Penel1.Location = new System.Drawing.Point(20, 32);
-            this.Penel1.Name = "Penel1";
-            this.Penel1.Size = new System.Drawing.Size(593, 341);
-            this.Penel1.TabIndex = 9;
-            // 
-            // Panel2
-            // 
-            this.Panel2.Controls.Add(this.rbGenderF);
-            this.Panel2.Controls.Add(this.Label5);
-            this.Panel2.Controls.Add(this.rbGenderM);
-            this.Panel2.Location = new System.Drawing.Point(168, 54);
-            this.Panel2.Name = "Panel2";
-            this.Panel2.Size = new System.Drawing.Size(200, 24);
-            this.Panel2.TabIndex = 11;
-            // 
-            // rbGenderF
-            // 
-            this.rbGenderF.AutoSize = true;
-            this.rbGenderF.Location = new System.Drawing.Point(137, 4);
-            this.rbGenderF.Name = "rbGenderF";
-            this.rbGenderF.Size = new System.Drawing.Size(59, 17);
-            this.rbGenderF.TabIndex = 12;
-            this.rbGenderF.Text = "Female";
-            this.rbGenderF.UseVisualStyleBackColor = true;
-            // 
-            // Label5
-            // 
-            this.Label5.AutoSize = true;
-            this.Label5.Location = new System.Drawing.Point(3, 5);
-            this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(42, 13);
-            this.Label5.TabIndex = 11;
-            this.Label5.Text = "Gender";
-            // 
-            // rbGenderM
-            // 
-            this.rbGenderM.AutoSize = true;
-            this.rbGenderM.Checked = true;
-            this.rbGenderM.Location = new System.Drawing.Point(67, 3);
-            this.rbGenderM.Name = "rbGenderM";
-            this.rbGenderM.Size = new System.Drawing.Size(48, 17);
-            this.rbGenderM.TabIndex = 10;
-            this.rbGenderM.TabStop = true;
-            this.rbGenderM.Text = "Male";
-            this.rbGenderM.UseVisualStyleBackColor = true;
-            // 
-            // lblMiddlename
-            // 
-            this.lblMiddlename.AutoSize = true;
-            this.lblMiddlename.Location = new System.Drawing.Point(447, 34);
-            this.lblMiddlename.Name = "lblMiddlename";
-            this.lblMiddlename.Size = new System.Drawing.Size(69, 13);
-            this.lblMiddlename.TabIndex = 6;
-            this.lblMiddlename.Text = "Middle Name";
-            // 
-            // lblFirstname
-            // 
-            this.lblFirstname.AutoSize = true;
-            this.lblFirstname.Location = new System.Drawing.Point(306, 32);
-            this.lblFirstname.Name = "lblFirstname";
-            this.lblFirstname.Size = new System.Drawing.Size(57, 13);
-            this.lblFirstname.TabIndex = 5;
-            this.lblFirstname.Text = "First Name";
-            // 
-            // lblLastname
-            // 
-            this.lblLastname.AutoSize = true;
-            this.lblLastname.Location = new System.Drawing.Point(165, 32);
-            this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(58, 13);
-            this.lblLastname.TabIndex = 4;
-            this.lblLastname.Text = "Last Name";
-            // 
-            // txtMiddlename
-            // 
-            this.txtMiddlename.Location = new System.Drawing.Point(450, 9);
-            this.txtMiddlename.Name = "txtMiddlename";
-            this.txtMiddlename.Size = new System.Drawing.Size(132, 20);
-            this.txtMiddlename.TabIndex = 3;
-            // 
-            // txtFirstname
-            // 
-            this.txtFirstname.Location = new System.Drawing.Point(309, 9);
-            this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(132, 20);
-            this.txtFirstname.TabIndex = 2;
-            // 
-            // txtLastname
-            // 
-            this.txtLastname.Location = new System.Drawing.Point(168, 9);
-            this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(132, 20);
-            this.txtLastname.TabIndex = 1;
-            // 
-            // lblProposedInsuredName
-            // 
-            this.lblProposedInsuredName.AutoSize = true;
-            this.lblProposedInsuredName.Location = new System.Drawing.Point(22, 9);
-            this.lblProposedInsuredName.Name = "lblProposedInsuredName";
-            this.lblProposedInsuredName.Size = new System.Drawing.Size(121, 13);
-            this.lblProposedInsuredName.TabIndex = 0;
-            this.lblProposedInsuredName.Text = "Proposed Insured Name";
-            // 
-            // Panel4
-            // 
-            this.Panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Panel4.Controls.Add(this.Panel5);
-            this.Panel4.Controls.Add(this.lblsubquestion3);
-            this.Panel4.Controls.Add(this.txtsubanswer2);
-            this.Panel4.Controls.Add(this.txtsubanswer3);
-            this.Panel4.Controls.Add(this.txtSSSGSISNumber);
-            this.Panel4.Controls.Add(this.txtTaxIDNumber);
-            this.Panel4.Controls.Add(this.txtNatureofBusiness);
-            this.Panel4.Controls.Add(this.txtCompanyConctactNumber);
-            this.Panel4.Controls.Add(this.txtCompanyAddress);
-            this.Panel4.Controls.Add(this.txtCompanyName);
-            this.Panel4.Controls.Add(this.lblQuestion);
-            this.Panel4.Controls.Add(this.lblsubquestion1);
-            this.Panel4.Controls.Add(this.lblsubquestion2);
-            this.Panel4.Controls.Add(this.lblNatureofBusiness);
-            this.Panel4.Controls.Add(this.lblTaxID);
-            this.Panel4.Controls.Add(this.lblSSSGSIS);
-            this.Panel4.Controls.Add(this.lblCompanyname);
-            this.Panel4.Controls.Add(this.lblCompanyContactNumber);
-            this.Panel4.Controls.Add(this.lblCompanyAddress);
-            this.Panel4.Controls.Add(this.txtOtherSource);
-            this.Panel4.Controls.Add(this.txtBusinessIncome);
-            this.Panel4.Controls.Add(this.txtWorkSalary);
-            this.Panel4.Controls.Add(this.lblWorkSalary);
-            this.Panel4.Controls.Add(this.lblBusinessIncome);
-            this.Panel4.Controls.Add(this.lblOtherSource);
-            this.Panel4.Controls.Add(this.txtOccupation);
-            this.Panel4.Controls.Add(this.lblMonthlyIncome);
-            this.Panel4.Controls.Add(this.lblOccupation);
-            this.Panel4.Location = new System.Drawing.Point(619, 33);
-            this.Panel4.Name = "Panel4";
-            this.Panel4.Size = new System.Drawing.Size(404, 518);
-            this.Panel4.TabIndex = 10;
             // 
             // lblsubquestion1
             // 
             this.lblsubquestion1.AutoSize = true;
-            this.lblsubquestion1.Location = new System.Drawing.Point(150, 413);
+            this.lblsubquestion1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsubquestion1.Location = new System.Drawing.Point(12, 373);
             this.lblsubquestion1.Name = "lblsubquestion1";
-            this.lblsubquestion1.Size = new System.Drawing.Size(95, 13);
+            this.lblsubquestion1.Size = new System.Drawing.Size(127, 17);
             this.lblsubquestion1.TabIndex = 64;
             this.lblsubquestion1.Text = "Are you a smoker?";
             // 
-            // lblsubquestion2
-            // 
-            this.lblsubquestion2.AutoSize = true;
-            this.lblsubquestion2.Location = new System.Drawing.Point(43, 443);
-            this.lblsubquestion2.Name = "lblsubquestion2";
-            this.lblsubquestion2.Size = new System.Drawing.Size(203, 13);
-            this.lblsubquestion2.TabIndex = 63;
-            this.lblsubquestion2.Text = "If YES, since when do you start smoking?";
-            // 
-            // lblNatureofBusiness
-            // 
-            this.lblNatureofBusiness.AutoSize = true;
-            this.lblNatureofBusiness.Location = new System.Drawing.Point(76, 265);
-            this.lblNatureofBusiness.Name = "lblNatureofBusiness";
-            this.lblNatureofBusiness.Size = new System.Drawing.Size(96, 13);
-            this.lblNatureofBusiness.TabIndex = 62;
-            this.lblNatureofBusiness.Text = "Nature of Business";
-            // 
-            // lblTaxID
-            // 
-            this.lblTaxID.AutoSize = true;
-            this.lblTaxID.Location = new System.Drawing.Point(44, 299);
-            this.lblTaxID.Name = "lblTaxID";
-            this.lblTaxID.Size = new System.Drawing.Size(128, 13);
-            this.lblTaxID.TabIndex = 61;
-            this.lblTaxID.Text = "Tax Identification Number";
-            // 
-            // lblSSSGSIS
-            // 
-            this.lblSSSGSIS.AutoSize = true;
-            this.lblSSSGSIS.Location = new System.Drawing.Point(64, 327);
-            this.lblSSSGSIS.Name = "lblSSSGSIS";
-            this.lblSSSGSIS.Size = new System.Drawing.Size(108, 13);
-            this.lblSSSGSIS.TabIndex = 60;
-            this.lblSSSGSIS.Text = "SSS or GSIS Number";
-            // 
-            // lblCompanyname
-            // 
-            this.lblCompanyname.AutoSize = true;
-            this.lblCompanyname.Location = new System.Drawing.Point(83, 168);
-            this.lblCompanyname.Name = "lblCompanyname";
-            this.lblCompanyname.Size = new System.Drawing.Size(89, 13);
-            this.lblCompanyname.TabIndex = 59;
-            this.lblCompanyname.Text = "Company\'s Name";
-            // 
-            // lblCompanyContactNumber
-            // 
-            this.lblCompanyContactNumber.AutoSize = true;
-            this.lblCompanyContactNumber.Location = new System.Drawing.Point(34, 220);
-            this.lblCompanyContactNumber.Name = "lblCompanyContactNumber";
-            this.lblCompanyContactNumber.Size = new System.Drawing.Size(138, 13);
-            this.lblCompanyContactNumber.TabIndex = 58;
-            this.lblCompanyContactNumber.Text = "Company\'s Contact Number";
-            // 
-            // lblCompanyAddress
-            // 
-            this.lblCompanyAddress.AutoSize = true;
-            this.lblCompanyAddress.Location = new System.Drawing.Point(73, 191);
-            this.lblCompanyAddress.Name = "lblCompanyAddress";
-            this.lblCompanyAddress.Size = new System.Drawing.Size(99, 13);
-            this.lblCompanyAddress.TabIndex = 57;
-            this.lblCompanyAddress.Text = "Company\'s Address";
-            // 
             // txtOtherSource
             // 
-            this.txtOtherSource.Location = new System.Drawing.Point(198, 107);
+            this.txtOtherSource.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOtherSource.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOtherSource.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtOtherSource.Location = new System.Drawing.Point(36, 118);
             this.txtOtherSource.Name = "txtOtherSource";
-            this.txtOtherSource.Size = new System.Drawing.Size(155, 20);
+            this.txtOtherSource.Size = new System.Drawing.Size(244, 20);
             this.txtOtherSource.TabIndex = 56;
-            this.txtOtherSource.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtherSource_KeyPress);
+            this.txtOtherSource.Text = "Other Source";
             // 
             // txtBusinessIncome
             // 
-            this.txtBusinessIncome.Location = new System.Drawing.Point(198, 81);
+            this.txtBusinessIncome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBusinessIncome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusinessIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtBusinessIncome.Location = new System.Drawing.Point(36, 91);
             this.txtBusinessIncome.Name = "txtBusinessIncome";
-            this.txtBusinessIncome.Size = new System.Drawing.Size(155, 20);
+            this.txtBusinessIncome.Size = new System.Drawing.Size(244, 20);
             this.txtBusinessIncome.TabIndex = 55;
-            this.txtBusinessIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusinessIncome_KeyPress);
+            this.txtBusinessIncome.Text = "Business Income";
             // 
             // txtWorkSalary
             // 
-            this.txtWorkSalary.Location = new System.Drawing.Point(198, 55);
+            this.txtWorkSalary.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWorkSalary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWorkSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtWorkSalary.Location = new System.Drawing.Point(36, 64);
             this.txtWorkSalary.Name = "txtWorkSalary";
-            this.txtWorkSalary.Size = new System.Drawing.Size(155, 20);
+            this.txtWorkSalary.Size = new System.Drawing.Size(244, 20);
             this.txtWorkSalary.TabIndex = 54;
-            this.txtWorkSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWorkSalary_KeyPress);
-            // 
-            // lblWorkSalary
-            // 
-            this.lblWorkSalary.AutoSize = true;
-            this.lblWorkSalary.Location = new System.Drawing.Point(107, 58);
-            this.lblWorkSalary.Name = "lblWorkSalary";
-            this.lblWorkSalary.Size = new System.Drawing.Size(65, 13);
-            this.lblWorkSalary.TabIndex = 53;
-            this.lblWorkSalary.Text = "Work Salary";
-            // 
-            // lblBusinessIncome
-            // 
-            this.lblBusinessIncome.AutoSize = true;
-            this.lblBusinessIncome.Location = new System.Drawing.Point(85, 84);
-            this.lblBusinessIncome.Name = "lblBusinessIncome";
-            this.lblBusinessIncome.Size = new System.Drawing.Size(87, 13);
-            this.lblBusinessIncome.TabIndex = 52;
-            this.lblBusinessIncome.Text = "Business Income";
-            // 
-            // lblOtherSource
-            // 
-            this.lblOtherSource.AutoSize = true;
-            this.lblOtherSource.Location = new System.Drawing.Point(102, 110);
-            this.lblOtherSource.Name = "lblOtherSource";
-            this.lblOtherSource.Size = new System.Drawing.Size(70, 13);
-            this.lblOtherSource.TabIndex = 51;
-            this.lblOtherSource.Text = "Other Source";
+            this.txtWorkSalary.Text = "Work Salary";
             // 
             // txtOccupation
             // 
-            this.txtOccupation.Location = new System.Drawing.Point(198, 8);
+            this.txtOccupation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOccupation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOccupation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
+            this.txtOccupation.Location = new System.Drawing.Point(12, 8);
             this.txtOccupation.Name = "txtOccupation";
-            this.txtOccupation.Size = new System.Drawing.Size(155, 20);
+            this.txtOccupation.Size = new System.Drawing.Size(244, 20);
             this.txtOccupation.TabIndex = 50;
+            this.txtOccupation.Text = "Occupation (Job Position)";
             // 
             // lblMonthlyIncome
             // 
             this.lblMonthlyIncome.AutoSize = true;
-            this.lblMonthlyIncome.Location = new System.Drawing.Point(64, 38);
+            this.lblMonthlyIncome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthlyIncome.Location = new System.Drawing.Point(8, 38);
             this.lblMonthlyIncome.Name = "lblMonthlyIncome";
-            this.lblMonthlyIncome.Size = new System.Drawing.Size(82, 13);
+            this.lblMonthlyIncome.Size = new System.Drawing.Size(137, 21);
             this.lblMonthlyIncome.TabIndex = 49;
             this.lblMonthlyIncome.Text = "Monthly Income";
             // 
-            // lblOccupation
+            // panelBeneficiaries
             // 
-            this.lblOccupation.AutoSize = true;
-            this.lblOccupation.Location = new System.Drawing.Point(64, 8);
-            this.lblOccupation.Name = "lblOccupation";
-            this.lblOccupation.Size = new System.Drawing.Size(128, 13);
-            this.lblOccupation.TabIndex = 48;
-            this.lblOccupation.Text = "Occupation (Job Position)";
+            this.panelBeneficiaries.BackColor = System.Drawing.Color.White;
+            this.panelBeneficiaries.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelBeneficiaries.Controls.Add(this.panel42);
+            this.panelBeneficiaries.Controls.Add(this.panel41);
+            this.panelBeneficiaries.Controls.Add(this.panel40);
+            this.panelBeneficiaries.Controls.Add(this.panel39);
+            this.panelBeneficiaries.Controls.Add(this.panel38);
+            this.panelBeneficiaries.Controls.Add(this.btnBUpdate);
+            this.panelBeneficiaries.Controls.Add(this.txtBShare);
+            this.panelBeneficiaries.Controls.Add(this.txtBRelationship);
+            this.panelBeneficiaries.Controls.Add(this.txtBOccupation);
+            this.panelBeneficiaries.Controls.Add(this.btnRemoveBeneficiary);
+            this.panelBeneficiaries.Controls.Add(this.txtBBirthPlace);
+            this.panelBeneficiaries.Controls.Add(this.btnAddBeneficiary);
+            this.panelBeneficiaries.Controls.Add(this.lblBBirthDate);
+            this.panelBeneficiaries.Controls.Add(this.dtpBBirthDate);
+            this.panelBeneficiaries.Controls.Add(this.txtBFullname);
+            this.panelBeneficiaries.Controls.Add(this.dgvBeneficiaries);
+            this.panelBeneficiaries.Controls.Add(this.lblBeneficiaries);
+            this.panelBeneficiaries.Location = new System.Drawing.Point(3, 494);
+            this.panelBeneficiaries.Name = "panelBeneficiaries";
+            this.panelBeneficiaries.Size = new System.Drawing.Size(1209, 412);
+            this.panelBeneficiaries.TabIndex = 19;
             // 
-            // openFileDialog1
+            // panel42
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panel42.BackColor = System.Drawing.Color.DimGray;
+            this.panel42.Location = new System.Drawing.Point(349, 106);
+            this.panel42.Name = "panel42";
+            this.panel42.Size = new System.Drawing.Size(215, 1);
+            this.panel42.TabIndex = 62;
+            // 
+            // panel41
+            // 
+            this.panel41.BackColor = System.Drawing.Color.DimGray;
+            this.panel41.Location = new System.Drawing.Point(759, 61);
+            this.panel41.Name = "panel41";
+            this.panel41.Size = new System.Drawing.Size(215, 1);
+            this.panel41.TabIndex = 61;
+            // 
+            // panel40
+            // 
+            this.panel40.BackColor = System.Drawing.Color.DimGray;
+            this.panel40.Location = new System.Drawing.Point(538, 61);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(215, 1);
+            this.panel40.TabIndex = 60;
+            // 
+            // panel39
+            // 
+            this.panel39.BackColor = System.Drawing.Color.DimGray;
+            this.panel39.Location = new System.Drawing.Point(980, 61);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(215, 1);
+            this.panel39.TabIndex = 59;
+            // 
+            // panel38
+            // 
+            this.panel38.BackColor = System.Drawing.Color.DimGray;
+            this.panel38.Location = new System.Drawing.Point(18, 61);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(504, 1);
+            this.panel38.TabIndex = 58;
+            // 
+            // btnBUpdate
+            // 
+            this.btnBUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnBUpdate.FlatAppearance.BorderSize = 0;
+            this.btnBUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBUpdate.Location = new System.Drawing.Point(16, 362);
+            this.btnBUpdate.Name = "btnBUpdate";
+            this.btnBUpdate.Size = new System.Drawing.Size(118, 43);
+            this.btnBUpdate.TabIndex = 16;
+            this.btnBUpdate.Text = "Update";
+            this.btnBUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBUpdate.UseVisualStyleBackColor = false;
+            // 
+            // txtBShare
+            // 
+            this.txtBShare.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBShare.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBShare.Location = new System.Drawing.Point(349, 80);
+            this.txtBShare.Name = "txtBShare";
+            this.txtBShare.Size = new System.Drawing.Size(215, 20);
+            this.txtBShare.TabIndex = 15;
+            this.txtBShare.Text = "% Share";
+            // 
+            // txtBRelationship
+            // 
+            this.txtBRelationship.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBRelationship.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBRelationship.Location = new System.Drawing.Point(759, 35);
+            this.txtBRelationship.Name = "txtBRelationship";
+            this.txtBRelationship.Size = new System.Drawing.Size(215, 20);
+            this.txtBRelationship.TabIndex = 14;
+            this.txtBRelationship.Text = "Relationship";
+            // 
+            // txtBOccupation
+            // 
+            this.txtBOccupation.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBOccupation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBOccupation.Location = new System.Drawing.Point(538, 35);
+            this.txtBOccupation.Name = "txtBOccupation";
+            this.txtBOccupation.Size = new System.Drawing.Size(215, 20);
+            this.txtBOccupation.TabIndex = 11;
+            this.txtBOccupation.Text = "Occupation";
+            // 
+            // btnRemoveBeneficiary
+            // 
+            this.btnRemoveBeneficiary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnRemoveBeneficiary.FlatAppearance.BorderSize = 0;
+            this.btnRemoveBeneficiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveBeneficiary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveBeneficiary.Location = new System.Drawing.Point(149, 362);
+            this.btnRemoveBeneficiary.Name = "btnRemoveBeneficiary";
+            this.btnRemoveBeneficiary.Size = new System.Drawing.Size(118, 43);
+            this.btnRemoveBeneficiary.TabIndex = 2;
+            this.btnRemoveBeneficiary.Text = "Remove Beneficiary";
+            this.btnRemoveBeneficiary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRemoveBeneficiary.UseVisualStyleBackColor = false;
+            // 
+            // txtBBirthPlace
+            // 
+            this.txtBBirthPlace.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBBirthPlace.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBBirthPlace.Location = new System.Drawing.Point(980, 35);
+            this.txtBBirthPlace.Name = "txtBBirthPlace";
+            this.txtBBirthPlace.Size = new System.Drawing.Size(215, 20);
+            this.txtBBirthPlace.TabIndex = 9;
+            this.txtBBirthPlace.Text = "Birth Place";
+            // 
+            // btnAddBeneficiary
+            // 
+            this.btnAddBeneficiary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnAddBeneficiary.FlatAppearance.BorderSize = 0;
+            this.btnAddBeneficiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddBeneficiary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddBeneficiary.Image = ((System.Drawing.Image)(resources.GetObject("btnAddBeneficiary.Image")));
+            this.btnAddBeneficiary.Location = new System.Drawing.Point(19, 123);
+            this.btnAddBeneficiary.Name = "btnAddBeneficiary";
+            this.btnAddBeneficiary.Size = new System.Drawing.Size(176, 37);
+            this.btnAddBeneficiary.TabIndex = 3;
+            this.btnAddBeneficiary.Text = "Add Beneficiary";
+            this.btnAddBeneficiary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddBeneficiary.UseVisualStyleBackColor = false;
+            this.btnAddBeneficiary.Click += new System.EventHandler(this.btnAddBeneficiary_Click);
+            // 
+            // lblBBirthDate
+            // 
+            this.lblBBirthDate.AutoSize = true;
+            this.lblBBirthDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBBirthDate.Location = new System.Drawing.Point(17, 85);
+            this.lblBBirthDate.Name = "lblBBirthDate";
+            this.lblBBirthDate.Size = new System.Drawing.Size(92, 21);
+            this.lblBBirthDate.TabIndex = 7;
+            this.lblBBirthDate.Text = "Birth Date:";
+            // 
+            // dtpBBirthDate
+            // 
+            this.dtpBBirthDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBBirthDate.Location = new System.Drawing.Point(117, 80);
+            this.dtpBBirthDate.Name = "dtpBBirthDate";
+            this.dtpBBirthDate.Size = new System.Drawing.Size(215, 27);
+            this.dtpBBirthDate.TabIndex = 6;
+            // 
+            // txtBFullname
+            // 
+            this.txtBFullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBFullname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBFullname.Location = new System.Drawing.Point(18, 35);
+            this.txtBFullname.Name = "txtBFullname";
+            this.txtBFullname.Size = new System.Drawing.Size(504, 20);
+            this.txtBFullname.TabIndex = 4;
+            this.txtBFullname.Text = "Full Name: (Last Name, First Name, Middle Name)";
+            // 
+            // dgvBeneficiaries
+            // 
+            this.dgvBeneficiaries.AllowUserToAddRows = false;
+            this.dgvBeneficiaries.AllowUserToDeleteRows = false;
+            this.dgvBeneficiaries.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBeneficiaries.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBeneficiaries.Location = new System.Drawing.Point(11, 166);
+            this.dgvBeneficiaries.MultiSelect = false;
+            this.dgvBeneficiaries.Name = "dgvBeneficiaries";
+            this.dgvBeneficiaries.ReadOnly = true;
+            this.dgvBeneficiaries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBeneficiaries.Size = new System.Drawing.Size(1184, 190);
+            this.dgvBeneficiaries.TabIndex = 1;
+            // 
+            // lblBeneficiaries
+            // 
+            this.lblBeneficiaries.AutoSize = true;
+            this.lblBeneficiaries.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeneficiaries.Location = new System.Drawing.Point(7, 4);
+            this.lblBeneficiaries.Name = "lblBeneficiaries";
+            this.lblBeneficiaries.Size = new System.Drawing.Size(125, 21);
+            this.lblBeneficiaries.TabIndex = 0;
+            this.lblBeneficiaries.Text = "BENEFICIARIES";
+            // 
+            // panel43
+            // 
+            this.panel43.BackColor = System.Drawing.Color.DimGray;
+            this.panel43.Location = new System.Drawing.Point(123, 344);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(132, 1);
+            this.panel43.TabIndex = 58;
+            // 
+            // panel44
+            // 
+            this.panel44.BackColor = System.Drawing.Color.DimGray;
+            this.panel44.Location = new System.Drawing.Point(123, 292);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(132, 1);
+            this.panel44.TabIndex = 58;
             // 
             // AddEditClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1303, 749);
-            this.Controls.Add(this.panelBeneficiaries);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1270, 624);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.btnAddClient);
-            this.Controls.Add(this.Panel1);
             this.Controls.Add(this.Button2);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnUpdateClient);
-            this.Controls.Add(this.Penel1);
-            this.Controls.Add(this.Panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddEditClientForm";
-            this.Text = "Add / Edit Client";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AddEditClientForm_Load);
-            this.panelBeneficiaries.ResumeLayout(false);
-            this.panelBeneficiaries.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficiaries)).EndInit();
-            this.Panel5.ResumeLayout(false);
-            this.Panel5.PerformLayout();
-            this.Panel1.ResumeLayout(false);
-            this.Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbID2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbID1)).EndInit();
             this.Panel3.ResumeLayout(false);
             this.Panel3.PerformLayout();
             this.Penel1.ResumeLayout(false);
             this.Penel1.PerformLayout();
             this.Panel2.ResumeLayout(false);
             this.Panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Panel1.ResumeLayout(false);
+            this.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbID1)).EndInit();
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
+            this.Panel5.ResumeLayout(false);
+            this.Panel5.PerformLayout();
+            this.panelBeneficiaries.ResumeLayout(false);
+            this.panelBeneficiaries.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBeneficiaries)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        internal System.Windows.Forms.Label lblOccupation;
-        internal System.Windows.Forms.Label lblMonthlyIncome;
-        internal System.Windows.Forms.TextBox txtOccupation;
-        internal System.Windows.Forms.Label lblOtherSource;
-        internal System.Windows.Forms.Label lblBusinessIncome;
-        internal System.Windows.Forms.Label lblWorkSalary;
-        internal System.Windows.Forms.TextBox txtWorkSalary;
-        internal System.Windows.Forms.TextBox txtBusinessIncome;
-        internal System.Windows.Forms.TextBox txtOtherSource;
-        internal System.Windows.Forms.Label lblCompanyAddress;
-        internal System.Windows.Forms.Label lblCompanyContactNumber;
-        internal System.Windows.Forms.Label lblCompanyname;
-        internal System.Windows.Forms.Label lblSSSGSIS;
-        internal System.Windows.Forms.Label lblTaxID;
-        internal System.Windows.Forms.Label lblNatureofBusiness;
-        internal System.Windows.Forms.Label lblsubquestion2;
-        internal System.Windows.Forms.Label lblsubquestion1;
-        internal System.Windows.Forms.Panel Panel4;
-        internal System.Windows.Forms.Label lblProposedInsuredName;
         internal System.Windows.Forms.TextBox txtLastname;
         internal System.Windows.Forms.TextBox txtFirstname;
         internal System.Windows.Forms.TextBox txtMiddlename;
-        internal System.Windows.Forms.Label lblLastname;
-        internal System.Windows.Forms.Label lblFirstname;
-        internal System.Windows.Forms.Label lblMiddlename;
         internal System.Windows.Forms.RadioButton rbGenderM;
         internal System.Windows.Forms.Label Label5;
         internal System.Windows.Forms.RadioButton rbGenderF;
         internal System.Windows.Forms.Panel Panel2;
         internal System.Windows.Forms.Panel Penel1;
-        internal System.Windows.Forms.DateTimePicker dtpBdate;
         internal System.Windows.Forms.RadioButton rbSingle;
         internal System.Windows.Forms.RadioButton rbMarried;
         internal System.Windows.Forms.Panel Panel3;
@@ -1239,74 +1492,106 @@
         internal System.Windows.Forms.TextBox txtSLastname;
         internal System.Windows.Forms.TextBox txtSFirstname;
         internal System.Windows.Forms.TextBox txtSMiddlename;
-        internal System.Windows.Forms.Label lblSLastname;
-        internal System.Windows.Forms.Label lblSFirstname;
-        internal System.Windows.Forms.Label lblSMiddlename;
-        internal System.Windows.Forms.Label lblBirthDate;
-        internal System.Windows.Forms.Label lblBirthplace;
-        internal System.Windows.Forms.TextBox txtBirthplace;
         internal System.Windows.Forms.RadioButton rbWidowed;
         internal System.Windows.Forms.Label Label6;
-        internal System.Windows.Forms.TextBox txtHeight;
-        internal System.Windows.Forms.TextBox txtweight;
-        internal System.Windows.Forms.TextBox txtresidenceaddress;
-        internal System.Windows.Forms.Label lblHeight;
-        internal System.Windows.Forms.Label lblWeight;
-        internal System.Windows.Forms.Label lblResidenceAddress;
-        internal System.Windows.Forms.Label lblcpnumber;
-        internal System.Windows.Forms.Label lbltelephonenumber;
-        internal System.Windows.Forms.Label lbleaddress;
-        internal System.Windows.Forms.TextBox txtcpnumber;
-        internal System.Windows.Forms.TextBox txttelephonenumber;
-        internal System.Windows.Forms.TextBox txtemailaddress;
         internal System.Windows.Forms.TextBox txtClientsID;
-        internal System.Windows.Forms.Label lblQuestion;
-        internal System.Windows.Forms.TextBox txtsubanswer2;
         internal System.Windows.Forms.Button btnUpdateClient;
         internal System.Windows.Forms.Button btnDone;
         internal System.Windows.Forms.Button Button2;
-        internal System.Windows.Forms.Panel Panel1;
-        internal System.Windows.Forms.ComboBox cboxfinancial_advisor;
-        internal System.Windows.Forms.TextBox txtsubanswer3;
         internal System.Windows.Forms.Button btnAddClient;
-        internal System.Windows.Forms.TextBox txtCompanyName;
-        internal System.Windows.Forms.TextBox txtCompanyAddress;
-        internal System.Windows.Forms.TextBox txtCompanyConctactNumber;
-        internal System.Windows.Forms.TextBox txtNatureofBusiness;
-        internal System.Windows.Forms.TextBox txtTaxIDNumber;
-        internal System.Windows.Forms.TextBox txtSSSGSISNumber;
-        internal System.Windows.Forms.Label lblsubquestion3;
-        internal System.Windows.Forms.RadioButton rbYES;
-        internal System.Windows.Forms.RadioButton rbNo;
-        internal System.Windows.Forms.Panel Panel5;
-        internal System.Windows.Forms.Label lblBeneficiaries;
-        internal System.Windows.Forms.DataGridView dgvBeneficiaries;
-        internal System.Windows.Forms.TextBox txtBFullname;
-        internal System.Windows.Forms.Label lblBFullname;
-        internal System.Windows.Forms.DateTimePicker dtpBBirthDate;
-        internal System.Windows.Forms.Label lblBBirthDate;
-        internal System.Windows.Forms.Panel panelBeneficiaries;
-        internal System.Windows.Forms.Label lblBBirthPlace;
-        internal System.Windows.Forms.Button btnAddBeneficiary;
-        internal System.Windows.Forms.TextBox txtBBirthPlace;
-        internal System.Windows.Forms.Button btnRemoveBeneficiary;
-        internal System.Windows.Forms.Label lblBOccupation;
-        internal System.Windows.Forms.TextBox txtBOccupation;
-        internal System.Windows.Forms.Label lblBRelationship;
-        internal System.Windows.Forms.Label lblBshare;
-        internal System.Windows.Forms.TextBox txtBRelationship;
-        internal System.Windows.Forms.TextBox txtBShare;
-        internal System.Windows.Forms.Button btnBUpdate;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button btnAddPlan;
-        private System.Windows.Forms.ListBox lbPlan;
-        private System.Windows.Forms.Button btnBrowseID1;
-        private System.Windows.Forms.TextBox txtIDDir1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIDDir2;
-        private System.Windows.Forms.Button btnBrowseID2;
-        private System.Windows.Forms.PictureBox pbID1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button button_Exit;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
+        internal System.Windows.Forms.TextBox txtemailaddress;
+        internal System.Windows.Forms.TextBox txttelephonenumber;
+        internal System.Windows.Forms.TextBox txtcpnumber;
+        internal System.Windows.Forms.TextBox txtresidenceaddress;
+        internal System.Windows.Forms.TextBox txtweight;
+        internal System.Windows.Forms.TextBox txtHeight;
+        internal System.Windows.Forms.TextBox txtBirthplace;
+        internal System.Windows.Forms.DateTimePicker dtpBdate;
+        internal System.Windows.Forms.Label lblBirthDate;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        internal System.Windows.Forms.Panel Panel1;
         private System.Windows.Forms.PictureBox pbID2;
+        private System.Windows.Forms.TextBox txtIDDir2;
+        private System.Windows.Forms.PictureBox pbID1;
+        private System.Windows.Forms.Button btnBrowseID2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIDDir1;
+        private System.Windows.Forms.Button btnBrowseID1;
+        private System.Windows.Forms.ListBox lbPlan;
+        private System.Windows.Forms.Button btnAddPlan;
+        internal System.Windows.Forms.ComboBox cboxfinancial_advisor;
+        internal System.Windows.Forms.Panel Panel4;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.Panel panel32;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Panel panel26;
+        internal System.Windows.Forms.Panel Panel5;
+        internal System.Windows.Forms.RadioButton rbNo;
+        internal System.Windows.Forms.RadioButton rbYES;
+        internal System.Windows.Forms.TextBox txtsubanswer2;
+        internal System.Windows.Forms.TextBox txtsubanswer3;
+        internal System.Windows.Forms.TextBox txtSSSGSISNumber;
+        internal System.Windows.Forms.TextBox txtTaxIDNumber;
+        internal System.Windows.Forms.TextBox txtNatureofBusiness;
+        internal System.Windows.Forms.TextBox txtCompanyConctactNumber;
+        internal System.Windows.Forms.TextBox txtCompanyAddress;
+        internal System.Windows.Forms.TextBox txtCompanyName;
+        internal System.Windows.Forms.Label lblQuestion;
+        internal System.Windows.Forms.Label lblsubquestion1;
+        internal System.Windows.Forms.TextBox txtOtherSource;
+        internal System.Windows.Forms.TextBox txtBusinessIncome;
+        internal System.Windows.Forms.TextBox txtWorkSalary;
+        internal System.Windows.Forms.TextBox txtOccupation;
+        internal System.Windows.Forms.Label lblMonthlyIncome;
+        internal System.Windows.Forms.Panel panelBeneficiaries;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.Panel panel38;
+        internal System.Windows.Forms.Button btnBUpdate;
+        internal System.Windows.Forms.TextBox txtBShare;
+        internal System.Windows.Forms.TextBox txtBRelationship;
+        internal System.Windows.Forms.TextBox txtBOccupation;
+        internal System.Windows.Forms.Button btnRemoveBeneficiary;
+        internal System.Windows.Forms.TextBox txtBBirthPlace;
+        internal System.Windows.Forms.Button btnAddBeneficiary;
+        internal System.Windows.Forms.Label lblBBirthDate;
+        internal System.Windows.Forms.DateTimePicker dtpBBirthDate;
+        internal System.Windows.Forms.TextBox txtBFullname;
+        internal System.Windows.Forms.DataGridView dgvBeneficiaries;
+        internal System.Windows.Forms.Label lblBeneficiaries;
+        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.Panel panel43;
     }
 }
