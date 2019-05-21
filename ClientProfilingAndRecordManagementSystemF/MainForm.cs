@@ -240,5 +240,10 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
 
         }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
