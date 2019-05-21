@@ -74,6 +74,12 @@
     <Compile Include="AddEditClientForm.Designer.cs">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEditPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditPlanForm.Designer.cs">
+      <DependentUpon>AddEditPlanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </Compile>
     <EmbeddedResource Include="AddEditClientForm.resx">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditPlanForm.resx">
+      <DependentUpon>AddEditPlanForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditUserForm.resx">
       <DependentUpon>AddEditUserForm.cs</DependentUpon>

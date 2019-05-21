@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditUserForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -39,6 +39,7 @@
             this.txtRetypePassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_Exit = new System.Windows.Forms.Button();
             this.dataGridViewUSR_ = new System.Windows.Forms.DataGridView();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtContact_Num = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button_Exit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUSR_)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -191,6 +191,18 @@
             this.panel1.Size = new System.Drawing.Size(731, 40);
             this.panel1.TabIndex = 66;
             // 
+            // button_Exit
+            // 
+            this.button_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Exit.FlatAppearance.BorderSize = 0;
+            this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
+            this.button_Exit.Location = new System.Drawing.Point(692, 3);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(36, 33);
+            this.button_Exit.TabIndex = 17;
+            this.button_Exit.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewUSR_
             // 
             this.dataGridViewUSR_.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -202,8 +214,8 @@
             this.dataGridViewUSR_.MultiSelect = false;
             this.dataGridViewUSR_.Name = "dataGridViewUSR_";
             this.dataGridViewUSR_.ReadOnly = true;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewUSR_.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewUSR_.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewUSR_.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUSR_.Size = new System.Drawing.Size(685, 313);
             this.dataGridViewUSR_.TabIndex = 67;
@@ -415,18 +427,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(240, 1);
             this.panel10.TabIndex = 86;
-            // 
-            // button_Exit
-            // 
-            this.button_Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Exit.FlatAppearance.BorderSize = 0;
-            this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
-            this.button_Exit.Location = new System.Drawing.Point(692, 3);
-            this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(36, 33);
-            this.button_Exit.TabIndex = 17;
-            this.button_Exit.UseVisualStyleBackColor = true;
             // 
             // AddEditUserForm
             // 

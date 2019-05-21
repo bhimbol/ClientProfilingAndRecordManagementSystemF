@@ -245,5 +245,11 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             Application.Exit();
         }
+
+        private void managePlanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEditPlanForm addEditPlanForm = new AddEditPlanForm();
+            addEditPlanForm.ShowDialog();
+        }
     }
 }

@@ -84,6 +84,8 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.panel43 = new System.Windows.Forms.Panel();
             this.pbID2 = new System.Windows.Forms.PictureBox();
             this.txtIDDir2 = new System.Windows.Forms.TextBox();
             this.pbID1 = new System.Windows.Forms.PictureBox();
@@ -143,8 +145,7 @@
             this.txtBFullname = new System.Windows.Forms.TextBox();
             this.dgvBeneficiaries = new System.Windows.Forms.DataGridView();
             this.lblBeneficiaries = new System.Windows.Forms.Label();
-            this.panel43 = new System.Windows.Forms.Panel();
-            this.panel44 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Panel3.SuspendLayout();
             this.Penel1.SuspendLayout();
             this.Panel2.SuspendLayout();
@@ -343,6 +344,7 @@
             // 
             this.Penel1.BackColor = System.Drawing.Color.White;
             this.Penel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Penel1.Controls.Add(this.comboBox1);
             this.Penel1.Controls.Add(this.panel25);
             this.Penel1.Controls.Add(this.panel24);
             this.Penel1.Controls.Add(this.panel23);
@@ -777,6 +779,22 @@
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(288, 485);
             this.Panel1.TabIndex = 17;
+            // 
+            // panel44
+            // 
+            this.panel44.BackColor = System.Drawing.Color.DimGray;
+            this.panel44.Location = new System.Drawing.Point(123, 292);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(132, 1);
+            this.panel44.TabIndex = 58;
+            // 
+            // panel43
+            // 
+            this.panel43.BackColor = System.Drawing.Color.DimGray;
+            this.panel43.Location = new System.Drawing.Point(123, 344);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(132, 1);
+            this.panel43.TabIndex = 58;
             // 
             // pbID2
             // 
@@ -1417,21 +1435,19 @@
             this.lblBeneficiaries.TabIndex = 0;
             this.lblBeneficiaries.Text = "BENEFICIARIES";
             // 
-            // panel43
+            // comboBox1
             // 
-            this.panel43.BackColor = System.Drawing.Color.DimGray;
-            this.panel43.Location = new System.Drawing.Point(123, 344);
-            this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(132, 1);
-            this.panel43.TabIndex = 58;
-            // 
-            // panel44
-            // 
-            this.panel44.BackColor = System.Drawing.Color.DimGray;
-            this.panel44.Location = new System.Drawing.Point(123, 292);
-            this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(132, 1);
-            this.panel44.TabIndex = 58;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "In force",
+            "Auto Surrender",
+            "Lapse",
+            "Claim/Insured Dead"});
+            this.comboBox1.Location = new System.Drawing.Point(19, 412);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 58;
+            this.comboBox1.Text = "Policy Status";
             // 
             // AddEditClientForm
             // 
@@ -1593,5 +1609,6 @@
         internal System.Windows.Forms.Label lblBeneficiaries;
         private System.Windows.Forms.Panel panel44;
         private System.Windows.Forms.Panel panel43;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -52,9 +52,9 @@
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btnLogIn.Location = new System.Drawing.Point(82, 189);
+            this.btnLogIn.Location = new System.Drawing.Point(40, 253);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(183, 45);
+            this.btnLogIn.Size = new System.Drawing.Size(125, 45);
             this.btnLogIn.TabIndex = 3;
             this.btnLogIn.Text = "LogIn";
             this.btnLogIn.UseVisualStyleBackColor = false;
@@ -87,13 +87,14 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(23)))), ((int)(((byte)(41)))));
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btnExit.Location = new System.Drawing.Point(82, 240);
+            this.btnExit.Location = new System.Drawing.Point(171, 253);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(183, 45);
+            this.btnExit.Size = new System.Drawing.Size(125, 45);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -166,6 +167,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(346, 313);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
