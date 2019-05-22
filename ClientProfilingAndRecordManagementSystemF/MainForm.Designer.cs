@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.ListClientsButton = new System.Windows.Forms.Button();
             this.ListPlanButton = new System.Windows.Forms.Button();
@@ -41,6 +41,8 @@
             this.manageClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageFinancialAdvisorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.managePlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mangaAxaFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListLabel = new System.Windows.Forms.Label();
             this.ListDataGridView = new System.Windows.Forms.DataGridView();
@@ -54,8 +56,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.managePlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mangaAxaFormsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListDataGridView)).BeginInit();
@@ -71,9 +71,9 @@
             this.MainPanel.Controls.Add(this.ListAXAFormButton);
             this.MainPanel.Controls.Add(this.ListFinancialAdvisorButton);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.MainPanel.Location = new System.Drawing.Point(10, 40);
+            this.MainPanel.Location = new System.Drawing.Point(5, 40);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(998, 70);
+            this.MainPanel.Size = new System.Drawing.Size(1008, 70);
             this.MainPanel.TabIndex = 3;
             // 
             // ListClientsButton
@@ -151,7 +151,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 4);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(190, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(70, 29);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -190,6 +190,19 @@
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
             this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
+            // managePlanToolStripMenuItem
+            // 
+            this.managePlanToolStripMenuItem.Name = "managePlanToolStripMenuItem";
+            this.managePlanToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
+            this.managePlanToolStripMenuItem.Text = "Manage Plan";
+            this.managePlanToolStripMenuItem.Click += new System.EventHandler(this.managePlanToolStripMenuItem_Click);
+            // 
+            // mangaAxaFormsToolStripMenuItem
+            // 
+            this.mangaAxaFormsToolStripMenuItem.Name = "mangaAxaFormsToolStripMenuItem";
+            this.mangaAxaFormsToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
+            this.mangaAxaFormsToolStripMenuItem.Text = "Manga Axa Forms";
+            // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
@@ -214,21 +227,21 @@
             this.ListDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.ListDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ListDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ListDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListDataGridView.Location = new System.Drawing.Point(16, 161);
             this.ListDataGridView.MultiSelect = false;
             this.ListDataGridView.Name = "ListDataGridView";
             this.ListDataGridView.ReadOnly = true;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ListDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ListDataGridView.Size = new System.Drawing.Size(986, 408);
             this.ListDataGridView.TabIndex = 13;
@@ -303,25 +316,25 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 40);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 545);
+            this.panel3.Size = new System.Drawing.Size(5, 545);
             this.panel3.TabIndex = 17;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(10, 575);
+            this.panel4.Location = new System.Drawing.Point(5, 580);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1008, 10);
+            this.panel4.Size = new System.Drawing.Size(1013, 5);
             this.panel4.TabIndex = 18;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1008, 40);
+            this.panel2.Location = new System.Drawing.Point(1013, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 535);
+            this.panel2.Size = new System.Drawing.Size(5, 540);
             this.panel2.TabIndex = 18;
             // 
             // pictureBox1
@@ -341,19 +354,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(234, 1);
             this.panel5.TabIndex = 20;
-            // 
-            // managePlanToolStripMenuItem
-            // 
-            this.managePlanToolStripMenuItem.Name = "managePlanToolStripMenuItem";
-            this.managePlanToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
-            this.managePlanToolStripMenuItem.Text = "Manage Plan";
-            this.managePlanToolStripMenuItem.Click += new System.EventHandler(this.managePlanToolStripMenuItem_Click);
-            // 
-            // mangaAxaFormsToolStripMenuItem
-            // 
-            this.mangaAxaFormsToolStripMenuItem.Name = "mangaAxaFormsToolStripMenuItem";
-            this.mangaAxaFormsToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
-            this.mangaAxaFormsToolStripMenuItem.Text = "Manga Axa Forms";
             // 
             // MainForm
             // 

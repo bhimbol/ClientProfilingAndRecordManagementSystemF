@@ -133,9 +133,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
-            this.panel2.Location = new System.Drawing.Point(336, 0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(341, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 314);
+            this.panel2.Size = new System.Drawing.Size(5, 273);
             this.panel2.TabIndex = 9;
             // 
             // panel3
@@ -143,15 +144,16 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 314);
+            this.panel3.Size = new System.Drawing.Size(5, 314);
             this.panel3.TabIndex = 10;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
-            this.panel4.Location = new System.Drawing.Point(0, 304);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 308);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(346, 10);
+            this.panel4.Size = new System.Drawing.Size(341, 5);
             this.panel4.TabIndex = 11;
             // 
             // pictureBox2

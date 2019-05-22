@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientProfilingAndRecordManagementSystemF
@@ -20,8 +16,8 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             try
             {
-                if (_id == "1"){ pbID1.Image.Dispose(); }
-                else if (_id == "2"){ pbID2.Image.Dispose(); }
+                if (_id == "1") { pbID1.Image.Dispose(); }
+                else if (_id == "2") { pbID2.Image.Dispose(); }
                 else { }
                 string final_destination_path = Application.StartupPath + "\\ID_S\\" + client_id.ToString() + _id + DateTime.Now.Ticks.ToString() + ".jpeg";
                 System.IO.File.Copy(sourcepath, final_destination_path, true);
@@ -52,7 +48,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void populateFinancialAdvisors()
         {
-            using(axaDBEntities db = new axaDBEntities())
+            using (axaDBEntities db = new axaDBEntities())
             {
                 var financial_advisor_list = db.FinancialAdvisors.ToList();
                 if (financial_advisor_list.Count > 0)
@@ -137,15 +133,15 @@ namespace ClientProfilingAndRecordManagementSystemF
                 cboxfinancial_advisor.Text = fullname;
             }
 
-            if (selected_client.gender == "Male"){ rbGenderM.Checked = true; }
-            else{ rbGenderF.Checked = true; }
+            if (selected_client.gender == "Male") { rbGenderM.Checked = true; }
+            else { rbGenderF.Checked = true; }
 
-            if (selected_client.civilstatus == "Single"){ rbSingle.Checked = true; }
-            else if (selected_client.civilstatus == "Married"){ rbMarried.Checked = true; }
-            else{ rbWidowed.Checked = true; }
+            if (selected_client.civilstatus == "Single") { rbSingle.Checked = true; }
+            else if (selected_client.civilstatus == "Married") { rbMarried.Checked = true; }
+            else { rbWidowed.Checked = true; }
 
-            if (selected_client.answersub1 == "YES"){ rbYES.Checked = true; }
-            else{ rbNo.Checked = true; }
+            if (selected_client.answersub1 == "YES") { rbYES.Checked = true; }
+            else { rbNo.Checked = true; }
         }
 
         private Client SetClientDataForAddUpdate(Client c)
@@ -166,7 +162,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             Double.TryParse(txtBusinessIncome.Text, out double bi);
             Double.TryParse(txtOtherSource.Text, out double oi);
 
-            c.FA_id= (Int32)cboxfinancial_advisor.SelectedValue;
+            c.FA_id = (Int32)cboxfinancial_advisor.SelectedValue;
             c.lastname = txtLastname.Text;
             c.firstname = txtFirstname.Text;
             c.middlename = txtMiddlename.Text;
@@ -205,7 +201,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             if (!String.IsNullOrEmpty(txtIDDir2.Text))
             {
                 //if (System.IO.File.Exists(c.id_path2)) { System.IO.File.Delete(c.id_path2); }
-                c.id_path2  = Copy_browsed_id(txtIDDir2.Text, c.client_id, "2");
+                c.id_path2 = Copy_browsed_id(txtIDDir2.Text, c.client_id, "2");
             }
 
             return c;
@@ -249,26 +245,51 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             //try
             //{
-                using(axaDBEntities db = new axaDBEntities())
-                {
-                    Client c = db.Clients.Find(Int32.Parse(txtClientsID.Text));
-                    c = SetClientDataForAddUpdate(c);
-                    db.SaveChanges();
-                    MessageBox.Show("Record successfully updated.");
-                    this.Close();
-                    this.Dispose();
-                }
-           // }
+            using (axaDBEntities db = new axaDBEntities())
+            {
+                Client c = db.Clients.Find(Int32.Parse(txtClientsID.Text));
+                c = SetClientDataForAddUpdate(c);
+                db.SaveChanges();
+                MessageBox.Show("Record successfully updated.");
+                this.Close();
+                this.Dispose();
+            }
+            // }
             //catch (Exception ex)
             //{
-             //   MessageBox.Show(ex.Message);
-           // }
+            //   MessageBox.Show(ex.Message);
+            // }
         }
 
         private void btnAddClient_Click(object sender, EventArgs e)
         {
+            CheckTxtBoxIfnotEmpty();
+
+        }
+
+        private void CheckTxtBoxIfnotEmpty()
+        {
+            if (txtFirstname.Text != "First name" &&
+                txtLastname.Text != "Last name" &&
+                txtMiddlename.Text != "Middle name" &&
+                txtweight.Text != "Weight" &&
+                txtHeight.Text != "Height" &&
+                txtBBirthPlace.Text != "Place of Birth" &&
+                txtemailaddress.Text != "Email Address" &&
+                txttelephonenumber.Text != "Home Telephone Number" &&
+                txtcpnumber.Text != "Cellphone Number" &&
+                txtresidenceaddress.Text != "Residence Address"
+                )
+            {
+                SaveClient();
+            }
+        }
+
+        private void SaveClient()
+        {
             try
             {
+
                 Client c = SetClientDataForAddUpdate(new Client());
                 using (axaDBEntities db = new axaDBEntities())
                 {
@@ -281,11 +302,10 @@ namespace ClientProfilingAndRecordManagementSystemF
                     AddEditClientForm_Load(null, null);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void btnAddBeneficiary_Click(object sender, EventArgs e)
@@ -350,13 +370,13 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void btnRemoveBeneficiary_Click(object sender, EventArgs e)
         {
-            if(dgvBeneficiaries.Rows.Count > 0)
+            if (dgvBeneficiaries.Rows.Count > 0)
             {
-                foreach(DataGridViewRow br in dgvBeneficiaries.SelectedRows)
+                foreach (DataGridViewRow br in dgvBeneficiaries.SelectedRows)
                 {
-                    if (MessageBox.Show("Delete? " + br.Cells["FULLNAME"].Value.ToString(),"Delete",MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Delete? " + br.Cells["FULLNAME"].Value.ToString(), "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        using(axaDBEntities db = new axaDBEntities())
+                        using (axaDBEntities db = new axaDBEntities())
                         {
                             ClientBeneficiary cb = db.ClientBeneficiaries.Find(br.Cells["beneficiary_id"].Value);
                             db.ClientBeneficiaries.Remove(cb);
@@ -373,7 +393,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             this.Close();
             this.Dispose();
         }
-        
+
         private void btnAddPlan_Click(object sender, EventArgs e)
         {
             AddPlanForm addplanform = new AddPlanForm();
@@ -484,6 +504,248 @@ namespace ClientProfilingAndRecordManagementSystemF
         private void txtOtherSource_KeyPress(object sender, KeyPressEventArgs e)
         {
             isNumeric(sender, e);
+        }
+
+
+
+
+
+
+        // Enter and Leave txt design
+        private void txtClientsID_Enter(object sender, EventArgs e)
+        {
+            if (txtClientsID.Text == "Proposed Insured Name")
+            {
+                txtClientsID.Text = "";
+
+            }
+        }
+
+        private void txtClientsID_Leave(object sender, EventArgs e)
+        {
+            if (txtClientsID.Text == "")
+            {
+                txtClientsID.Text = "Proposed Insured Name";
+
+            }
+        }
+
+        private void txtLastname_Enter(object sender, EventArgs e)
+        {
+            if (txtLastname.Text == "Last name")
+            {
+                txtLastname.Text = "";
+
+            }
+        }
+
+        private void txtLastname_Leave(object sender, EventArgs e)
+        {
+            if (txtLastname.Text == "")
+            {
+                txtLastname.Text = "Last name";
+            }
+        }
+
+        private void txtMiddlename_Enter(object sender, EventArgs e)
+        {
+            if (txtMiddlename.Text == "Middle name")
+            {
+                txtMiddlename.Text = "";
+            }
+
+
+        }
+
+        private void txtMiddlename_Leave(object sender, EventArgs e)
+        {
+            if (txtMiddlename.Text == "")
+            {
+                txtMiddlename.Text = "Middle name";
+            }
+        }
+
+        private void txtFirstname_Enter(object sender, EventArgs e)
+        {
+            if (txtFirstname.Text == "First name")
+            {
+                txtFirstname.Text = "";
+            }
+        }
+
+        private void txtFirstname_Leave(object sender, EventArgs e)
+        {
+            if (txtFirstname.Text == "")
+            {
+                txtFirstname.Text = "First name";
+            }
+        }
+
+        private void txtweight_Enter(object sender, EventArgs e)
+        {
+            if (txtweight.Text == "Weight")
+            {
+                txtweight.Text = "";
+            }
+        }
+
+        private void txtweight_Leave(object sender, EventArgs e)
+        {
+            if (txtweight.Text == "")
+            {
+                txtweight.Text = "Weight";
+            }
+        }
+
+        private void txtHeight_Enter(object sender, EventArgs e)
+        {
+            if (txtHeight.Text == "Height")
+            {
+                txtHeight.Text = "";
+            }
+        }
+
+        private void txtHeight_Leave(object sender, EventArgs e)
+        {
+            if (txtHeight.Text == "")
+            {
+                txtHeight.Text = "Height";
+            }
+        }
+
+        private void txtBirthplace_Enter(object sender, EventArgs e)
+        {
+            if (txtBirthplace.Text == "Place of Birth")
+            {
+                txtBirthplace.Text = "";
+            }
+        }
+
+        private void txtBirthplace_Leave(object sender, EventArgs e)
+        {
+            if (txtBirthplace.Text == "")
+            {
+                txtBirthplace.Text = "Place of Birth";
+            }
+        }
+
+        private void txtemailaddress_Enter(object sender, EventArgs e)
+        {
+
+
+            if (txtemailaddress.Text == "Email Address")
+            {
+                txtemailaddress.Text = "";
+            }
+        }
+
+        private void txtemailaddress_Leave(object sender, EventArgs e)
+        {
+            if (txtemailaddress.Text == "")
+            {
+                txtemailaddress.Text = "Email Address";
+            }
+        }
+
+        private void txttelephonenumber_Enter(object sender, EventArgs e)
+        {
+
+
+
+
+            if (txttelephonenumber.Text == "Home Telephone Number")
+            {
+                txttelephonenumber.Text = "";
+            }
+        }
+
+        private void txttelephonenumber_Leave(object sender, EventArgs e)
+        {
+            if (txttelephonenumber.Text == "")
+            {
+                txttelephonenumber.Text = "Home Telephone Number";
+            }
+        }
+
+        private void txtcpnumber_Enter(object sender, EventArgs e)
+        {
+            if (txtcpnumber.Text == "Cellphone Number")
+            {
+                txtcpnumber.Text = "";
+            }
+        }
+
+        private void txtcpnumber_Leave(object sender, EventArgs e)
+        {
+            if (txtcpnumber.Text == "")
+            {
+                txtcpnumber.Text = "Cellphone Number";
+            }
+        }
+
+        private void txtresidenceaddress_Enter(object sender, EventArgs e)
+        {
+            if (txtresidenceaddress.Text == "Residence Address")
+            {
+                txtresidenceaddress.Text = "";
+            }
+        }
+
+        private void txtresidenceaddress_Leave(object sender, EventArgs e)
+        {
+            if (txtresidenceaddress.Text == "")
+            {
+                txtresidenceaddress.Text = "Residence Address";
+            }
+        }
+
+        private void txtSLastname_Enter(object sender, EventArgs e)
+        {
+            if (txtSLastname.Text == "Last name")
+            {
+                txtSLastname.Text = "";
+            }
+        }
+
+        private void txtSFirstname_Leave(object sender, EventArgs e)
+        {
+            if (txtSFirstname.Text == "")
+            {
+                txtSFirstname.Text = "First name";
+            }
+        }
+
+        private void txtSLastname_Leave(object sender, EventArgs e)
+        {
+            if (txtSLastname.Text == "")
+            {
+                txtSLastname.Text = "Last name";
+            }
+        }
+
+        private void txtSFirstname_Enter(object sender, EventArgs e)
+        {
+            if (txtSFirstname.Text == "First name")
+            {
+                txtSFirstname.Text = "";
+            }
+        }
+
+        private void txtSMiddlename_Enter(object sender, EventArgs e)
+        {
+            if (txtSMiddlename.Text == "Middle name")
+            {
+                txtSMiddlename.Text = "";
+            }
+
+        }
+
+        private void txtSMiddlename_Leave(object sender, EventArgs e)
+        {
+            if (txtSMiddlename.Text == "")
+            {
+                txtSMiddlename.Text = "Middle name";
+            }
         }
     }
 }

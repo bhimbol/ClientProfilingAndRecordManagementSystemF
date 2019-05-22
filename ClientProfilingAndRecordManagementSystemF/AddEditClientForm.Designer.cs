@@ -44,6 +44,7 @@
             this.rbMarried = new System.Windows.Forms.RadioButton();
             this.rbSingle = new System.Windows.Forms.RadioButton();
             this.Penel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
@@ -145,7 +146,6 @@
             this.txtBFullname = new System.Windows.Forms.TextBox();
             this.dgvBeneficiaries = new System.Windows.Forms.DataGridView();
             this.lblBeneficiaries = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Panel3.SuspendLayout();
             this.Penel1.SuspendLayout();
             this.Panel2.SuspendLayout();
@@ -232,12 +232,13 @@
             this.txtClientsID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClientsID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClientsID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
-            this.txtClientsID.Location = new System.Drawing.Point(16, 37);
+            this.txtClientsID.Location = new System.Drawing.Point(16, 36);
             this.txtClientsID.Name = "txtClientsID";
             this.txtClientsID.Size = new System.Drawing.Size(485, 20);
             this.txtClientsID.TabIndex = 41;
             this.txtClientsID.Text = "Proposed Insured Name";
-            this.txtClientsID.Visible = false;
+            this.txtClientsID.Enter += new System.EventHandler(this.txtClientsID_Enter);
+            this.txtClientsID.Leave += new System.EventHandler(this.txtClientsID_Leave);
             // 
             // Label6
             // 
@@ -270,6 +271,8 @@
             this.txtSMiddlename.Size = new System.Drawing.Size(132, 20);
             this.txtSMiddlename.TabIndex = 19;
             this.txtSMiddlename.Text = "Middle name";
+            this.txtSMiddlename.Enter += new System.EventHandler(this.txtSMiddlename_Enter);
+            this.txtSMiddlename.Leave += new System.EventHandler(this.txtSMiddlename_Leave);
             // 
             // txtSFirstname
             // 
@@ -281,6 +284,8 @@
             this.txtSFirstname.Size = new System.Drawing.Size(132, 20);
             this.txtSFirstname.TabIndex = 18;
             this.txtSFirstname.Text = "First name";
+            this.txtSFirstname.Enter += new System.EventHandler(this.txtSFirstname_Enter);
+            this.txtSFirstname.Leave += new System.EventHandler(this.txtSFirstname_Leave);
             // 
             // txtSLastname
             // 
@@ -292,6 +297,8 @@
             this.txtSLastname.Size = new System.Drawing.Size(132, 20);
             this.txtSLastname.TabIndex = 17;
             this.txtSLastname.Text = "Last name";
+            this.txtSLastname.Enter += new System.EventHandler(this.txtSLastname_Enter);
+            this.txtSLastname.Leave += new System.EventHandler(this.txtSLastname_Leave);
             // 
             // lblNameSpouse
             // 
@@ -384,6 +391,20 @@
             this.Penel1.Name = "Penel1";
             this.Penel1.Size = new System.Drawing.Size(534, 485);
             this.Penel1.TabIndex = 9;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "In force",
+            "Auto Surrender",
+            "Lapse",
+            "Claim/Insured Dead"});
+            this.comboBox1.Location = new System.Drawing.Point(19, 412);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 58;
+            this.comboBox1.Text = "Policy Status";
             // 
             // panel25
             // 
@@ -515,6 +536,8 @@
             this.txtemailaddress.Size = new System.Drawing.Size(211, 20);
             this.txtemailaddress.TabIndex = 51;
             this.txtemailaddress.Text = "Email Address";
+            this.txtemailaddress.Enter += new System.EventHandler(this.txtemailaddress_Enter);
+            this.txtemailaddress.Leave += new System.EventHandler(this.txtemailaddress_Leave);
             // 
             // txttelephonenumber
             // 
@@ -526,6 +549,8 @@
             this.txttelephonenumber.Size = new System.Drawing.Size(211, 20);
             this.txttelephonenumber.TabIndex = 50;
             this.txttelephonenumber.Text = "Home Telephone Number";
+            this.txttelephonenumber.Enter += new System.EventHandler(this.txttelephonenumber_Enter);
+            this.txttelephonenumber.Leave += new System.EventHandler(this.txttelephonenumber_Leave);
             // 
             // txtcpnumber
             // 
@@ -537,6 +562,8 @@
             this.txtcpnumber.Size = new System.Drawing.Size(211, 20);
             this.txtcpnumber.TabIndex = 49;
             this.txtcpnumber.Text = "Cellphone Number";
+            this.txtcpnumber.Enter += new System.EventHandler(this.txtcpnumber_Enter);
+            this.txtcpnumber.Leave += new System.EventHandler(this.txtcpnumber_Leave);
             // 
             // txtresidenceaddress
             // 
@@ -548,6 +575,8 @@
             this.txtresidenceaddress.Size = new System.Drawing.Size(211, 20);
             this.txtresidenceaddress.TabIndex = 48;
             this.txtresidenceaddress.Text = "Residence Address";
+            this.txtresidenceaddress.Enter += new System.EventHandler(this.txtresidenceaddress_Enter);
+            this.txtresidenceaddress.Leave += new System.EventHandler(this.txtresidenceaddress_Leave);
             // 
             // txtweight
             // 
@@ -559,6 +588,8 @@
             this.txtweight.Size = new System.Drawing.Size(211, 20);
             this.txtweight.TabIndex = 47;
             this.txtweight.Text = "Weight";
+            this.txtweight.Enter += new System.EventHandler(this.txtweight_Enter);
+            this.txtweight.Leave += new System.EventHandler(this.txtweight_Leave);
             // 
             // txtHeight
             // 
@@ -570,6 +601,8 @@
             this.txtHeight.Size = new System.Drawing.Size(211, 20);
             this.txtHeight.TabIndex = 46;
             this.txtHeight.Text = "Height";
+            this.txtHeight.Enter += new System.EventHandler(this.txtHeight_Enter);
+            this.txtHeight.Leave += new System.EventHandler(this.txtHeight_Leave);
             // 
             // txtBirthplace
             // 
@@ -581,6 +614,8 @@
             this.txtBirthplace.Size = new System.Drawing.Size(211, 20);
             this.txtBirthplace.TabIndex = 45;
             this.txtBirthplace.Text = "Place of Birth";
+            this.txtBirthplace.Enter += new System.EventHandler(this.txtBirthplace_Enter);
+            this.txtBirthplace.Leave += new System.EventHandler(this.txtBirthplace_Leave);
             // 
             // dtpBdate
             // 
@@ -668,6 +703,8 @@
             this.txtMiddlename.Size = new System.Drawing.Size(132, 20);
             this.txtMiddlename.TabIndex = 3;
             this.txtMiddlename.Text = "Middle name";
+            this.txtMiddlename.Enter += new System.EventHandler(this.txtMiddlename_Enter);
+            this.txtMiddlename.Leave += new System.EventHandler(this.txtMiddlename_Leave);
             // 
             // txtFirstname
             // 
@@ -679,6 +716,8 @@
             this.txtFirstname.Size = new System.Drawing.Size(132, 20);
             this.txtFirstname.TabIndex = 2;
             this.txtFirstname.Text = "First name";
+            this.txtFirstname.Enter += new System.EventHandler(this.txtFirstname_Enter);
+            this.txtFirstname.Leave += new System.EventHandler(this.txtFirstname_Leave);
             // 
             // txtLastname
             // 
@@ -690,6 +729,8 @@
             this.txtLastname.Size = new System.Drawing.Size(132, 20);
             this.txtLastname.TabIndex = 1;
             this.txtLastname.Text = "Last name";
+            this.txtLastname.Enter += new System.EventHandler(this.txtLastname_Enter);
+            this.txtLastname.Leave += new System.EventHandler(this.txtLastname_Leave);
             // 
             // openFileDialog1
             // 
@@ -839,6 +880,7 @@
             this.btnBrowseID2.Text = "Browse";
             this.btnBrowseID2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowseID2.UseVisualStyleBackColor = false;
+            this.btnBrowseID2.Click += new System.EventHandler(this.btnBrowseID2_Click);
             // 
             // label2
             // 
@@ -873,6 +915,7 @@
             this.btnBrowseID1.Text = "Browse";
             this.btnBrowseID1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBrowseID1.UseVisualStyleBackColor = false;
+            this.btnBrowseID1.Click += new System.EventHandler(this.btnBrowseID_Click);
             // 
             // lbPlan
             // 
@@ -897,6 +940,7 @@
             this.btnAddPlan.Text = "Add Plan";
             this.btnAddPlan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddPlan.UseVisualStyleBackColor = false;
+            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
             // cboxfinancial_advisor
             // 
@@ -1434,20 +1478,6 @@
             this.lblBeneficiaries.Size = new System.Drawing.Size(125, 21);
             this.lblBeneficiaries.TabIndex = 0;
             this.lblBeneficiaries.Text = "BENEFICIARIES";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "In force",
-            "Auto Surrender",
-            "Lapse",
-            "Claim/Insured Dead"});
-            this.comboBox1.Location = new System.Drawing.Point(19, 412);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 58;
-            this.comboBox1.Text = "Policy Status";
             // 
             // AddEditClientForm
             // 
