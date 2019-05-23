@@ -163,13 +163,6 @@
             // comboBoxPlanType
             // 
             this.comboBoxPlanType.FormattingEnabled = true;
-            this.comboBoxPlanType.Items.AddRange(new object[] {
-            "Traditional",
-            "Variable",
-            "Non Life Insurance",
-            "General Insurance",
-            "Group Insurance",
-            "Life Insurance"});
             this.comboBoxPlanType.Location = new System.Drawing.Point(237, 58);
             this.comboBoxPlanType.Name = "comboBoxPlanType";
             this.comboBoxPlanType.Size = new System.Drawing.Size(198, 29);
@@ -179,13 +172,6 @@
             // comboBoxPlanCategory
             // 
             this.comboBoxPlanCategory.FormattingEnabled = true;
-            this.comboBoxPlanCategory.Items.AddRange(new object[] {
-            "Income Protection",
-            "Health Insurance",
-            "Education",
-            "Income Protection with Invesment",
-            "Investment",
-            "Retirement"});
             this.comboBoxPlanCategory.Location = new System.Drawing.Point(441, 58);
             this.comboBoxPlanCategory.Name = "comboBoxPlanCategory";
             this.comboBoxPlanCategory.Size = new System.Drawing.Size(198, 29);
@@ -234,6 +220,7 @@
             this.txtSearch.Size = new System.Drawing.Size(204, 20);
             this.txtSearch.TabIndex = 87;
             this.txtSearch.Text = "Search Here";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // btnCancelUpdate
             // 

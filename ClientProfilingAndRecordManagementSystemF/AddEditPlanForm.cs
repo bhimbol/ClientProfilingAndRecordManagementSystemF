@@ -21,6 +21,16 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             using (axaDBEntities db = new axaDBEntities())
             {
+                var categories = (from c in db.Plans select c.category).Distinct().ToList();
+                var types = (from c in db.Plans select c.type).Distinct().ToList();
+                foreach(var c in categories)
+                {
+                    comboBoxPlanCategory.Items.Add(c);
+                }
+                foreach (var t in types)
+                {
+                    comboBoxPlanType.Items.Add(t);
+                }
                 DataGridViewPlans.DataSource = db.Plans.ToList();
             }
         }
@@ -128,12 +138,32 @@ namespace ClientProfilingAndRecordManagementSystemF
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            if(ex.InnerException != null)
+                            {
+                                MessageBox.Show(ex.InnerException.InnerException.Message);
+                            }
+                            else
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
                         }
                         AddEditPlanForm_Load(null, null);
                     }
                 }
                 }
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                using (axaDBEntities db = new axaDBEntities())
+                {
+                    DataGridViewPlans.DataSource = db.Plans.Where(p => p.type.Contains(txtSearch.Text) ||
+                                                                                 p.category.Contains(txtSearch.Text) ||
+                                                                                 p.description.Contains(txtSearch.Text)).ToList();
+                }
+            }
         }
     }
 }
