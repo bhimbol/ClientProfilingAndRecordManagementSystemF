@@ -465,10 +465,6 @@ namespace ClientProfilingAndRecordManagementSystemF
             e.Value = lastname + ", " + firstname + " " + middlename;
         }
 
-        private void txtHeight_KeyUp(object sender, KeyEventArgs e)
-        {
-        }
-
         private void txtweight_KeyPress(object sender, KeyPressEventArgs e)
         {
             isNumeric(sender, e);

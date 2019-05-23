@@ -34,18 +34,20 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnAddPlan = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
-            this.btnUpdateClient = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnUpdatePlan = new System.Windows.Forms.Button();
+            this.textBoxPlanDescription = new System.Windows.Forms.TextBox();
+            this.comboBoxPlanType = new System.Windows.Forms.ComboBox();
+            this.comboBoxPlanCategory = new System.Windows.Forms.ComboBox();
+            this.DataGridViewPlans = new System.Windows.Forms.DataGridView();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnCancelUpdate = new System.Windows.Forms.Button();
+            this.Remove = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,21 +100,22 @@
             this.panel2.Size = new System.Drawing.Size(10, 462);
             this.panel2.TabIndex = 22;
             // 
-            // btnAddClient
+            // btnAddPlan
             // 
-            this.btnAddClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
-            this.btnAddClient.FlatAppearance.BorderSize = 0;
-            this.btnAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddClient.Image = ((System.Drawing.Image)(resources.GetObject("btnAddClient.Image")));
-            this.btnAddClient.Location = new System.Drawing.Point(464, 434);
-            this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(158, 62);
-            this.btnAddClient.TabIndex = 23;
-            this.btnAddClient.Text = "Add Plan";
-            this.btnAddClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddClient.UseVisualStyleBackColor = false;
+            this.btnAddPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnAddPlan.FlatAppearance.BorderSize = 0;
+            this.btnAddPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPlan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPlan.Image = ((System.Drawing.Image)(resources.GetObject("btnAddPlan.Image")));
+            this.btnAddPlan.Location = new System.Drawing.Point(129, 434);
+            this.btnAddPlan.Name = "btnAddPlan";
+            this.btnAddPlan.Size = new System.Drawing.Size(158, 62);
+            this.btnAddPlan.TabIndex = 23;
+            this.btnAddPlan.Text = "Add Plan";
+            this.btnAddPlan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddPlan.UseVisualStyleBackColor = false;
+            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
             // btnDone
             // 
@@ -129,70 +132,79 @@
             this.btnDone.Text = "Done";
             this.btnDone.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
-            // btnUpdateClient
+            // btnUpdatePlan
             // 
-            this.btnUpdateClient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdateClient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
-            this.btnUpdateClient.FlatAppearance.BorderSize = 0;
-            this.btnUpdateClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateClient.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateClient.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdateClient.Image")));
-            this.btnUpdateClient.Location = new System.Drawing.Point(622, 434);
-            this.btnUpdateClient.Name = "btnUpdateClient";
-            this.btnUpdateClient.Size = new System.Drawing.Size(158, 62);
-            this.btnUpdateClient.TabIndex = 24;
-            this.btnUpdateClient.Text = "Update Plan";
-            this.btnUpdateClient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdateClient.UseVisualStyleBackColor = false;
+            this.btnUpdatePlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdatePlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(99)))), ((int)(((byte)(117)))));
+            this.btnUpdatePlan.Enabled = false;
+            this.btnUpdatePlan.FlatAppearance.BorderSize = 0;
+            this.btnUpdatePlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdatePlan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePlan.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdatePlan.Image")));
+            this.btnUpdatePlan.Location = new System.Drawing.Point(287, 434);
+            this.btnUpdatePlan.Name = "btnUpdatePlan";
+            this.btnUpdatePlan.Size = new System.Drawing.Size(158, 62);
+            this.btnUpdatePlan.TabIndex = 24;
+            this.btnUpdatePlan.Text = "Update Plan";
+            this.btnUpdatePlan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdatePlan.UseVisualStyleBackColor = false;
+            this.btnUpdatePlan.Click += new System.EventHandler(this.btnUpdatePlan_Click);
             // 
-            // textBox1
+            // textBoxPlanDescription
             // 
-            this.textBox1.Location = new System.Drawing.Point(33, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 27);
-            this.textBox1.TabIndex = 26;
-            this.textBox1.Text = "Plan name";
+            this.textBoxPlanDescription.Location = new System.Drawing.Point(33, 60);
+            this.textBoxPlanDescription.Name = "textBoxPlanDescription";
+            this.textBoxPlanDescription.Size = new System.Drawing.Size(198, 27);
+            this.textBoxPlanDescription.TabIndex = 26;
+            this.textBoxPlanDescription.Text = "Plan name";
             // 
-            // comboBox1
+            // comboBoxPlanType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxPlanType.FormattingEnabled = true;
+            this.comboBoxPlanType.Items.AddRange(new object[] {
             "Traditional",
             "Variable",
             "Non Life Insurance",
             "General Insurance",
             "Group Insurance",
             "Life Insurance"});
-            this.comboBox1.Location = new System.Drawing.Point(186, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 29);
-            this.comboBox1.TabIndex = 27;
-            this.comboBox1.Text = "Plan type:";
+            this.comboBoxPlanType.Location = new System.Drawing.Point(237, 58);
+            this.comboBoxPlanType.Name = "comboBoxPlanType";
+            this.comboBoxPlanType.Size = new System.Drawing.Size(198, 29);
+            this.comboBoxPlanType.TabIndex = 27;
+            this.comboBoxPlanType.Text = "Plan type:";
             // 
-            // comboBox2
+            // comboBoxPlanCategory
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxPlanCategory.FormattingEnabled = true;
+            this.comboBoxPlanCategory.Items.AddRange(new object[] {
             "Income Protection",
             "Health Insurance",
             "Education",
             "Income Protection with Invesment",
             "Investment",
             "Retirement"});
-            this.comboBox2.Location = new System.Drawing.Point(347, 58);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 29);
-            this.comboBox2.TabIndex = 28;
-            this.comboBox2.Text = "Category";
+            this.comboBoxPlanCategory.Location = new System.Drawing.Point(441, 58);
+            this.comboBoxPlanCategory.Name = "comboBoxPlanCategory";
+            this.comboBoxPlanCategory.Size = new System.Drawing.Size(198, 29);
+            this.comboBoxPlanCategory.TabIndex = 28;
+            this.comboBoxPlanCategory.Text = "Category";
             // 
-            // dataGridView1
+            // DataGridViewPlans
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 187);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(922, 241);
-            this.dataGridView1.TabIndex = 29;
+            this.DataGridViewPlans.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DataGridViewPlans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewPlans.Location = new System.Drawing.Point(16, 187);
+            this.DataGridViewPlans.MultiSelect = false;
+            this.DataGridViewPlans.Name = "DataGridViewPlans";
+            this.DataGridViewPlans.ReadOnly = true;
+            this.DataGridViewPlans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DataGridViewPlans.Size = new System.Drawing.Size(922, 241);
+            this.DataGridViewPlans.TabIndex = 29;
+            this.DataGridViewPlans.DataSourceChanged += new System.EventHandler(this.DataGridViewPlans_DataSourceChanged);
+            this.DataGridViewPlans.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewPlans_CellContentDoubleClick);
             // 
             // panel10
             // 
@@ -223,22 +235,45 @@
             this.txtSearch.TabIndex = 87;
             this.txtSearch.Text = "Search Here";
             // 
+            // btnCancelUpdate
+            // 
+            this.btnCancelUpdate.Enabled = false;
+            this.btnCancelUpdate.Location = new System.Drawing.Point(460, 443);
+            this.btnCancelUpdate.Name = "btnCancelUpdate";
+            this.btnCancelUpdate.Size = new System.Drawing.Size(153, 45);
+            this.btnCancelUpdate.TabIndex = 90;
+            this.btnCancelUpdate.Text = "Cancel Update";
+            this.btnCancelUpdate.UseVisualStyleBackColor = true;
+            this.btnCancelUpdate.Click += new System.EventHandler(this.btnCancelUpdate_Click);
+            // 
+            // Remove
+            // 
+            this.Remove.Location = new System.Drawing.Point(619, 443);
+            this.Remove.Name = "Remove";
+            this.Remove.Size = new System.Drawing.Size(139, 45);
+            this.Remove.TabIndex = 91;
+            this.Remove.Text = "Remove";
+            this.Remove.UseVisualStyleBackColor = true;
+            this.Remove.Click += new System.EventHandler(this.Remove_Click);
+            // 
             // AddEditPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(956, 512);
+            this.Controls.Add(this.Remove);
+            this.Controls.Add(this.btnCancelUpdate);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnAddClient);
+            this.Controls.Add(this.DataGridViewPlans);
+            this.Controls.Add(this.comboBoxPlanCategory);
+            this.Controls.Add(this.comboBoxPlanType);
+            this.Controls.Add(this.textBoxPlanDescription);
+            this.Controls.Add(this.btnAddPlan);
             this.Controls.Add(this.btnDone);
-            this.Controls.Add(this.btnUpdateClient);
+            this.Controls.Add(this.btnUpdatePlan);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel8);
@@ -249,8 +284,9 @@
             this.Name = "AddEditPlanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEditPlan";
+            this.Load += new System.EventHandler(this.AddEditPlanForm_Load);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlans)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -264,15 +300,17 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        internal System.Windows.Forms.Button btnAddClient;
+        internal System.Windows.Forms.Button btnAddPlan;
         internal System.Windows.Forms.Button btnDone;
-        internal System.Windows.Forms.Button btnUpdateClient;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        internal System.Windows.Forms.Button btnUpdatePlan;
+        private System.Windows.Forms.TextBox textBoxPlanDescription;
+        private System.Windows.Forms.ComboBox comboBoxPlanType;
+        private System.Windows.Forms.ComboBox comboBoxPlanCategory;
+        private System.Windows.Forms.DataGridView DataGridViewPlans;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnCancelUpdate;
+        private System.Windows.Forms.Button Remove;
     }
 }
