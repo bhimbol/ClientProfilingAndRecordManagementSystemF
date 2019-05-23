@@ -251,5 +251,11 @@ namespace ClientProfilingAndRecordManagementSystemF
             AddEditPlanForm addEditPlanForm = new AddEditPlanForm();
             addEditPlanForm.ShowDialog();
         }
+
+        private void mangaAxaFormsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageAXAForms manageaxaforms = new ManageAXAForms();
+            manageaxaforms.ShowDialog();
+        }
     }
 }

@@ -145,6 +145,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageAXAForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAXAForms.Designer.cs">
+      <DependentUpon>ManageAXAForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAXAForm_Subform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageAXAForm_Subform.Designer.cs">
+      <DependentUpon>ManageAXAForm_Subform.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +208,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAXAForms.resx">
+      <DependentUpon>ManageAXAForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageAXAForm_Subform.resx">
+      <DependentUpon>ManageAXAForm_Subform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageClientsForm.resx">
       <DependentUpon>ManageClientsForm.cs</DependentUpon>

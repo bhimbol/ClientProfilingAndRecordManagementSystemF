@@ -151,7 +151,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 4);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(70, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(190, 29);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -202,6 +202,7 @@
             this.mangaAxaFormsToolStripMenuItem.Name = "mangaAxaFormsToolStripMenuItem";
             this.mangaAxaFormsToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
             this.mangaAxaFormsToolStripMenuItem.Text = "Manga Axa Forms";
+            this.mangaAxaFormsToolStripMenuItem.Click += new System.EventHandler(this.mangaAxaFormsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
