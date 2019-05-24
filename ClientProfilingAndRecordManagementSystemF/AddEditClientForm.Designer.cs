@@ -589,6 +589,7 @@
             this.txtweight.TabIndex = 47;
             this.txtweight.Text = "Weight";
             this.txtweight.Enter += new System.EventHandler(this.txtweight_Enter);
+            this.txtweight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtweight_KeyPress);
             this.txtweight.Leave += new System.EventHandler(this.txtweight_Leave);
             // 
             // txtHeight
@@ -602,6 +603,7 @@
             this.txtHeight.TabIndex = 46;
             this.txtHeight.Text = "Height";
             this.txtHeight.Enter += new System.EventHandler(this.txtHeight_Enter);
+            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
             this.txtHeight.Leave += new System.EventHandler(this.txtHeight_Leave);
             // 
             // txtBirthplace
@@ -855,6 +857,7 @@
             this.txtIDDir2.Name = "txtIDDir2";
             this.txtIDDir2.Size = new System.Drawing.Size(144, 20);
             this.txtIDDir2.TabIndex = 109;
+            this.txtIDDir2.TextChanged += new System.EventHandler(this.txtIDDir2_TextChanged);
             // 
             // pbID1
             // 
@@ -900,6 +903,7 @@
             this.txtIDDir1.Name = "txtIDDir1";
             this.txtIDDir1.Size = new System.Drawing.Size(144, 20);
             this.txtIDDir1.TabIndex = 105;
+            this.txtIDDir1.TextChanged += new System.EventHandler(this.txtIDDir1_TextChanged);
             // 
             // btnBrowseID1
             // 
@@ -1232,6 +1236,7 @@
             this.txtOtherSource.Size = new System.Drawing.Size(244, 20);
             this.txtOtherSource.TabIndex = 56;
             this.txtOtherSource.Text = "Other Source";
+            this.txtOtherSource.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtherSource_KeyPress);
             // 
             // txtBusinessIncome
             // 
@@ -1243,6 +1248,7 @@
             this.txtBusinessIncome.Size = new System.Drawing.Size(244, 20);
             this.txtBusinessIncome.TabIndex = 55;
             this.txtBusinessIncome.Text = "Business Income";
+            this.txtBusinessIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusinessIncome_KeyPress);
             // 
             // txtWorkSalary
             // 
@@ -1254,6 +1260,7 @@
             this.txtWorkSalary.Size = new System.Drawing.Size(244, 20);
             this.txtWorkSalary.TabIndex = 54;
             this.txtWorkSalary.Text = "Work Salary";
+            this.txtWorkSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWorkSalary_KeyPress);
             // 
             // txtOccupation
             // 

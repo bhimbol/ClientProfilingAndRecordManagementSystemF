@@ -78,9 +78,9 @@
             this.txtpassword.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.txtpassword.Location = new System.Drawing.Point(82, 132);
             this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(183, 27);
             this.txtpassword.TabIndex = 2;
-            this.txtpassword.Text = "Password";
             this.txtpassword.Click += new System.EventHandler(this.txtpassword_Click);
             this.txtpassword.TextChanged += new System.EventHandler(this.txtpassword_TextChanged);
             // 

@@ -27,7 +27,7 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             using (axaDBEntities db = new axaDBEntities())
             {
-                foreach (Control c in this.Controls)
+                foreach (Control c in this.panel2.Controls)
                 {
                     if (c is CheckBox)
                     {
@@ -78,12 +78,65 @@ namespace ClientProfilingAndRecordManagementSystemF
             this.Dispose();
         }
 
+        private void ShowPlans()
+        {
+
+            using(axaDBEntities db = new axaDBEntities())
+            {
+                var plans = db.Plans.ToList();
+                var plans_type = (from p in plans select p.type).Distinct();
+                CheckBox box;
+                int j = 1;
+
+                foreach (var pt in plans_type)
+                {
+                    Label label = new Label();
+                    label.AutoSize = true;
+                    label.Text = pt;
+                    label.Location = new Point(10, j * 25);
+                    this.panel2.Controls.Add(label);
+                    j++;
+
+                    var plans_type_category = (from p in plans where p.type == pt select p.category).Distinct();
+                    foreach (var pc in plans_type_category)
+                    {
+                        var plans_in_category = plans.Where(x => x.category == pc && x.type == pt);
+                        int i = 1;
+
+                        Label label2 = new Label();
+                        label2.AutoSize = true;
+                        label2.Text = pc;
+                        label2.Location = new Point(50, j * 25);
+                        this.panel2.Controls.Add(label2);
+                        j++;
+
+                        foreach (var p in plans_in_category)
+                        {
+                            box = new CheckBox();
+                            box.Tag = p.plan_id;
+                            box.Name = p.plan_id.ToString();
+                            box.AccessibleName = p.plan_id.ToString();
+                            box.Text = i.ToString() + ". " + p.description.ToString();
+                            box.AutoSize = true;
+                            box.Location = new Point(50, j * 25);
+                            box.CheckedChanged += checkBox_CheckedChanged;
+                            this.panel2.Controls.Add(box);
+                            i = i + 1;
+                            j = j + 1;
+                        }
+                    }
+                }
+            }
+        }
+ 
         private void AddPlanForm_Load(object sender, EventArgs e)
         {
+            ShowPlans();
+
             action = "FromLoad";
             using (axaDBEntities db = new axaDBEntities())
             {
-                foreach (Control c in this.Controls)
+                foreach (Control c in this.panel2.Controls)
                 {
                     if (c is CheckBox)
                     {
