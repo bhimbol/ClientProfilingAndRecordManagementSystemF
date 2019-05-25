@@ -74,6 +74,12 @@
     <Compile Include="AddEditClientForm.Designer.cs">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEditGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditGroup.Designer.cs">
+      <DependentUpon>AddEditGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     <EmbeddedResource Include="AddEditClientForm.resx">
       <DependentUpon>AddEditClientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEditGroup.resx">
+      <DependentUpon>AddEditGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditPlanForm.resx">
       <DependentUpon>AddEditPlanForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

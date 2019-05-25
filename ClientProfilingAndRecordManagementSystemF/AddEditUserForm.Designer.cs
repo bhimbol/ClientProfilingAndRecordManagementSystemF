@@ -70,10 +70,11 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(100)))));
-            this.txtSearch.Location = new System.Drawing.Point(504, 270);
+            this.txtSearch.Location = new System.Drawing.Point(706, 270);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(204, 20);
             this.txtSearch.TabIndex = 48;
@@ -90,7 +91,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(193, 633);
+            this.btnDelete.Location = new System.Drawing.Point(395, 633);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(169, 55);
             this.btnDelete.TabIndex = 47;
@@ -108,7 +109,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(362, 633);
+            this.btnUpdate.Location = new System.Drawing.Point(564, 633);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(169, 55);
             this.btnUpdate.TabIndex = 46;
@@ -126,7 +127,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(531, 633);
+            this.btnAdd.Location = new System.Drawing.Point(733, 633);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(169, 55);
             this.btnAdd.TabIndex = 45;
@@ -137,12 +138,14 @@
             // 
             // txtFullName
             // 
+            this.txtFullName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFullName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtFullName.Location = new System.Drawing.Point(28, 51);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(400, 20);
+            this.txtFullName.Size = new System.Drawing.Size(602, 20);
             this.txtFullName.TabIndex = 40;
             this.txtFullName.Text = "Full Name: (Last Name, First Name, Middle Name)";
             this.txtFullName.Enter += new System.EventHandler(this.txtFullName_Enter);
@@ -150,12 +153,14 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtPassword.Location = new System.Drawing.Point(28, 117);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(400, 20);
+            this.txtPassword.Size = new System.Drawing.Size(602, 20);
             this.txtPassword.TabIndex = 51;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
@@ -163,12 +168,14 @@
             // 
             // txtRetypePassword
             // 
+            this.txtRetypePassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRetypePassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRetypePassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRetypePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtRetypePassword.Location = new System.Drawing.Point(28, 150);
             this.txtRetypePassword.Name = "txtRetypePassword";
-            this.txtRetypePassword.Size = new System.Drawing.Size(400, 20);
+            this.txtRetypePassword.Size = new System.Drawing.Size(602, 20);
             this.txtRetypePassword.TabIndex = 52;
             this.txtRetypePassword.Text = "Re-type Password";
             this.txtRetypePassword.Enter += new System.EventHandler(this.txtRetypePassword_Enter);
@@ -176,12 +183,14 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtUsername.Location = new System.Drawing.Point(28, 84);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(400, 20);
+            this.txtUsername.Size = new System.Drawing.Size(602, 20);
             this.txtUsername.TabIndex = 53;
             this.txtUsername.Text = "Username";
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
@@ -194,7 +203,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(731, 40);
+            this.panel1.Size = new System.Drawing.Size(933, 40);
             this.panel1.TabIndex = 66;
             // 
             // button_Exit
@@ -203,7 +212,7 @@
             this.button_Exit.FlatAppearance.BorderSize = 0;
             this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
-            this.button_Exit.Location = new System.Drawing.Point(692, 3);
+            this.button_Exit.Location = new System.Drawing.Point(894, 3);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(36, 33);
             this.button_Exit.TabIndex = 17;
@@ -212,7 +221,7 @@
             // 
             // dataGridViewUSR_
             // 
-            this.dataGridViewUSR_.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridViewUSR_.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewUSR_.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUSR_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewUSR_.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -223,19 +232,21 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridViewUSR_.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewUSR_.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUSR_.Size = new System.Drawing.Size(685, 313);
+            this.dataGridViewUSR_.Size = new System.Drawing.Size(887, 313);
             this.dataGridViewUSR_.TabIndex = 67;
             this.dataGridViewUSR_.DataSourceChanged += new System.EventHandler(this.dataGridViewUSR_DataSourceChanged);
             this.dataGridViewUSR_.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUSR_CellDoubleClick);
             // 
             // txtAddress
             // 
+            this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtAddress.Location = new System.Drawing.Point(28, 216);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(400, 20);
+            this.txtAddress.Size = new System.Drawing.Size(602, 20);
             this.txtAddress.TabIndex = 69;
             this.txtAddress.Text = "Address";
             this.txtAddress.Enter += new System.EventHandler(this.txtAddress_Enter);
@@ -243,22 +254,26 @@
             // 
             // txtContact_Num
             // 
+            this.txtContact_Num.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtContact_Num.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContact_Num.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact_Num.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtContact_Num.Location = new System.Drawing.Point(28, 183);
             this.txtContact_Num.Name = "txtContact_Num";
-            this.txtContact_Num.Size = new System.Drawing.Size(400, 20);
+            this.txtContact_Num.Size = new System.Drawing.Size(602, 20);
             this.txtContact_Num.TabIndex = 68;
             this.txtContact_Num.Text = "Contact Number";
             this.txtContact_Num.Enter += new System.EventHandler(this.txtContact_Num_Enter);
+            this.txtContact_Num.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_Num_KeyPress);
             this.txtContact_Num.Leave += new System.EventHandler(this.txtContact_Num_Leave);
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(449, 52);
+            this.label12.Location = new System.Drawing.Point(651, 52);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 20);
             this.label12.TabIndex = 72;
@@ -266,10 +281,11 @@
             // 
             // rbM
             // 
+            this.rbM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbM.AutoSize = true;
             this.rbM.Checked = true;
             this.rbM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbM.Location = new System.Drawing.Point(531, 52);
+            this.rbM.Location = new System.Drawing.Point(733, 52);
             this.rbM.Name = "rbM";
             this.rbM.Size = new System.Drawing.Size(61, 24);
             this.rbM.TabIndex = 74;
@@ -279,9 +295,10 @@
             // 
             // rbF
             // 
+            this.rbF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.rbF.AutoSize = true;
             this.rbF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbF.Location = new System.Drawing.Point(616, 52);
+            this.rbF.Location = new System.Drawing.Point(818, 52);
             this.rbF.Name = "rbF";
             this.rbF.Size = new System.Drawing.Size(80, 24);
             this.rbF.TabIndex = 73;
@@ -290,11 +307,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.rbClerkStaff);
             this.groupBox1.Controls.Add(this.rbAdvisor);
             this.groupBox1.Controls.Add(this.rbManager);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(453, 84);
+            this.groupBox1.Location = new System.Drawing.Point(655, 84);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 96);
             this.groupBox1.TabIndex = 75;
@@ -349,7 +367,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(721, 40);
+            this.panel2.Location = new System.Drawing.Point(923, 40);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 683);
             this.panel2.TabIndex = 76;
@@ -369,61 +387,74 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(10, 713);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(711, 10);
+            this.panel4.Size = new System.Drawing.Size(913, 10);
             this.panel4.TabIndex = 78;
             // 
             // panel42
             // 
+            this.panel42.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel42.BackColor = System.Drawing.Color.DimGray;
             this.panel42.Location = new System.Drawing.Point(28, 77);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(400, 1);
+            this.panel42.Size = new System.Drawing.Size(602, 1);
             this.panel42.TabIndex = 79;
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.DimGray;
             this.panel5.Location = new System.Drawing.Point(28, 110);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(400, 1);
+            this.panel5.Size = new System.Drawing.Size(602, 1);
             this.panel5.TabIndex = 80;
             // 
             // panel6
             // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.DimGray;
             this.panel6.Location = new System.Drawing.Point(28, 143);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(400, 1);
+            this.panel6.Size = new System.Drawing.Size(602, 1);
             this.panel6.TabIndex = 81;
             // 
             // panel7
             // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.DimGray;
             this.panel7.Location = new System.Drawing.Point(28, 176);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(400, 1);
+            this.panel7.Size = new System.Drawing.Size(602, 1);
             this.panel7.TabIndex = 82;
             // 
             // panel8
             // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.DimGray;
             this.panel8.Location = new System.Drawing.Point(28, 209);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(400, 1);
+            this.panel8.Size = new System.Drawing.Size(602, 1);
             this.panel8.TabIndex = 83;
             // 
             // panel9
             // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.DimGray;
             this.panel9.Location = new System.Drawing.Point(25, 242);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(400, 1);
+            this.panel9.Size = new System.Drawing.Size(602, 1);
             this.panel9.TabIndex = 84;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(468, 264);
+            this.pictureBox1.Location = new System.Drawing.Point(670, 264);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -432,8 +463,9 @@
             // 
             // panel10
             // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.DimGray;
-            this.panel10.Location = new System.Drawing.Point(468, 296);
+            this.panel10.Location = new System.Drawing.Point(670, 296);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(240, 1);
             this.panel10.TabIndex = 86;
@@ -443,7 +475,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(731, 723);
+            this.ClientSize = new System.Drawing.Size(933, 723);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel9);

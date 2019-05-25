@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientProfilingAndRecordManagementSystemF
@@ -19,7 +14,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void ManageFinancialAdvisorForm_Load(object sender, EventArgs e)
         {
-            using(axaDBEntities db = new axaDBEntities())
+            using (axaDBEntities db = new axaDBEntities())
             {
                 dataGridViewFA.DataSource = db.FinancialAdvisors.ToList();
                 btnUpdate.Enabled = false;
@@ -68,6 +63,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                             addedituserform.ShowDialog();
                             addedituserform.role = null;
                         }
+                        CleartxtFields();
                     }
                     catch (Exception ex)
                     {
@@ -77,13 +73,26 @@ namespace ClientProfilingAndRecordManagementSystemF
                 else
                 {
                     MessageBox.Show("Please fill up required fields.");
+                    CleartxtFields();
                 }
             }
+
+        }
+
+        private void CleartxtFields()
+        {
+            txtLastName.Text = "Last Name*";
+            txtFirstName.Text = "First Name*";
+            txtMiddleName.Text = "Middle Name*";
+            txtCode_Num.Text = "Liscense Code *";
+            txtContact_Num.Text = "Contact Number";
+            txtEmail_Add.Text = "Email Address";
+            txtAddress.Text = "Address";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if(dataGridViewFA.SelectedRows.Count > 0)
+            if (dataGridViewFA.SelectedRows.Count > 0)
             {
                 if (CheckForRequiredFields())
                 {
@@ -110,6 +119,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     }
                     ManageFinancialAdvisorForm_Load(null, null);
                     MessageBox.Show("Record updated Successfully.");
+                    CleartxtFields();
                 }
                 else
                 {
@@ -160,9 +170,9 @@ namespace ClientProfilingAndRecordManagementSystemF
                                 ManageFinancialAdvisorForm_Load(null, null);
                             }
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
-                            if(ex.InnerException != null)
+                            if (ex.InnerException != null)
                             {
                                 MessageBox.Show(ex.InnerException.InnerException.Message);
                             }
@@ -174,9 +184,9 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                using(axaDBEntities db = new axaDBEntities())
+                using (axaDBEntities db = new axaDBEntities())
                 {
                     dataGridViewFA.DataSource = db.FinancialAdvisors.Where(fa => fa.FName.Contains(txtSearch.Text) ||
                                                                                  fa.MName.Contains(txtSearch.Text) ||
@@ -190,7 +200,8 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void dataGridViewFA_DataSourceChanged(object sender, EventArgs e)
         {
-            dataGridViewFA.Columns[0].HeaderText = "Id";
+            dataGridViewFA.Columns[0].Visible = false;
+            //dataGridViewFA.Columns[0].HeaderText = "Id";
             dataGridViewFA.Columns[1].HeaderText = "License Code";
             dataGridViewFA.Columns[2].HeaderText = "First Name";
             dataGridViewFA.Columns[3].HeaderText = "Middle Name";
@@ -201,12 +212,161 @@ namespace ClientProfilingAndRecordManagementSystemF
             dataGridViewFA.Columns[8].HeaderText = "Email Address";
             dataGridViewFA.Columns[9].HeaderText = "Address";
             dataGridViewFA.Columns["Clients"].Visible = false;
+
+
         }
 
         private void button_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
             this.Dispose();
+        }
+
+        private void txtLastName_Enter(object sender, EventArgs e)
+        {
+            if (txtLastName.Text == "Last Name*")
+            {
+                txtLastName.Text = "";
+            }
+        }
+
+        private void txtLastName_Leave(object sender, EventArgs e)
+        {
+            if (txtLastName.Text == "")
+            {
+                txtLastName.Text = "Last Name*";
+            }
+        }
+
+        private void txtFirstName_Enter(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text == "First Name*")
+            {
+                txtFirstName.Text = "";
+            }
+        }
+
+        private void txtFirstName_Leave(object sender, EventArgs e)
+        {
+            if (txtFirstName.Text == "")
+            {
+                txtFirstName.Text = "First Name*";
+            }
+        }
+
+        private void txtMiddleName_Enter(object sender, EventArgs e)
+        {
+            if (txtMiddleName.Text == "Middle Name*")
+            {
+                txtMiddleName.Text = "";
+            }
+        }
+
+        private void txtMiddleName_Leave(object sender, EventArgs e)
+        {
+            if (txtMiddleName.Text == "")
+            {
+                txtMiddleName.Text = "Middle Name*";
+            }
+        }
+
+        private void txtCode_Num_Enter(object sender, EventArgs e)
+        {
+            if (txtCode_Num.Text == "Liscense Code *")
+            {
+                txtCode_Num.Text = "";
+            }
+        }
+
+        private void txtCode_Num_Leave(object sender, EventArgs e)
+        {
+            if (txtCode_Num.Text == "")
+            {
+                txtCode_Num.Text = "Liscense Code *";
+            }
+        }
+
+        private void txtContact_Num_Enter(object sender, EventArgs e)
+        {
+            if (txtContact_Num.Text == "Contact Number")
+            {
+                txtContact_Num.Text = "";
+            }
+        }
+
+        private void txtContact_Num_Leave(object sender, EventArgs e)
+        {
+            if (txtContact_Num.Text == "")
+            {
+                txtContact_Num.Text = "Contact Number";
+            }
+        }
+
+        private void txtEmail_Add_Enter(object sender, EventArgs e)
+        {
+            if (txtEmail_Add.Text == "Email Address")
+            {
+                txtEmail_Add.Text = "";
+            }
+        }
+
+        private void txtEmail_Add_Leave(object sender, EventArgs e)
+        {
+            if (txtEmail_Add.Text == "")
+            {
+                txtEmail_Add.Text = "Email Address";
+            }
+        }
+
+        private void txtAddress_Enter(object sender, EventArgs e)
+        {
+            if (txtAddress.Text == "Address")
+            {
+                txtAddress.Text = "";
+            }
+        }
+
+        private void txtAddress_Leave(object sender, EventArgs e)
+        {
+            if (txtAddress.Text == "")
+            {
+                txtAddress.Text = "Address";
+            }
+        }
+
+        private void txtCode_Num_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        public void isNumeric(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opd = new OpenFileDialog();
+            opd.Title = "Browse Image file for ID";
+            opd.DefaultExt = "jpg";
+            opd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            opd.Multiselect = false;
+            if (opd.ShowDialog() == DialogResult.OK)
+            {
+                //txtIDDir1.Text = opd.FileName;
+            }
         }
     }
 }

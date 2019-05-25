@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4dc117c9478240ee9326948c4522ba4c" Name="Diagram1" ZoomLevel="127">
+      <Diagram DiagramId="4dc117c9478240ee9326948c4522ba4c" Name="Diagram1" ZoomLevel="93">
         <EntityTypeShape EntityType="axaDBModel.ClientBeneficiary" Width="1.5" PointX="5.25" PointY="7" />
-        <EntityTypeShape EntityType="axaDBModel.ClientPlan" Width="1.5" PointX="5.25" PointY="3.125" />
+        <EntityTypeShape EntityType="axaDBModel.ClientPlan" Width="1.5" PointX="6.875" PointY="4.75" />
         <EntityTypeShape EntityType="axaDBModel.Client" Width="1.5" PointX="3" PointY="1.25" />
-        <EntityTypeShape EntityType="axaDBModel.FinancialAdvisor" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="axaDBModel.FinancialAdvisor" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="axaDBModel.Plan" Width="1.5" PointX="3" PointY="10.25" />
         <AssociationConnector Association="axaDBModel.FK_ClientBeneficiaries" />
         <AssociationConnector Association="axaDBModel.FK_ClientPlans_Client" />

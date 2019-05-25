@@ -1398,6 +1398,9 @@
             this.txtBShare.Size = new System.Drawing.Size(215, 20);
             this.txtBShare.TabIndex = 15;
             this.txtBShare.Text = "% Share";
+            this.txtBShare.Enter += new System.EventHandler(this.txtBShare_Enter);
+            this.txtBShare.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.isNumeric);
+            this.txtBShare.Leave += new System.EventHandler(this.txtBShare_Leave);
             // 
             // txtBRelationship
             // 
@@ -1408,6 +1411,8 @@
             this.txtBRelationship.Size = new System.Drawing.Size(215, 20);
             this.txtBRelationship.TabIndex = 14;
             this.txtBRelationship.Text = "Relationship";
+            this.txtBRelationship.Enter += new System.EventHandler(this.txtBRelationship_Enter);
+            this.txtBRelationship.Leave += new System.EventHandler(this.txtBRelationship_Leave);
             // 
             // txtBOccupation
             // 
@@ -1418,6 +1423,8 @@
             this.txtBOccupation.Size = new System.Drawing.Size(215, 20);
             this.txtBOccupation.TabIndex = 11;
             this.txtBOccupation.Text = "Occupation";
+            this.txtBOccupation.Enter += new System.EventHandler(this.txtBOccupation_Enter);
+            this.txtBOccupation.Leave += new System.EventHandler(this.txtBOccupation_Leave);
             // 
             // btnRemoveBeneficiary
             // 
@@ -1442,6 +1449,8 @@
             this.txtBBirthPlace.Size = new System.Drawing.Size(215, 20);
             this.txtBBirthPlace.TabIndex = 9;
             this.txtBBirthPlace.Text = "Birth Place";
+            this.txtBBirthPlace.Enter += new System.EventHandler(this.txtBBirthPlace_Enter);
+            this.txtBBirthPlace.Leave += new System.EventHandler(this.txtBBirthPlace_Leave);
             // 
             // btnAddBeneficiary
             // 
@@ -1487,6 +1496,8 @@
             this.txtBFullname.Size = new System.Drawing.Size(504, 20);
             this.txtBFullname.TabIndex = 4;
             this.txtBFullname.Text = "Full Name: (Last Name, First Name, Middle Name)";
+            this.txtBFullname.Enter += new System.EventHandler(this.txtBFullname_Enter);
+            this.txtBFullname.Leave += new System.EventHandler(this.txtBFullname_Leave);
             // 
             // dgvBeneficiaries
             // 

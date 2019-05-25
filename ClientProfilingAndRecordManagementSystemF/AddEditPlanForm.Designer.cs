@@ -46,6 +46,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnCancelUpdate = new System.Windows.Forms.Button();
             this.Remove = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewPlans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -160,6 +161,8 @@
             this.textBoxPlanDescription.Size = new System.Drawing.Size(198, 27);
             this.textBoxPlanDescription.TabIndex = 26;
             this.textBoxPlanDescription.Text = "Plan name";
+            this.textBoxPlanDescription.Enter += new System.EventHandler(this.textBoxPlanDescription_Enter);
+            this.textBoxPlanDescription.Leave += new System.EventHandler(this.textBoxPlanDescription_Leave);
             // 
             // comboBoxPlanType
             // 
@@ -221,7 +224,9 @@
             this.txtSearch.Size = new System.Drawing.Size(204, 20);
             this.txtSearch.TabIndex = 87;
             this.txtSearch.Text = "Search Here";
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // btnCancelUpdate
             // 
@@ -244,12 +249,22 @@
             this.Remove.UseVisualStyleBackColor = true;
             this.Remove.Click += new System.EventHandler(this.Remove_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(33, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 47);
+            this.button1.TabIndex = 92;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AddEditPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(956, 512);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Remove);
             this.Controls.Add(this.btnCancelUpdate);
             this.Controls.Add(this.panel10);
@@ -300,5 +315,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnCancelUpdate;
         private System.Windows.Forms.Button Remove;
+        private System.Windows.Forms.Button button1;
     }
 }

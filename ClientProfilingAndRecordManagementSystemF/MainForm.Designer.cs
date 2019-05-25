@@ -151,7 +151,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 4);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(190, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(70, 29);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -294,12 +294,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 9);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(242, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(452, 23);
+            this.label1.Size = new System.Drawing.Size(566, 25);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Client Recording Systerm in Axa Northern Samar";
+            this.label1.Text = "CLIENT RECORD MANAGEMENT SYSTEM IN AXA SAMAR";
             // 
             // status
             // 

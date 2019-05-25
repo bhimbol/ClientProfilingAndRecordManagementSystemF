@@ -474,7 +474,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             isNumeric(sender, e);
         }
 
-        private void isNumeric(object sender, KeyPressEventArgs e)
+        public void isNumeric(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
@@ -932,6 +932,86 @@ namespace ClientProfilingAndRecordManagementSystemF
             if (txtsubanswer3.Text == "")
             {
                 txtsubanswer3.Text = "Cigarette consumption, how many sticks per day?";
+            }
+        }
+
+        private void txtBFullname_Enter(object sender, EventArgs e)
+        {
+            if (txtBFullname.Text == "Full Name: (Last Name, First Name, Middle Name)")
+            {
+                txtBFullname.Text = "";
+            }
+        }
+
+        private void txtBFullname_Leave(object sender, EventArgs e)
+        {
+            if (txtBFullname.Text == "")
+            {
+                txtBFullname.Text = "Full Name: (Last Name, First Name, Middle Name)";
+            }
+        }
+
+        private void txtBOccupation_Enter(object sender, EventArgs e)
+        {
+            if (txtBOccupation.Text == "Occupation")
+            {
+                txtBOccupation.Text = "";
+            }
+        }
+
+        private void txtBOccupation_Leave(object sender, EventArgs e)
+        {
+            if (txtBOccupation.Text == "")
+            {
+                txtBOccupation.Text = "Occupation";
+            }
+        }
+
+        private void txtBRelationship_Enter(object sender, EventArgs e)
+        {
+            if (txtBRelationship.Text == "Relationship")
+            {
+                txtBRelationship.Text = "";
+            }
+        }
+
+        private void txtBRelationship_Leave(object sender, EventArgs e)
+        {
+            if (txtBRelationship.Text == "")
+            {
+                txtBRelationship.Text = "Relationship";
+            }
+        }
+
+        private void txtBBirthPlace_Enter(object sender, EventArgs e)
+        {
+            if (txtBBirthPlace.Text == "Birth Place")
+            {
+                txtBBirthPlace.Text = "";
+            }
+        }
+
+        private void txtBBirthPlace_Leave(object sender, EventArgs e)
+        {
+            if (txtBBirthPlace.Text == "")
+            {
+                txtBBirthPlace.Text = "Birth Place";
+            }
+        }
+
+        private void txtBShare_Enter(object sender, EventArgs e)
+        {
+            if (txtBShare.Text == "% Share")
+            {
+                txtBShare.Text = "";
+            }
+        }
+
+        private void txtBShare_Leave(object sender, EventArgs e)
+        {
+            if (txtBShare.Text == "")
+            {
+                txtBShare.Text = "% Share";
             }
         }
     }

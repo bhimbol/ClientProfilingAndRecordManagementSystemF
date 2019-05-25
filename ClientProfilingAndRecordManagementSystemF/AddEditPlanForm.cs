@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientProfilingAndRecordManagementSystemF
@@ -23,7 +18,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 var categories = (from c in db.Plans select c.category).Distinct().ToList();
                 var types = (from c in db.Plans select c.type).Distinct().ToList();
-                foreach(var c in categories)
+                foreach (var c in categories)
                 {
                     comboBoxPlanCategory.Items.Add(c);
                 }
@@ -63,6 +58,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 {
                     db.SaveChanges();
                     MessageBox.Show("New Plan added successfully.");
+                    ClearEditFields();
                 }
                 catch (Exception ex)
                 {
@@ -70,6 +66,13 @@ namespace ClientProfilingAndRecordManagementSystemF
                 }
                 AddEditPlanForm_Load(null, null);
             }
+        }
+
+        private void ClearEditFields()
+        {
+            textBoxPlanDescription.Text = "Plan name";
+            comboBoxPlanType.Text = "Plan Type";
+            comboBoxPlanCategory.Text = "Plan Category";
         }
 
         private void DataGridViewPlans_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -107,6 +110,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     {
                         db.SaveChanges();
                         MessageBox.Show("Plan updated successfully.");
+                        ClearEditFields();
                     }
                     catch (Exception ex)
                     {
@@ -123,7 +127,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void Remove_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show(null,"Are you sure you want to delete this item?","Delete",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show(null, "Are you sure you want to delete this item?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (DataGridViewPlans.SelectedRows.Count > 0)
                 {
@@ -138,7 +142,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                         }
                         catch (Exception ex)
                         {
-                            if(ex.InnerException != null)
+                            if (ex.InnerException != null)
                             {
                                 MessageBox.Show(ex.InnerException.InnerException.Message);
                             }
@@ -150,7 +154,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                         AddEditPlanForm_Load(null, null);
                     }
                 }
-                }
+            }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
@@ -170,6 +174,38 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             this.Dispose();
             this.Close();
+        }
+
+        private void textBoxPlanDescription_Enter(object sender, EventArgs e)
+        {
+            if (textBoxPlanDescription.Text == "Plan name")
+            {
+                textBoxPlanDescription.Text = "";
+            }
+        }
+
+        private void textBoxPlanDescription_Leave(object sender, EventArgs e)
+        {
+            if (textBoxPlanDescription.Text == "")
+            {
+                textBoxPlanDescription.Text = "Plan name";
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search")
+            {
+                txtSearch.Text = "";
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search";
+            }
         }
     }
 }

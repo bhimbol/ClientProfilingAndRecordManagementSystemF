@@ -173,7 +173,9 @@ namespace ClientProfilingAndRecordManagementSystemF
                         btnDelete.Enabled = true;
                         dataGridViewUSR_.Enabled = true;
                     }
+                    MessageBox.Show("Update Successful");
                     AddEditUserForm_Load(null, null);
+                    ClearTxtField();
                 }
             }
         }
@@ -350,6 +352,23 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             this.Dispose();
             this.Close();
+        }
+
+        private void txtContact_Num_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            isNumeric(sender, e);
+        }
+
+        public void isNumeric(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
