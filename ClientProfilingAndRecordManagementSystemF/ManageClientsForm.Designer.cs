@@ -39,8 +39,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.button_Exit = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             this.panel4.SuspendLayout();
@@ -193,6 +193,18 @@
             this.panel4.Size = new System.Drawing.Size(1055, 40);
             this.panel4.TabIndex = 12;
             // 
+            // button_Exit
+            // 
+            this.button_Exit.FlatAppearance.BorderSize = 0;
+            this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
+            this.button_Exit.Location = new System.Drawing.Point(1019, 1);
+            this.button_Exit.Name = "button_Exit";
+            this.button_Exit.Size = new System.Drawing.Size(36, 33);
+            this.button_Exit.TabIndex = 16;
+            this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click_1);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(143)))));
@@ -205,17 +217,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(198, 542);
             this.panel5.TabIndex = 13;
-            // 
-            // button_Exit
-            // 
-            this.button_Exit.FlatAppearance.BorderSize = 0;
-            this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
-            this.button_Exit.Location = new System.Drawing.Point(1019, 1);
-            this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(36, 33);
-            this.button_Exit.TabIndex = 16;
-            this.button_Exit.UseVisualStyleBackColor = true;
             // 
             // label1
             // 

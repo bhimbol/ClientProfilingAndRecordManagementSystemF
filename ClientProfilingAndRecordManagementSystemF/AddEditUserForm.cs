@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClientProfilingAndRecordManagementSystemF
@@ -21,11 +16,15 @@ namespace ClientProfilingAndRecordManagementSystemF
         private bool CheckForRequiredFields()
         {
             bool result = false;
-            if(!(!String.IsNullOrWhiteSpace(txtFullName.Text) && !String.IsNullOrWhiteSpace(txtUsername.Text) && !String.IsNullOrWhiteSpace(txtPassword.Text) && !String.IsNullOrWhiteSpace(txtRetypePassword.Text)))
+            //if (!(!String.IsNullOrWhiteSpace(txtFullName.Text) && !String.IsNullOrWhiteSpace(txtUsername.Text) && !String.IsNullOrWhiteSpace(txtPassword.Text) && !String.IsNullOrWhiteSpace(txtRetypePassword.Text)))
+            //{
+            if (txtFullName.Text == "Full Name: (Last Name, First Name, Middle Name)" || txtUsername.Text == "Username" || txtContact_Num.Text == "Contact Number" || txtAddress.Text == "Address")
             {
                 MessageBox.Show("Please fill-up required fields.");
                 return result;
             }
+
+            //}
             if (txtPassword.Text != txtRetypePassword.Text)
             {
                 result = false;
@@ -69,16 +68,33 @@ namespace ClientProfilingAndRecordManagementSystemF
                             this.role = null;
                         }
                     }
+                    ClearTxtField();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    if(ex.InnerException != null)
+                    if (ex.InnerException != null)
                     {
                         MessageBox.Show(ex.InnerException.InnerException.Message);
                     }
                 }
 
             }
+            else
+            {
+                ClearTxtField();
+            }
+        }
+
+        private void ClearTxtField()
+        {
+            txtPassword.PasswordChar = '\0';
+            txtRetypePassword.PasswordChar = '\0';
+            txtFullName.Text = "Full Name: (Last Name, First Name, Middle Name)";
+            txtUsername.Text = "Username";
+            txtPassword.Text = "Password";
+            txtRetypePassword.Text = "Re-type Password";
+            txtContact_Num.Text = "Contact Number";
+            txtAddress.Text = "Address";
         }
 
         private void AddEditUserForm_Load(object sender, EventArgs e)
@@ -87,7 +103,7 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 dataGridViewUSR_.DataSource = db.Users.ToList();
                 btnUpdate.Enabled = false;
-                if(this.role != null)
+                if (this.role != null)
                 {
                     rbManager.Enabled = false;
                     rbClerkStaff.Enabled = false;
@@ -173,7 +189,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                         using (axaDBEntities db = new axaDBEntities())
                         {
                             User usr = db.Users.Find(br.Cells["user_id"].Value);
-                            if(usr.user_id.ToString() == Properties.Settings.Default.current_user_id)
+                            if (usr.user_id.ToString() == Properties.Settings.Default.current_user_id)
                             {
                                 MessageBox.Show("Sorry, can't delete current logged-in user.");
                             }
@@ -194,7 +210,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 using (axaDBEntities db = new axaDBEntities())
                 {
@@ -219,7 +235,121 @@ namespace ClientProfilingAndRecordManagementSystemF
             dataGridViewUSR_.Columns["gender"].HeaderText = "Gender";
             dataGridViewUSR_.Columns["contact_num"].HeaderText = "Contact Number";
             dataGridViewUSR_.Columns["address"].HeaderText = "Address";
-            dataGridViewUSR_.Columns["password"].Visible= false;
+            dataGridViewUSR_.Columns["password"].Visible = false;
+        }
+
+        private void txtFullName_Enter(object sender, EventArgs e)
+        {
+            if (txtFullName.Text == "Full Name: (Last Name, First Name, Middle Name)")
+            {
+                txtFullName.Text = "";
+            }
+
+        }
+
+        private void txtFullName_Leave(object sender, EventArgs e)
+        {
+            if (txtFullName.Text == "")
+            {
+                txtFullName.Text = "Full Name: (Last Name, First Name, Middle Name)";
+            }
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "Username")
+            {
+                txtUsername.Text = "";
+            }
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Username";
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = '*';
+            if (txtPassword.Text == "Password")
+            {
+                txtPassword.Text = "";
+
+            }
+
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+
+            if (txtPassword.Text == "")
+            {
+                txtPassword.PasswordChar = '\0';
+                txtPassword.Text = "Password";
+
+
+            }
+        }
+
+        private void txtRetypePassword_Enter(object sender, EventArgs e)
+        {
+            txtRetypePassword.PasswordChar = '*';
+            if (txtRetypePassword.Text == "Re-type Password")
+            {
+                txtRetypePassword.Text = "";
+
+            }
+        }
+
+        private void txtRetypePassword_Leave(object sender, EventArgs e)
+        {
+            if (txtRetypePassword.Text == "")
+            {
+                txtRetypePassword.PasswordChar = '\0';
+                txtRetypePassword.Text = "Re-type Password";
+
+            }
+        }
+
+        private void txtContact_Num_Enter(object sender, EventArgs e)
+        {
+            if (txtContact_Num.Text == "Contact Number")
+            {
+                txtContact_Num.Text = "";
+            }
+        }
+
+        private void txtContact_Num_Leave(object sender, EventArgs e)
+        {
+            if (txtContact_Num.Text == "")
+            {
+                txtContact_Num.Text = "Contact Number";
+            }
+        }
+
+        private void txtAddress_Enter(object sender, EventArgs e)
+        {
+            if (txtAddress.Text == "Address")
+            {
+                txtAddress.Text = "";
+            }
+        }
+
+        private void txtAddress_Leave(object sender, EventArgs e)
+        {
+            if (txtAddress.Text == "")
+            {
+                txtAddress.Text = "Address";
+            }
+        }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
         }
     }
 }

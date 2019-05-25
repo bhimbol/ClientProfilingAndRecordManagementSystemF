@@ -202,5 +202,11 @@ namespace ClientProfilingAndRecordManagementSystemF
             dataGridViewFA.Columns[9].HeaderText = "Address";
             dataGridViewFA.Columns["Clients"].Visible = false;
         }
+
+        private void button_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+        }
     }
 }

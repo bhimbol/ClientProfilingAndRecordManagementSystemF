@@ -153,5 +153,11 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
 
         }
+
+        private void button_Exit_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+        }
     }
 }

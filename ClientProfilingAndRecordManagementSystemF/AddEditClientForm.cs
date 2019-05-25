@@ -276,8 +276,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 txtHeight.Text != "Height" &&
                 txtBBirthPlace.Text != "Place of Birth" &&
                 txtemailaddress.Text != "Email Address" &&
-                txttelephonenumber.Text != "Home Telephone Number" &&
-                txtcpnumber.Text != "Cellphone Number" &&
+
                 txtresidenceaddress.Text != "Residence Address"
                 )
             {
@@ -326,11 +325,11 @@ namespace ClientProfilingAndRecordManagementSystemF
                 db.SaveChanges();
                 MessageBox.Show("Beneficiary successfully added.");
                 populateClientBeneficiaries(Int64.Parse(txtClientsID.Text));
-                txtBFullname.Clear();
-                txtBBirthPlace.Clear();
-                txtBRelationship.Clear();
-                txtBOccupation.Clear();
-                txtBShare.Clear();
+                txtBFullname.Text = "Full Name: (Last Name, First Name, Middle Name)";
+                txtBBirthPlace.Text = "Birth Place";
+                txtBRelationship.Text = "Relationship";
+                txtBOccupation.Text = "Occupation";
+                txtBShare.Text = "% Share";
                 cb = null;
             }
         }
@@ -579,7 +578,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void txtweight_Enter(object sender, EventArgs e)
         {
-            if (txtweight.Text == "Weight")
+            if (txtweight.Text == "Weight(kg)")
             {
                 txtweight.Text = "";
             }
@@ -589,13 +588,13 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             if (txtweight.Text == "")
             {
-                txtweight.Text = "Weight";
+                txtweight.Text = "Weight(kg)";
             }
         }
 
         private void txtHeight_Enter(object sender, EventArgs e)
         {
-            if (txtHeight.Text == "Height")
+            if (txtHeight.Text == "Height(cm)")
             {
                 txtHeight.Text = "";
             }
@@ -605,7 +604,7 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             if (txtHeight.Text == "")
             {
-                txtHeight.Text = "Height";
+                txtHeight.Text = "Height(cm)";
             }
         }
 
@@ -741,6 +740,198 @@ namespace ClientProfilingAndRecordManagementSystemF
             if (txtSMiddlename.Text == "")
             {
                 txtSMiddlename.Text = "Middle name";
+            }
+        }
+
+        private void txtOccupation_Enter(object sender, EventArgs e)
+        {
+            if (txtOccupation.Text == "Occupation (Job Position)")
+            {
+                txtOccupation.Text = "";
+            }
+        }
+
+        private void txtOccupation_Leave(object sender, EventArgs e)
+        {
+            if (txtOccupation.Text == "")
+            {
+                txtOccupation.Text = "Occupation (Job Position)";
+            }
+        }
+
+        private void txtWorkSalary_Enter(object sender, EventArgs e)
+        {
+            if (txtWorkSalary.Text == "Work Salary")
+            {
+                txtWorkSalary.Text = "";
+            }
+        }
+
+        private void txtWorkSalary_Leave(object sender, EventArgs e)
+        {
+            if (txtWorkSalary.Text == "")
+            {
+                txtWorkSalary.Text = "Work Salary";
+            }
+        }
+
+        private void txtBusinessIncome_Enter(object sender, EventArgs e)
+        {
+            if (txtBusinessIncome.Text == "Business Income")
+            {
+                txtBusinessIncome.Text = "";
+            }
+        }
+
+        private void txtBusinessIncome_Leave(object sender, EventArgs e)
+        {
+            if (txtBusinessIncome.Text == "")
+            {
+                txtBusinessIncome.Text = "Business Income";
+            }
+        }
+
+        private void txtOtherSource_Enter(object sender, EventArgs e)
+        {
+            if (txtOtherSource.Text == "Other Source")
+            {
+                txtOtherSource.Text = "";
+            }
+        }
+
+        private void txtOtherSource_Leave(object sender, EventArgs e)
+        {
+            if (txtOtherSource.Text == "")
+            {
+                txtOtherSource.Text = "Other Source";
+            }
+        }
+
+        private void txtCompanyName_Enter(object sender, EventArgs e)
+        {
+            if (txtCompanyName.Text == "Company's Name")
+            {
+                txtCompanyName.Text = "";
+            }
+        }
+
+        private void txtCompanyName_Leave(object sender, EventArgs e)
+        {
+            if (txtCompanyName.Text == "")
+            {
+                txtCompanyName.Text = "Company's Name";
+            }
+        }
+
+        private void txtCompanyAddress_Enter(object sender, EventArgs e)
+        {
+            if (txtCompanyAddress.Text == "Company's Address")
+            {
+                txtCompanyAddress.Text = "";
+            }
+        }
+
+        private void txtCompanyAddress_Leave(object sender, EventArgs e)
+        {
+            if (txtCompanyAddress.Text == "")
+            {
+                txtCompanyAddress.Text = "Company's Address";
+            }
+        }
+
+        private void txtCompanyConctactNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtCompanyConctactNumber.Text == "Company's Contact Number")
+            {
+                txtCompanyConctactNumber.Text = "";
+            }
+        }
+
+        private void txtCompanyConctactNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtCompanyConctactNumber.Text == "")
+            {
+                txtCompanyConctactNumber.Text = "Company's Contact Number";
+            }
+        }
+
+        private void txtNatureofBusiness_Enter(object sender, EventArgs e)
+        {
+            if (txtNatureofBusiness.Text == "Nature of Business")
+            {
+                txtNatureofBusiness.Text = "";
+            }
+        }
+
+        private void txtNatureofBusiness_Leave(object sender, EventArgs e)
+        {
+            if (txtNatureofBusiness.Text == "")
+            {
+                txtNatureofBusiness.Text = "Nature of Business";
+            }
+        }
+
+        private void txtTaxIDNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtTaxIDNumber.Text == "Tax Identification Number")
+            {
+                txtTaxIDNumber.Text = "";
+            }
+        }
+
+        private void txtTaxIDNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtTaxIDNumber.Text == "")
+            {
+                txtTaxIDNumber.Text = "";
+            }
+        }
+
+        private void txtSSSGSISNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtSSSGSISNumber.Text == "SSS or GSIS Number")
+            {
+                txtSSSGSISNumber.Text = "";
+            }
+        }
+
+        private void txtSSSGSISNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtSSSGSISNumber.Text == "")
+            {
+                txtSSSGSISNumber.Text = "SSS or GSIS Number";
+            }
+        }
+
+        private void txtsubanswer2_Enter(object sender, EventArgs e)
+        {
+            if (txtsubanswer2.Text == "If YES, since when do you start smoking?")
+            {
+                txtsubanswer2.Text = "";
+            }
+        }
+
+        private void txtsubanswer2_Leave(object sender, EventArgs e)
+        {
+            if (txtsubanswer2.Text == "")
+            {
+                txtsubanswer2.Text = "If YES, since when do you start smoking?";
+            }
+        }
+
+        private void txtsubanswer3_Enter(object sender, EventArgs e)
+        {
+            if (txtsubanswer3.Text == "Cigarette consumption, how many sticks per day?")
+            {
+                txtsubanswer3.Text = "";
+            }
+        }
+
+        private void txtsubanswer3_Leave(object sender, EventArgs e)
+        {
+            if (txtsubanswer3.Text == "")
+            {
+                txtsubanswer3.Text = "Cigarette consumption, how many sticks per day?";
             }
         }
     }

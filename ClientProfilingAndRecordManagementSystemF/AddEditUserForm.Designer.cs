@@ -145,6 +145,8 @@
             this.txtFullName.Size = new System.Drawing.Size(400, 20);
             this.txtFullName.TabIndex = 40;
             this.txtFullName.Text = "Full Name: (Last Name, First Name, Middle Name)";
+            this.txtFullName.Enter += new System.EventHandler(this.txtFullName_Enter);
+            this.txtFullName.Leave += new System.EventHandler(this.txtFullName_Leave);
             // 
             // txtPassword
             // 
@@ -153,10 +155,11 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtPassword.Location = new System.Drawing.Point(28, 117);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(400, 20);
             this.txtPassword.TabIndex = 51;
             this.txtPassword.Text = "Password";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtRetypePassword
             // 
@@ -165,10 +168,11 @@
             this.txtRetypePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(99)))), ((int)(((byte)(104)))));
             this.txtRetypePassword.Location = new System.Drawing.Point(28, 150);
             this.txtRetypePassword.Name = "txtRetypePassword";
-            this.txtRetypePassword.PasswordChar = '*';
             this.txtRetypePassword.Size = new System.Drawing.Size(400, 20);
             this.txtRetypePassword.TabIndex = 52;
             this.txtRetypePassword.Text = "Re-type Password";
+            this.txtRetypePassword.Enter += new System.EventHandler(this.txtRetypePassword_Enter);
+            this.txtRetypePassword.Leave += new System.EventHandler(this.txtRetypePassword_Leave);
             // 
             // txtUsername
             // 
@@ -180,6 +184,8 @@
             this.txtUsername.Size = new System.Drawing.Size(400, 20);
             this.txtUsername.TabIndex = 53;
             this.txtUsername.Text = "Username";
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // panel1
             // 
@@ -202,12 +208,12 @@
             this.button_Exit.Size = new System.Drawing.Size(36, 33);
             this.button_Exit.TabIndex = 17;
             this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
             // dataGridViewUSR_
             // 
             this.dataGridViewUSR_.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridViewUSR_.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewUSR_.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewUSR_.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUSR_.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewUSR_.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridViewUSR_.Location = new System.Drawing.Point(25, 300);
@@ -232,6 +238,8 @@
             this.txtAddress.Size = new System.Drawing.Size(400, 20);
             this.txtAddress.TabIndex = 69;
             this.txtAddress.Text = "Address";
+            this.txtAddress.Enter += new System.EventHandler(this.txtAddress_Enter);
+            this.txtAddress.Leave += new System.EventHandler(this.txtAddress_Leave);
             // 
             // txtContact_Num
             // 
@@ -243,6 +251,8 @@
             this.txtContact_Num.Size = new System.Drawing.Size(400, 20);
             this.txtContact_Num.TabIndex = 68;
             this.txtContact_Num.Text = "Contact Number";
+            this.txtContact_Num.Enter += new System.EventHandler(this.txtContact_Num_Enter);
+            this.txtContact_Num.Leave += new System.EventHandler(this.txtContact_Num_Leave);
             // 
             // label12
             // 

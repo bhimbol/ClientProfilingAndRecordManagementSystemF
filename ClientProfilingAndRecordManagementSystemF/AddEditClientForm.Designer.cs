@@ -550,6 +550,7 @@
             this.txttelephonenumber.TabIndex = 50;
             this.txttelephonenumber.Text = "Home Telephone Number";
             this.txttelephonenumber.Enter += new System.EventHandler(this.txttelephonenumber_Enter);
+            this.txttelephonenumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.isNumeric);
             this.txttelephonenumber.Leave += new System.EventHandler(this.txttelephonenumber_Leave);
             // 
             // txtcpnumber
@@ -563,6 +564,7 @@
             this.txtcpnumber.TabIndex = 49;
             this.txtcpnumber.Text = "Cellphone Number";
             this.txtcpnumber.Enter += new System.EventHandler(this.txtcpnumber_Enter);
+            this.txtcpnumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.isNumeric);
             this.txtcpnumber.Leave += new System.EventHandler(this.txtcpnumber_Leave);
             // 
             // txtresidenceaddress
@@ -587,7 +589,7 @@
             this.txtweight.Name = "txtweight";
             this.txtweight.Size = new System.Drawing.Size(211, 20);
             this.txtweight.TabIndex = 47;
-            this.txtweight.Text = "Weight";
+            this.txtweight.Text = "Weight(kg)";
             this.txtweight.Enter += new System.EventHandler(this.txtweight_Enter);
             this.txtweight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtweight_KeyPress);
             this.txtweight.Leave += new System.EventHandler(this.txtweight_Leave);
@@ -601,7 +603,7 @@
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(211, 20);
             this.txtHeight.TabIndex = 46;
-            this.txtHeight.Text = "Height";
+            this.txtHeight.Text = "Height(cm)";
             this.txtHeight.Enter += new System.EventHandler(this.txtHeight_Enter);
             this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
             this.txtHeight.Leave += new System.EventHandler(this.txtHeight_Leave);
@@ -1129,6 +1131,8 @@
             this.txtsubanswer2.Size = new System.Drawing.Size(339, 16);
             this.txtsubanswer2.TabIndex = 74;
             this.txtsubanswer2.Text = "If YES, since when do you start smoking?";
+            this.txtsubanswer2.Enter += new System.EventHandler(this.txtsubanswer2_Enter);
+            this.txtsubanswer2.Leave += new System.EventHandler(this.txtsubanswer2_Leave);
             // 
             // txtsubanswer3
             // 
@@ -1139,6 +1143,8 @@
             this.txtsubanswer3.Size = new System.Drawing.Size(342, 16);
             this.txtsubanswer3.TabIndex = 73;
             this.txtsubanswer3.Text = "Cigarette consumption, how many sticks per day?";
+            this.txtsubanswer3.Enter += new System.EventHandler(this.txtsubanswer3_Enter);
+            this.txtsubanswer3.Leave += new System.EventHandler(this.txtsubanswer3_Leave);
             // 
             // txtSSSGSISNumber
             // 
@@ -1150,6 +1156,8 @@
             this.txtSSSGSISNumber.Size = new System.Drawing.Size(244, 20);
             this.txtSSSGSISNumber.TabIndex = 71;
             this.txtSSSGSISNumber.Text = "SSS or GSIS Number";
+            this.txtSSSGSISNumber.Enter += new System.EventHandler(this.txtSSSGSISNumber_Enter);
+            this.txtSSSGSISNumber.Leave += new System.EventHandler(this.txtSSSGSISNumber_Leave);
             // 
             // txtTaxIDNumber
             // 
@@ -1161,6 +1169,8 @@
             this.txtTaxIDNumber.Size = new System.Drawing.Size(244, 20);
             this.txtTaxIDNumber.TabIndex = 70;
             this.txtTaxIDNumber.Text = "Tax Identification Number";
+            this.txtTaxIDNumber.Enter += new System.EventHandler(this.txtTaxIDNumber_Enter);
+            this.txtTaxIDNumber.Leave += new System.EventHandler(this.txtTaxIDNumber_Leave);
             // 
             // txtNatureofBusiness
             // 
@@ -1172,6 +1182,8 @@
             this.txtNatureofBusiness.Size = new System.Drawing.Size(244, 20);
             this.txtNatureofBusiness.TabIndex = 69;
             this.txtNatureofBusiness.Text = "Nature of Business";
+            this.txtNatureofBusiness.Enter += new System.EventHandler(this.txtNatureofBusiness_Enter);
+            this.txtNatureofBusiness.Leave += new System.EventHandler(this.txtNatureofBusiness_Leave);
             // 
             // txtCompanyConctactNumber
             // 
@@ -1183,6 +1195,8 @@
             this.txtCompanyConctactNumber.Size = new System.Drawing.Size(244, 20);
             this.txtCompanyConctactNumber.TabIndex = 68;
             this.txtCompanyConctactNumber.Text = "Company\'s Contact Number";
+            this.txtCompanyConctactNumber.Enter += new System.EventHandler(this.txtCompanyConctactNumber_Enter);
+            this.txtCompanyConctactNumber.Leave += new System.EventHandler(this.txtCompanyConctactNumber_Leave);
             // 
             // txtCompanyAddress
             // 
@@ -1194,6 +1208,8 @@
             this.txtCompanyAddress.Size = new System.Drawing.Size(244, 20);
             this.txtCompanyAddress.TabIndex = 67;
             this.txtCompanyAddress.Text = "Company\'s Address";
+            this.txtCompanyAddress.Enter += new System.EventHandler(this.txtCompanyAddress_Enter);
+            this.txtCompanyAddress.Leave += new System.EventHandler(this.txtCompanyAddress_Leave);
             // 
             // txtCompanyName
             // 
@@ -1205,6 +1221,8 @@
             this.txtCompanyName.Size = new System.Drawing.Size(244, 20);
             this.txtCompanyName.TabIndex = 66;
             this.txtCompanyName.Text = "Company\'s Name";
+            this.txtCompanyName.Enter += new System.EventHandler(this.txtCompanyName_Enter);
+            this.txtCompanyName.Leave += new System.EventHandler(this.txtCompanyName_Leave);
             // 
             // lblQuestion
             // 
@@ -1236,7 +1254,9 @@
             this.txtOtherSource.Size = new System.Drawing.Size(244, 20);
             this.txtOtherSource.TabIndex = 56;
             this.txtOtherSource.Text = "Other Source";
+            this.txtOtherSource.Enter += new System.EventHandler(this.txtOtherSource_Enter);
             this.txtOtherSource.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOtherSource_KeyPress);
+            this.txtOtherSource.Leave += new System.EventHandler(this.txtOtherSource_Leave);
             // 
             // txtBusinessIncome
             // 
@@ -1248,7 +1268,9 @@
             this.txtBusinessIncome.Size = new System.Drawing.Size(244, 20);
             this.txtBusinessIncome.TabIndex = 55;
             this.txtBusinessIncome.Text = "Business Income";
+            this.txtBusinessIncome.Enter += new System.EventHandler(this.txtBusinessIncome_Enter);
             this.txtBusinessIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusinessIncome_KeyPress);
+            this.txtBusinessIncome.Leave += new System.EventHandler(this.txtBusinessIncome_Leave);
             // 
             // txtWorkSalary
             // 
@@ -1260,7 +1282,9 @@
             this.txtWorkSalary.Size = new System.Drawing.Size(244, 20);
             this.txtWorkSalary.TabIndex = 54;
             this.txtWorkSalary.Text = "Work Salary";
+            this.txtWorkSalary.Enter += new System.EventHandler(this.txtWorkSalary_Enter);
             this.txtWorkSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWorkSalary_KeyPress);
+            this.txtWorkSalary.Leave += new System.EventHandler(this.txtWorkSalary_Leave);
             // 
             // txtOccupation
             // 
@@ -1272,6 +1296,8 @@
             this.txtOccupation.Size = new System.Drawing.Size(244, 20);
             this.txtOccupation.TabIndex = 50;
             this.txtOccupation.Text = "Occupation (Job Position)";
+            this.txtOccupation.Enter += new System.EventHandler(this.txtOccupation_Enter);
+            this.txtOccupation.Leave += new System.EventHandler(this.txtOccupation_Leave);
             // 
             // lblMonthlyIncome
             // 

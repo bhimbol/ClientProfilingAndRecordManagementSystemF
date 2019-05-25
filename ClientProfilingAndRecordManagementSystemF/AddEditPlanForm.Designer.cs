@@ -72,6 +72,7 @@
             this.button_Exit.Size = new System.Drawing.Size(36, 33);
             this.button_Exit.TabIndex = 16;
             this.button_Exit.UseVisualStyleBackColor = true;
+            this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
             // panel8
             // 
