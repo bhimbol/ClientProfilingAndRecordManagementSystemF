@@ -60,6 +60,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 try
                 {
                     System.IO.Directory.CreateDirectory(Application.StartupPath + "\\AXA FORMS\\" + input);
+                    MessageBox.Show("New Category added successfully.");
                 }
                 catch(Exception ex)
                 {
@@ -94,6 +95,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     System.IO.Directory.Move(Application.StartupPath + "\\AXA FORMS\\" + comboBoxAXAForms.Text, Application.StartupPath + "\\AXA FORMS\\" + input);
                     ManageAXAForms_Load(null, null);
                     comboBoxAXAForms.Text = input;
+                    MessageBox.Show("Edit successfully.");
                 }
             }
         }
@@ -123,6 +125,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     try
                     {
                         File.Copy(opd.FileName, Application.StartupPath + "\\AXA FORMS\\" + comboBoxAXAForms.Text + "\\" + opd.SafeFileName);
+                        MessageBox.Show("New AXA form added successfully.");
                     }
                     catch(Exception ex)
                     {

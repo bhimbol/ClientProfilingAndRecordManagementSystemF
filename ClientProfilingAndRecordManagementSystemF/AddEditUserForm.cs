@@ -48,7 +48,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                         usr.password = txtPassword.Text;
                         usr.contact_num = txtContact_Num.Text;
                         usr.address = txtAddress.Text;
-                        if (rbAdvisor.Checked == true) { usr.role = rbAdvisor.Text; }
+
                         if (rbClerkStaff.Checked == true) { usr.role = rbClerkStaff.Text; }
                         if (rbManager.Checked == true) { usr.role = rbManager.Text; }
                         if (rbM.Checked == true) { usr.gender = rbM.Text; }
@@ -130,7 +130,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     txtContact_Num.Text = dataGridViewUSR_.SelectedRows[0].Cells["contact_num"].Value.ToString();
                     txtAddress.Text = dataGridViewUSR_.SelectedRows[0].Cells["address"].Value.ToString();
                     if (dataGridViewUSR_.SelectedRows[0].Cells["role"].Value.ToString() == "ClerkStaff") { rbClerkStaff.Checked = true; }
-                    if (dataGridViewUSR_.SelectedRows[0].Cells["role"].Value.ToString() == "Advisor") { rbAdvisor.Checked = true; }
+
                     if (dataGridViewUSR_.SelectedRows[0].Cells["role"].Value.ToString() == "Manager") { rbManager.Checked = true; }
                     if (dataGridViewUSR_.SelectedRows[0].Cells["gender"].Value.ToString() == "Male") { rbM.Checked = true; }
                     if (dataGridViewUSR_.SelectedRows[0].Cells["gender"].Value.ToString() == "Female") { rbF.Checked = true; }
@@ -161,7 +161,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                         usr.contact_num = txtContact_Num.Text;
                         usr.address = txtAddress.Text;
 
-                        if (rbAdvisor.Checked == true) { usr.role = rbAdvisor.Text; }
+
                         if (rbClerkStaff.Checked == true) { usr.role = rbClerkStaff.Text; }
                         if (rbManager.Checked == true) { usr.role = rbManager.Text; }
                         if (rbM.Checked == true) { usr.gender = rbM.Text; }

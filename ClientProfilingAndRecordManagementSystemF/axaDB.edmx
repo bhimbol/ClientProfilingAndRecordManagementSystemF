@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="axaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="axaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ClientBeneficiaries">
           <Key>
             <PropertyRef Name="beneficiary_id" />
@@ -81,6 +81,7 @@
           <Property Name="Contact_Num" Type="varchar" MaxLength="50" />
           <Property Name="Email_Add" Type="varchar" MaxLength="50" />
           <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="id_path" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Plans">
           <Key>
@@ -91,15 +92,25 @@
           <Property Name="category" Type="varchar" MaxLength="50" />
           <Property Name="description" Type="varchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="username" Type="varchar" MaxLength="50" />
-          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="role" Type="varchar" MaxLength="50" />
-          <Property Name="fullname" Type="varchar" MaxLength="50" />
+          <Property Name="fullname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="gender" Type="varchar" MaxLength="50" />
           <Property Name="contact_num" Type="varchar" MaxLength="50" />
           <Property Name="address" Type="varchar" MaxLength="50" />
@@ -158,6 +169,7 @@
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ClientBeneficiaries" Association="Self.FK_ClientBeneficiaries">
             <End Role="Clients" EntitySet="Clients" />
@@ -176,47 +188,24 @@
             <End Role="Clients" EntitySet="Clients" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="axaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ClientBeneficiaries" EntityType="axaDBModel.ClientBeneficiary" />
-          <EntitySet Name="ClientPlans" EntityType="axaDBModel.ClientPlan" />
-          <EntitySet Name="Clients" EntityType="axaDBModel.Client" />
-          <EntitySet Name="FinancialAdvisors" EntityType="axaDBModel.FinancialAdvisor" />
-          <EntitySet Name="Plans" EntityType="axaDBModel.Plan" />
-          <AssociationSet Name="FK_ClientBeneficiaries" Association="axaDBModel.FK_ClientBeneficiaries">
-            <End Role="Client" EntitySet="Clients" />
-            <End Role="ClientBeneficiary" EntitySet="ClientBeneficiaries" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ClientPlans_Client" Association="axaDBModel.FK_ClientPlans_Client">
-            <End Role="Client" EntitySet="Clients" />
-            <End Role="ClientPlan" EntitySet="ClientPlans" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ClientPlans_Plan" Association="axaDBModel.FK_ClientPlans_Plan">
-            <End Role="Plan" EntitySet="Plans" />
-            <End Role="ClientPlan" EntitySet="ClientPlans" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Clients_Clients_FA" Association="axaDBModel.FK_Clients_Clients_FA">
-            <End Role="FinancialAdvisor" EntitySet="FinancialAdvisors" />
-            <End Role="Client" EntitySet="Clients" />
-          </AssociationSet>
-          <EntitySet Name="Users" EntityType="axaDBModel.User" />
-        </EntityContainer>
         <EntityType Name="ClientBeneficiary">
           <Key>
             <PropertyRef Name="beneficiary_id" />
           </Key>
           <Property Name="beneficiary_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="client_id" Type="Int32" Nullable="false" />
-          <Property Name="fullname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="birthdate" Type="DateTime" Precision="3" />
           <Property Name="birthplace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="relationship" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="occupation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="relationship" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="share" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Client" Relationship="axaDBModel.FK_ClientBeneficiaries" FromRole="ClientBeneficiary" ToRole="Client" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_ClientBeneficiaries" FromRole="ClientBeneficiaries" ToRole="Clients" />
         </EntityType>
         <EntityType Name="ClientPlan">
           <Key>
@@ -227,8 +216,8 @@
           <Property Name="plan_id" Type="Int32" />
           <Property Name="mode_of_payment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="due" Type="Double" />
-          <NavigationProperty Name="Client" Relationship="axaDBModel.FK_ClientPlans_Client" FromRole="ClientPlan" ToRole="Client" />
-          <NavigationProperty Name="Plan" Relationship="axaDBModel.FK_ClientPlans_Plan" FromRole="ClientPlan" ToRole="Plan" />
+          <NavigationProperty Name="Client" Relationship="Self.FK_ClientPlans_Client" FromRole="ClientPlans" ToRole="Clients" />
+          <NavigationProperty Name="Plan" Relationship="Self.FK_ClientPlans_Plan" FromRole="ClientPlans" ToRole="Plans" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
@@ -268,25 +257,26 @@
           <Property Name="answersub3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_path1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="id_path2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ClientBeneficiaries" Relationship="axaDBModel.FK_ClientBeneficiaries" FromRole="Client" ToRole="ClientBeneficiary" />
-          <NavigationProperty Name="ClientPlans" Relationship="axaDBModel.FK_ClientPlans_Client" FromRole="Client" ToRole="ClientPlan" />
-          <NavigationProperty Name="FinancialAdvisor" Relationship="axaDBModel.FK_Clients_Clients_FA" FromRole="Client" ToRole="FinancialAdvisor" />
+          <NavigationProperty Name="ClientBeneficiaries" Relationship="Self.FK_ClientBeneficiaries" FromRole="Clients" ToRole="ClientBeneficiaries" />
+          <NavigationProperty Name="ClientPlans" Relationship="Self.FK_ClientPlans_Client" FromRole="Clients" ToRole="ClientPlans" />
+          <NavigationProperty Name="FinancialAdvisor" Relationship="Self.FK_Clients_Clients_FA" FromRole="Clients" ToRole="FinancialAdvisors" />
         </EntityType>
         <EntityType Name="FinancialAdvisor">
           <Key>
             <PropertyRef Name="FA_id" />
           </Key>
           <Property Name="FA_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code_Num" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="B_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Contact_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email_Add" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Clients" Relationship="axaDBModel.FK_Clients_Clients_FA" FromRole="FinancialAdvisor" ToRole="Client" />
+          <Property Name="id_path" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Clients_FA" FromRole="FinancialAdvisors" ToRole="Clients" />
         </EntityType>
         <EntityType Name="Plan">
           <Key>
@@ -296,70 +286,105 @@
           <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ClientPlans" Relationship="axaDBModel.FK_ClientPlans_Plan" FromRole="Plan" ToRole="ClientPlan" />
+          <NavigationProperty Name="ClientPlans" Relationship="Self.FK_ClientPlans_Plan" FromRole="Plans" ToRole="ClientPlans" />
         </EntityType>
-        <Association Name="FK_ClientBeneficiaries">
-          <End Type="axaDBModel.Client" Role="Client" Multiplicity="1" />
-          <End Type="axaDBModel.ClientBeneficiary" Role="ClientBeneficiary" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="ClientBeneficiary">
-              <PropertyRef Name="client_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ClientPlans_Client">
-          <End Type="axaDBModel.Client" Role="Client" Multiplicity="0..1" />
-          <End Type="axaDBModel.ClientPlan" Role="ClientPlan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Client">
-              <PropertyRef Name="client_id" />
-            </Principal>
-            <Dependent Role="ClientPlan">
-              <PropertyRef Name="client_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ClientPlans_Plan">
-          <End Type="axaDBModel.Plan" Role="Plan" Multiplicity="0..1" />
-          <End Type="axaDBModel.ClientPlan" Role="ClientPlan" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Plan">
-              <PropertyRef Name="plan_id" />
-            </Principal>
-            <Dependent Role="ClientPlan">
-              <PropertyRef Name="plan_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Clients_Clients_FA">
-          <End Type="axaDBModel.FinancialAdvisor" Role="FinancialAdvisor" Multiplicity="0..1" />
-          <End Type="axaDBModel.Client" Role="Client" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FinancialAdvisor">
-              <PropertyRef Name="FA_id" />
-            </Principal>
-            <Dependent Role="Client">
-              <PropertyRef Name="FA_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="contact_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        </Schema>
+        <Association Name="FK_ClientBeneficiaries">
+          <End Role="Clients" Type="Self.Client" Multiplicity="1" />
+          <End Role="ClientBeneficiaries" Type="Self.ClientBeneficiary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="client_id" />
+            </Principal>
+            <Dependent Role="ClientBeneficiaries">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientPlans_Client">
+          <End Role="Clients" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="ClientPlans" Type="Self.ClientPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="client_id" />
+            </Principal>
+            <Dependent Role="ClientPlans">
+              <PropertyRef Name="client_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientPlans_Plan">
+          <End Role="Plans" Type="Self.Plan" Multiplicity="0..1" />
+          <End Role="ClientPlans" Type="Self.ClientPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plans">
+              <PropertyRef Name="plan_id" />
+            </Principal>
+            <Dependent Role="ClientPlans">
+              <PropertyRef Name="plan_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Clients_FA">
+          <End Role="FinancialAdvisors" Type="Self.FinancialAdvisor" Multiplicity="0..1" />
+          <End Role="Clients" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FinancialAdvisors">
+              <PropertyRef Name="FA_id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="FA_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="axaDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClientBeneficiaries" EntityType="Self.ClientBeneficiary" />
+          <EntitySet Name="ClientPlans" EntityType="Self.ClientPlan" />
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisor" />
+          <EntitySet Name="Plans" EntityType="Self.Plan" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_ClientBeneficiaries" Association="Self.FK_ClientBeneficiaries">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientBeneficiaries" EntitySet="ClientBeneficiaries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientPlans_Client" Association="Self.FK_ClientPlans_Client">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientPlans" EntitySet="ClientPlans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientPlans_Plan" Association="Self.FK_ClientPlans_Plan">
+            <End Role="Plans" EntitySet="Plans" />
+            <End Role="ClientPlans" EntitySet="ClientPlans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Clients_FA" Association="Self.FK_Clients_Clients_FA">
+            <End Role="FinancialAdvisors" EntitySet="FinancialAdvisors" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -368,105 +393,117 @@
           <EntitySetMapping Name="ClientBeneficiaries">
             <EntityTypeMapping TypeName="axaDBModel.ClientBeneficiary">
               <MappingFragment StoreEntitySet="ClientBeneficiaries">
-                <ScalarProperty Name="share" ColumnName="share" />
-                <ScalarProperty Name="occupation" ColumnName="occupation" />
-                <ScalarProperty Name="relationship" ColumnName="relationship" />
-                <ScalarProperty Name="birthplace" ColumnName="birthplace" />
-                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
-                <ScalarProperty Name="fullname" ColumnName="fullname" />
-                <ScalarProperty Name="client_id" ColumnName="client_id" />
                 <ScalarProperty Name="beneficiary_id" ColumnName="beneficiary_id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="birthplace" ColumnName="birthplace" />
+                <ScalarProperty Name="relationship" ColumnName="relationship" />
+                <ScalarProperty Name="occupation" ColumnName="occupation" />
+                <ScalarProperty Name="share" ColumnName="share" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ClientPlans">
             <EntityTypeMapping TypeName="axaDBModel.ClientPlan">
               <MappingFragment StoreEntitySet="ClientPlans">
-                <ScalarProperty Name="due" ColumnName="due" />
-                <ScalarProperty Name="mode_of_payment" ColumnName="mode_of_payment" />
-                <ScalarProperty Name="plan_id" ColumnName="plan_id" />
-                <ScalarProperty Name="client_id" ColumnName="client_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+                <ScalarProperty Name="mode_of_payment" ColumnName="mode_of_payment" />
+                <ScalarProperty Name="due" ColumnName="due" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="axaDBModel.Client">
               <MappingFragment StoreEntitySet="Clients">
-                <ScalarProperty Name="id_path2" ColumnName="id_path2" />
-                <ScalarProperty Name="id_path1" ColumnName="id_path1" />
-                <ScalarProperty Name="answersub3" ColumnName="answersub3" />
-                <ScalarProperty Name="answersub2" ColumnName="answersub2" />
-                <ScalarProperty Name="answersub1" ColumnName="answersub1" />
-                <ScalarProperty Name="sss_gsis_number" ColumnName="sss_gsis_number" />
-                <ScalarProperty Name="taxidnumber" ColumnName="taxidnumber" />
-                <ScalarProperty Name="natureofbusiness" ColumnName="natureofbusiness" />
-                <ScalarProperty Name="companycontact" ColumnName="companycontact" />
-                <ScalarProperty Name="companyaddress" ColumnName="companyaddress" />
-                <ScalarProperty Name="companyname" ColumnName="companyname" />
-                <ScalarProperty Name="othersource" ColumnName="othersource" />
-                <ScalarProperty Name="businessincome" ColumnName="businessincome" />
-                <ScalarProperty Name="worksalary" ColumnName="worksalary" />
-                <ScalarProperty Name="occupation" ColumnName="occupation" />
-                <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
-                <ScalarProperty Name="telephonenumber" ColumnName="telephonenumber" />
-                <ScalarProperty Name="cpnumber" ColumnName="cpnumber" />
-                <ScalarProperty Name="residenceaddress" ColumnName="residenceaddress" />
-                <ScalarProperty Name="weight" ColumnName="weight" />
-                <ScalarProperty Name="height" ColumnName="height" />
-                <ScalarProperty Name="birthplace" ColumnName="birthplace" />
-                <ScalarProperty Name="birthday" ColumnName="birthday" />
-                <ScalarProperty Name="civilstatus" ColumnName="civilstatus" />
-                <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="spousemiddlename" ColumnName="spousemiddlename" />
-                <ScalarProperty Name="spousefirstname" ColumnName="spousefirstname" />
-                <ScalarProperty Name="spouselastname" ColumnName="spouselastname" />
-                <ScalarProperty Name="middlename" ColumnName="middlename" />
-                <ScalarProperty Name="firstname" ColumnName="firstname" />
-                <ScalarProperty Name="lastname" ColumnName="lastname" />
-                <ScalarProperty Name="FA_id" ColumnName="FA_id" />
-                <ScalarProperty Name="addedby_user_id" ColumnName="addedby_user_id" />
                 <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="addedby_user_id" ColumnName="addedby_user_id" />
+                <ScalarProperty Name="FA_id" ColumnName="FA_id" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="spouselastname" ColumnName="spouselastname" />
+                <ScalarProperty Name="spousefirstname" ColumnName="spousefirstname" />
+                <ScalarProperty Name="spousemiddlename" ColumnName="spousemiddlename" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="civilstatus" ColumnName="civilstatus" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+                <ScalarProperty Name="birthplace" ColumnName="birthplace" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="residenceaddress" ColumnName="residenceaddress" />
+                <ScalarProperty Name="cpnumber" ColumnName="cpnumber" />
+                <ScalarProperty Name="telephonenumber" ColumnName="telephonenumber" />
+                <ScalarProperty Name="emailaddress" ColumnName="emailaddress" />
+                <ScalarProperty Name="occupation" ColumnName="occupation" />
+                <ScalarProperty Name="worksalary" ColumnName="worksalary" />
+                <ScalarProperty Name="businessincome" ColumnName="businessincome" />
+                <ScalarProperty Name="othersource" ColumnName="othersource" />
+                <ScalarProperty Name="companyname" ColumnName="companyname" />
+                <ScalarProperty Name="companyaddress" ColumnName="companyaddress" />
+                <ScalarProperty Name="companycontact" ColumnName="companycontact" />
+                <ScalarProperty Name="natureofbusiness" ColumnName="natureofbusiness" />
+                <ScalarProperty Name="taxidnumber" ColumnName="taxidnumber" />
+                <ScalarProperty Name="sss_gsis_number" ColumnName="sss_gsis_number" />
+                <ScalarProperty Name="answersub1" ColumnName="answersub1" />
+                <ScalarProperty Name="answersub2" ColumnName="answersub2" />
+                <ScalarProperty Name="answersub3" ColumnName="answersub3" />
+                <ScalarProperty Name="id_path1" ColumnName="id_path1" />
+                <ScalarProperty Name="id_path2" ColumnName="id_path2" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FinancialAdvisors">
             <EntityTypeMapping TypeName="axaDBModel.FinancialAdvisor">
               <MappingFragment StoreEntitySet="FinancialAdvisors">
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Email_Add" ColumnName="Email_Add" />
-                <ScalarProperty Name="Contact_Num" ColumnName="Contact_Num" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="B_Date" ColumnName="B_Date" />
-                <ScalarProperty Name="LName" ColumnName="LName" />
-                <ScalarProperty Name="MName" ColumnName="MName" />
-                <ScalarProperty Name="FName" ColumnName="FName" />
-                <ScalarProperty Name="Code_Num" ColumnName="Code_Num" />
                 <ScalarProperty Name="FA_id" ColumnName="FA_id" />
+                <ScalarProperty Name="Code_Num" ColumnName="Code_Num" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="MName" ColumnName="MName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="B_Date" ColumnName="B_Date" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Contact_Num" ColumnName="Contact_Num" />
+                <ScalarProperty Name="Email_Add" ColumnName="Email_Add" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="id_path" ColumnName="id_path" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Plans">
             <EntityTypeMapping TypeName="axaDBModel.Plan">
               <MappingFragment StoreEntitySet="Plans">
-                <ScalarProperty Name="description" ColumnName="description" />
-                <ScalarProperty Name="category" ColumnName="category" />
-                <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="plan_id" ColumnName="plan_id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="axaDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="axaDBModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="contact_num" ColumnName="contact_num" />
-                <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="fullname" ColumnName="fullname" />
-                <ScalarProperty Name="role" ColumnName="role" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="contact_num" ColumnName="contact_num" />
+                <ScalarProperty Name="address" ColumnName="address" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -48,7 +48,6 @@
             this.rbF = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbClerkStaff = new System.Windows.Forms.RadioButton();
-            this.rbAdvisor = new System.Windows.Forms.RadioButton();
             this.rbManager = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -309,12 +308,11 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.rbClerkStaff);
-            this.groupBox1.Controls.Add(this.rbAdvisor);
             this.groupBox1.Controls.Add(this.rbManager);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Location = new System.Drawing.Point(655, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 96);
+            this.groupBox1.Size = new System.Drawing.Size(260, 86);
             this.groupBox1.TabIndex = 75;
             this.groupBox1.TabStop = false;
             // 
@@ -322,25 +320,12 @@
             // 
             this.rbClerkStaff.AutoSize = true;
             this.rbClerkStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbClerkStaff.Location = new System.Drawing.Point(141, 61);
+            this.rbClerkStaff.Location = new System.Drawing.Point(141, 45);
             this.rbClerkStaff.Name = "rbClerkStaff";
             this.rbClerkStaff.Size = new System.Drawing.Size(102, 24);
             this.rbClerkStaff.TabIndex = 69;
             this.rbClerkStaff.Text = "Clerk Staff";
             this.rbClerkStaff.UseVisualStyleBackColor = true;
-            // 
-            // rbAdvisor
-            // 
-            this.rbAdvisor.AutoSize = true;
-            this.rbAdvisor.Checked = true;
-            this.rbAdvisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAdvisor.Location = new System.Drawing.Point(141, 37);
-            this.rbAdvisor.Name = "rbAdvisor";
-            this.rbAdvisor.Size = new System.Drawing.Size(79, 24);
-            this.rbAdvisor.TabIndex = 68;
-            this.rbAdvisor.TabStop = true;
-            this.rbAdvisor.Text = "Advisor";
-            this.rbAdvisor.UseVisualStyleBackColor = true;
             // 
             // rbManager
             // 
@@ -538,7 +523,6 @@
         private System.Windows.Forms.RadioButton rbF;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbClerkStaff;
-        private System.Windows.Forms.RadioButton rbAdvisor;
         private System.Windows.Forms.RadioButton rbManager;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;

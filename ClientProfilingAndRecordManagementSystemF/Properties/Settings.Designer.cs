@@ -70,5 +70,15 @@ namespace ClientProfilingAndRecordManagementSystemF.Properties {
                 this["current_user_id"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PPYCHA-PC;Initial Catalog=axaDB;Integrated Security=True")]
+        public string axaDBConnectionString {
+            get {
+                return ((string)(this["axaDBConnectionString"]));
+            }
+        }
     }
 }

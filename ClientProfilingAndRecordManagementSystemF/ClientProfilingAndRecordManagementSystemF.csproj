@@ -46,8 +46,20 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="GSMCommServer, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\GSMCommServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GSMCommShared, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\GSMCommShared.dll</HintPath>
+    </Reference>
+    <Reference Include="GSMCommunication, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\GSMCommunication.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="PDUConverter, Version=1.21.0.0, Culture=neutral, PublicKeyToken=515d87df384dcc81, processorArchitecture=MSIL">
+      <HintPath>..\packages\GSMComm.1.21.1\lib\PDUConverter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -175,11 +187,20 @@
     <Compile Include="ManageFinancialAdvisorForm.Designer.cs">
       <DependentUpon>ManageFinancialAdvisorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notify Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notify Client.Designer.cs">
+      <DependentUpon>Notify Client.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plan.cs">
       <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>axaDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>axaDB.tt</DependentUpon>
     </Compile>
@@ -207,6 +228,16 @@
     <EmbeddedResource Include="ClientPlanForm.resx">
       <DependentUpon>ClientPlanForm.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="axaDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>axaDB.edmx</DependentUpon>
+      <LastGenOutput>axaDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="axaDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>axaDB.edmx</DependentUpon>
+      <LastGenOutput>axaDB.cs</LastGenOutput>
+    </Content>
     <Content Include="CrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport.cs</LastGenOutput>
@@ -229,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageFinancialAdvisorForm.resx">
       <DependentUpon>ManageFinancialAdvisorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notify Client.resx">
+      <DependentUpon>Notify Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,22 +305,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="axaDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>axaDB.edmx</DependentUpon>
-      <LastGenOutput>axaDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="axaDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>axaDB.edmx</DependentUpon>
-      <LastGenOutput>axaDB.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

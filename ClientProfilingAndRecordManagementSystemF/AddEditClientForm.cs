@@ -281,6 +281,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                 )
             {
                 SaveClient();
+
             }
         }
 
@@ -299,6 +300,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                     this.selected_client = c;
                     this.action = "Edit";
                     AddEditClientForm_Load(null, null);
+
                 }
             }
             catch (Exception ex)
@@ -369,22 +371,7 @@ namespace ClientProfilingAndRecordManagementSystemF
 
         private void btnRemoveBeneficiary_Click(object sender, EventArgs e)
         {
-            if (dgvBeneficiaries.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow br in dgvBeneficiaries.SelectedRows)
-                {
-                    if (MessageBox.Show("Delete? " + br.Cells["FULLNAME"].Value.ToString(), "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        using (axaDBEntities db = new axaDBEntities())
-                        {
-                            ClientBeneficiary cb = db.ClientBeneficiaries.Find(br.Cells["beneficiary_id"].Value);
-                            db.ClientBeneficiaries.Remove(cb);
-                            db.SaveChanges();
-                        }
-                    }
-                }
-            }
-            populateClientBeneficiaries(Int64.Parse(txtClientsID.Text));
+
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -1013,6 +1000,11 @@ namespace ClientProfilingAndRecordManagementSystemF
             {
                 txtBShare.Text = "% Share";
             }
+        }
+
+        private void dgvBeneficiaries_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

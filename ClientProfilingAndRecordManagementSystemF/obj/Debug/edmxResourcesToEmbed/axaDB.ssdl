@@ -76,6 +76,7 @@
     <Property Name="Contact_Num" Type="varchar" MaxLength="50" />
     <Property Name="Email_Add" Type="varchar" MaxLength="50" />
     <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="id_path" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Plans">
     <Key>
@@ -86,15 +87,25 @@
     <Property Name="category" Type="varchar" MaxLength="50" />
     <Property Name="description" Type="varchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="user_id" />
     </Key>
     <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="username" Type="varchar" MaxLength="50" />
-    <Property Name="password" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="role" Type="varchar" MaxLength="50" />
-    <Property Name="fullname" Type="varchar" MaxLength="50" />
+    <Property Name="fullname" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="gender" Type="varchar" MaxLength="50" />
     <Property Name="contact_num" Type="varchar" MaxLength="50" />
     <Property Name="address" Type="varchar" MaxLength="50" />
@@ -153,6 +164,7 @@
     <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FinancialAdvisors" EntityType="Self.FinancialAdvisors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Plans" EntityType="Self.Plans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ClientBeneficiaries" Association="Self.FK_ClientBeneficiaries">
       <End Role="Clients" EntitySet="Clients" />

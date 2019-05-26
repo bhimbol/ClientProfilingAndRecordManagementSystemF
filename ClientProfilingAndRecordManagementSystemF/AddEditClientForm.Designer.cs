@@ -1381,13 +1381,14 @@
             this.btnBUpdate.FlatAppearance.BorderSize = 0;
             this.btnBUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBUpdate.Location = new System.Drawing.Point(16, 362);
+            this.btnBUpdate.Location = new System.Drawing.Point(149, 362);
             this.btnBUpdate.Name = "btnBUpdate";
             this.btnBUpdate.Size = new System.Drawing.Size(118, 43);
             this.btnBUpdate.TabIndex = 16;
             this.btnBUpdate.Text = "Update";
             this.btnBUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBUpdate.UseVisualStyleBackColor = false;
+            this.btnBUpdate.Click += new System.EventHandler(this.btnBUpdate_Click);
             // 
             // txtBShare
             // 
@@ -1432,13 +1433,14 @@
             this.btnRemoveBeneficiary.FlatAppearance.BorderSize = 0;
             this.btnRemoveBeneficiary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveBeneficiary.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveBeneficiary.Location = new System.Drawing.Point(149, 362);
+            this.btnRemoveBeneficiary.Location = new System.Drawing.Point(315, 362);
             this.btnRemoveBeneficiary.Name = "btnRemoveBeneficiary";
             this.btnRemoveBeneficiary.Size = new System.Drawing.Size(118, 43);
             this.btnRemoveBeneficiary.TabIndex = 2;
             this.btnRemoveBeneficiary.Text = "Remove Beneficiary";
             this.btnRemoveBeneficiary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRemoveBeneficiary.UseVisualStyleBackColor = false;
+            this.btnRemoveBeneficiary.Click += new System.EventHandler(this.btnRemoveBeneficiary_Click);
             // 
             // txtBBirthPlace
             // 
@@ -1512,6 +1514,7 @@
             this.dgvBeneficiaries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBeneficiaries.Size = new System.Drawing.Size(1184, 190);
             this.dgvBeneficiaries.TabIndex = 1;
+            this.dgvBeneficiaries.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvBeneficiaries_DataError);
             // 
             // lblBeneficiaries
             // 

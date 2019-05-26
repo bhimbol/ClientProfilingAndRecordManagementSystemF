@@ -30,6 +30,7 @@ namespace ClientProfilingAndRecordManagementSystemF
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<FinancialAdvisor> FinancialAdvisors { get; set; }
         public virtual DbSet<Plan> Plans { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }
 }

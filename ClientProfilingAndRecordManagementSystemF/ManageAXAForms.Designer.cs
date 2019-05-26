@@ -152,6 +152,7 @@
             this.Controls.Add(this.comboBoxAXAForms);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxAXAFiles);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageAXAForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageAXAForms";

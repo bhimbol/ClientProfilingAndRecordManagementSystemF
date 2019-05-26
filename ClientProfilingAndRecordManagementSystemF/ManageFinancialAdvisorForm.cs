@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,6 +13,8 @@ namespace ClientProfilingAndRecordManagementSystemF
         {
             InitializeComponent();
         }
+
+        string directoryPath;
 
         private void ManageFinancialAdvisorForm_Load(object sender, EventArgs e)
         {
@@ -45,24 +49,25 @@ namespace ClientProfilingAndRecordManagementSystemF
                     fa.Address = txtAddress.Text;
                     fa.B_Date = dtpB_Date.Text;
                     fa.Gender = gender;
+                    fa.id_path = directoryPath;
                     db.FinancialAdvisors.Add(fa);
                     try
                     {
                         db.SaveChanges();
                         MessageBox.Show("Successfully added advisor.");
                         ManageFinancialAdvisorForm_Load(null, null);
-                        DialogResult dr = new DialogResult();
-                        dr = MessageBox.Show("Would  you like to create log-in account for this advisor?", "Create log-in account:", MessageBoxButtons.YesNo);
-                        if (dr == DialogResult.Yes)
-                        {
-                            AddEditUserForm addedituserform = new AddEditUserForm();
-                            addedituserform.role = "Advisor";
-                            ((TextBox)addedituserform.Controls["txtFullname"]).Text = fa.LName + ", " + fa.FName + " " + fa.MName;
-                            ((Button)addedituserform.Controls["btnUpdate"]).Enabled = false;
-                            ((Button)addedituserform.Controls["btnDelete"]).Enabled = false;
-                            addedituserform.ShowDialog();
-                            addedituserform.role = null;
-                        }
+                        //DialogResult dr = new DialogResult();
+                        //dr = MessageBox.Show("Would  you like to create log-in account for this advisor?", "Create log-in account:", MessageBoxButtons.YesNo);
+                        //if (dr == DialogResult.Yes)
+                        //{
+                        //    AddEditUserForm addedituserform = new AddEditUserForm();
+                        //    addedituserform.role = "Advisor";
+                        //    ((TextBox)addedituserform.Controls["txtFullname"]).Text = fa.LName + ", " + fa.FName + " " + fa.MName;
+                        //    ((Button)addedituserform.Controls["btnUpdate"]).Enabled = false;
+                        //    ((Button)addedituserform.Controls["btnDelete"]).Enabled = false;
+                        //    addedituserform.ShowDialog();
+                        //    addedituserform.role = null;
+                        //}
                         CleartxtFields();
                     }
                     catch (Exception ex)
@@ -112,6 +117,7 @@ namespace ClientProfilingAndRecordManagementSystemF
                         fa.Address = txtAddress.Text;
                         fa.B_Date = dtpB_Date.Text;
                         fa.Gender = gender;
+                        fa.id_path = directoryPath;
                         db.SaveChanges();
                         btnUpdate.Enabled = false;
                         btnAdd.Enabled = true;
@@ -363,9 +369,13 @@ namespace ClientProfilingAndRecordManagementSystemF
             opd.DefaultExt = "jpg";
             opd.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             opd.Multiselect = false;
+
+
             if (opd.ShowDialog() == DialogResult.OK)
             {
-                //txtIDDir1.Text = opd.FileName;
+                pictureBox2.Image = Image.FromFile(opd.FileName);
+                directoryPath = Path.GetFullPath(opd.FileName);
+
             }
         }
     }
